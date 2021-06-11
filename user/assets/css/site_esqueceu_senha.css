@@ -1,0 +1,264 @@
+/*Author: Jéssica*/
+
+/* ______Layout______*/
+
+body{
+    background-color: #fff;
+}
+
+form{
+    background-color: #fff;
+}
+
+/* ______Barra de navegação______*/
+
+.barra-preta{
+    background: #000;
+}
+
+.borda-titulo{
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+}
+
+.color-green{
+    color: #28a745;
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+/* ______Estrutura formulário______*/
+
+label{
+    text-align: right;
+    font-weight: bold;
+}
+
+h5{
+    color: #28a745;
+}
+
+.estilo-font{
+    font-family: 'Montserrat', sans-serif;  
+}
+
+/* ______Rodapé______*/
+
+footer{
+    background:#000;
+    padding: 15px 0px 5px 0px;
+    text-align:center;
+    margin-top:0%;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+footer h5{
+    color: #fff;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+footer .navbar-nav a:hover{
+    color: #28a745;
+    text-decoration: none;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer p{
+    color: #28a745;
+}
+
+
+/* ______Media Queries______*/
+
+/* Extra small devices (portrait phones, less than 576px) 5*/
+@media (max-width: 575.98px) {
+    h5{
+        font-size: 0.8em;
+    }
+
+    .tamanho-text{
+        font-size: 12px;
+    }
+
+    .tamanho-font{
+        font-size: 12px;        
+    }
+
+    .c-email-resp{
+        margin-right: 468px;       
+    }
+
+    .c-campo-email-resp{
+        margin-right: 95px;      
+    }
+
+    input[type=text]{
+        width: 60%;
+        position: absolute;
+        right: 50px;
+        bottom: 0px;
+        height: 32.5px;
+    }
+
+    .bto-enviar-c{
+        position: absolute;
+        right: 60px;  
+        font-size: 13px;
+        
+    }
+    
+    .barra-preta, footer{
+        width: 575px;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) 4*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    h5{
+        font-size: 0.8em;
+    }
+
+    .tamanho-text{
+        font-size: 13.5px;
+    }
+
+    .tamanho-font{
+        font-size: 13.5px;
+    }
+
+    .alinhamento{
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+
+    .c-email-resp{
+        padding-left: 20px;       
+    }
+
+    input[type=text]{
+        width: 87%;
+        position: absolute;
+        right: 45px;
+        bottom: 0px;
+        height: 35px;
+    }
+
+    .bto-enviar-c{
+        position: absolute;
+        right: 55px;        
+        font-size: 13.5px;
+    }
+
+}
+
+/* Medium devices (tablets, 768px and up) 3*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    h5{
+        font-size: 0.8em;
+    }
+
+    .tamanho-text{
+        font-size: 13px;
+    }
+
+    .tamanho-font{
+        font-size: 12px;       
+        margin-top: 10px;
+    }
+
+    .alinhamento{
+        margin-top: 135px;
+        margin-bottom: 135px;
+    }
+
+    input[type=text]{
+        position: absolute;
+        left: 15px;
+        height: 34px;
+    }
+
+    .c-email-resp{
+        padding: 5px;
+        margin-left: 15px;
+    }
+
+    .bto-enviar-c{
+        position: absolute;
+        left: 340px;
+        font-size: 13px;
+    } 
+
+}
+
+/* Large devices (desktops, 992px and up) 2*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+    h5{
+        font-size: 15.5px;
+    }
+
+    .tamanho-text{
+        font-size: 15px;
+    }
+
+    .tamanho-font{
+        font-size: 13px;       
+        margin-top: 10px;
+    }
+
+    .alinhamento{
+        margin-top: 94px;
+        margin-bottom: 94px;
+    }
+
+    input[type=text]{
+        position: absolute;       
+    }
+
+    .c-email-resp{
+        padding-left: 20px; 
+    }
+
+    .bto-enviar-c{
+        position: absolute;
+        left: 430px;     
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) 1*/
+@media (min-width: 1200px) {
+
+    h5{
+        font-size: 15.5px;
+    }
+
+    .tamanho-text{
+        font-size: 15px;
+    }
+
+    .tamanho-font{
+        font-size: 13px;
+
+    }
+
+    .alinhamento{
+        margin-top: 65px;
+        margin-bottom: 64px;
+    }
+    
+     .c-email-resp{
+        padding-left: 20px; 
+    }
+    
+
+}

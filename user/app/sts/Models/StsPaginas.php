@@ -1,0 +1,30 @@
+<?php
+
+/* @author jessica */
+
+namespace App\Sts\Models;
+
+if (!defined('URL')) {
+    header("Location: /");
+    exit();
+}
+
+class StsPaginas {
+
+    private $resultado;
+    private $urlController;
+    private $urlMetodo;
+
+    public function listarPaginas($urlController = null, $urlMetodo = null) {
+        $this->urlController = (string) $urlController;
+        $this->urlMetodo = (string) $urlMetodo;
+        
+        $listar = new \Sts\Models\helper\StsRead();
+        $listar->fullRead("SELECT id FROM pagina WHERE controller =:controller AND metodo =:metodo", "controller={$this->urlController}&metodo={$this->urlMetodo}");
+        $this->resultado = $listar->getResultado();
+        return $this->resultado;
+
+        
+    }
+
+}

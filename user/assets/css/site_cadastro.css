@@ -1,0 +1,351 @@
+/*Author: Jéssica*/
+
+/* ______Layout______*/
+
+body{
+    background-color: #fff;
+}
+
+form{
+    background-color: #fff;
+    align-self: center;
+}
+
+/* ______Barra de navegação______*/
+
+.barra-preta{
+    background: #000;
+}
+
+.borda-titulo{
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+}
+
+.color-green{
+    color: #28a745;
+    text-decoration: none;
+}
+
+a:link{
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+/* ______Estrutura formulário______*/
+
+.alinhamento{
+    justify-content: center;
+    padding-right: 20px;
+}
+
+label{
+    text-align: right;
+    font-weight: bold;
+}
+
+h5{
+    color: #28a745;
+}
+
+.the-fieldset {
+    border: 1px solid #e0e0e0;    
+}
+
+.borda-sup {
+    border: 1px #e0e0e0;
+    border-style: none none solid none;
+    width: 1108px; 
+}
+
+.borda-conteudo{
+    border: 1px;
+    border-style: none none solid none;
+    width: 1000px;
+}
+
+.botao-cadastrar{
+    text-align: right;
+}
+
+.estilo-font{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 17px;
+}
+
+/* ______Rodapé______*/
+
+footer{
+    background:#000;
+    padding: 15px 0px 5px 0px;
+    text-align:center;
+    margin-top:0%;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+footer h5{
+    color: #fff;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+footer .navbar-nav a:hover{
+    color: #28a745;
+    text-decoration: none;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer p{
+    color: #28a745;
+}
+
+
+/* ______Media Queries______*/
+
+/* Extra small devices (portrait phones, less than 576px) 5*/
+@media (max-width: 575.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 420px;
+    }
+
+    .borda-sup{
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 476px;
+    }
+
+    h5{
+        font-size: 15px;
+    }
+
+    .estilo-font{
+        font-size: 14px;
+    }
+
+    .tamanho-font{
+        font-size: 12px;
+    }
+
+    input[type=text], .form-control {
+        width:120%;
+        height: 70%;
+    }
+
+    .c-login-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 48px;
+    }
+
+    .c-senha-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 50px;
+    }
+
+    .c-nome-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 50px;
+    }
+
+    .c-email-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 50px;
+    }
+
+    .c-telefone-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 55px;
+    }
+
+    .c-cidade-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 50px;
+    }
+
+    .c-logradouro-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 80px;
+    }
+
+    .t-c-bairro{
+        padding-bottom: 20px;
+        width: 95%;   
+        padding-right: 5px;
+    }
+
+    .t-c-cep{
+        width: 95%; 
+        height: 110%;
+        margin-right: 12px;
+    }
+
+    .c-bairro-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 50px;
+    }
+
+    .c-cep-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 75px;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up) 4*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 435px;
+    }
+
+    .borda-sup{
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 509px;
+    }
+
+    h5{
+        font-size: 16px;
+    }
+
+    .estilo-font{
+        font-size: 14px;
+    }
+
+    .tamanho-font{
+        font-size: 12px;
+    }
+    
+    .a-log{
+      padding: 1px;  
+    }
+
+    input[type=text], .form-control {
+        height: 85%;
+    }
+
+    .margem-titulo{
+        margin-left: 20px;
+    }
+
+    .t-c-bairro{
+        width: 132%;
+    }
+
+    .t-c-cep{
+        width: 132%;        
+    }
+    
+    .a-alinhar{
+       margin: 0px;
+       padding: 0px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) 3*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 605px; 
+    }
+
+    .borda-sup{
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 689px;
+    }  
+
+    h5{
+        font-size: 18px;
+    }
+
+    .estilo-font{
+        font-size: 14px;
+    }
+
+    .tamanho-font{
+        font-size: 14px;
+    }
+
+    input[type=text], .form-control {
+        height: 85%;
+    }
+
+    .margem-titulo{
+        margin-left: 20px;
+    }
+
+}
+
+/* Large devices (desktops, 992px and up) 2*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 815px;
+        font-size: 18px;
+    }
+
+    .borda-sup {
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 929px; 
+    }
+    
+    .estilo-font{
+        font-size: 15.5px;
+    }
+
+    .margem-titulo{
+        margin-left: 50px;
+    }
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) 1*/
+@media (min-width: 1200px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 1000px;
+        font-size: 18px;
+    }
+
+    .borda-sup {
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 1109px; 
+    }
+    
+    .estilo-font{
+        font-size: 15.5px;
+    }
+
+    .margem-titulo{
+        margin-left: 50px;
+    }
+    
+    input[type=text], .form-control {
+        height: 85%;
+        width: 90%;
+    }
+}
+
+
+
