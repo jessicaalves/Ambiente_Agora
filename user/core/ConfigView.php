@@ -49,7 +49,7 @@ class ConfigView {
 
     public function renderizarAtualSenha() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoEsqueceuSenha.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoAtualizarSenha.php';
             include 'app/sts/Views/include/menu/menuComum.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeComum.php';

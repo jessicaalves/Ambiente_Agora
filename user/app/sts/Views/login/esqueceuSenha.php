@@ -7,7 +7,7 @@
             </div>
             <div class="col-md-6 d-flex">
                 <div class="align-self-center">
-                    <h5 class="estilo-font pl-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ESQUECEU SUA SENHA?</b></h5>
+                    <h5 class="estilo-font pl-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i><b> ESQUECEU SUA SENHA?</b></h5>
                     <p class="estilo-font tamanho-text pl-1" style="letter-spacing: 0.5px;">Informe seu endereço de e-mail já cadastrado anteriormente para gerar uma nova senha.</p>
 
                     <form method="POST">

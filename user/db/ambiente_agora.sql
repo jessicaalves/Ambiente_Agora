@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Jun-2021 às 02:52
+-- Tempo de geração: 12-Jun-2021 às 02:07
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -300,7 +300,7 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `login`, `senha`, `nome`, `email`, `telefone`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `id_permissao_acesso`, `chave_descadastro`, `id_situacao`, `id_grupo_pagina`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@gmail.com', '$2y$10$MQgp73R5/6BzJ2lb5d7iN.TJIbmg76jBrdEO.k75vNpuQMFAPboX2', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '(64) 99962-3376', 'Rua Joaquim Eloy Leite', 'Santa Luzia', '79b9ae0e0279dac94d75dc30f036655a', '2', 1, NULL, 2, NULL, '2021-06-03 21:30:56', '2021-06-11 01:46:28'),
-(2, 'jessicaalves24@hotmail.com', '$2y$10$XmKpPeumMplNQt4QMSEAJ.aCiMBzHkMKFkNoPIl1QJkD0qL1OngYK', 'Jéssica Ferrari', 'jessicaalves24@hotmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', '33a549014b32a62d86a2aaea1ca087bb', '2', 1, NULL, 2, NULL, '2021-06-11 01:22:17', '2021-06-11 01:52:46');
+(2, 'jessicaalves24@hotmail.com', '$2y$10$WZsPmHatKLuOvj3tmdHDSe1glNPbm4fGd4lObe3PZbrR5Tc39lNdG', 'Jéssica Alves Ferreira', 'jessicaalves24@hotmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', NULL, '2', 1, NULL, 2, NULL, '2021-06-12 02:05:52', '2021-06-12 02:05:52');
 
 --
 -- Índices para tabelas despejadas

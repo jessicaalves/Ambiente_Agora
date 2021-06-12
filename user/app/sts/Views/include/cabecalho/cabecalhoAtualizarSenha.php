@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="<?php echo URL . 'user/assets/css/bootstrap.min.css'; ?>">
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/usuario_esqueceu_senha.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL . '/user/assets/css/usuario_atualizar_senha.css'; ?>">
 
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/reboot.css'; ?>">
@@ -25,5 +25,3 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/font-awesome/css/all.css'; ?>">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
     </head>
-
-

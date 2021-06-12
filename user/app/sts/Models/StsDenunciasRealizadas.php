@@ -15,10 +15,9 @@ class StsDenunciasRealizadas {
 
     public function visualizarDenunciasRealizadas() {
         $visualizarDenunciasRealizadas = new \Sts\Models\helper\StsRead();
-        $visualizarDenunciasRealizadas->fullRead("SELECT * FROM denuncia_comum ORDER BY id ASC LIMIT :limit", "limit=10");
+        $visualizarDenunciasRealizadas->fullRead("SELECT * FROM denuncia_comum WHERE id_usuario =:id_usuario ORDER BY id ASC LIMIT :limit", "id_usuario={$_SESSION['id']}&limit=10");
         $this->resultado = $visualizarDenunciasRealizadas->getResultado();
         return $this->resultado;
     }
 
 }
-

@@ -47,31 +47,31 @@
                         <th>Id</th>
                         <th>Título</th>
                         <th>Tipo</th>
-                        <th>Status</th>
-                        <th>Mais Dados da Denúncia</th>
+                        <th class="d-lg-table-cell">Status</th>
+                        <th class="d-sm-table-cell">Mais Dados da Denúncia</th>
                     </tr>
                     </thead>
 
                     <tbody>
 
-<?php
-foreach ($this->dados['denunciasRealizadas'] as $denuncias) {
-    extract($denuncias);
-    ?>
+                        <?php
+                        foreach ($this->dados['denunciasRealizadas'] as $denuncias) {
+                            extract($denuncias);
+                            ?>
 
                             <tr>
                                 <th class="text-success"><?php echo $id; ?></th>
                                 <td><?php echo $titulo; ?></td>
                                 <td><?php echo $tipo; ?></td>
-                                <td>Em Andamento</td>
-                                <td class="align-center"><a href="<?php echo URL . 'user/visualizar dados denuncia/visualizarDadosDenuncia/' . $id; ?>" class="text-body">Visualizar Dados </a><i class="far fa-eye text-success"></i></td>
+                                <td class="d-lg-table-cell">Em Andamento</td>
+                                <td class="align-center d-sm-table-cell"><a href="<?php echo URL . 'user/visualizar dados denuncia/visualizarDadosDenuncia/' . $id; ?>" class="text-body">Visualizar Dados </a><i class="far fa-eye text-success"></i></td>
                             </tr>
 
                         </tbody>
 
-    <?php
-}
-?>
+                        <?php
+                    }
+                    ?>
 
                 </table><!-- Final Tabela de Denúncias Realizadas -->
 
