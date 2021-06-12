@@ -156,7 +156,7 @@ class StsCadastro {
         $this->dados['created'] = date('Y-m-d H:i:s');
         $this->dados['modified'] = date('Y-m-d H:i:s');
         $cadUser = new \Sts\Models\helper\StsCreate();
-        $cadUser->executarCreate('usuario', $this->dados);
+        $cadUser->executarCreate('sts_usuario', $this->dados);
         if ($cadUser->getResultado()) {
             $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;

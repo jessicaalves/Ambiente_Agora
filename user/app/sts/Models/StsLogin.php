@@ -27,8 +27,8 @@ class StsLogin {
             $validarLogin = new \Sts\Models\helper\StsRead();
             $validarLogin->fullRead("SELECT user.id, user.senha, user.nome, user.email, user.id_permissao_acesso,
                     perm.ordem ordem_perm
-                    FROM usuario user
-                    INNER JOIN permissao_acesso perm ON
+                    FROM sts_usuario user
+                    INNER JOIN sts_permissao_acesso perm ON
                     perm.id=user.id_permissao_acesso
                     WHERE login =:login LIMIT :limit", "login={$this->dados['login']}&limit=1");
             $this->resultado = $validarLogin->getResultado();

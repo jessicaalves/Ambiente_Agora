@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Jun-2021 às 02:07
+-- Tempo de geração: 12-Jun-2021 às 04:20
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -24,27 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `administrador`
+-- Estrutura da tabela `sts_denuncia_anonima`
 --
 
-CREATE TABLE `administrador` (
-  `id` bigint(20) NOT NULL,
-  `login` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `tipo_permissao` varchar(255) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `created` datetime DEFAULT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `denuncia_anonima`
---
-
-CREATE TABLE `denuncia_anonima` (
+CREATE TABLE `sts_denuncia_anonima` (
   `id` bigint(20) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `tipo` varchar(255) NOT NULL,
@@ -59,19 +42,20 @@ CREATE TABLE `denuncia_anonima` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `denuncia_anonima`
+-- Extraindo dados da tabela `sts_denuncia_anonima`
 --
 
-INSERT INTO `denuncia_anonima` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `created`) VALUES
-(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'fi', 'Seu Zé', 'Aposentado e Pensionista', '-16.444962', '-51.802281', 'gatoferido.jpg', '2021-06-05 19:53:28');
+INSERT INTO `sts_denuncia_anonima` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `created`) VALUES
+(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'fi', 'Seu Zé', 'Aposentado e Pensionista', '-16.444962', '-51.802281', 'gatoferido.jpg', '2021-06-05 19:53:28'),
+(2, 'Poluição Ambiental', 'Poluição e Outros Crimes Ambientais', 'Art. 54. Causar poluição de qualquer natureza em níveis tais que resultem ou possam resultar em danos à saúde humana, ou que provoquem a mortandade de animais ou a destruição significativa da flora: (…)', 'Pessoa Jurídica', 'João', 'Dono do Laticínio Beira Rio', '-16.444962', '-51.802281', 'poluicaoambiental.jpg', '2021-06-12 03:55:01');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `denuncia_comum`
+-- Estrutura da tabela `sts_denuncia_comum`
 --
 
-CREATE TABLE `denuncia_comum` (
+CREATE TABLE `sts_denuncia_comum` (
   `id` bigint(20) NOT NULL,
   `id_usuario` bigint(20) NOT NULL,
   `titulo` varchar(255) NOT NULL,
@@ -88,20 +72,22 @@ CREATE TABLE `denuncia_comum` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `denuncia_comum`
+-- Extraindo dados da tabela `sts_denuncia_comum`
 --
 
-INSERT INTO `denuncia_comum` (`id`, `id_usuario`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `status`, `created`) VALUES
+INSERT INTO `sts_denuncia_comum` (`id`, `id_usuario`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `status`, `created`) VALUES
 (1, 1, 'Maltrato de Animais', 'Fauna', 'O dogzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'João', 'Aposentado', '-16.444962', '-51.802281', 'doguinhoatropelado.png', NULL, '2021-06-06 04:11:05'),
-(2, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Josefino', 'Aposentado e Pensionista', '-16.444962', '-51.802281', 'gatoferido.jpg', NULL, '2021-06-06 04:12:37');
+(2, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Josefino', 'Aposentado e Pensionista', '-16.444962', '-51.802281', 'gatoferido.jpg', NULL, '2021-06-06 04:12:37'),
+(3, 4, 'Poluição Ambiental', 'Poluição e Outros Crimes Ambientais', 'Art. 54. Causar poluição de qualquer natureza em níveis tais que resultem ou possam resultar em danos à saúde humana, ou que provoquem a mortandade de animais ou a destruição significativa da flora: (…)', 'Pessoa Jurídica', 'João', 'Dono do Laticínio Beira Rio ', '-16.444962', '-51.802281', 'poluicaoambiental.jpg', NULL, '2021-06-12 03:38:15'),
+(4, 4, 'Poluição Ambiental', 'Poluição e Outros Crimes Ambientais', 'poluição', 'Pessoa Jurídica', 'João', 'Dono do Laticínio Beira Rio', '-16.444962', '-51.802281', 'poluicaoambiental.jpg', NULL, '2021-06-12 03:59:26');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `grupo_pagina`
+-- Estrutura da tabela `sts_grupo_pagina`
 --
 
-CREATE TABLE `grupo_pagina` (
+CREATE TABLE `sts_grupo_pagina` (
   `id` bigint(20) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `ordem` int(11) NOT NULL,
@@ -110,10 +96,10 @@ CREATE TABLE `grupo_pagina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `grupo_pagina`
+-- Extraindo dados da tabela `sts_grupo_pagina`
 --
 
-INSERT INTO `grupo_pagina` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
+INSERT INTO `sts_grupo_pagina` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 (1, 'Listar', 1, '2020-04-19 17:00:00', '2020-04-19 17:00:00'),
 (2, 'Cadastrar', 2, '2020-04-19 17:00:00', NULL),
 (3, 'Editar', 3, '2020-04-19 17:00:00', NULL),
@@ -125,25 +111,10 @@ INSERT INTO `grupo_pagina` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `info_usuarios_cadastrados`
+-- Estrutura da tabela `sts_pagina`
 --
 
-CREATE TABLE `info_usuarios_cadastrados` (
-  `id` bigint(20) NOT NULL,
-  `enviar_email_conf` int(11) NOT NULL,
-  `permissao_acesso_id` bigint(11) NOT NULL,
-  `situacao_id` bigint(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `pagina`
---
-
-CREATE TABLE `pagina` (
+CREATE TABLE `sts_pagina` (
   `id` bigint(20) NOT NULL,
   `controller` varchar(220) NOT NULL,
   `metodo` varchar(220) NOT NULL,
@@ -158,10 +129,10 @@ CREATE TABLE `pagina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `pagina`
+-- Extraindo dados da tabela `sts_pagina`
 --
 
-INSERT INTO `pagina` (`id`, `controller`, `metodo`, `nome_pagina`, `titulo_pagina`, `liberado_bloqueado`, `id_tipo_pagina`, `id_situacao_pagina`, `id_grupo_pagina`, `created`, `modified`) VALUES
+INSERT INTO `sts_pagina` (`id`, `controller`, `metodo`, `nome_pagina`, `titulo_pagina`, `liberado_bloqueado`, `id_tipo_pagina`, `id_situacao_pagina`, `id_grupo_pagina`, `created`, `modified`) VALUES
 (1, 'Home', 'index', 'Página Inicial', 'Página Inicial - Ambiente Agora', 1, 1, 1, NULL, '2020-04-19 17:00:00', NULL),
 (2, 'Login', 'acessoLogin', 'Página de Login', 'Página de Login - Ambiente Agora', 1, 2, 1, NULL, '2020-04-19 17:00:00', NULL),
 (3, 'Cadastro', 'cadastrarUsuario', 'Página de Cadastro', 'Página de Cadastro - Ambiente Agora', 1, 3, 1, NULL, '2020-04-19 17:00:00', '2020-04-19 17:00:00'),
@@ -179,10 +150,10 @@ INSERT INTO `pagina` (`id`, `controller`, `metodo`, `nome_pagina`, `titulo_pagin
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `permissao_acesso`
+-- Estrutura da tabela `sts_permissao_acesso`
 --
 
-CREATE TABLE `permissao_acesso` (
+CREATE TABLE `sts_permissao_acesso` (
   `id` bigint(20) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `ordem` int(11) NOT NULL,
@@ -191,20 +162,20 @@ CREATE TABLE `permissao_acesso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `permissao_acesso`
+-- Extraindo dados da tabela `sts_permissao_acesso`
 --
 
-INSERT INTO `permissao_acesso` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
+INSERT INTO `sts_permissao_acesso` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 (1, 'Usuario', 1, '2020-03-09 15:00:00', NULL),
 (2, 'Administrador', 2, '2021-05-13 22:05:56', '2021-05-13 22:05:56');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `situacao_pagina`
+-- Estrutura da tabela `sts_situacao_pagina`
 --
 
-CREATE TABLE `situacao_pagina` (
+CREATE TABLE `sts_situacao_pagina` (
   `id` bigint(20) NOT NULL,
   `nome` varchar(20) NOT NULL,
   `created` datetime NOT NULL,
@@ -212,10 +183,10 @@ CREATE TABLE `situacao_pagina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `situacao_pagina`
+-- Extraindo dados da tabela `sts_situacao_pagina`
 --
 
-INSERT INTO `situacao_pagina` (`id`, `nome`, `created`, `modified`) VALUES
+INSERT INTO `sts_situacao_pagina` (`id`, `nome`, `created`, `modified`) VALUES
 (1, 'Ativo', '0000-00-00 00:00:00', NULL),
 (2, 'Inativo', '0000-00-00 00:00:00', NULL),
 (3, 'Analise', '0000-00-00 00:00:00', NULL);
@@ -223,10 +194,10 @@ INSERT INTO `situacao_pagina` (`id`, `nome`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `situacao_usuario`
+-- Estrutura da tabela `sts_situacao_usuario`
 --
 
-CREATE TABLE `situacao_usuario` (
+CREATE TABLE `sts_situacao_usuario` (
   `id` bigint(20) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `created` datetime NOT NULL,
@@ -234,10 +205,10 @@ CREATE TABLE `situacao_usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `situacao_usuario`
+-- Extraindo dados da tabela `sts_situacao_usuario`
 --
 
-INSERT INTO `situacao_usuario` (`id`, `nome`, `created`, `modified`) VALUES
+INSERT INTO `sts_situacao_usuario` (`id`, `nome`, `created`, `modified`) VALUES
 (1, 'Ativo', '2020-03-09 15:30:00', NULL),
 (2, 'Inativo', '2020-03-09 15:30:00', NULL),
 (3, 'Aguardando confirmacao', '2020-03-09 15:30:00', NULL),
@@ -246,10 +217,10 @@ INSERT INTO `situacao_usuario` (`id`, `nome`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipo_pagina`
+-- Estrutura da tabela `sts_tipo_pagina`
 --
 
-CREATE TABLE `tipo_pagina` (
+CREATE TABLE `sts_tipo_pagina` (
   `id` bigint(20) NOT NULL,
   `tipo` varchar(120) NOT NULL,
   `nome` varchar(220) NOT NULL,
@@ -259,10 +230,10 @@ CREATE TABLE `tipo_pagina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `tipo_pagina`
+-- Extraindo dados da tabela `sts_tipo_pagina`
 --
 
-INSERT INTO `tipo_pagina` (`id`, `tipo`, `nome`, `observacao`, `created`, `modified`) VALUES
+INSERT INTO `sts_tipo_pagina` (`id`, `tipo`, `nome`, `observacao`, `created`, `modified`) VALUES
 (1, 'sts', 'Página Principal / Index', 'Página responsável por permitir que o usuário seja encaminhado para a página de login e de cadastro.', '2020-03-08 22:45:00', NULL),
 (2, 'sts', 'Minha Conta', 'Página responsável por permitir que o usuário realize: cadastro, login e denúncia anônima.', '2020-03-08 22:48:00', NULL),
 (3, 'sts', 'Cadastro de Usuário', 'Página responsável por permitir que o usuário realize o cadastro no sistema.', '2020-03-08 22:48:00', NULL),
@@ -272,10 +243,10 @@ INSERT INTO `tipo_pagina` (`id`, `tipo`, `nome`, `observacao`, `created`, `modif
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Estrutura da tabela `sts_usuario`
 --
 
-CREATE TABLE `usuario` (
+CREATE TABLE `sts_usuario` (
   `id` bigint(20) NOT NULL,
   `login` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
@@ -295,87 +266,76 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `usuario`
+-- Extraindo dados da tabela `sts_usuario`
 --
 
-INSERT INTO `usuario` (`id`, `login`, `senha`, `nome`, `email`, `telefone`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `id_permissao_acesso`, `chave_descadastro`, `id_situacao`, `id_grupo_pagina`, `created`, `modified`) VALUES
+INSERT INTO `sts_usuario` (`id`, `login`, `senha`, `nome`, `email`, `telefone`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `id_permissao_acesso`, `chave_descadastro`, `id_situacao`, `id_grupo_pagina`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@gmail.com', '$2y$10$MQgp73R5/6BzJ2lb5d7iN.TJIbmg76jBrdEO.k75vNpuQMFAPboX2', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '(64) 99962-3376', 'Rua Joaquim Eloy Leite', 'Santa Luzia', '79b9ae0e0279dac94d75dc30f036655a', '2', 1, NULL, 2, NULL, '2021-06-03 21:30:56', '2021-06-11 01:46:28'),
-(2, 'jessicaalves24@hotmail.com', '$2y$10$WZsPmHatKLuOvj3tmdHDSe1glNPbm4fGd4lObe3PZbrR5Tc39lNdG', 'Jéssica Alves Ferreira', 'jessicaalves24@hotmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', NULL, '2', 1, NULL, 2, NULL, '2021-06-12 02:05:52', '2021-06-12 02:05:52');
+(2, 'jessicaalves24@hotmail.com', '$2y$10$WZsPmHatKLuOvj3tmdHDSe1glNPbm4fGd4lObe3PZbrR5Tc39lNdG', 'Jéssica Alves Ferreira', 'jessicaalves24@hotmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', NULL, '2', 1, NULL, 2, NULL, '2021-06-12 02:05:52', '2021-06-12 02:05:52'),
+(3, 'francisco1996@gmail.com', '$2y$10$1SrhLSF5J9BNAp976smDTOiEur5F9RPaq0Bf9QAXXD.qko6..baCi', 'Francisco', 'francisco1996@gmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', NULL, '2', 1, NULL, 2, NULL, '2021-06-12 03:27:49', '2021-06-12 03:49:16'),
+(4, 'nobphs@gmail.com', '$2y$10$jXXCx.x1i350AN/oqS2Gj.C.q.OgOSey5bX7gEBXReCZxaiLxKIxC', 'Nobilar Alves Moreira', 'nobphs@gmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', NULL, '2', 1, NULL, 2, NULL, '2021-06-12 03:33:12', '2021-06-12 03:33:12'),
+(5, 'nayane1993@hotmail.com', '$2y$10$zn4NFx6wjMhKoITjF7ivHuhAsiOQQkZliulfUzB88OX0iByfg69He', 'Nayane Alves Ferreira', 'nayane1993@hotmail.com', '(64) 99999-9999', 'Rua da Solidão', 'Santa Maria', NULL, '2', 1, NULL, 2, NULL, '2021-06-12 04:06:04', '2021-06-12 04:10:32');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `administrador`
+-- Índices para tabela `sts_denuncia_anonima`
 --
-ALTER TABLE `administrador`
+ALTER TABLE `sts_denuncia_anonima`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `denuncia_anonima`
+-- Índices para tabela `sts_denuncia_comum`
 --
-ALTER TABLE `denuncia_anonima`
-  ADD PRIMARY KEY (`id`);
-
---
--- Índices para tabela `denuncia_comum`
---
-ALTER TABLE `denuncia_comum`
+ALTER TABLE `sts_denuncia_comum`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_usuario_fk` (`id_usuario`) USING BTREE;
 
 --
--- Índices para tabela `grupo_pagina`
+-- Índices para tabela `sts_grupo_pagina`
 --
-ALTER TABLE `grupo_pagina`
+ALTER TABLE `sts_grupo_pagina`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `info_usuarios_cadastrados`
+-- Índices para tabela `sts_pagina`
 --
-ALTER TABLE `info_usuarios_cadastrados`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `permissao_acesso_id_fk` (`permissao_acesso_id`),
-  ADD KEY `situacao_id_fk` (`situacao_id`);
-
---
--- Índices para tabela `pagina`
---
-ALTER TABLE `pagina`
+ALTER TABLE `sts_pagina`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_situacao_pagina_fk` (`id_situacao_pagina`),
   ADD KEY `id_tipo_pagina_fk` (`id_tipo_pagina`),
   ADD KEY `id_grp_pagina_fk` (`id_grupo_pagina`) USING BTREE;
 
 --
--- Índices para tabela `permissao_acesso`
+-- Índices para tabela `sts_permissao_acesso`
 --
-ALTER TABLE `permissao_acesso`
+ALTER TABLE `sts_permissao_acesso`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `situacao_pagina`
+-- Índices para tabela `sts_situacao_pagina`
 --
-ALTER TABLE `situacao_pagina`
+ALTER TABLE `sts_situacao_pagina`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `situacao_usuario`
+-- Índices para tabela `sts_situacao_usuario`
 --
-ALTER TABLE `situacao_usuario`
+ALTER TABLE `sts_situacao_usuario`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `tipo_pagina`
+-- Índices para tabela `sts_tipo_pagina`
 --
-ALTER TABLE `tipo_pagina`
+ALTER TABLE `sts_tipo_pagina`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuario`
+-- Índices para tabela `sts_usuario`
 --
-ALTER TABLE `usuario`
+ALTER TABLE `sts_usuario`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_permissao_acesso_fk` (`id_permissao_acesso`),
   ADD KEY `id_situacao_fk` (`id_situacao`),
@@ -386,103 +346,84 @@ ALTER TABLE `usuario`
 --
 
 --
--- AUTO_INCREMENT de tabela `administrador`
+-- AUTO_INCREMENT de tabela `sts_denuncia_anonima`
 --
-ALTER TABLE `administrador`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `denuncia_anonima`
---
-ALTER TABLE `denuncia_anonima`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `denuncia_comum`
---
-ALTER TABLE `denuncia_comum`
+ALTER TABLE `sts_denuncia_anonima`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `grupo_pagina`
+-- AUTO_INCREMENT de tabela `sts_denuncia_comum`
 --
-ALTER TABLE `grupo_pagina`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT de tabela `info_usuarios_cadastrados`
---
-ALTER TABLE `info_usuarios_cadastrados`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `pagina`
---
-ALTER TABLE `pagina`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT de tabela `permissao_acesso`
---
-ALTER TABLE `permissao_acesso`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de tabela `situacao_pagina`
---
-ALTER TABLE `situacao_pagina`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT de tabela `situacao_usuario`
---
-ALTER TABLE `situacao_usuario`
+ALTER TABLE `sts_denuncia_comum`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `tipo_pagina`
+-- AUTO_INCREMENT de tabela `sts_grupo_pagina`
 --
-ALTER TABLE `tipo_pagina`
+ALTER TABLE `sts_grupo_pagina`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `sts_pagina`
+--
+ALTER TABLE `sts_pagina`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT de tabela `sts_permissao_acesso`
+--
+ALTER TABLE `sts_permissao_acesso`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `sts_situacao_pagina`
+--
+ALTER TABLE `sts_situacao_pagina`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `sts_situacao_usuario`
+--
+ALTER TABLE `sts_situacao_usuario`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `sts_tipo_pagina`
+--
+ALTER TABLE `sts_tipo_pagina`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `usuario`
+-- AUTO_INCREMENT de tabela `sts_usuario`
 --
-ALTER TABLE `usuario`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `sts_usuario`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para despejos de tabelas
 --
 
 --
--- Limitadores para a tabela `denuncia_comum`
+-- Limitadores para a tabela `sts_denuncia_comum`
 --
-ALTER TABLE `denuncia_comum`
-  ADD CONSTRAINT `id_usuario_fk` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `sts_denuncia_comum`
+  ADD CONSTRAINT `id_usuario_fk` FOREIGN KEY (`id_usuario`) REFERENCES `sts_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `info_usuarios_cadastrados`
+-- Limitadores para a tabela `sts_pagina`
 --
-ALTER TABLE `info_usuarios_cadastrados`
-  ADD CONSTRAINT `permissao_acesso_id_fk` FOREIGN KEY (`permissao_acesso_id`) REFERENCES `permissao_acesso` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `situacao_id_fk` FOREIGN KEY (`situacao_id`) REFERENCES `situacao_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `sts_pagina`
+  ADD CONSTRAINT `id_grp_pagina_fk` FOREIGN KEY (`id_grupo_pagina`) REFERENCES `sts_grupo_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `id_situacao_pagina_fk` FOREIGN KEY (`id_situacao_pagina`) REFERENCES `sts_situacao_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `id_tipo_pagina_fk` FOREIGN KEY (`id_tipo_pagina`) REFERENCES `sts_tipo_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `pagina`
+-- Limitadores para a tabela `sts_usuario`
 --
-ALTER TABLE `pagina`
-  ADD CONSTRAINT `id_grp_pagina_fk` FOREIGN KEY (`id_grupo_pagina`) REFERENCES `grupo_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_situacao_pagina_fk` FOREIGN KEY (`id_situacao_pagina`) REFERENCES `situacao_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_tipo_pagina_fk` FOREIGN KEY (`id_tipo_pagina`) REFERENCES `tipo_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD CONSTRAINT `id_grupo_pagina_fk` FOREIGN KEY (`id_grupo_pagina`) REFERENCES `grupo_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_permissao_acesso_fk` FOREIGN KEY (`id_permissao_acesso`) REFERENCES `permissao_acesso` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `id_situacao_fk` FOREIGN KEY (`id_situacao`) REFERENCES `situacao_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `sts_usuario`
+  ADD CONSTRAINT `id_grupo_pagina_fk` FOREIGN KEY (`id_grupo_pagina`) REFERENCES `sts_grupo_pagina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `id_permissao_acesso_fk` FOREIGN KEY (`id_permissao_acesso`) REFERENCES `sts_permissao_acesso` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `id_situacao_fk` FOREIGN KEY (`id_situacao`) REFERENCES `sts_situacao_usuario` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -168,7 +168,7 @@ class StsDenunciaComum {
         $this->dados['imagem'] = $slugImg->nomeSlug($this->imagem['name']);
 
         $cadDenunciaComum = new \Sts\Models\helper\StsCreate();
-        $cadDenunciaComum->executarCreate('denuncia_comum', $this->dados);
+        $cadDenunciaComum->executarCreate('sts_denuncia_comum', $this->dados);
         if ($cadDenunciaComum->getResultado()) {
             if (empty($this->imagem['name'])) {
                 $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia criada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";

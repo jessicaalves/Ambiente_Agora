@@ -56,7 +56,7 @@ class StsAlterarDadosCadastrais {
         $this->dados['modified'] = date("Y-m-d H:i:s");
 
         $upAltSenha = new \Sts\Models\helper\StsUpdate();
-        $upAltSenha->exeUpdate("usuario", $this->dados, "WHERE id =:id", "id=" . $_SESSION['id']);
+        $upAltSenha->exeUpdate("sts_usuario", $this->dados, "WHERE id =:id", "id=" . $_SESSION['id']);
         if ($upAltSenha->getResultado()) {
             $_SESSION['msg'] = "<div class='alert alert-success'>Dados cadastrais alterados com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;

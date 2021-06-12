@@ -24,7 +24,7 @@ class StsEsqueceuSenha {
     public function esqueceuSenha(array $dados) {
         $this->dados = $dados;
         $esqSenha = new \Sts\Models\helper\StsRead();
-        $esqSenha->fullRead("SELECT id, login, nome, recuperar_senha FROM usuario WHERE email =:email LIMIT :limit", "email={$this->dados['email']}&limit=1");
+        $esqSenha->fullRead("SELECT id, login, nome, recuperar_senha FROM sts_usuario WHERE email =:email LIMIT :limit", "email={$this->dados['email']}&limit=1");
         $this->dadosUsuario = $esqSenha->getResultado();
         if (!empty($this->dadosUsuario)) {
             $this->validarChaveRecuperarSenha();
@@ -42,7 +42,7 @@ class StsEsqueceuSenha {
             $this->dadosUpdate['modified'] = date('Y-m-d H:i:s');
 
             $updateRecSenha = new \Sts\Models\helper\StsUpdate();
-            $updateRecSenha->exeUpdate("usuario", $this->dadosUpdate, "WHERE id =:id", "id={$this->dadosUsuario[0]['id']}");
+            $updateRecSenha->exeUpdate("sts_usuario", $this->dadosUpdate, "WHERE id =:id", "id={$this->dadosUsuario[0]['id']}");
             if ($updateRecSenha->getResultado()) {
                 $this->dadosUsuario[0]['recuperar_senha'] = $this->dadosUpdate['recuperar_senha'];
                 $this->dadosEmail();
@@ -59,7 +59,7 @@ class StsEsqueceuSenha {
         $this->dadosEmail['dest_nome'] = $prim_nome;
         $this->dadosEmail['dest_email'] = $this->dados['email'];
         $this->dadosEmail['titulo_email'] = "Recuperar senha";
-        $this->dadosEmail['cont_email'] = "Olá " . $prim_nome . "<br><br>";
+        $this->dadosEmail['cont_email'] = "Olá, " . $prim_nome . "<br><br>";
         $this->dadosEmail['cont_email'] .= "Você solicitou uma alteração de senha.<br>";
         $this->dadosEmail['cont_email'] .= "Seguindo o link abaixo você poderá alterar sua senha.<br>";
         $this->dadosEmail['cont_email'] .= "Para continuar o processo de recuperação de sua senha, clique no link abaixo ou cole o endereço abaixo no seu navegador.<br><br>";
