@@ -28,9 +28,9 @@ class StsEmailUnico {
         $validarEmailUnico = new \Sts\Models\helper\StsRead();
 
         if (!empty($this->editarUnico) AND ( $this->editarUnico == true)) {
-            $validarEmailUnico->fullRead("SELECT id FROM Usuario WHERE email =:email AND id <>:id LIMIT :limit", "email={$this->email}&limit=1&id={$this->dadoId}");
+            $validarEmailUnico->fullRead("SELECT id FROM sts_usuario WHERE email =:email AND id <>:id LIMIT :limit", "email={$this->email}&limit=1&id={$this->dadoId}");
         } else {
-            $validarEmailUnico->fullRead("SELECT id FROM Usuario WHERE email =:email LIMIT :limit", "email={$this->email}&limit=1");
+            $validarEmailUnico->fullRead("SELECT id FROM sts_usuario WHERE email =:email LIMIT :limit", "email={$this->email}&limit=1");
         }
 
         $this->resultado = $validarEmailUnico->getResultado();
