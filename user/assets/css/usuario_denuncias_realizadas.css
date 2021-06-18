@@ -61,8 +61,14 @@ nav.navbar-custom{
     text-decoration: none;
 }
 
-.sidebar ul li a:hover, .sidebar ul .active a{
-    background-color: #34ce57;
+.sidebar ul li a:hover{
+    color: white;
+    background-color: black;
+}
+
+.sidebar ul .active a{
+    color: black;
+    background-color: #28a745;
 }
 
 /* ______Estrutura formulário______*/
