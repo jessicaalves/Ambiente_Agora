@@ -58,6 +58,9 @@ nav.navbar-custom{
     padding: 0.75rem 1rem;
     color: black;
     text-decoration: none;
+    border-bottom-style: dashed;
+    border-bottom-color: black;
+    border-bottom-width: 1.9px;
 }
 
 .sidebar ul li a:hover{
@@ -67,7 +70,33 @@ nav.navbar-custom{
 
 .sidebar ul .active a{
     color: black;
-    background-color: #28a745;
+    background-color: #009933;
+}
+
+.sidebar ul ul a{
+    padding-left: 2.5rem;
+    //background-color:#28a745;
+}
+
+.sidebar [data-toggle="collapse"]{
+    position: relative;
+}
+
+.sidebar [data-toggle="collapse"]:before{
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+}
+
+.sidebar [aria-expanded="true"]{
+    background-color: #009933;
+    
+}
+
+.sidebar [aria-expanded="true"]:before{
+    content: "\f0d8";
 }
 
 

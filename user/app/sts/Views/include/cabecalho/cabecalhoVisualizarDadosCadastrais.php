@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/bootstrap.min.css'; ?>">
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" text="text/css" href="<?php echo URL . 'user/assets/css/usuario_visualizar_dados_cadastrais.css'; ?>">
+        <link rel="stylesheet" text="text/css" href="<?php echo URL . '/user/assets/css/usuario_visualizar_dados_cadastrais.css'; ?>">
         
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/reboot.css'; ?>">

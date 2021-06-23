@@ -2,11 +2,11 @@
 <div class="d-flex">
     <nav class="sidebar">
         <ul class="list-unstyled">
-            <li><a href="<?php echo URL . 'user/minha conta/acessoMinhaConta'; ?>">Minha Conta</a></li>        
-            <li><a href="<?php echo URL . 'user/denuncia comum/cadastrarDenunciaComum'; ?>">Nova Denúncia</a></li>
-            <li><a href="<?php echo URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas'; ?>">Denúncias Realizadas</a></li>
-            <li class="active"><a href="<?php echo URL . 'user/visualizar dados cadastrais/visualizarDadosCadastrais'; ?>">Dados Cadastrais</a></li>
-            <li><a href="<?php echo URL . 'user/login/logout'; ?>">Sair</a></li>
+            <li><a href="<?php echo URL . 'user/minha conta/acessoMinhaConta'; ?>"> Minha Conta</a></li>        
+            <li><a href="<?php echo URL . 'user/denuncia comum/cadastrarDenunciaComum'; ?>"> Nova Denúncia</a></li>
+            <li><a href="<?php echo URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas'; ?>"> Denúncias Realizadas</a></li>
+            <li class="active"><a href="<?php echo URL . 'user/visualizar dados cadastrais/visualizarDadosCadastrais'; ?>"> Dados Cadastrais</a></li>
+            <li><a href="<?php echo URL . 'user/login/logout'; ?>"> Sair</a></li>
         </ul>
     </nav>
 
