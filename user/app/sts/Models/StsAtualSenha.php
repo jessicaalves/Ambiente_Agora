@@ -23,7 +23,7 @@ class StsAtualSenha {
     public function valChave($chave) {
         $this->chave = (string) $chave;
         $validaChave = new \Sts\Models\helper\StsRead();
-        $validaChave->fullRead("SELECT id FROM sts_usuario WHERE recuperar_senha =:recuperar_senha", "recuperar_senha={$this->chave}");
+        $validaChave->fullRead("SELECT id FROM sts_usuarios WHERE recuperar_senha =:recuperar_senha", "recuperar_senha={$this->chave}");
         $this->dadosUsuario = $validaChave->getResultado();
         if (!empty($this->dadosUsuario)) {
             $this->resultado = true;
@@ -65,7 +65,7 @@ class StsAtualSenha {
             $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT);
             $this->dados['modified'] = date("Y-m-d H:i:s");
             $upAtualSenha = new \Sts\Models\helper\StsUpdate();
-            $upAtualSenha->exeUpdate("sts_usuario", $this->dados, "WHERE id =:id", "id={$this->dadosUsuario[0]['id']}");
+            $upAtualSenha->exeUpdate("sts_usuarios", $this->dados, "WHERE id =:id", "id={$this->dadosUsuario[0]['id']}");
             if ($upAtualSenha->getResultado()) {
                 $_SESSION['msg'] = "<div class='alert alert-success'>Senha atualizada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
                 $this->resultado = true;

@@ -44,7 +44,7 @@ nav.navbar-custom{
 
 
 .sidebar{
-    background-color: white;
+    background-color: #fff;
     min-width: 250px;
     max-width: 250px;
     min-height: calc(100vh - 56px);
@@ -64,9 +64,41 @@ nav.navbar-custom{
     border-bottom-width: 1.9px;
 }
 
-.sidebar ul li a:hover, .sidebar ul .active a{
-    background-color: #34ce57;
+.sidebar ul li a:hover{
+    color: white;
+    background-color: black;
 }
+
+.sidebar ul .active a{
+    color: black;
+    background-color: #009933;
+}
+
+.sidebar ul ul a{
+    padding-left: 2.5rem;
+    //background-color:#28a745;
+}
+
+.sidebar [data-toggle="collapse"]{
+    position: relative;
+}
+
+.sidebar [data-toggle="collapse"]:before{
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+}
+
+.sidebar [aria-expanded="true"]{
+    background-color: #009933;   
+}
+
+.sidebar [aria-expanded="true"]:before{
+    content: "\f0d8";
+}
+
 
 /* ______Estrutura formulário______*/
 

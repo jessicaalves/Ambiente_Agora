@@ -154,7 +154,7 @@ class StsDenunciaAnonima {
         $this->dados['imagem'] = $slugImg->nomeSlug($this->imagem['name']);
 
         $cadDenunciaAnonima = new \Sts\Models\helper\StsCreate();
-        $cadDenunciaAnonima->executarCreate('sts_denuncia_anonima', $this->dados);
+        $cadDenunciaAnonima->executarCreate('sts_denuncias_anonimas', $this->dados);
         if ($cadDenunciaAnonima->getResultado()) {
             if (empty($this->imagem['name'])) {
                 $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia anônima criada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";

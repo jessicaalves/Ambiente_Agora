@@ -151,12 +151,12 @@ class StsCadastro {
         $this->dados['telefone'] = $this->telefone;
         $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
         $this->dados['confirmar_email'] = 2;
-        $this->dados['id_permissao_acesso'] = 1;
-        $this->dados['id_situacao'] = 2;
+        $this->dados['sts_perm_ace_id'] = 1;
+        $this->dados['sts_sit_usuario_id'] = 2;
         $this->dados['created'] = date('Y-m-d H:i:s');
         $this->dados['modified'] = date('Y-m-d H:i:s');
         $cadUser = new \Sts\Models\helper\StsCreate();
-        $cadUser->executarCreate('sts_usuario', $this->dados);
+        $cadUser->executarCreate('sts_usuarios', $this->dados);
         if ($cadUser->getResultado()) {
             $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;

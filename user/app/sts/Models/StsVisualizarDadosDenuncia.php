@@ -17,7 +17,7 @@ class StsVisualizarDadosDenuncia {
     public function visualizarDadosDenuncia($dadosId) {
         $this->dadosId = (int) $dadosId;
         $visualizarDadosDenuncia = new \Sts\Models\helper\StsRead();
-        $visualizarDadosDenuncia->fullRead("SELECT * FROM sts_denuncia_comum WHERE id =:id LIMIT :limit", "id=" . $this->dadosId . "&limit=1");
+        $visualizarDadosDenuncia->fullRead("SELECT * FROM sts_denuncias_comuns WHERE id =:id LIMIT :limit", "id=" . $this->dadosId . "&limit=1");
 
         $this->resultado = $visualizarDadosDenuncia->getResultado();
         return $this->resultado;

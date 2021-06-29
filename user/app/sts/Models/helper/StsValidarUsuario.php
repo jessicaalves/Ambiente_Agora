@@ -28,9 +28,9 @@ class StsValidarUsuario { //Responsável por validar o Usuário (Login)
         $validarUsuario = new \Sts\Models\helper\StsRead();
         
         if (!empty($this->editarUnico) AND ( $this->editarUnico == true)) {
-            $validarUsuario->fullRead("SELECT id FROM sts_usuario WHERE login =:login AND id <>:id LIMIT :limit", "login={$this->usuario}&limit=1&id={$this->dadoId}");
+            $validarUsuario->fullRead("SELECT id FROM sts_usuarios WHERE login =:login AND id <>:id LIMIT :limit", "login={$this->usuario}&limit=1&id={$this->dadoId}");
         }else{
-            $validarUsuario->fullRead("SELECT id FROM sts_usuario WHERE login =:login LIMIT :limit", "login={$this->usuario}&limit=1");
+            $validarUsuario->fullRead("SELECT id FROM sts_usuarios WHERE login =:login LIMIT :limit", "login={$this->usuario}&limit=1");
         }
         
         

@@ -3,8 +3,26 @@
         <ul class="list-unstyled">
             <li><a href="<?php echo URL . 'user/minha conta/acessoMinhaConta'; ?>"> Minha Conta</a></li>   
             <li><a href="<?php echo URL . 'user/denuncia comum/cadastrarDenunciaComum'; ?>"> Nova Denúncia</a></li>
-            <li class="active"><a href="<?php echo URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas'; ?>"> Denúncias Realizadas</a></li>
-            <li><a href="<?php echo URL . 'user/visualizar dados cadastrais/visualizarDadosCadastrais'; ?>"> Dados Cadastrais</a></li>
+
+           <li>
+                <a href="#submenu1" data-toggle="collapse"> Denúncias Realizadas
+                </a>
+
+                <ul class="list-unstyled collapse" id="submenu1">
+                    <li class="active"><a href="<?php echo URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Denúncias</a></li>  
+                </ul>
+            </li>
+
+            <li>
+                <a href="#submenu2" data-toggle="collapse"> Dados Cadastrais
+                </a>
+
+                <ul class="list-unstyled collapse" id="submenu2">
+                    <li><a href="<?php echo URL . 'user/visualizar dados cadastrais/visualizarDadosCadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Dados</a></li>  
+                    <li><a href="<?php echo URL . 'user/alterar dados cadastrais/alterarDadosCadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Alterar Dados</a></li>  
+                </ul>
+            </li>
+
             <li><a href="<?php echo URL . 'user/login/logout'; ?>"> Sair</a></li>
         </ul>
     </nav>
@@ -250,18 +268,18 @@
                                             <?php
                                             if (!empty($imagem)) {
                                                 echo "<img src='" . URL . "user/assets/img/uploadImagens/denunciaComum/" . $id . "/" . $imagem . "' witdh='135' height='135'>";
-                                            }else{
+                                            } else {
                                                 echo "<img src='" . URL . "user/assets/img/uploadImagens/preview_img.png" . "' witdh='135' height='135'>";
                                             }
                                             ?>
 
-<!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
+    <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
                                         </div>
                                     </div>
 
-    <?php
-}
-?>
+                                    <?php
+                                }
+                                ?>
 
                             </div>
                             <!--<div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-outline-success alin-de">Denunciar</button></div>-->

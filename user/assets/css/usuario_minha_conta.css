@@ -91,14 +91,12 @@ nav.navbar-custom{
 }
 
 .sidebar [aria-expanded="true"]{
-    background-color: #009933;
-    
+    background-color: #009933;   
 }
 
 .sidebar [aria-expanded="true"]:before{
     content: "\f0d8";
 }
-
 
 
 
