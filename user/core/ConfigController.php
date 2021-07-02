@@ -75,7 +75,7 @@ class ConfigController {
 
         if ($this->paginas) {
             extract($this->paginas[0]);
-            $this->classe = "\App\\sts\Controllers\\".$this->urlController;
+            $this->classe = "\\App\\Sts\\Controllers\\" . $this->urlController;
             if (class_exists($this->classe)) {
                 $this->carregarMetodo();
             } else {
@@ -93,9 +93,9 @@ class ConfigController {
     private function carregarMetodo() {
         $classeCarregar = new $this->classe;
         if (method_exists($classeCarregar, $this->urlMetodo)) {
-            if($this->urlMetodo !== null){
+            if ($this->urlParametro !== null) {
                 $classeCarregar->{$this->urlMetodo}($this->urlParametro);
-            }else{
+            } else {
                 $classeCarregar->{$this->urlMetodo}();
             }
         } else {

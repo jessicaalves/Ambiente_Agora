@@ -18,13 +18,14 @@ class StsPaginas {
     public function listarPaginas($urlController = null, $urlMetodo = null) {
         $this->urlController = (string) $urlController;
         $this->urlMetodo = (string) $urlMetodo;
-        
+
         $listar = new \Sts\Models\helper\StsRead();
-        $listar->fullRead("SELECT id FROM sts_pags WHERE controller =:controller AND metodo =:metodo", "controller={$this->urlController}&metodo={$this->urlMetodo}");
+        $listar->fullRead("SELECT id
+                FROM sts_pags
+                WHERE controller =:controller
+                AND metodo =:metodo", "controller={$this->urlController}&metodo={$this->urlMetodo}");
         $this->resultado = $listar->getResultado();
         return $this->resultado;
-
-        
     }
 
 }
