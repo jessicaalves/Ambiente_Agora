@@ -2,14 +2,14 @@
 <div class="d-flex">
     <nav class="sidebar">
         <ul class="list-unstyled">
-            <li><a href="<?php echo URL . 'user/minha conta/acessoMinhaConta'; ?>"> Minha Conta</a></li>   
-            <li class="active"><a href="<?php echo URL . 'user/denuncia comum/cadastrarDenunciaComum'; ?>"> Nova Denúncia</a></li> 
+            <li><a href="<?php echo URL . 'user/minha-conta/acessoMinhaConta'; ?>"> Minha Conta</a></li>   
+            <li class="active"><a href="<?php echo URL . 'user/denuncia-comum/cadastrarDenunciaComum'; ?>"> Nova Denúncia</a></li> 
             <li>
                 <a href="#submenu1" data-toggle="collapse"> Denúncias Realizadas
                 </a>
 
                 <ul class="list-unstyled collapse" id="submenu1">
-                    <li><a href="<?php echo URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Denúncias</a></li>  
+                    <li><a href="<?php echo URL . 'user/denuncias-realizadas/visualizarDenunciasRealizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Denúncias</a></li>  
                     </ul>
             </li>
             
@@ -18,8 +18,8 @@
                 </a>
 
                 <ul class="list-unstyled collapse" id="submenu2">
-                    <li><a href="<?php echo URL . 'user/visualizar dados cadastrais/visualizarDadosCadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Dados</a></li>  
-                    <li><a href="<?php echo URL . 'user/alterar dados cadastrais/alterarDadosCadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Alterar Dados</a></li>  
+                    <li><a href="<?php echo URL . 'user/visualizar-dados-cadastrais/visualizarDadosCadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Dados</a></li>  
+                    <li><a href="<?php echo URL . 'user/alterar-dados-cadastrais/alterarDadosCadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Alterar Dados</a></li>  
                    </ul>
             </li>
             

@@ -30,7 +30,7 @@ class VisualizarDadosDenuncia {
             $carregarView->renderizarDadosDenuncia();
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao encontrar denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-            $urlDestino = URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas';
+            $urlDestino = URL . 'user/denuncias-realizadas/visualizarDenunciasRealizadas';
             header("Location: $urlDestino");
         }
     }

@@ -26,7 +26,7 @@ class Login {
             $visualizarLogin = new \Sts\Models\StsLogin();
             $visualizarLogin->acesso($this->dados);
             if ($visualizarLogin->getResultado()) {
-                $urlDestino = URL . 'user/minha conta/acessoMinhaConta';
+                $urlDestino = URL . 'user/minha-conta/acessoMinhaConta';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

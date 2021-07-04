@@ -23,7 +23,7 @@ class StsDenunciasRealizadas {
     public function visualizarDenunciasRealizadas($pageId = null) {
 
         $this->pageId = (int) $pageId;
-        $paginacao = new \Sts\Models\helper\StsPaginacao(URL . 'user/denuncias realizadas/visualizarDenunciasRealizadas');
+        $paginacao = new \Sts\Models\helper\StsPaginacao(URL . 'user/denuncias-realizadas/visualizarDenunciasRealizadas');
         $paginacao->condicao($this->pageId, $this->limiteResultado);
 
         $paginacao->paginacao("SELECT COUNT(id) AS num_result

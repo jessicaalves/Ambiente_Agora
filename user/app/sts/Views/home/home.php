@@ -34,7 +34,7 @@
                             <h1 class="brand-heading text-3 titulo2e3">Denuncie <i class="fas fa-globe-americas text-success"></i></h1>
                             <p class="texto-capa subtitulo2e3">Através deste ato você contribui para a preservação do meio ambiente.</p>
                             <p>
-                                <a href="<?php echo URL . 'user/denuncia anonima/cadastrarDenunciaAnonima'; ?>" class="btn btn-lg btn-custom btn-branco btn-denunAnonima" data-toggle="modal" data-target="#denunciarAnonimamente">Denunciar Anonimamente</a>    
+                                <a href="<?php echo URL . 'user/denuncia-anonima/cadastrarDenunciaAnonima'; ?>" class="btn btn-lg btn-custom btn-branco btn-denunAnonima" data-toggle="modal" data-target="#denunciarAnonimamente">Denunciar Anonimamente</a>    
                             </p>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo URL . 'user/cadastro/cadastrarUsuario'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-primary" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 16px;">Cadastrar Nova Conta</button></a>
-                    <a href="<?php echo URL . 'user/denuncia anonima/cadastrarDenunciaAnonima'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-success" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 16px;">Criar Denúncia Anônima</button></a>          
+                    <a href="<?php echo URL . 'user/denuncia-anonima/cadastrarDenunciaAnonima'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-success" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 16px;">Criar Denúncia Anônima</button></a>          
                 </div>
             </div>
         </div>
