@@ -7,7 +7,7 @@
                     <i class="fas fa-user-circle text-success display-4"></i>
                     <h5 class="p-2">Minha Conta</h5>
 
-                    <form  action="<?php echo URL . 'user/login/acessoLogin'; ?>" class="form" method="POST"> <!-- Início Login -->
+                    <form  action="<?php echo URL . 'user/login/acesso-login'; ?>" class="form" method="POST"> <!-- Início Login -->
                         <?php
                         //var_dump($this->dados['form']);
                         if (isset($_SESSION['msg'])) {
@@ -46,13 +46,13 @@
 
                         <div class="form-group row custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
-                            <label class="p-1"><a href="<?php echo URL . 'user/esqueceu-senha/esqueceuSenha'; ?>" class="form-control-sm text-success" style=" cursor: pointer;" target="">Esqueceu sua senha?</a></label>
+                            <label class="p-1"><a href="<?php echo URL . 'user/esqueceu-senha/esqueceu-senha'; ?>" class="form-control-sm text-success" style=" cursor: pointer;" target="">Esqueceu sua senha?</a></label>
 
                             <div class="p-3"><button name="acessar" type="submit"  value="acessar" class="btn btn-success">Acessar</button></div><p>
                         </div> 
                     </form> <!-- Final Login -->
 
-                    <form action="<?php echo URL . 'user/cadastro/cadastrarUsuario'; ?>" class="form pl-3" method="POST"> <!-- Início Cadastro -->
+                    <form action="<?php echo URL . 'user/cadastro/cadastrar-usuario'; ?>" class="form pl-3" method="POST"> <!-- Início Cadastro -->
                         <div class="borda-cadastro pb-3"> 
                             <h5>Não possui uma conta? Cadastre-se!</h5>
                             <button type="submit" name="cadastrar" class="btn btn-success ml-2" value="cadastrar">Cadastrar</button>
@@ -60,7 +60,7 @@
                     </form> <!-- Final Cadastro -->
 
                     <form class="form pb-2 pl-5"> <!-- Início Denúncia Anônima -->
-                        <a href="<?php echo URL . 'user/denuncia-anonima/cadastrarDenunciaAnonima'; ?>" class="text-success form-control-sm a-modal" data-toggle="modal" data-target="#denunciarAnonimamente">Não quer se identificar? Denuncie anonimamente!</a>
+                        <a href="<?php echo URL . 'user/denuncia-anonima/cadastrar-denuncia-anonima'; ?>" class="text-success form-control-sm a-modal" data-toggle="modal" data-target="#denunciarAnonimamente">Não quer se identificar? Denuncie anonimamente!</a>
                     </form> <!-- Final Denúncia Anônima -->
                 </div>
             </div>
@@ -82,8 +82,8 @@
                     Por isso, para acompanhar o <b class="font-italic font-weight-normal">status</b> de uma denúncia é necessário se cadastrar no sistema.
                 </div>
                 <div class="modal-footer">
-                    <a href="<?php echo URL . 'user/cadastro/cadastrarUsuario'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-primary" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Cadastrar Nova Conta</button></a>
-                    <a href="<?php echo URL . 'user/denuncia-anonima/cadastrarDenunciaAnonima'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-success" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Criar Denúncia Anônima</button></a>               
+                    <a href="<?php echo URL . 'user/cadastro/cadastrar-usuario'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-primary" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Cadastrar Nova Conta</button></a>
+                    <a href="<?php echo URL . 'user/denuncia-anonima/cadastrar-denuncia-anonima'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-success" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Criar Denúncia Anônima</button></a>               
                 </div>
             </div>
         </div>

@@ -29,12 +29,12 @@ class AtualSenha {
             if ($validaChave->getResultado()) {
                 $this->atualSenhaPriv();
             } else {
-                $urlDestino = URL . 'user/login/acessoLogin';
+                $urlDestino = URL . 'user/login/acesso-login';
                 header("Location: $urlDestino");
             }
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Link inválido!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-            $urlDestino = URL . 'user/login/acessoLogin';
+            $urlDestino = URL . 'user/login/acesso-login';
             header("Location: $urlDestino");
         }
     }
@@ -46,7 +46,7 @@ class AtualSenha {
             $atualSenha = new \Sts\Models\StsAtualSenha();
             $atualSenha->atualSenha($this->dados);
             if ($atualSenha->getResultado()) {
-                $urlDestino = URL . 'user/login/acessoLogin';
+                $urlDestino = URL . 'user/login/acesso-login';
                 header("Location: $urlDestino");
             } else {
                 $carregarView = new \Core\ConfigView("sts/Views/login/atualSenha", $this->dados);

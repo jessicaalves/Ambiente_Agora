@@ -26,7 +26,7 @@ class Login {
             $visualizarLogin = new \Sts\Models\StsLogin();
             $visualizarLogin->acesso($this->dados);
             if ($visualizarLogin->getResultado()) {
-                $urlDestino = URL . 'user/minha-conta/acessoMinhaConta';
+                $urlDestino = URL . 'user/minha-conta/acesso-minha-conta';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
@@ -40,7 +40,7 @@ class Login {
         unset($_SESSION['id'], $_SESSION['senha'], $_SESSION['nome'], $_SESSION['email'], $_SESSION['ordem_perm']
         );
         $_SESSION['msg'] = "<div class='alert alert-success'>Deslogado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-        $urlDestino = URL . 'user/login/acessoLogin';
+        $urlDestino = URL . 'user/login/acesso-login';
         header("Location: $urlDestino");
     }
 

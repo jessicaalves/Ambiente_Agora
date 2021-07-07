@@ -26,7 +26,7 @@ class EsqueceuSenha {
             $esqSenha = new \Sts\Models\StsEsqueceuSenha();
             $esqSenha->esqueceuSenha($this->dados);
             if ($esqSenha->getResultado()) {
-                $UrlDestino = URL . 'user/login/acessoLogin';
+                $UrlDestino = URL . 'user/login/acesso-login';
                 header("Location: $UrlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

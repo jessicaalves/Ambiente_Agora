@@ -31,7 +31,7 @@ class AlterarDadosCadastrais {
             $alterarDadosCadastraisBd = new \Sts\Models\StsAlterarDadosCadastrais();
             $alterarDadosCadastraisBd->alterarDadosCadastrais($this->dados);
             if ($alterarDadosCadastraisBd->getResultado()) {
-                $urlDestino = URL . 'user/alterar-dados-cadastrais/alterarDadosCadastrais';
+                $urlDestino = URL . 'user/alterar-dados-cadastrais/alterar-dados-cadastrais';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

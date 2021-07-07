@@ -43,7 +43,7 @@ class Cadastro {
             
 
             if ($novoCadastro->getResultado()) {
-                $urlDestino = URL . 'user/cadastro/cadastrarUsuario';
+                $urlDestino = URL . 'user/cadastro/cadastrar-usuario';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

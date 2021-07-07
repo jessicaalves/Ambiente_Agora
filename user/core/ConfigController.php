@@ -28,9 +28,9 @@ class ConfigController {
             }
 
             if (isset($this->urlConjunto[1])) {
-                $this->urlMetodo = $this->urlConjunto[1];
+                $this->urlMetodo = $this->slugMetodo($this->urlConjunto[1]);
             } else {
-                $this->urlController = $this->slugController(METODO);
+                $this->urlMetodo = $this->slugMetodo(METODO);
             }
 
             if (isset($this->urlConjunto[2])) {
@@ -40,7 +40,7 @@ class ConfigController {
             }
         } else {
             $this->urlController = $this->slugController(CONTROLLER);
-            $this->urlController = $this->slugController(METODO);
+            $this->urlMetodo = $this->slugMetodo(METODO);
             $this->urlParametro = null;
         }
 
@@ -68,9 +68,15 @@ class ConfigController {
         return $urlController;
     }
 
+    private function slugMetodo($slugMetodo) {
+
+        $urlController = str_replace(" ", "", ucwords(implode(" ", explode("-", strtolower($slugMetodo)))));
+
+        return lcfirst($urlController);
+    }
+
     public function carregar() {
-        $listarPagina = new \App\sts\Models\StsPaginas();
-//        $listarPagina = new \Sts\Models\StsPaginas();
+        $listarPagina = new \App\Sts\Models\StsPaginas();
         $this->paginas = $listarPagina->listarPaginas($this->urlController, $this->urlMetodo);
 
         if ($this->paginas) {
@@ -80,12 +86,12 @@ class ConfigController {
                 $this->carregarMetodo();
             } else {
                 $this->urlController = $this->slugController(CONTROLLER);
-                $this->urlMetodo = $this->slugController(METODO);
+                $this->urlMetodo = $this->slugMetodo(METODO);
                 $this->carregar();
             }
         } else {
-            $this->urlController = $this->slugController(CONTROLLER);
-            $this->urlMetodo = $this->slugController(METODO);
+            $this->urlController = $this->slugController('Login');
+            $this->urlMetodo = $this->slugMetodo('acessoLogin');
             $this->carregar();
         }
     }
@@ -100,7 +106,7 @@ class ConfigController {
             }
         } else {
             $this->urlController = $this->slugController(CONTROLLER);
-            $this->urlMetodo = $this->slugController(METODO);
+            $this->urlMetodo = $this->slugMetodo(METODO);
             $this->carregar();
         }
     }

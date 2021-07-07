@@ -20,7 +20,7 @@
                     </li>
                     <li class="nav-item divisor"></li>
                     <li class="nav-item">
-                        <a href="<?php echo URL . 'user/login/acessoLogin'; ?>" class="nav-link mx-auto">Entrar / Criar Conta</a>
+                        <a href="<?php echo URL . 'user/login/acesso-login'; ?>" class="nav-link mx-auto">Entrar / Criar Conta</a>
                     </li>
                 </ul>
             </div>

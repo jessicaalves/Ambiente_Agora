@@ -41,7 +41,7 @@ class DenunciaAnonima {
             //var_dump($this->dados);
 
             if ($novaDenunciaAnonima->getResultado()) {
-                $urlDestino = URL . 'user/denuncia-anonima/cadastrarDenunciaAnonima';
+                $urlDestino = URL . 'user/denuncia-anonima/cadastrar-denuncia-anonima';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
