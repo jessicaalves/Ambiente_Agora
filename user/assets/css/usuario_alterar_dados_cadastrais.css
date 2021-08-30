@@ -1,0 +1,610 @@
+/*Author: Jéssica*/
+
+/* ______Layout______*/
+
+body{
+    background-color: #fff;
+}
+
+form{
+    background-color: #fff;
+}
+
+/* ______Barra de navegação______*/
+
+nav.navbar-custom{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 17px;
+}
+
+.barra-preta{
+    background: #000;
+}
+
+.borda-titulo{
+    border-style: solid;
+    border-width: 2px;
+    border-color: lightgray;
+}
+
+.nav-link:hover .dropdown-item:hover{
+    color: #28a745;
+}
+
+.nav-link{
+    color: white;
+}
+
+.color-green{
+    color: #28a745;
+}
+
+/* ______Menu Lateral______*/
+
+
+.sidebar{
+    background-color: #fff;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: calc(100vh - 56px);
+    font-family: 'Montserrat', sans-serif; 
+    border-right-style: dashed;  
+    border-right-color: black;
+    border-right-width: 1.9px;
+}
+
+.sidebar ul li a{
+    display: block;
+    padding: 0.75rem 1rem;
+    color: black;
+    text-decoration: none;
+    border-bottom-style: dashed;
+    border-bottom-color: black;
+    border-bottom-width: 1.9px;
+}
+
+.sidebar ul li a:hover{
+    color: white;
+    background-color: black;
+}
+
+.sidebar ul .active a{
+    color: black;
+    background-color: #009933;
+}
+
+.sidebar ul ul a{
+    padding-left: 2.5rem;
+    //background-color:#28a745;
+}
+
+.sidebar [data-toggle="collapse"]{
+    position: relative;
+}
+
+.sidebar [data-toggle="collapse"]:before{
+    content: "\f0d7";
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    position: absolute;
+    right: 1rem;
+}
+
+.sidebar [aria-expanded="true"]{
+    background-color: #009933;   
+}
+
+.sidebar [aria-expanded="true"]:before{
+    content: "\f0d8";
+}
+
+/* ______Estrutura formulário______*/
+
+.alinhamento{
+/*    align-items: center;*/
+}
+
+label{
+    text-align: right;
+    font-weight: bold;
+}
+
+h5{
+    color: #28a745;
+}
+
+.the-fieldset {
+    border: 1px solid #e0e0e0;    
+}
+
+.borda-sup {
+    border: 1px #e0e0e0;
+    border-style: none none solid none;
+    width: 1108px; 
+}
+
+.borda-conteudo{
+    border: 1px;
+    border-style: none none solid none;
+    width: 1000px;
+}
+
+.botao-atualizar{
+    text-align: right;
+}
+
+.estilo-font{
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 17px;
+}
+
+.color-black{
+    color:black;
+}
+
+.bg-green{
+    background-color: #28a745;
+}
+
+/*.sidebar.toggled{ Utilizado para ativar o botão ocultar menu em tela maior
+    margin-left: -250px;
+}*/
+
+/* ______Rodapé______*/
+
+footer{
+    background:#000;
+    padding: 15px 0px 5px 0px;
+    text-align: center;
+    margin-top:0%;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+footer h5{
+    color: #fff;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+
+footer .navbar-nav a:hover{
+    color: #28a745;
+    text-decoration: none;
+}
+
+footer ul{
+    list-style: none;
+}
+
+footer p{
+    color: #28a745;
+}
+
+/* ______Media Queries______*/
+
+/* Extra small devices (portrait phones, less than 576px) 5*/
+@media (max-width: 575.98px) {
+    .the-fieldset {
+        border: 1px solid #e0e0e0;    
+        width: 500px;
+    }
+
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 450px;
+    }
+
+    .borda-sup{
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 499px;
+    }
+
+    .sidebar{
+        margin-left: -130px;
+    }
+
+    .sidebar.toggled{
+        margin-left: 0px;
+    }
+
+    li{
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif; 
+    }
+
+    .sidebar{
+        min-width: 130px;
+        max-width: 130px;
+    }
+
+    h5{
+        font-size: 14px;
+    }
+
+    .estilo-font{
+        font-size: 12px;
+    }
+
+    .tamanho-font{
+        font-size: 12px;
+    }
+
+    input[type=text], .form-control {
+        width: 120%;
+        height: 70%;
+    }
+
+    .c-login-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 100px;
+        width: 83.5%;
+    }
+
+    .c-senha-resp{
+        display: grid;
+        grid-template-areas: "div div";        
+        margin-right: 110px;        
+        width: 83.5%;   
+    }
+
+    .c-nome-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 95px;
+    }
+
+    .c-email-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 95px;
+    }
+
+    .c-telefone-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 103px;
+    }
+
+    .c-cidade-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 115px;
+    }
+
+    .c-logradouro-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 130px;
+        padding-left: 6px;
+    }
+
+    .c-bairro-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 100px;
+        padding-left: 6px;
+    }
+
+    .c-cep-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 30px;
+    }
+
+    .t-c-campos{
+        width: 87%;
+    }
+
+    .t-c-cep{
+        width: 82%;
+    }
+
+    .t-c-bairro{
+        width: 87.5%;
+    }
+
+    .t-c-logradouro{
+        width: 99.5%;
+    }
+
+    .t-c-telefone{
+        width: 90%;
+    }
+
+    .barra-preta, footer{
+        width: 720px;
+    }   
+
+}
+
+/* Small devices (landscape phones, 576px and up) 4*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 435px;
+    }
+
+    .borda-sup{
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 509px;
+    }
+
+    .sidebar{
+        margin-left: -130px;
+    }
+
+    .sidebar.toggled{
+        margin-left: 0px;
+    }
+
+    li{
+        font-size: 12px;
+        font-family: 'Montserrat', sans-serif; 
+    }
+
+    .sidebar{
+        min-width: 130px;
+        max-width: 130px;
+    }
+
+    h5{
+        font-size: 16px;
+    }
+
+    .estilo-font{
+        font-size: 12px;
+    }
+
+    .tamanho-font{
+        font-size: 12px;
+    }
+
+    .a-alinhar{
+        padding: 5px;
+    }
+
+    input[type=text], .form-control {
+        height: 85%;
+    }
+    
+    .c-login-resp{
+        margin-left: 10px;
+    }
+    
+    .c-senha-resp{
+        margin-left: 10px;
+    }
+    
+    .c-nome-resp{
+        margin-left: 10px;
+    }
+    
+    .c-email-resp{
+        margin-left: 10px;
+    }
+
+    .margem-titulo{
+        margin-left: 20px;
+    }
+    
+    .c-telefone-resp{
+        margin-left: 10px;
+    }
+    
+    .c-logradouro-resp{
+        margin-left: 10px;
+    }
+    
+    .c-bairro-resp{
+        margin-left: 10px;
+    }
+
+    .t-c-bairro{
+        width: 137%;
+    }
+
+    .t-c-cep{
+        width: 137%;
+    }
+
+    .c-bairro-cep-resp{
+        display: grid;
+        grid-template-areas: "div div";
+        margin-right: 60px;      
+    }
+    
+    .barra-preta, footer{
+        width: 790px;
+    } 
+
+}
+
+/* Medium devices (tablets, 768px and up) 3*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 600px; 
+    }
+
+    .borda-sup{
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 650px;
+    }  
+
+    .sidebar{
+        margin-left: -200px;
+    }
+
+    .sidebar.toggled{
+        margin-left: 0px;
+    }
+
+    li{
+        font-size: 14px;
+        font-family: 'Montserrat', sans-serif; 
+    }
+
+    .sidebar{
+        min-width: 200px;
+        max-width: 200px;
+    }
+
+    h5{
+        font-size: 18px;
+    }
+
+    .estilo-font{
+        font-size: 13px;
+    }
+
+    .tamanho-font{
+        font-size: 13px;
+    }
+
+    input[type=text], .form-control {
+        height: 85%;
+    }
+
+    .margem-titulo{
+        margin-left: 20px;
+    }
+
+    .barra-preta, footer{
+        width: 990px;
+    }
+
+    .t-c-cep{
+        padding-right: 12px;
+    }
+
+    .t-c-bairro{
+        margin-left: 5px;
+    }
+    
+    .a-alinhar{
+        padding: 5px;
+    }
+    
+    .c-login-resp{
+        padding-left: 4px;
+    }
+    
+    .c-senha-resp{
+        padding-left: 4px;
+    }
+    
+    .c-nome-resp{
+        padding-left: 4px;
+    }
+    
+    .c-email-resp{
+        padding-left: 4px;
+    }
+    
+    .c-telefone-resp{
+        padding-left: 4px;
+    }
+    
+    .c-logradouro-resp{
+       padding-left: 4px;
+    }
+    
+    .c-bairro-resp{
+        padding-right: 5px;
+    }
+
+    .barra-preta, footer{
+        width: 974px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) 2*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 750px;
+    }
+
+    .borda-sup {
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 790px; 
+    }
+
+    .margem-titulo{
+        margin-left: 40px;
+    }
+
+    .sidebar{
+        min-width: 200px;
+        max-width: 200px;
+    }
+    
+    h5{
+        font-size: 18px;
+    }
+
+    .estilo-font{
+        font-size: 15px;
+    }
+
+    .tamanho-font{
+        font-size: 13px;
+    }
+    
+     input[type=text], .form-control {
+        height: 85%;
+    }
+
+    .barra-preta, footer{
+        width: 1182px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) 1*/ 
+@media (min-width: 1200px) {
+    .borda-conteudo{
+        border: 1px;
+        border-style: none none solid none;
+        width: 800px;
+    }
+
+    .borda-sup {
+        border: 1px #e0e0e0;
+        border-style: none none solid none;
+        width: 900px; 
+    }
+    
+    input[type=text],.form-control {
+        width: 100%;
+        height: 85%;
+    } 
+
+    h5{
+        font-size: 18px;
+    }
+
+    .estilo-font{
+        font-size: 15px;
+    }
+
+    .tamanho-font{
+        font-size: 14.5px;
+    }
+
+    .barra-preta, footer{
+        width: 1348px;
+    }
+}
+
+
+
+
+

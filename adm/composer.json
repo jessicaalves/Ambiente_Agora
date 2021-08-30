@@ -1,0 +1,20 @@
+{
+    "name": "jessica/trabalho-conclusao-curso",
+    "description": "Sistema de Denúncias Contra Crimes Ambientais",
+    "authors": [
+        {
+            "name": "Jéssica Alves Ferreira",
+            "email": "jessicaalvesferreira24@gmail.com"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core",
+            "App\\": "app"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    }
+}
