@@ -1,5 +1,5 @@
 <!-- @author jessica -->
-<!-- Página de Denúncias Realizadas -->  
+<!-- Página de Listar Denúncias Realizadas -->  
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +8,7 @@
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
         
-        <title>Denúncias Realizadas | Ambiente Agora</title>
+        <title>Listar Denúncias Realizadas | Ambiente Agora</title>
         
         <link rel="icon" href="<?php echo URL . 'user/assets/img/imagensSistema/icon.png'; ?>">
 
@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/bootstrap.min.css'; ?>">   
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/usuario_denuncias_realizadas.css'; ?>">   
+        <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/usuario_listar_denuncias_realizadas.css'; ?>">   
         
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/reboot.css'; ?>">

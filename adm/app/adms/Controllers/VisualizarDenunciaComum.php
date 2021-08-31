@@ -9,30 +9,30 @@ if (!defined('URL')) {
     exit();
 }
 
-class VisualizarDadosDenuncia {
+class VisualizarDenunciaComum {
 
     private $dados;
     private $dadosId;
 
     public function index() {
-        $visualizarDenuncia = new VisualizarDadosDenuncia();
-        $visualizarDenuncia->visualizarDadosDenuncia();
+        $visualizarDenunciaComum = new VisualizarDenunciaComum();
+        $visualizarDenunciaComum->visualizarDenunciaComum();
     }
 
-    public function visualizarDadosDenuncia($dadosId = null) {
+    public function visualizarDenunciaComum($dadosId = null) {
         $this->dadosId = (int) $dadosId;
         if (!empty($this->dadosId)) {
-            $visualizarDadosDenuncia = new \App\adms\Models\AdmsVisualizarDadosDenuncia();
-            $this->dados['dados_denuncia'] = $visualizarDadosDenuncia->visualizarDadosDenuncia($this->dadosId);
+            $visualizarDenunciaComum = new \App\adms\Models\AdmsVisualizarDenunciaComum();
+            $this->dados['dados_denuncia'] = $visualizarDenunciaComum->visualizarDenunciaComum($this->dadosId);
 
             $listarMenu = new \App\adms\Models\AdmsMenu();
             $this->dados['menu'] = $listarMenu->itemMenu();
             
-            $carregarView = new \Core\ConfigView('adms/Views/denunciasRealizadas/visualizarDadosDenuncia', $this->dados);
-            $carregarView->renderizarDadosDenuncia();
+            $carregarView = new \Core\ConfigView('adms/Views/denunciasRealizadas/visualizarDenunciaComum', $this->dados);
+            $carregarView->renderizarVizualizarDenunciaComum();
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao encontrar denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-            $urlDestino = URLADM . 'visualizar-denuncias-realizadas/visualizar-denuncias-realizadas';
+            $urlDestino = URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns';
             header("Location: $urlDestino");
         }
     }

@@ -11,7 +11,7 @@ if (!defined('URL')) {
     <div class="container">
 
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR DENÚNCIAS</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR DENÚNCIAS COMUNS</b></h5>
 
 
         <div class="table table-responsive text-center">   
@@ -39,7 +39,7 @@ if (!defined('URL')) {
 
             <table class="table table-bordered"> <!-- Início Tabela de Listar Usuários -->
                 <thead>                                                    
-                <th colspan="6" class="bg-success text-white">Quadro de Denúncias</th>
+                <th colspan="6" class="bg-success text-white">Quadro de Denúncias Comuns</th>
                 <tr>                           
                     <th>Id</th>
                     <th>Título</th>
@@ -69,7 +69,7 @@ if (!defined('URL')) {
 
                                     <?php
                                     if ($this->dados['botao']['visDenuncia']) {
-                                        echo "<a href='" . URLADM . "visualizar-dados-denuncia/visualizar-dados-denuncia/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altSituacaoDenuncia']) {
                                         echo "<a href='" . URLADM . "alterar-situacao-denuncia/alterar-situacao-denuncia/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
@@ -86,7 +86,7 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visDenuncia']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-dados-denuncia/visualizar-dados-denuncia/$id'>Visualizar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id'>Visualizar</a>";
                                         }
                                         if ($this->dados['botao']['altSituacaoDenuncia']) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "alterar-situacao-denuncia/alterar-situacao-denuncia/$id'>Alterar</a>";

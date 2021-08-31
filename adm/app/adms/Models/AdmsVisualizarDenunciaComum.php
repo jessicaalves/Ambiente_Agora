@@ -9,12 +9,12 @@ if (!defined('URL')) {
     exit();
 }
 
-class AdmsVisualizarDadosDenuncia {
+class AdmsVisualizarDenunciaComum {
 
     private $resultado;
     private $dadosId;
 
-    public function visualizarDadosDenuncia($dadosId) {
+    public function visualizarDenunciaComum($dadosId) {
         $this->dadosId = (int) $dadosId;
         $visualizarDadosDenuncia = new \App\adms\Models\helper\AdmsRead();
         $visualizarDadosDenuncia->fullRead("SELECT denun.*,

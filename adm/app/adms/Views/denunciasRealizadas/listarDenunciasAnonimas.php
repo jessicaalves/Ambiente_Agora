@@ -58,17 +58,14 @@ if (!defined('URL')) {
                         <tr>
                             <th class="text-success"><?php echo $id; ?></th>
                             <td><?php echo $id; ?></td>                                  
-                            <td><?php echo $tipo; ?></td> 
-                            <td class="d-none d-lg-table-cell">
-                                <span class="badge badge-<?php echo $cor_cr; ?>"><?php ?></span>
-                            </td>
+                            <td><?php echo $tipo; ?></td>                             
 
                             <td class="align-center">
                                 <span class="d-none d-md-block">
 
                                     <?php
                                     if ($this->dados['botao']['visDenuncia']) {
-                                        echo "<a href='" . URLADM . "visualizar-dados-denuncia/visualizar-dados-denuncia/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "visualizar-denuncia-anonima/visualizar-denuncia-anonima/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
                                     ?>
 
@@ -82,9 +79,8 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visDenuncia']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-dados-denuncia/visualizar-dados-denuncia/$id'>Visualizar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-denuncia-anonima/visualizar-denuncia-anonima/$id'>Visualizar</a>";
                                         }
-                                        
                                         ?>
 
                                     </div>

@@ -102,14 +102,14 @@ class ConfigView {
         }
     }
 
-    public function renderizarDenunciasRealizadas() {
+    public function renderizarListarDenunciasRealizadas() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoDenunciasRealizadas.php';
-            include 'app/sts/Views/include/menu/menuDenunciasRealizadas.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoListarDenunciasRealizadas.php';
+            include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Denúncias Realizadas: {$this->nome}!";
+            echo "Erro ao carregar a página de Listar Denúncias Realizadas: {$this->nome}!";
         }
     }
 
@@ -138,7 +138,7 @@ class ConfigView {
     public function renderizarDadosDenuncia() {
        if (file_exists('app/' . $this->nome . '.php')) {
             include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
-            include 'app/sts/Views/include/menu/menuDenunciasRealizadas.php';
+            include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {

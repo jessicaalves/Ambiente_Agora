@@ -10,7 +10,7 @@
                 </a>
 
                 <ul class="list-unstyled collapse" id="submenu1">
-                    <li><a href="<?php echo URL . 'user/denuncias-realizadas/visualizar-denuncias-realizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Denúncias</a></li>  
+                    <li><a href="<?php echo URL . 'user/listar-denuncias-realizadas/listar-denuncias-realizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Listar Denúncias</a></li>  
                 </ul>
             </li>
 
@@ -31,6 +31,15 @@
 
     <section id="" class="p-4"> <!-- Início Seção Alterar Cadastro -->
         <div class="container">
+
+            <a href="<?php echo URL . 'user/visualizar-dados-cadastrais/visualizar-dados-cadastrais'; ?>">
+                <div class="p-2">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-primary btn-sm">
+                        Visualizar
+                    </button>
+                </div>
+            </a>
+
             <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR DADOS CADASTRAIS</b></h5>
             <fieldset class="the-fieldset">    
                 <div class="row">

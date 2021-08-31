@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Ago-2021 às 21:13
+-- Tempo de geração: 31-Ago-2021 às 05:32
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -228,7 +228,9 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 (35, 1, 35, 2, 2, 2, 2, 19, '2021-08-23 02:20:36', NULL),
 (36, 1, 36, 2, 2, 2, 2, 23, '2021-08-23 02:53:46', NULL),
 (37, 1, 37, 2, 2, 4, 1, 26, '2021-08-23 07:50:32', NULL),
-(38, 1, 38, 2, 2, 4, 1, 27, '2021-08-23 08:17:26', NULL);
+(38, 1, 38, 2, 2, 4, 1, 27, '2021-08-23 08:17:26', NULL),
+(39, 1, 39, 1, 1, 4, 1, 28, '2021-08-30 21:53:37', NULL),
+(40, 1, 40, 2, 2, 4, 1, 29, '2021-08-31 04:41:52', NULL);
 
 -- --------------------------------------------------------
 
@@ -266,7 +268,7 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (7, 'AtualSenha', 'atualSenha', 'atual-senha', 'atual-senha', 'Página de atualizar a senha', 'Página de atualizar a senha - Ambiente Agora', 1, 1, 1, 3, '2021-06-26 06:51:25', NULL),
 (8, 'ListarUsuarios', 'listarUsuarios', 'listar-usuarios', 'listar-usuarios', 'Listar Usuários', 'Página para ter acesso a lista dos usuários cadastrados - Ambiente Agora', 1, 2, 1, 1, '2021-06-26 06:56:19', NULL),
 (9, 'Menu', 'menu', 'menu', 'menu', 'Páginas', 'Página de Menu', 2, 2, 1, 7, '2021-07-11 01:02:32', NULL),
-(10, 'DenunciasRealizadas', 'denunciasRealizadas', 'denuncias-realizadas', 'denuncias-realizadas', 'Página de Denúncias Realizadas', 'Página de Denúncias Realizadas - Ambiente Agora', 2, 2, 1, 5, '2021-07-11 02:18:32', NULL),
+(10, 'DenunciasRealizadas', 'denunciasRealizadas', 'denuncias-realizadas', 'denuncias-realizadas', 'Denúncias Realizadas', 'Página de Denúncias Realizadas - Ambiente Agora', 2, 2, 1, 5, '2021-07-11 02:18:32', NULL),
 (11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'alterar-dados-cadastrais', 'alterar-dados-cadastrais', 'Alterar Dados ', 'Minha Conta - Ambiente Agora', 1, 2, 1, 3, '2021-07-29 01:04:35', NULL),
 (12, 'ListarNiveisAcesso', 'listarNiveisAcesso', 'listar-niveis-acesso', 'listar-niveis-acesso', 'Níveis de Acesso', 'Minha Conta - Ambiente Agora', 1, 2, 1, 6, '2021-07-29 03:30:10', NULL),
 (13, 'Menu', 'menu', 'menu', 'menu', 'Item de Menu', 'Minha Conta - Ambiente Agora', 1, 2, 2, 6, '2021-07-29 03:39:08', NULL),
@@ -280,9 +282,11 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (21, 'VisualizarNivelAcesso', 'visualizarNivelAcesso', 'visualizar-nivel-acesso', 'visualizar-nivel-acesso', 'Visualizar Nível Acesso', 'Página para visualizar nível de Acesso - Ambiente Agora', 2, 2, 1, 4, '2021-08-22 01:35:04', NULL),
 (22, 'ApagarNivelAcesso', 'apagarNivelAcesso', 'apagar-nivel-acesso', 'apagar-nivel-acesso', 'Apagar Nível Acesso', 'Página para apagar nível de Acesso - Ambiente Agora', 2, 2, 1, 4, '2021-08-22 01:51:15', NULL),
 (23, 'AlterarOrdemNivelAcesso', 'alterarOrdemNivelAcesso', 'alterar-ordem-nivel-acesso', 'alterar-ordem-nivel-acesso', 'Alterar Ordem Nível Acesso', 'Página para alterar ordem do nível de Acesso - Ambiente Agora', 2, 2, 1, 3, '2021-08-22 01:55:22', NULL),
-(24, 'VisualizarDenunciasRealizadas', 'visualizarDenunciasRealizadas', 'visualizar-denuncias-realizadas', 'visualizar-denuncias-realizadas', 'Visualizar Denúncias', 'Página de Visualizar Denúncias Realizadas - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
-(26, 'VisualizarDadosDenuncia', 'visualizarDadosDenuncia', 'visualizar-dados-denuncia', 'visualizar-dados-denuncia', 'Visualizar Dados Denúncia', 'Página de Visualizar Dados Denúncia - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
-(27, 'AlterarSituacaoDenuncia', 'alterarSituacaoDenuncia', 'alterar-situacao-denuncia', 'alterar-situacao-denuncia', 'Alterar Situação Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL);
+(24, 'ListarDenunciasComuns', 'listarDenunciasComuns', 'listar-denuncias-comuns', 'listar-denuncias-comuns', 'Listar Denúncias Comuns', 'Página de Visualizar Denúncias Realizadas - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
+(26, 'VisualizarDenunciaComum', 'visualizarDenunciaComum', 'visualizar-denuncia-comum', 'visualizar-denuncia-comum', 'Visualizar  Denúncia Comum', 'Página de Visualizar  Denúncia Comum - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
+(27, 'AlterarSituacaoDenuncia', 'alterarSituacaoDenuncia', 'alterar-situacao-denuncia', 'alterar-situacao-denuncia', 'Alterar Situação Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
+(28, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Listar Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
+(29, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -522,7 +526,7 @@ CREATE TABLE `sts_denuncias_comuns` (
   `latitude` varchar(40) NOT NULL,
   `longitude` varchar(40) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `sts_status_denuncia_id` int(11) DEFAULT NULL,
+  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `created` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -531,7 +535,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `sts_status_denuncia_id`, `created`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', NULL, '2021-06-28 19:15:13');
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', 1, '2021-06-28 19:15:13');
 
 -- --------------------------------------------------------
 
@@ -589,7 +593,7 @@ INSERT INTO `sts_pags` (`id`, `controller`, `metodo`, `nome`, `titulo`, `liberad
 (3, 'Cadastro', 'cadastrarUsuario', 'Página de Cadastro', 'Página de Cadastro - Ambiente Agora', 1, 3, 1, 2, '2021-06-27 05:29:29', NULL),
 (4, 'DenunciaAnonima', 'cadastrarDenunciaAnonima', 'Página de Denúncia Anônima', 'Página de Denúncia Anônima - Ambiente Agora', 1, 4, 1, 2, '2021-06-27 05:30:43', NULL),
 (5, 'MinhaConta', 'acessoMinhaConta', 'Página de Acesso à Minha Conta', 'Minha Conta - Ambiente Agora', 1, 5, 1, 6, '2021-06-27 05:32:10', NULL),
-(6, 'DenunciasRealizadas', 'visualizarDenunciasRealizadas', 'Página de Denúncias Realizadas', 'Minha Conta - Ambiente Agora', 1, 5, 1, 4, '2021-06-27 05:34:20', NULL),
+(6, 'ListarDenunciasRealizadas', 'listarDenunciasRealizadas', 'Página de Listar Denúncias Realizadas', 'Minha Conta - Ambiente Agora', 1, 5, 1, 4, '2021-06-27 05:34:20', NULL),
 (7, 'DenunciaComum', 'cadastrarDenunciaComum', 'Página de Denúncia Comum', 'Minha Conta - Ambiente Agora', 1, 5, 1, 2, '2021-06-27 05:36:04', NULL),
 (8, 'VisualizarDadosCadastrais', 'visualizarDadosCadastrais', 'Página de Dados Cadastrais', 'Minha Conta - Ambiente Agora', 1, 5, 1, 4, '2021-06-27 05:37:18', NULL),
 (9, 'Login', 'logout', 'Página de Logout', 'Página de Logout - Ambiente Agora', 1, 2, 1, 6, '2021-06-27 05:37:18', NULL),
@@ -943,13 +947,13 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_nivs_aces_pags`
 --
 ALTER TABLE `adms_nivs_aces_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de tabela `adms_pags`
 --
 ALTER TABLE `adms_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `adms_sits`

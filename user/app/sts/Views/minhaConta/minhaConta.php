@@ -10,7 +10,7 @@
                 </a>
 
                 <ul class="list-unstyled collapse" id="submenu1">
-                    <li><a href="<?php echo URL . 'user/denuncias-realizadas/visualizar-denuncias-realizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Denúncias</a></li>  
+                    <li><a href="<?php echo URL . 'user/listar-denuncias-realizadas/listar-denuncias-realizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Listar Denúncias</a></li>  
                     </ul>
             </li>
             

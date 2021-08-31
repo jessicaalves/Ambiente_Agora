@@ -8,7 +8,7 @@
                 </a>
 
                 <ul class="list-unstyled collapse" id="submenu1">
-                    <li class="active"><a href="<?php echo URL . 'user/denuncias-realizadas/visualizar-denuncias-realizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Denúncias</a></li>  
+                    <li class="active"><a href="<?php echo URL . 'user/listar-denuncias-realizadas/listar-denuncias-realizadas'; ?>"> <i class="fas fa-seedling text-warning"></i> Listar Denúncias</a></li>  
                 </ul>
             </li>
 
@@ -29,7 +29,7 @@
     <section id="" class="p-4"> <!-- Início Seção Denúncias Realizadas -->  
         <div class="container">
 
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>DENÚNCIAS REALIZADAS</b></h5>
+            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR DENÚNCIAS</b></h5>
 
             <!--<h5 class="p-2">Olá, você não criou nenhuma denúncia ainda!</h5><p><p>-->
 
@@ -65,7 +65,7 @@
                         <th>Título</th>
                         <th>Tipo</th>
                         <th class="d-lg-table-cell">Status</th>
-                        <th class="d-sm-table-cell">Mais Dados da Denúncia</th>
+                        <th class="d-sm-table-cell">Ações</th>
                     </tr>
                     </thead>
 
@@ -81,7 +81,8 @@
                                 <td><?php echo $titulo; ?></td>
                                 <td><?php echo $tipo; ?></td>
                                 <td class="d-lg-table-cell">Em Andamento</td>
-                                <td class="align-center d-sm-table-cell"><a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="text-body">Visualizar Dados </a><i class="far fa-eye text-success"></i></td>
+                                                                                                      
+                                <td class="align-center d-sm-table-cell"><a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar </a></td>
                             </tr>
 
                         </tbody>

@@ -190,19 +190,19 @@ class ConfigView {
         }
     }
 
-    public function renderizarDenunciasRealizadas() {
+    public function renderizarListarDenunciasComuns() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoDenunciasRealizadas.php';
-            include 'app/adms/Views/include/menu/menuListarUsuarios.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoListarDenunciasComuns.php';
+            include 'app/adms/Views/include/menu/menuDenunciasRealizadas.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Denúncias Realizadas: {$this->nome}!";
+            echo "Erro ao carregar a página de Listar Denúncias Comuns: {$this->nome}!";
         }
     }
 
-    public function renderizarDadosDenuncia() {
+    public function renderizarVizualizarDenunciaComum() {
         if (file_exists('app/' . $this->nome . '.php')) {
             include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
@@ -210,7 +210,31 @@ class ConfigView {
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Denúncias Realizadas: {$this->nome}!";
+            echo "Erro ao carregar a página de Visualizar Denúncia Comumm: {$this->nome}!";
+        }
+    }
+
+    public function renderizarListarDenunciasAnonimas() {
+        if (file_exists('app/' . $this->nome . '.php')) {
+            include 'app/adms/Views/include/cabecalho/cabecalhoListarDenunciasAnonimas.php';
+            include 'app/adms/Views/include/menu/menuDenunciasRealizadas.php';
+            include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
+            include 'app/' . $this->nome . '.php';
+            include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
+        } else {
+            echo "Erro ao carregar a página de Listar Denúncias Anônimas: {$this->nome}!";
+        }
+    }
+    
+    public function renderizarVisualizarDenunciaAnonima() {
+        if (file_exists('app/' . $this->nome . '.php')) {
+            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
+            include 'app/adms/Views/include/menu/menuListarUsuarios.php';
+            include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
+            include 'app/' . $this->nome . '.php';
+            include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
+        } else {
+            echo "Erro ao carregar a página de Visualizar Denúncia Anônima: {$this->nome}!";
         }
     }
 

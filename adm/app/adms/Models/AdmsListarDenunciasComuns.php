@@ -9,7 +9,7 @@ if (!defined('URL')) {
     exit();
 }
 
-class AdmsVisualizarDenunciasRealizadas {
+class AdmsListarDenunciasComuns {
 
     private $resultado;
     private $pageId;
@@ -20,10 +20,10 @@ class AdmsVisualizarDenunciasRealizadas {
         return $this->resultadoPg;
     }
 
-    public function visualizarDenunciasRealizadas($pageId = null) {
+    public function listarDenunciasComuns($pageId = null) {
 
         $this->pageId = (int) $pageId;
-        $paginacao = new \App\adms\Models\helper\AdmsPaginacao(URLADM . 'visualizar-denuncias-realizadas/visualizar-denuncias-realizadas');
+        $paginacao = new \App\adms\Models\helper\AdmsPaginacao(URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns');
         $paginacao->condicao($this->pageId, $this->limiteResultado);
 
         $paginacao->paginacao("SELECT COUNT(id) AS num_result
@@ -31,10 +31,10 @@ class AdmsVisualizarDenunciasRealizadas {
 
         $this->resultadoPg = $paginacao->getResultado();
 
-        $visualizarDenunciasRealizadas = new \App\adms\Models\helper\AdmsRead();
-        $visualizarDenunciasRealizadas->fullRead("SELECT * FROM sts_denuncias_comuns 
+        $listarDenunciasComuns = new \App\adms\Models\helper\AdmsRead();
+        $listarDenunciasComuns->fullRead("SELECT * FROM sts_denuncias_comuns 
                 WHERE sts_usuario_id =:sts_usuario_id ORDER BY id ASC LIMIT :limit OFFSET :offset", "sts_usuario_id={$_SESSION['id']}&limit={$this->limiteResultado}&offset={$paginacao->getOffset()}");
-        $this->resultado = $visualizarDenunciasRealizadas->getResultado();
+        $this->resultado = $listarDenunciasComuns->getResultado();
         return $this->resultado;
     }
 
