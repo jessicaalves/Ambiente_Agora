@@ -202,15 +202,27 @@ class ConfigView {
         }
     }
 
-    public function renderizarVizualizarDenunciaComum() {
+    public function renderizarVisualizarDenunciaComum() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDenunciaComum.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Denúncia Comumm: {$this->nome}!";
+            echo "Erro ao carregar a página de Visualizar Denúncia Comum: {$this->nome}!";
+        }
+    }
+
+    public function renderizarAlterarStatusDenuncia() {
+        if (file_exists('app/' . $this->nome . '.php')) {
+            include 'app/adms/Views/include/cabecalho/cabecalhoAlterarStatusDenuncia.php';
+            include 'app/adms/Views/include/menu/menuListarUsuarios.php';
+            include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
+            include 'app/' . $this->nome . '.php';
+            include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
+        } else {
+            echo "Erro ao carregar a página de Alterar Status Denúncia Comum: {$this->nome}!";
         }
     }
 
@@ -225,10 +237,10 @@ class ConfigView {
             echo "Erro ao carregar a página de Listar Denúncias Anônimas: {$this->nome}!";
         }
     }
-    
+
     public function renderizarVisualizarDenunciaAnonima() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDenunciaAnonima.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';

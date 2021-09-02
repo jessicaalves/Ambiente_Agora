@@ -8,7 +8,7 @@
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
         
-        <title>Visualizar Denúncias Realizadas | Ambiente Agora</title>
+        <title>Visualizar Denúncia Comum | Ambiente Agora</title>
         
         <link rel="icon" href="<?php echo URLADM . '/assets/img/imagensSistema/icon.png'; ?>">
 
@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/bootstrap.min.css'; ?>">   
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/adm_visualizar_dados_denuncia.css'; ?>">   
+        <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/adm_visualizar_denuncia_comum.css'; ?>">   
         
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/reboot.css'; ?>">

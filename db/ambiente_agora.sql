@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Ago-2021 às 05:32
+-- Tempo de geração: 02-Set-2021 às 17:48
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -282,10 +282,10 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (21, 'VisualizarNivelAcesso', 'visualizarNivelAcesso', 'visualizar-nivel-acesso', 'visualizar-nivel-acesso', 'Visualizar Nível Acesso', 'Página para visualizar nível de Acesso - Ambiente Agora', 2, 2, 1, 4, '2021-08-22 01:35:04', NULL),
 (22, 'ApagarNivelAcesso', 'apagarNivelAcesso', 'apagar-nivel-acesso', 'apagar-nivel-acesso', 'Apagar Nível Acesso', 'Página para apagar nível de Acesso - Ambiente Agora', 2, 2, 1, 4, '2021-08-22 01:51:15', NULL),
 (23, 'AlterarOrdemNivelAcesso', 'alterarOrdemNivelAcesso', 'alterar-ordem-nivel-acesso', 'alterar-ordem-nivel-acesso', 'Alterar Ordem Nível Acesso', 'Página para alterar ordem do nível de Acesso - Ambiente Agora', 2, 2, 1, 3, '2021-08-22 01:55:22', NULL),
-(24, 'ListarDenunciasComuns', 'listarDenunciasComuns', 'listar-denuncias-comuns', 'listar-denuncias-comuns', 'Listar Denúncias Comuns', 'Página de Visualizar Denúncias Realizadas - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
+(24, 'ListarDenunciasComuns', 'listarDenunciasComuns', 'listar-denuncias-comuns', 'listar-denuncias-comuns', 'Denúncias Comuns', 'Página de Visualizar Denúncias Realizadas - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
 (26, 'VisualizarDenunciaComum', 'visualizarDenunciaComum', 'visualizar-denuncia-comum', 'visualizar-denuncia-comum', 'Visualizar  Denúncia Comum', 'Página de Visualizar  Denúncia Comum - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
-(27, 'AlterarSituacaoDenuncia', 'alterarSituacaoDenuncia', 'alterar-situacao-denuncia', 'alterar-situacao-denuncia', 'Alterar Situação Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
-(28, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Listar Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
+(27, 'AlterarStatusDenuncia', 'alterarStatusDenuncia', 'alterar-status-denuncia', 'alterar-status-denuncia', 'Alterar Status Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
+(28, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
 (29, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL);
 
 -- --------------------------------------------------------
@@ -671,6 +671,29 @@ INSERT INTO `sts_sits_usuarios` (`id`, `nome`, `created`, `modified`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `sts_status_denuncias`
+--
+
+CREATE TABLE `sts_status_denuncias` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `adms_cor_id` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `sts_status_denuncias`
+--
+
+INSERT INTO `sts_status_denuncias` (`id`, `nome`, `adms_cor_id`, `created`, `modified`) VALUES
+(1, 'Em Andamento', 3, '2021-09-02 16:25:38', NULL),
+(2, 'Em Aberto', 1, '2021-09-02 16:25:38', NULL),
+(3, 'Finalizado', 4, '2021-09-02 16:25:38', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `sts_tipos_pags`
 --
 
@@ -853,7 +876,8 @@ ALTER TABLE `sts_denuncias_anonimas`
 --
 ALTER TABLE `sts_denuncias_comuns`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `sts_usuario_id_fk` (`sts_usuario_id`);
+  ADD KEY `sts_usuario_id_fk` (`sts_usuario_id`),
+  ADD KEY `sts_status_denuncia_id_fk` (`sts_status_denuncia_id`);
 
 --
 -- Índices para tabela `sts_grups_pags`
@@ -887,6 +911,13 @@ ALTER TABLE `sts_sits_pags`
 --
 ALTER TABLE `sts_sits_usuarios`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `sts_status_denuncias`
+--
+ALTER TABLE `sts_status_denuncias`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `adms_cores_id_fk` (`adms_cor_id`);
 
 --
 -- Índices para tabela `sts_tipos_pags`
@@ -1046,6 +1077,12 @@ ALTER TABLE `sts_sits_usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de tabela `sts_status_denuncias`
+--
+ALTER TABLE `sts_status_denuncias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `sts_tipos_pags`
 --
 ALTER TABLE `sts_tipos_pags`
@@ -1120,6 +1157,7 @@ ALTER TABLE `sts_cads_usuarios`
 -- Limitadores para a tabela `sts_denuncias_comuns`
 --
 ALTER TABLE `sts_denuncias_comuns`
+  ADD CONSTRAINT `sts_status_denuncia_id_fk` FOREIGN KEY (`sts_status_denuncia_id`) REFERENCES `adms_status_denuncias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_usuario_id_fk` FOREIGN KEY (`sts_usuario_id`) REFERENCES `sts_usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -1129,6 +1167,12 @@ ALTER TABLE `sts_pags`
   ADD CONSTRAINT `sts_grup_pag_id_fk` FOREIGN KEY (`sts_grup_pag_id`) REFERENCES `sts_grups_pags` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_sit_pag_id_fk` FOREIGN KEY (`sts_sit_pag_id`) REFERENCES `sts_sits_pags` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_tipo_pag_id _fk` FOREIGN KEY (`sts_tipo_pag_id`) REFERENCES `sts_tipos_pags` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `sts_status_denuncias`
+--
+ALTER TABLE `sts_status_denuncias`
+  ADD CONSTRAINT `adms_cores_id_fk` FOREIGN KEY (`adms_cor_id`) REFERENCES `adms_cors` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `sts_usuarios`

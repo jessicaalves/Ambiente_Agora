@@ -72,7 +72,7 @@ if (!defined('URL')) {
                                         echo "<a href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altSituacaoDenuncia']) {
-                                        echo "<a href='" . URLADM . "alterar-situacao-denuncia/alterar-situacao-denuncia/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "alterar-status-denuncia/alterar-status-denuncia/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
                                     }
                                     ?>
 
@@ -89,7 +89,7 @@ if (!defined('URL')) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id'>Visualizar</a>";
                                         }
                                         if ($this->dados['botao']['altSituacaoDenuncia']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "alterar-situacao-denuncia/alterar-situacao-denuncia/$id'>Alterar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "alterar-status-denuncia/alterar-status-denuncia/$id'>Alterar</a>";
                                         }
                                         
                                         ?>

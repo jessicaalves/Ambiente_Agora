@@ -1,9 +1,8 @@
 <div class="d-flex">
 
-
     <section id="" class="p-4 alinhamento"> <!-- Início Seção Nova Denúncia Comum -->
         <div class="container">
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS DA DENÚNCIA</b></h5>
+            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DENÚNCIA COMUM</b></h5>
             <fieldset class="the-fieldset">
                 <div class="row">
                     <div class="col-md-12">
@@ -277,7 +276,7 @@
                             </div>
 
                             <!--<div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-outline-success alin-de">Denunciar</button></div>-->
-                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-situacao-denuncia/alterar-situacao-denuncia/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
+                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-status-denuncia/alterar-status-denuncia/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
 
                         </form> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
 

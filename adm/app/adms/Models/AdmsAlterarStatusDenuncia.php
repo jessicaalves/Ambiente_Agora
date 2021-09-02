@@ -9,7 +9,7 @@ if (!defined('URL')) {
     exit();
 }
 
-class AdmsAlterarSituacaoDenuncia {
+class AdmsAlterarStatusDenuncia {
 
     private $resultado;
     private $dados;
@@ -29,7 +29,7 @@ class AdmsAlterarSituacaoDenuncia {
         return $this->resultado;
     }
 
-    public function alterarDenuncia(array $dados) {
+    public function alterarStatusDenuncia(array $dados) {
         $this->dados = $dados;
 //        $this->apelido = $this->dados['apelido'];
 //        unset($this->dados['apelido']);
@@ -75,7 +75,7 @@ class AdmsAlterarSituacaoDenuncia {
             $_SESSION['msg'] = "<div class='alert alert-success'>Status da denúncia alterado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao alterar status da denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Erro ao alterar status da denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }

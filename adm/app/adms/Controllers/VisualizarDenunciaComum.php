@@ -29,7 +29,7 @@ class VisualizarDenunciaComum {
             $this->dados['menu'] = $listarMenu->itemMenu();
             
             $carregarView = new \Core\ConfigView('adms/Views/denunciasRealizadas/visualizarDenunciaComum', $this->dados);
-            $carregarView->renderizarVizualizarDenunciaComum();
+            $carregarView->renderizarVisualizarDenunciaComum();
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao encontrar denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $urlDestino = URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns';

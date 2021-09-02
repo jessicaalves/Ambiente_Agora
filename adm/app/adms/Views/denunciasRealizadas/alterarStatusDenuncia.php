@@ -17,14 +17,14 @@ if (isset($this->dados['form'][0])) {
 ?>
 
 
-<section id="" class="p-4"> <!-- Início Seção Alterar Status Denúncia -->
+<section id="" class="p-4"> <!-- Início Seção Alterar Cadastro -->
     <div class="container">
 
         <?php
         if ($this->dados['botao']['listDenuncias']) {
             ?>
 
-            <a href="<?php echo URLADM . 'visualizar-denuncias-realizadas/visualizar-denuncias-realizadas'; ?>">
+            <a href="<?php echo URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns'; ?>">
                 <div class="p-2">
                     <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
                         Listar
@@ -40,7 +40,7 @@ if (isset($this->dados['form'][0])) {
             <div class="row">
                 <div class="col-md-12">
                     <div class="borda-sup">
-                        <h6 class="ml-2 pt-1">Dados Cadastrais</h6>
+                        <h6 class="ml-2 pt-1">Dados Denúncia</h6>
                     </div>
 
                     <?php
@@ -73,26 +73,23 @@ if (isset($this->dados['form'][0])) {
                             </div>
                         </div>
 
+                        <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Atualizar</button></div> 
 
+                        <?php
+                        if ($this->dados['botao']['visDenuncia']) {
+                            ?>
+                            <div class="botao-visualizar">
+                                <a href="<?php echo URLADM . 'visualizar-denuncia-comum/visualizar-denuncia-comum/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-outline-primary btn-sm">Visualizar</a>
+                            </div>
+                            <?php
+                        }
+                        ?>
+
+                    </form> <!-- Final Formulário Alterar Dados Cadastrais -->
                 </div>
-
-                <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarUsuario" value="atualizarUsuario">Atualizar</button></div> 
-
-                <?php
-                if ($this->dados['botao']['visUsuario']) {
-                    ?>
-                    <div class="botao-visualizar">
-                        <a href="<?php echo URLADM . 'visualizarUsuario/visualizar-usuario/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                    </div>
-                    <?php
-                }
-                ?>
-
-                </form> <!-- Final Formulário Alterar Dados Cadastrais -->
             </div>
+        </fieldset>  
     </div>
-</fieldset>  
-</div>
 </section><!-- Final Seção Alterar Cadastro -->
 </div>
 
