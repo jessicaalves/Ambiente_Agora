@@ -33,7 +33,7 @@ if (!defined('URL')) {
 
                     <form class="p-2" class="form" action="" method="POST"> <!-- Início Formulário Alterar Usuário -->
 
-                        <h5 class="p-2 borda-conteudo" id="">Dados de Acesso - Visualizar Usuário</h5><p><p>
+                        <h5 class="p-2 borda-conteudo" id="">Dados - Visualizar Nível de Acesso</h5><p><p>
 
                             <?php
                             if (!empty($this->dados['dados_nivel_acesso'][0])) {

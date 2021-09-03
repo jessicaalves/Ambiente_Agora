@@ -17,7 +17,7 @@ if (isset($this->dados['form'][0])) {
 ?>
 
 
-<section id="" class="p-4"> <!-- Início Seção Alterar Cadastro -->
+<section id="" class="p-4"> <!-- Início Seção Denúncias Realizadas -->  
     <div class="container">
 
         <?php
@@ -35,7 +35,9 @@ if (isset($this->dados['form'][0])) {
         }
         ?>
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR STATUS DENÚNCIA</b> </h5>
+
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR STATUS DENÚNCIA COMUM</b></h5>
+
         <fieldset class="the-fieldset">    
             <div class="row">
                 <div class="col-md-12">
@@ -54,24 +56,42 @@ if (isset($this->dados['form'][0])) {
 
                         <h5 class="p-2 borda-conteudo" id="">Dados - Alterar Status Denúncia</h5><p><p>
 
+                        <div class="form-group row alinhamento c-login-resp"> 
+                            <label for="Id" class="col-sm-2 tamanho-font">Id&nbsp;</label>
+                            <div class="col-sm-8 t-c-campos">
+                                <input class="form-control tamanho-font bg-white" name="id" type="text" id="id" placeholder="<?php $id; ?>"
+                                       value="<?php
+                                       if (isset($valorForm['id'])) {
+                                           echo $valorForm['id'];
+                                       }
+                                       ?>"
+                                       readonly>
+                            </div>
+                        </div>
+
                         <div class="form-group row alinhamento c-tipo-resp">
-                            <label for="Tipo" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                            <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
-                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_status_denuncia_id" type="select" id="adms_sit_usuario_id">
+                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_status_denuncia_id" type="select" id="sts_status_denuncia_id">
                                     <option value="">Selecione o status da denúncia</option>
                                     <?php
-                                    foreach ($this->dados['select']['sts'] as $sts) {
-                                        extract($sts);
-                                        if ($valorForm['sts_status_denuncia_id'] == $id_sts) {
-                                            echo "<option value='$id_sts' selected>$nome_sts</option>";
+                                    foreach ($this->dados['select']['stat'] as $stat) {
+                                        extract($stat);
+                                        if ($valorForm['sts_status_denuncia_id'] == $id_stat) {
+                                            echo "<option value='$id_stat' selected>$nome_stat</option>";
                                         } else {
-                                            echo "<option value='$id_sts'>$nome_sts</option>";
+                                            echo "<option value='$id_stat'>$nome_stat</option>";
                                         }
                                     }
                                     ?>
                                 </select>
                             </div>
                         </div>
+
+
+                        
+
+
 
                         <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Atualizar</button></div> 
 
@@ -88,9 +108,29 @@ if (isset($this->dados['form'][0])) {
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->
                 </div>
             </div>
-        </fieldset>  
+        </fieldset>
+
+
+
+
     </div>
-</section><!-- Final Seção Alterar Cadastro -->
+
+
+
+
+</section><!-- Final Seção Denúncias Realizadas -->
+
+
 </div>
+</div>
+</div>
+</div> <!-- Final Listar Usuários -->
+</div>
+
+
+
+
+
+
 
 

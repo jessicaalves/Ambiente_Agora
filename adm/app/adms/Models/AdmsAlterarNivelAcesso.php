@@ -42,7 +42,7 @@ class AdmsAlterarNivelAcesso {
     }
 
     private function updateEditNivAc() {
-        $this->Dados['modified'] = date("Y-m-d H:i:s");
+        $this->dados['modified'] = date("Y-m-d H:i:s");
         $upAltNivAc = new \App\adms\Models\helper\AdmsUpdate();
         $upAltNivAc->exeUpdate("adms_niveis_acessos", $this->dados, "WHERE id =:id", "id=" . $this->dados['id']);
         if ($upAltNivAc->getResultado()) {

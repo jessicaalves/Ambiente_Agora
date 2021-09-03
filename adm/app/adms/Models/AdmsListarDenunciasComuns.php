@@ -32,8 +32,11 @@ class AdmsListarDenunciasComuns {
         $this->resultadoPg = $paginacao->getResultado();
 
         $listarDenunciasComuns = new \App\adms\Models\helper\AdmsRead();
-        $listarDenunciasComuns->fullRead("SELECT * FROM sts_denuncias_comuns 
-                WHERE sts_usuario_id =:sts_usuario_id ORDER BY id ASC LIMIT :limit OFFSET :offset", "sts_usuario_id={$_SESSION['id']}&limit={$this->limiteResultado}&offset={$paginacao->getOffset()}");
+        $listarDenunciasComuns->fullRead("SELECT * 
+                FROM sts_denuncias_comuns denun
+                INNER JOIN adms_status_denuncias stat ON stat.id=denun.sts_status_denuncia_id
+                WHERE sts_usuario_id =:sts_usuario_id AND denun.id =:id
+                ORDER BY id ASC LIMIT :limit OFFSET :offset", "sts_usuario_id={$_SESSION['id']}&limit={$this->limiteResultado}&offset={$paginacao->getOffset()}");
         $this->resultado = $listarDenunciasComuns->getResultado();
         return $this->resultado;
     }

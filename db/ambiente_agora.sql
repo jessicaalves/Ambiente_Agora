@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Set-2021 às 17:48
+-- Tempo de geração: 03-Set-2021 às 03:21
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -284,7 +284,7 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (23, 'AlterarOrdemNivelAcesso', 'alterarOrdemNivelAcesso', 'alterar-ordem-nivel-acesso', 'alterar-ordem-nivel-acesso', 'Alterar Ordem Nível Acesso', 'Página para alterar ordem do nível de Acesso - Ambiente Agora', 2, 2, 1, 3, '2021-08-22 01:55:22', NULL),
 (24, 'ListarDenunciasComuns', 'listarDenunciasComuns', 'listar-denuncias-comuns', 'listar-denuncias-comuns', 'Denúncias Comuns', 'Página de Visualizar Denúncias Realizadas - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
 (26, 'VisualizarDenunciaComum', 'visualizarDenunciaComum', 'visualizar-denuncia-comum', 'visualizar-denuncia-comum', 'Visualizar  Denúncia Comum', 'Página de Visualizar  Denúncia Comum - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
-(27, 'AlterarStatusDenuncia', 'alterarStatusDenuncia', 'alterar-status-denuncia', 'alterar-status-denuncia', 'Alterar Status Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
+(27, 'AlterarStatusDenunciaComum', 'alterarStatusDenunciaComum', 'alterar-status-denuncia-comum', 'alterar-status-denuncia-comum', 'Alterar Status Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
 (28, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
 (29, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL);
 
@@ -376,7 +376,7 @@ CREATE TABLE `adms_status_denuncias` (
 INSERT INTO `adms_status_denuncias` (`id`, `nome`, `adms_cor_id`, `created`, `modified`) VALUES
 (1, 'Andamento', 3, '2021-08-23 22:52:02', NULL),
 (2, 'Aberto', 1, '2021-08-23 22:52:02', NULL),
-(3, 'Finalizado', 4, '2021-08-23 22:52:02', '2021-08-23 22:52:02');
+(3, 'Finalizado', 4, '2021-08-23 22:52:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -430,9 +430,9 @@ CREATE TABLE `adms_usuarios` (
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$lMeUOKTh5AxXZmSsjH19v.xyZWVjSiQ5GdqCVjXwhrpyHyUQ37CIG', 'Jéssica Alves Moreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-08-18 04:18:40'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$6K33yhWeWS6jCRZi85/42.Wy1eY7c4klsJ7b904adiOf2XXX2/N/q', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-08-22 21:50:38'),
-(3, 'guilherme_ferreira@hotmail.com', '$2y$10$ZFMChJ3ZiJq6K1rg6oaOaOwwA4/5ZCT.lJqanXKgRHn4gpx2cQYVS', 'Guilherme Alves Ferreira', 'guilherme_ferreira@hotmail.com', 'Gui', NULL, NULL, 2, NULL, 1, '2021-08-20 19:05:11', '2021-08-20 19:05:48'),
-(4, 'nobphs@gmail.com', '$2y$10$0AZJlG35ws3.8pcneKmXd.iHmZAp1lANp4I/qKDQvgA2vEJPRmH3W', 'Nobilar Alves Moreira', 'nobphs@gmail.com', 'Noby', NULL, NULL, 2, NULL, 1, '2021-08-21 00:56:34', '2021-08-21 01:01:10');
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$q5ll92O3IMU/DyVU0EN2nef/Wyu9CwbY5V/P02Xc/YWoeEFWVl4Nu', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-03 02:23:50'),
+(3, 'guilherme_ferreira@hotmail.com', '$2y$10$kExVeo0YK3mHrDc3ARLtyunn0O63.uhjrR9E0Uv2/f77OCWXwgEbG', 'Guilherme Alves Ferreira', 'guilherme_ferreira@hotmail.com', 'Gui', NULL, NULL, 2, NULL, 1, '2021-08-20 19:05:11', '2021-09-03 02:24:22'),
+(4, 'nobphs@gmail.com', '$2y$10$OUsOc3EOwFTZvH3zifZLq.W7UvYTDpxpLORWTOYIJ9oapWTYopQJO', 'Nobilar Alves Moreira', 'nobphs@gmail.com', 'Noby', NULL, NULL, 2, NULL, 1, '2021-08-21 00:56:34', '2021-09-02 22:49:33');
 
 -- --------------------------------------------------------
 
@@ -526,7 +526,7 @@ CREATE TABLE `sts_denuncias_comuns` (
   `latitude` varchar(40) NOT NULL,
   `longitude` varchar(40) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
+  `sts_status_denuncia_id` int(11) NOT NULL,
   `created` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -535,7 +535,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `sts_status_denuncia_id`, `created`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', 1, '2021-06-28 19:15:13');
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', 2, '2021-06-28 19:15:13');
 
 -- --------------------------------------------------------
 
@@ -972,7 +972,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `adms_nivs_aces_pags`

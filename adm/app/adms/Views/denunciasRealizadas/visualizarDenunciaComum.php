@@ -2,6 +2,15 @@
 
     <section id="" class="p-4 alinhamento"> <!-- Início Seção Nova Denúncia Comum -->
         <div class="container">
+
+            <a href="<?php echo URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns'; ?>">
+                <div class="p-2">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                        Listar
+                    </button>
+                </div>
+            </a>
+
             <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DENÚNCIA COMUM</b></h5>
             <fieldset class="the-fieldset">
                 <div class="row">
@@ -20,22 +29,16 @@
                                     extract($this->dados ['dados_denuncia'][0]);
                                     ?>
 
-                                <div class="form-group row alinhamento c-tipo-resp">
-                                    <label for="Tipo" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
-                                    <div class="col-sm-8">
-                                        <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_status_denuncia_id" type="select" id="adms_sit_usuario_id">
-                                            <option value="">Selecione o status da denúncia</option>
-                                            <?php
-                                            foreach ($this->dados['select']['sts'] as $sts) {
-                                                extract($sts);
-                                                if ($valorForm['sts_status_denuncia_id'] == $id_sts) {
-                                                    echo "<option value='$id_sts' selected>$nome_sts</option>";
-                                                } else {
-                                                    echo "<option value='$id_sts'>$nome_sts</option>";
-                                                }
-                                            }
-                                            ?>
-                                        </select>
+                                <div class="form-group row alinhamento c-email-resp"> 
+                                    <label for="status" class="col-sm-2  tamanho-font">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                                    <div class="col-sm-8 t-c-campos">
+                                        <input class="form-control tamanho-font bg-white" name="status" type="text" id="status" placeholder="<?php echo $nome_stat; ?>"
+                                               value="<?php
+                                               if (isset($valorForm['sts_status_denuncia_id'])) {
+                                                   echo $valorForm['sts_status_denuncia_id'];
+                                               }
+                                               ?>"
+                                               readonly>
                                     </div>
                                 </div>
 
@@ -265,7 +268,7 @@
                                             }
                                             ?>
 
-                    <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
+                                <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
                                         </div>
                                     </div>
 
@@ -276,7 +279,7 @@
                             </div>
 
                             <!--<div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-outline-success alin-de">Denunciar</button></div>-->
-                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-status-denuncia/alterar-status-denuncia/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
+                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-status-denuncia-comum/alterar-status-denuncia-comum/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
 
                         </form> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
 

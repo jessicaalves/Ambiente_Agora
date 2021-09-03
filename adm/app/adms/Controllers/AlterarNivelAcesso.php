@@ -14,8 +14,7 @@ class AlterarNivelAcesso {
     private $dados;
     private $dadosId;
 
-    public function alterarNivelAcesso($dadosId = null)
-    {
+    public function alterarNivelAcesso($dadosId = null) {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         $this->dadosId = (int) $dadosId;
         if (!empty($this->dadosId)) {
@@ -27,8 +26,7 @@ class AlterarNivelAcesso {
         }
     }
 
-    private function editNivAcPriv()
-    {
+    private function editNivAcPriv() {
         if (!empty($this->dados['atualizarNivelAcesso'])) {
             unset($this->dados['atualizarNivelAcesso']);
             $editarNivAc = new \App\adms\Models\AdmsAlterarNivelAcesso();
@@ -48,9 +46,8 @@ class AlterarNivelAcesso {
         }
     }
 
-    private function editNivAcViewPriv()
-    {
-        if ($this->dados['form']) {            
+    private function editNivAcViewPriv() {
+        if ($this->dados['form']) {
             $botao = ['visNivelAcesso' => ['menu_controller' => 'visualizar-nivel-acesso', 'menu_metodo' => 'visualizar-nivel-acesso']];
             $listarBotao = new \App\adms\Models\AdmsBotao();
             $this->dados['botao'] = $listarBotao->valBotao($botao);
