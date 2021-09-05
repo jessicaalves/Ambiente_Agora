@@ -3,6 +3,7 @@ if (!defined('URL')) {
     header("Location: /");
     exit();
 }
+
 ?>
 
 <?php
@@ -53,7 +54,11 @@ if (isset($this->dados['form'][0])) {
                     ?>
 
                     <form class="p-2 form" method="POST" action=""> <!-- Início Formulário Alterar Dados Cadastrais -->
-
+                        <input name="id" type="hidden" value="<?php
+                            if (isset($valorForm['id'])) {
+                                echo $valorForm['id'];
+                            }
+                            ?>">
                         <h5 class="p-2 borda-conteudo" id="">Dados - Alterar Status Denúncia</h5><p><p>
 
                         <div class="form-group row alinhamento c-login-resp"> 
@@ -72,7 +77,7 @@ if (isset($this->dados['form'][0])) {
                         <div class="form-group row alinhamento c-tipo-resp">
                             <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
-                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_status_denuncia_id" type="select" id="sts_status_denuncia_id">
+                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_status_denuncia_id" id="sts_status_denuncia_id">
                                     <option value="">Selecione o status da denúncia</option>
                                     <?php
                                     foreach ($this->dados['select']['stat'] as $stat) {
@@ -87,11 +92,6 @@ if (isset($this->dados['form'][0])) {
                                 </select>
                             </div>
                         </div>
-
-
-                        
-
-
 
                         <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Atualizar</button></div> 
 
@@ -109,27 +109,14 @@ if (isset($this->dados['form'][0])) {
                 </div>
             </div>
         </fieldset>
-
-
-
-
     </div>
 
-
-
-
 </section><!-- Final Seção Denúncias Realizadas -->
-
-
 </div>
 </div>
 </div>
 </div> <!-- Final Listar Usuários -->
 </div>
-
-
-
-
 
 
 

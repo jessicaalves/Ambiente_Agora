@@ -29,6 +29,7 @@ class AlterarStatusDenunciaComum {
     private function alterarStatusDenunciaPriv() {
         if (!empty($this->dados['atualizarStatusDenuncia'])) {
             unset($this->dados['atualizarStatusDenuncia']);
+            //var_dump($this->dados);
             $altStatusDenuncia = new \App\adms\Models\AdmsAlterarStatusDenunciaComum();
             $altStatusDenuncia->alterarStatusDenunciaComum($this->dados);
             if ($altStatusDenuncia->getResultado()) {
@@ -52,7 +53,7 @@ class AlterarStatusDenunciaComum {
                 'visDenuncia' => ['menu_controller' => 'visualizar-denuncia-comum', 'menu_metodo' => 'visualizar-denuncia-comum']];
             $listarBotao = new \App\adms\Models\AdmsBotao();
             $this->dados['botao'] = $listarBotao->valBotao($botao);
-            
+
             $listarSelect = new \App\adms\Models\AdmsAlterarStatusDenunciaComum();
             $this->dados['select'] = $listarSelect->listarCadastrar();
 

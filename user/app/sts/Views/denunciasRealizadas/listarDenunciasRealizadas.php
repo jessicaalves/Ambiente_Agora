@@ -80,8 +80,10 @@
                                 <th class="text-success"><?php echo $id; ?></th>
                                 <td><?php echo $titulo; ?></td>
                                 <td><?php echo $tipo; ?></td>
-                                <td class="d-lg-table-cell">Em Andamento</td>
-                                                                                                      
+                                <td class="d-none d-lg-table-cell">
+                                    <span class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></span>
+                                </td>
+
                                 <td class="align-center d-sm-table-cell"><a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar </a></td>
                             </tr>
 

@@ -61,7 +61,7 @@ if (!defined('URL')) {
                             <td><?php echo $id; ?></td>                                  
                             <td><?php echo $tipo; ?></td> 
                             <td class="d-none d-lg-table-cell">
-                                <span class="badge badge-<?php echo $cor_cr; ?>"><?php ?></span>
+                                <span class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status;?></span>
                             </td>
 
                             <td class="align-center">

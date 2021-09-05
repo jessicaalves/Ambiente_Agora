@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Set-2021 às 03:21
+-- Tempo de geração: 05-Set-2021 às 03:03
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -358,29 +358,6 @@ INSERT INTO `adms_sits_usuarios` (`id`, `nome`, `adms_cor_id`, `created`, `modif
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `adms_status_denuncias`
---
-
-CREATE TABLE `adms_status_denuncias` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `adms_cor_id` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `adms_status_denuncias`
---
-
-INSERT INTO `adms_status_denuncias` (`id`, `nome`, `adms_cor_id`, `created`, `modified`) VALUES
-(1, 'Andamento', 3, '2021-08-23 22:52:02', NULL),
-(2, 'Aberto', 1, '2021-08-23 22:52:02', NULL),
-(3, 'Finalizado', 4, '2021-08-23 22:52:02', NULL);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `adms_tipos_pags`
 --
 
@@ -526,16 +503,17 @@ CREATE TABLE `sts_denuncias_comuns` (
   `latitude` varchar(40) NOT NULL,
   `longitude` varchar(40) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `sts_status_denuncia_id` int(11) NOT NULL,
-  `created` datetime DEFAULT NULL
+  `sts_status_denuncia_id` int(11) DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `sts_denuncias_comuns`
 --
 
-INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `sts_status_denuncia_id`, `created`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', 2, '2021-06-28 19:15:13');
+INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', 2, '2021-06-28 19:15:13', '2021-09-05 03:01:41');
 
 -- --------------------------------------------------------
 
@@ -687,8 +665,8 @@ CREATE TABLE `sts_status_denuncias` (
 --
 
 INSERT INTO `sts_status_denuncias` (`id`, `nome`, `adms_cor_id`, `created`, `modified`) VALUES
-(1, 'Em Andamento', 3, '2021-09-02 16:25:38', NULL),
-(2, 'Em Aberto', 1, '2021-09-02 16:25:38', NULL),
+(1, 'Andamento', 3, '2021-09-02 16:25:38', NULL),
+(2, 'Aberto', 1, '2021-09-02 16:25:38', NULL),
 (3, 'Finalizado', 4, '2021-09-02 16:25:38', NULL);
 
 -- --------------------------------------------------------
@@ -829,13 +807,6 @@ ALTER TABLE `adms_sits_pags`
 ALTER TABLE `adms_sits_usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `adms_cor_id_fk` (`adms_cor_id`);
-
---
--- Índices para tabela `adms_status_denuncias`
---
-ALTER TABLE `adms_status_denuncias`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `adms_cors_id_fk` (`adms_cor_id`);
 
 --
 -- Índices para tabela `adms_tipos_pags`
@@ -1005,12 +976,6 @@ ALTER TABLE `adms_sits_usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT de tabela `adms_status_denuncias`
---
-ALTER TABLE `adms_status_denuncias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT de tabela `adms_tipos_pags`
 --
 ALTER TABLE `adms_tipos_pags`
@@ -1134,12 +1099,6 @@ ALTER TABLE `adms_sits_usuarios`
   ADD CONSTRAINT `adms_cor_id_fk` FOREIGN KEY (`adms_cor_id`) REFERENCES `adms_cors` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `adms_status_denuncias`
---
-ALTER TABLE `adms_status_denuncias`
-  ADD CONSTRAINT `adms_cors_id_fk` FOREIGN KEY (`adms_cor_id`) REFERENCES `adms_cors` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
 -- Limitadores para a tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
@@ -1157,7 +1116,7 @@ ALTER TABLE `sts_cads_usuarios`
 -- Limitadores para a tabela `sts_denuncias_comuns`
 --
 ALTER TABLE `sts_denuncias_comuns`
-  ADD CONSTRAINT `sts_status_denuncia_id_fk` FOREIGN KEY (`sts_status_denuncia_id`) REFERENCES `adms_status_denuncias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `sts_status_denuncia_id_fk` FOREIGN KEY (`sts_status_denuncia_id`) REFERENCES `sts_status_denuncias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_usuario_id_fk` FOREIGN KEY (`sts_usuario_id`) REFERENCES `sts_usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

@@ -59,18 +59,13 @@
                                 <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
-                                        <select class="form-control tamanho-font-tipo bg-white" name="tipo" type="select" id="Tipo"
-                                                value="<?php
-                                                if (isset($valorForm['status'])) {
-                                                    echo $valorForm['status'];
-                                                }
-                                                ?>">
-                                            <option selected>Andamento</option>
-                                            <!--                                        <option value="Andamento">Andamento</option>
-                                                                                        <option value="Aberto">Aberto</option>
-                                                                                        <option value="Finalizado">Finalizado</option>
-                                            -->                                            
-                                        </select>
+                                        <input class="form-control tamanho-font bg-white" name="status" type="text" id="status" placeholder="<?php echo $nome_status; ?>"
+                                               value="<?php
+                                               if (isset($valorForm['sts_status_denuncia_id'])) {
+                                                   echo $valorForm['sts_status_denuncia_id'];
+                                               }
+                                               ?>"
+                                               readonly>
                                     </div>
                                 </div>
 
@@ -300,7 +295,7 @@
                                             }
                                             ?>
 
-                <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
+                    <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
                                         </div>
                                     </div>
 

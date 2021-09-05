@@ -32,7 +32,7 @@
                                 <div class="form-group row alinhamento c-email-resp"> 
                                     <label for="status" class="col-sm-2  tamanho-font">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                                     <div class="col-sm-8 t-c-campos">
-                                        <input class="form-control tamanho-font bg-white" name="status" type="text" id="status" placeholder="<?php echo $nome_stat; ?>"
+                                        <input class="form-control tamanho-font bg-white" name="status" type="text" id="status" placeholder="<?php echo $nome_status; ?>"
                                                value="<?php
                                                if (isset($valorForm['sts_status_denuncia_id'])) {
                                                    echo $valorForm['sts_status_denuncia_id'];
