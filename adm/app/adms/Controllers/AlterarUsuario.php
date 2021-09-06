@@ -14,18 +14,13 @@ class AlterarUsuario {
     private $dados;
     private $dadosId;
 
-    public function index() {
-        $alterarUsuario = new AlterarUsuario();
-        $alterarUsuario->alterarUsuario();
-    }
-
     public function alterarUsuario($dadosId = null) {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         $this->dadosId = (int) $dadosId;
         if (!empty($this->dadosId)) {
             $this->alterarUsuarioPriv();
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Usuário não encontrado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Usuário não encontrado!</div>";
             $urlDestino = URLADM . 'listar-usuarios/listar-usuarios';
             header("Location: $urlDestino");
         }
@@ -37,8 +32,8 @@ class AlterarUsuario {
             $alterarUsuario = new \App\adms\Models\AdmsAlterarUsuario();
             $alterarUsuario->alterarUsuario($this->dados);
             if ($alterarUsuario->getResultado()) {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Usuário alterado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-                $UrlDestino = URLADM . 'alterar-usuario/alterar-usuario/' . $this->dados['id'];
+                $_SESSION['msg'] = "<div class='alert alert-success'>Usuário alterado com sucesso!</div>";
+                $UrlDestino = URLADM . 'visualizar-usuario/visualizar-usuario/' . $this->dados['id'];
                 header("Location: $UrlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
@@ -52,12 +47,12 @@ class AlterarUsuario {
     }
 
     private function alterarUsuarioViewPriv() {
-        if ($this->dados['form']) {
+        if ($this->dados['form']) {            
             $botao = ['listUsuario' => ['menu_controller' => 'listar-usuarios', 'menu_metodo' => 'listar-usuarios'],
                 'visUsuario' => ['menu_controller' => 'visualizar-usuario', 'menu_metodo' => 'visualizar-usuario']];
             $listarBotao = new \App\adms\Models\AdmsBotao();
             $this->dados['botao'] = $listarBotao->valBotao($botao);
-
+            
             $listarSelect = new \App\adms\Models\AdmsAlterarUsuario();
             $this->dados['select'] = $listarSelect->listarCadastrar();
 
@@ -66,7 +61,7 @@ class AlterarUsuario {
             $carregarView = new \Core\ConfigView("adms/Views/usuarios/alterarUsuario", $this->dados);
             $carregarView->renderizarAlterarUsuario();
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Usuário não encontrado!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Usuário não encontrado!</div>";
             $urlDestino = URLADM . 'listar-usuarios/listar-usuarios';
             header("Location: $urlDestino");
         }
