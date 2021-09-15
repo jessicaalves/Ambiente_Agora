@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Set-2021 às 02:35
+-- Tempo de geração: 15-Set-2021 às 05:14
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -166,7 +166,7 @@ CREATE TABLE `adms_niveis_acessos` (
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 (1, 'Super Administrador', 1, '2021-06-26 07:00:32', '2021-08-23 02:48:37'),
-(2, 'Administrador', 2, '2021-06-26 07:00:32', '2021-08-23 02:52:52');
+(2, 'Administrador', 2, '2021-06-26 07:00:32', '2021-09-15 03:12:12');
 
 -- --------------------------------------------------------
 
@@ -948,7 +948,7 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_nivs_aces_pags`
 --
 ALTER TABLE `adms_nivs_aces_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT de tabela `adms_pags`
