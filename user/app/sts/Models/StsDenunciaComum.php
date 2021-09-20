@@ -28,7 +28,7 @@ class StsDenunciaComum extends StsDenuncia {
     }
 
     public function __construct($status) {
-        parent::__construct($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $latitude, $longitude, $imagem);
+        parent::__construct($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem);
         $this->status = $status;
     }
 
@@ -40,8 +40,6 @@ class StsDenunciaComum extends StsDenuncia {
         $this->envolvido = isset($this->dados['envolvido']);
         $this->nomeEnvolvido = isset($this->dados['nomeEnvolvido']);
         $this->funcaoEnvolvido = isset($this->dados['funcaoEnvolvido']);
-        $this->latitude = isset($this->dados['latitude']);
-        $this->longitude = isset($this->dados['longitude']);
         $this->imagem = isset($this->dados['imagem']);
         //$this->status = isset($this->dados['status']);
 

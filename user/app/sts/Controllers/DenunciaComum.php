@@ -26,7 +26,7 @@ class DenunciaComum {
             unset($this->dados['cadastrarDenunciaComum']);
 
             $this->dados['imagem'] = ($_FILES['imagem'] ? $_FILES['imagem'] : null);
-            $novaDenunciaComum = new \App\sts\Models\StsDenunciaComum($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $latitude, $longitude, $imagem);
+            $novaDenunciaComum = new \App\sts\Models\StsDenunciaComum($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem);
             $novaDenunciaComum->cadastrarDenunciaComum($this->dados);
             //$novaDenunciaComum->setId($this->dados['id']);
             $novaDenunciaComum->setTitulo($this->dados['titulo']);
@@ -35,8 +35,6 @@ class DenunciaComum {
             $novaDenunciaComum->setEnvolvido($this->dados['envolvido']);
             $novaDenunciaComum->setNomeEnvolvido($this->dados['nomeEnvolvido']);
             $novaDenunciaComum->setFuncaoEnvolvido($this->dados['funcaoEnvolvido']);
-            $novaDenunciaComum->setLatitude($this->dados['latitude']);
-            $novaDenunciaComum->setLongitude($this->dados['longitude']);
             $novaDenunciaComum->setImagem($this->dados['imagem']);
 
             if ($novaDenunciaComum->getResultado()) {

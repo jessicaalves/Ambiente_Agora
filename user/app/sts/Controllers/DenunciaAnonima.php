@@ -19,13 +19,12 @@ class DenunciaAnonima {
     }
 
     public function cadastrarDenunciaAnonima() {
-
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if (!empty($this->dados['cadastrarDenunciaAnonima'])) {
             unset($this->dados['cadastrarDenunciaAnonima']);
 
             $this->dados['imagem'] = ($_FILES['imagem'] ? $_FILES['imagem'] : null);
-            $novaDenunciaAnonima = new \App\sts\Models\StsDenunciaAnonima($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $latitude, $longitude, $imagem);
+            $novaDenunciaAnonima = new \App\sts\Models\StsDenunciaAnonima($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem);
             $novaDenunciaAnonima->cadastrarDenunciaAnonima($this->dados);
             //$novaDenunciaAnonima->setId($this->dados['id']);
             $novaDenunciaAnonima->setTitulo($this->dados['titulo']);
@@ -34,8 +33,6 @@ class DenunciaAnonima {
             $novaDenunciaAnonima->setEnvolvido($this->dados['envolvido']);
             $novaDenunciaAnonima->setNomeEnvolvido($this->dados['nomeEnvolvido']);
             $novaDenunciaAnonima->setFuncaoEnvolvido($this->dados['funcaoEnvolvido']);
-            $novaDenunciaAnonima->setLatitude($this->dados['latitude']);
-            $novaDenunciaAnonima->setLongitude($this->dados['longitude']);
             // $novaDenunciaAnonima->setImagem($this->dados['imagem'] = ($_FILES['imagem'] ? $_FILES['imagem'] : null));
             $novaDenunciaAnonima->setImagem($this->dados['imagem']);
             //var_dump($this->dados);

@@ -249,5 +249,17 @@ class ConfigView {
             echo "Erro ao carregar a página de Visualizar Denúncia Anônima: {$this->nome}!";
         }
     }
+    
+    public function renderizarAlterarStatusDenunciaAnonima() {
+        if (file_exists('app/' . $this->nome . '.php')) {
+            include 'app/adms/Views/include/cabecalho/cabecalhoAlterarStatusDenunciaAnonima.php';
+            include 'app/adms/Views/include/menu/menuListarUsuarios.php';
+            include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
+            include 'app/' . $this->nome . '.php';
+            include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
+        } else {
+            echo "Erro ao carregar a página de Alterar Status Denúncia Anônima: {$this->nome}!";
+        }
+    }
 
 }

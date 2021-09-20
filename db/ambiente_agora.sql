@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Set-2021 às 05:14
+-- Tempo de geração: 20-Set-2021 às 06:21
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -230,7 +230,8 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 (37, 1, 37, 2, 2, 4, 1, 26, '2021-08-23 07:50:32', NULL),
 (38, 1, 38, 2, 2, 4, 1, 27, '2021-08-23 08:17:26', NULL),
 (39, 1, 39, 1, 1, 4, 1, 28, '2021-08-30 21:53:37', NULL),
-(40, 1, 40, 2, 2, 4, 1, 29, '2021-08-31 04:41:52', NULL);
+(40, 1, 40, 2, 2, 4, 1, 29, '2021-08-31 04:41:52', NULL),
+(42, 1, 41, 2, 2, 4, 1, 30, '2021-09-20 04:47:35', NULL);
 
 -- --------------------------------------------------------
 
@@ -286,7 +287,8 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (26, 'VisualizarDenunciaComum', 'visualizarDenunciaComum', 'visualizar-denuncia-comum', 'visualizar-denuncia-comum', 'Visualizar  Denúncia Comum', 'Página de Visualizar  Denúncia Comum - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
 (27, 'AlterarStatusDenunciaComum', 'alterarStatusDenunciaComum', 'alterar-status-denuncia-comum', 'alterar-status-denuncia-comum', 'Alterar Status Denúncia', 'Página de Alterar Status Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
 (28, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
-(29, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL);
+(29, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL),
+(30, 'AlterarStatusDenunciaAnonima', 'alterarStatusDenunciaAnonima', 'alterar-status-denuncia-anonima', 'alterar-status-denuncia-anonima', 'Alterar Status Denúncia Anônima', 'Página de Alterar Status Denúncia Anônima - Ambiente Agora', 1, 2, 1, 3, '2021-09-20 04:44:51', NULL);
 
 -- --------------------------------------------------------
 
@@ -471,18 +473,18 @@ CREATE TABLE `sts_denuncias_anonimas` (
   `envolvido` varchar(220) NOT NULL,
   `nome_envolvido` varchar(220) NOT NULL,
   `funcao_envolvido` varchar(220) NOT NULL,
-  `latitude` varchar(30) NOT NULL,
-  `longitude` varchar(30) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `created` datetime DEFAULT NULL
+  `sts_status_denuncia_id` int(11) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `sts_denuncias_anonimas`
 --
 
-INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `created`) VALUES
-(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', '-16.444962', '-51.802281', 'gatoferido.jpg', '2021-06-28 19:09:47');
+INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
+(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', 'gatoferido.jpg', NULL, '2021-06-28 19:09:47', NULL);
 
 -- --------------------------------------------------------
 
@@ -499,8 +501,6 @@ CREATE TABLE `sts_denuncias_comuns` (
   `envolvido` varchar(220) NOT NULL,
   `nome_envolvido` varchar(220) NOT NULL,
   `funcao_envolvido` varchar(220) NOT NULL,
-  `latitude` varchar(40) NOT NULL,
-  `longitude` varchar(40) NOT NULL,
   `imagem` varchar(220) NOT NULL,
   `sts_status_denuncia_id` int(11) DEFAULT NULL,
   `created` datetime NOT NULL,
@@ -511,8 +511,8 @@ CREATE TABLE `sts_denuncias_comuns` (
 -- Extraindo dados da tabela `sts_denuncias_comuns`
 --
 
-INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `latitude`, `longitude`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', '-16.444962', '-51.802281', 'gatoferido.jpg', 2, '2021-06-28 19:15:13', '2021-09-05 03:25:01');
+INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, '2021-06-28 19:15:13', '2021-09-17 19:24:15');
 
 -- --------------------------------------------------------
 
@@ -839,7 +839,8 @@ ALTER TABLE `sts_confirmar_email`
 -- Índices para tabela `sts_denuncias_anonimas`
 --
 ALTER TABLE `sts_denuncias_anonimas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `sts_status_denuncia_a_id_fk` (`sts_status_denuncia_id`);
 
 --
 -- Índices para tabela `sts_denuncias_comuns`
@@ -948,13 +949,13 @@ ALTER TABLE `adms_niveis_acessos`
 -- AUTO_INCREMENT de tabela `adms_nivs_aces_pags`
 --
 ALTER TABLE `adms_nivs_aces_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT de tabela `adms_pags`
 --
 ALTER TABLE `adms_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `adms_sits`
@@ -1110,6 +1111,12 @@ ALTER TABLE `adms_usuarios`
 ALTER TABLE `sts_cads_usuarios`
   ADD CONSTRAINT `sts_per_acesso_id_fk` FOREIGN KEY (`sts_perm_ace_id`) REFERENCES `sts_perms_aces` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_si_usuario_id_fk` FOREIGN KEY (`sts_sit_usuario_id`) REFERENCES `sts_sits_usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `sts_denuncias_anonimas`
+--
+ALTER TABLE `sts_denuncias_anonimas`
+  ADD CONSTRAINT `sts_status_denuncia_a_id_fk` FOREIGN KEY (`sts_status_denuncia_id`) REFERENCES `sts_status_denuncias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Limitadores para a tabela `sts_denuncias_comuns`

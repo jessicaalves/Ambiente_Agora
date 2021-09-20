@@ -10,7 +10,7 @@ if (!defined('URL')) {
 }
 
 abstract class StsDenuncia {
-   
+
     private $id;
     private $titulo;
     private $tipo;
@@ -18,11 +18,9 @@ abstract class StsDenuncia {
     private $envolvido;
     private $nomeEnvolvido;
     private $funcaoEnvolvido;
-    private $latitude;
-    private $longitude;
     private $imagem;
-    
-    public function __construct($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $latitude, $longitude, $imagem){
+
+    public function __construct($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem) {
         $this->id = $id;
         $this->titulo = $titulo;
         $this->tipo = $tipo;
@@ -30,11 +28,10 @@ abstract class StsDenuncia {
         $this->envolvido = $envolvido;
         $this->nomeEnvolvido = $nomeEnvolvido;
         $this->funcaoEnvolvido = $funcaoEnvolvido;
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
-        $this->imagem = $imagem;      
+
+        $this->imagem = $imagem;
     }
-            
+
     function getId() {
         return $this->id;
     }
@@ -57,14 +54,6 @@ abstract class StsDenuncia {
 
     function getNomeEnvolvido() {
         return $this->nomeEnvolvido;
-    }
-
-    function getLatitude() {
-        return $this->latitude;
-    }
-
-    function getLongitude() {
-        return $this->longitude;
     }
 
     function getFuncaoEnvolvido() {
@@ -101,14 +90,6 @@ abstract class StsDenuncia {
 
     function setFuncaoEnvolvido($funcaoEnvolvido) {
         $this->funcaoEnvolvido = $funcaoEnvolvido;
-    }
-
-    function setLatitude($latitude) {
-        $this->latitude = $latitude;
-    }
-
-    function setLongitude($longitude) {
-        $this->longitude = $longitude;
     }
 
     function setImagem($imagem) {

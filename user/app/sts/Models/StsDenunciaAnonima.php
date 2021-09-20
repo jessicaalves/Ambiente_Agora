@@ -26,8 +26,6 @@ class StsDenunciaAnonima extends StsDenuncia {
         $this->envolvido = isset($this->dados['envolvido']);
         $this->nomeEnvolvido = isset($this->dados['nomeEnvolvido']);
         $this->funcaoEnvolvido = isset($this->dados['funcaoEnvolvido']);
-        $this->latitude = isset($this->dados['latitude']);
-        $this->longitude = isset($this->dados['longitude']);
         $this->imagem = isset($this->dados['imagem']);
 
         $this->dados = $dados;

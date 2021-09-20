@@ -44,6 +44,9 @@ if (!defined('URL')) {
                     <th>Id</th>
                     <th>Título</th>
                     <th class="d-sm-table-cell">Tipo</th>
+                    <td class="d-none d-lg-table-cell">
+                        <span class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></span>
+                    </td>
                     <th class="d-sm-table-cell text-center">Ações</th>
                 </tr>
                 </thead>
@@ -67,6 +70,9 @@ if (!defined('URL')) {
                                     if ($this->dados['botao']['visDenuncia']) {
                                         echo "<a href='" . URLADM . "visualizar-denuncia-anonima/visualizar-denuncia-anonima/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
+                                    if ($this->dados['botao']['altStatusDenuncia']) {
+                                        echo "<a href='" . URLADM . "alterar-status-denuncia-anonima/alterar-status-denuncia-anonima/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
+                                    }
                                     ?>
 
                                 </span>
@@ -80,6 +86,9 @@ if (!defined('URL')) {
                                         <?php
                                         if ($this->dados['botao']['visDenuncia']) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "visualizar-denuncia-anonima/visualizar-denuncia-anonima/$id'>Visualizar</a>";
+                                        }
+                                        if ($this->dados['botao']['altStatusDenuncia']) {
+                                            echo "<a class='dropdown-item' href='" . URLADM . "alterar-status-denuncia-anonima/alterar-status-denuncia-anonima/$id'>Alterar</a>";
                                         }
                                         ?>
 
