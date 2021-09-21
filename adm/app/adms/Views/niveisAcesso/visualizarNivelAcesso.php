@@ -31,6 +31,13 @@ if (!defined('URL')) {
                         <h6 class="ml-2 pt-1">Dados Cadastrais</h6>
                     </div>
 
+                    <?php
+                    if (isset($_SESSION['msg'])) {
+                        echo $_SESSION['msg'];
+                        unset($_SESSION['msg']);
+                    }
+                    ?>
+
                     <form class="p-2" class="form" action="" method="POST"> <!-- Início Formulário Alterar Usuário -->
 
                         <h5 class="p-2 borda-conteudo" id="">Dados - Visualizar Nível de Acesso</h5><p><p>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Set-2021 às 06:21
+-- Tempo de geração: 21-Set-2021 às 05:10
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -410,7 +410,7 @@ CREATE TABLE `adms_usuarios` (
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$lMeUOKTh5AxXZmSsjH19v.xyZWVjSiQ5GdqCVjXwhrpyHyUQ37CIG', 'Jéssica Alves Moreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-08-18 04:18:40'),
 (2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$cKTJ7Y8apxIzX64GRwIx2Oar9dT9KciXLnQQFCt93Bwiop6F381MG', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-06 02:27:04'),
-(3, 'nobphs@gmail.com', '$2y$10$dsglYaT5HM1NpR1mJ4j3m.oPUfj4VuM8KWtL2m987xyUsSITf3ZSu', 'Nobilar Alves Moreira', 'nobphs@gmail.com', 'Noby', NULL, NULL, 2, NULL, 1, '2021-08-21 00:56:34', '2021-09-06 02:33:44');
+(3, 'nobphs@gmail.com', '$2y$10$ds/WXmy71sqE8Hdpqi3P7uontgyDd.GFb2I.2Wq4xYc5H4jyJ98q6', 'Nobilar Alves Moreira', 'nobphs@gmail.com', 'Noby', NULL, NULL, 2, NULL, 1, '2021-08-21 00:56:34', '2021-09-21 05:03:11');
 
 -- --------------------------------------------------------
 
@@ -484,7 +484,7 @@ CREATE TABLE `sts_denuncias_anonimas` (
 --
 
 INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
-(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', 'gatoferido.jpg', NULL, '2021-06-28 19:09:47', NULL);
+(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', 'gatoferido.jpg', 2, '2021-06-28 19:09:47', '2021-09-21 05:01:54');
 
 -- --------------------------------------------------------
 

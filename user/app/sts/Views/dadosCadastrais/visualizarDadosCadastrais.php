@@ -38,6 +38,13 @@
                         <div class="borda-sup">
                             <h6 class="ml-2 pt-1">Dados Cadastrais</h6>
                         </div>
+                        
+                        <?php
+                        if (isset($_SESSION['msg'])) {
+                            echo $_SESSION['msg'];
+                            unset($_SESSION['msg']);
+                        }
+                        ?>
 
                         <form class="p-2" class="form" action="<?php echo URL . 'user/alterar-dados-cadastrais/alterar-dados-cadastrais'; ?>" method="POST"> <!-- Início Formulário Alterar Dados Cadastrais -->
 

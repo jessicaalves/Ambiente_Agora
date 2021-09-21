@@ -35,21 +35,20 @@ class AlterarDadosCadastrais {
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
-
-                $listarMenu = new \App\adms\Models\AdmsMenu();
-                $this->dados['menu'] = $listarMenu->itemMenu();
-                $carregarView = new \Core\ConfigView("adms/Views/dadosCadastrais/alterarDadosCadastrais", $this->dados);
-                $carregarView->renderizarAlterarDadosCadastrais();
+                $this->altDadosCadastraisPriv();
             }
         } else {
             $visualizarDadosUsuario = new \App\adms\Models\AdmsVisualizarDadosCadastrais();
             $this->dados['form'] = $visualizarDadosUsuario->visualizarDadosCadastrais();
-
-            $listarMenu = new \App\adms\Models\AdmsMenu();
-            $this->dados['menu'] = $listarMenu->itemMenu();
-            $carregarView = new \Core\ConfigView("adms/Views/dadosCadastrais/alterarDadosCadastrais", $this->dados);
-            $carregarView->renderizarAlterarDadosCadastrais();
+            $this->altDadosCadastraisPriv();
         }
+    }
+
+    private function altDadosCadastraisPriv() {
+        $listarMenu = new \App\adms\Models\AdmsMenu();
+        $this->dados['menu'] = $listarMenu->itemMenu();
+        $carregarView = new \Core\ConfigView("adms/Views/dadosCadastrais/alterarDadosCadastrais", $this->dados);
+        $carregarView->renderizarAlterarDadosCadastrais();
     }
 
 }

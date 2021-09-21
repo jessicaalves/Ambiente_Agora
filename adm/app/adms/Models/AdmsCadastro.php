@@ -172,7 +172,7 @@ class AdmsCadastro {
             $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso! Verifique sua caixa de entrada para confirmar seu e-mail.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-primary'>Usuário cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-primary'>Usuário cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }

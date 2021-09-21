@@ -19,6 +19,13 @@
                             <h6 class="ml-2 pt-1">Dados da Denúncia</h6>
                         </div>
 
+                        <?php
+                        if (isset($_SESSION['msg'])) {
+                            echo $_SESSION['msg'];
+                            unset($_SESSION['msg']);
+                        }
+                        ?>
+
                         <form class="p-2" class="form" method="POST" id="formDenunciaComum" enctype="multipart/form-data"> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
 
                             <h5 class="p-2 margem-titulo borda-conteudo" id="">Dados Cadastrais - Denúncia</h5><p><p>
@@ -141,7 +148,7 @@
                                             }
                                             ?>
 
-                                <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
+                                    <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
                                         </div>
                                     </div>
 

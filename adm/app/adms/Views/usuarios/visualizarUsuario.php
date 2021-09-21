@@ -7,7 +7,7 @@ if (!defined('URL')) {
 
 <section id="" class="p-4 alinhamento"> <!-- Início Seção Visualizar Cadastro -->
     <div class="container">
-        
+
         <a href="<?php echo URLADM . 'listar-usuarios/listar-usuarios'; ?>">
             <div class="p-2">
                 <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
@@ -15,7 +15,7 @@ if (!defined('URL')) {
                 </button>
             </div>
         </a>
-        
+
         <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR USUÁRIO</b></h5>
         <fieldset class="the-fieldset">    
             <div class="row">
@@ -23,6 +23,13 @@ if (!defined('URL')) {
                     <div class="borda-sup">
                         <h6 class="ml-2 pt-1">Dados Cadastrais</h6>
                     </div>
+
+                    <?php
+                    if (isset($_SESSION['msg'])) {
+                        echo $_SESSION['msg'];
+                        unset($_SESSION['msg']);
+                    }
+                    ?>
 
                     <form class="p-2" class="form" action="" method="POST"> <!-- Início Formulário Alterar Usuário -->
 
@@ -114,7 +121,7 @@ if (!defined('URL')) {
                                            readonly>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="nivelAcesso" class="col-sm-2  tamanho-font">Nível de Acesso</label> 
                                 <div class="col-sm-8 t-c-campos">
@@ -127,7 +134,7 @@ if (!defined('URL')) {
                                            readonly>
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="situacaoUser" class="col-sm-2  tamanho-font">Situação</label> 
                                 <div class="col-sm-8 t-c-campos">

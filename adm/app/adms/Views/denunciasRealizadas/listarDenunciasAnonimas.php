@@ -44,9 +44,7 @@ if (!defined('URL')) {
                     <th>Id</th>
                     <th>Título</th>
                     <th class="d-sm-table-cell">Tipo</th>
-                    <td class="d-none d-lg-table-cell">
-                        <span class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></span>
-                    </td>
+                    <th>Status</th>
                     <th class="d-sm-table-cell text-center">Ações</th>
                 </tr>
                 </thead>
@@ -61,7 +59,10 @@ if (!defined('URL')) {
                         <tr>
                             <th class="text-success"><?php echo $id; ?></th>
                             <td><?php echo $id; ?></td>                                  
-                            <td><?php echo $tipo; ?></td>                             
+                            <td><?php echo $tipo; ?></td>  
+                            <td class="d-none d-lg-table-cell">
+                                <span class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></span>
+                            </td>
 
                             <td class="align-center">
                                 <span class="d-none d-md-block">

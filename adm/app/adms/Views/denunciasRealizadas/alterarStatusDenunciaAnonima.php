@@ -37,7 +37,7 @@ if (isset($this->dados['form'][0])) {
         ?>
 
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR STATUS DENÚNCIA COMUM</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR STATUS DENÚNCIA ANÔNIMA</b></h5>
 
         <fieldset class="the-fieldset">    
             <div class="row">

@@ -77,7 +77,7 @@ class AdmsEsqueceuSenha {
             $_SESSION['msg'] = "<div class='alert alert-success'>E-mail enviado com sucesso! Verifique sua caixa de entrada para recuperar sua senha.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-primary'>Erro: Não foi possivel enviar o e-mail para recuperar a senha!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-primary'>Erro: Não foi possivel enviar o e-mail para recuperar a senha!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }
