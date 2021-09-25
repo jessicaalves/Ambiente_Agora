@@ -57,7 +57,7 @@ class ConfigView {
             echo "Erro ao carregar a página de Atualizar Senha: {$this->nome}!";
         }
     }
-    
+
     public function renderizarEsqueceuSenha() {
         if (file_exists('app/' . $this->nome . '.php')) {
             include 'app/sts/Views/include/cabecalho/cabecalhoEsqueceuSenha.php';
@@ -130,19 +130,30 @@ class ConfigView {
             include 'app/sts/Views/include/menu/menuDadosCadastrais.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
-        }else{
+        } else {
             echo "Erro ao carregar a página de Alterar Dados Cadastrais: {$this->nome}!";
         }
     }
 
     public function renderizarDadosDenuncia() {
-       if (file_exists('app/' . $this->nome . '.php')) {
+        if (file_exists('app/' . $this->nome . '.php')) {
             include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
             include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
             echo "Erro ao carregar a página de Denúncias Realizadas: {$this->nome}!";
+        }
+    }
+
+    public function renderizarLinhaTempoDenuncia() {
+        if (file_exists('app/' . $this->nome . '.php')) {
+            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarLinhaTempoDenuncia.php';
+            include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
+            include 'app/' . $this->nome . '.php';
+            include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
+        } else {
+            echo "Erro ao carregar a página de Visualizar Linha do Tempo da Denúncia: {$this->nome}!";
         }
     }
 

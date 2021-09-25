@@ -56,9 +56,10 @@
                                     extract($this->dados ['dados_denuncia'][0]);
                                     ?>
 
+
                                 <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;&nbsp;</label> 
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-7">
                                         <input class="form-control tamanho-font bg-white" name="status" type="text" id="status" placeholder="<?php echo $nome_status; ?>"
                                                value="<?php
                                                if (isset($valorForm['sts_status_denuncia_id'])) {
@@ -66,8 +67,16 @@
                                                }
                                                ?>"
                                                readonly>
+
+                                    </div>
+                                    
+                                    <div>
+                                        <a href="<?php echo URL . 'user/visualizar-linha-tempo-denuncia/visualizar-linha-tempo-denuncia/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar </a>
                                     </div>
                                 </div>
+
+
+
 
                                 <div class="form-group row alinhamento c-titulo-resp"> 
                                     <label for="Titulo" class="col-sm-2 col-form-label tamanho-font alin-tit">Título&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
@@ -168,7 +177,7 @@
                                             }
                                             ?>
 
-                        <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
+                                                                                    <!--                                            <img src="" alt="Imagem da Denúncia" id="preview-img" class="img-thumbnail" style="width:135px; height:135px;">-->
                                         </div>
                                     </div>
 
@@ -186,6 +195,9 @@
                 </div>
             </fieldset>
         </div>
+
+
+
     </section><!-- Final Seção Nova Denúncia Comum -->
 </div>
 
