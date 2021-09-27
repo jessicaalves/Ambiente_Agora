@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Set-2021 às 00:52
+-- Tempo de geração: 27-Set-2021 às 04:09
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -90,7 +90,8 @@ INSERT INTO `adms_cors` (`id`, `nome`, `cor`, `created`, `modified`) VALUES
 (1, 'Azul', 'primary', '2021-08-16 03:41:17', NULL),
 (2, 'Vermelho', 'danger', '2021-08-16 03:42:17', NULL),
 (3, 'Amarelo', 'warning', '2021-08-17 00:14:51', NULL),
-(4, 'Verde', 'success', '2021-08-17 00:15:13', NULL);
+(4, 'Verde', 'success', '2021-08-17 00:15:13', NULL),
+(5, 'Azul Claro', 'info', '2021-09-27 03:06:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -512,8 +513,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, '2021-06-28 19:15:13', '2021-09-17 19:24:15'),
-(2, 1, 'Teste', 'Flora', 'Teste', 'Pessoa Física', 'João', 'Aposentado', 'doguinhoatropelado.png', 2, '2021-09-25 05:54:33', NULL);
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, '2021-06-28 19:15:13', '2021-09-27 04:07:52');
 
 -- --------------------------------------------------------
 
@@ -656,6 +656,7 @@ INSERT INTO `sts_sits_usuarios` (`id`, `nome`, `created`, `modified`) VALUES
 CREATE TABLE `sts_status_denuncias` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
+  `descricao` varchar(220) NOT NULL,
   `adms_cor_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -665,10 +666,11 @@ CREATE TABLE `sts_status_denuncias` (
 -- Extraindo dados da tabela `sts_status_denuncias`
 --
 
-INSERT INTO `sts_status_denuncias` (`id`, `nome`, `adms_cor_id`, `created`, `modified`) VALUES
-(1, 'Andamento', 3, '2021-09-02 16:25:38', NULL),
-(2, 'Aberto', 1, '2021-09-02 16:25:38', NULL),
-(3, 'Finalizado', 4, '2021-09-02 16:25:38', NULL);
+INSERT INTO `sts_status_denuncias` (`id`, `nome`, `descricao`, `adms_cor_id`, `created`, `modified`) VALUES
+(1, 'Andamento', 'Os fiscais estão averiguando os fatos para comprovar a veracidade das informações da denúncia.', 3, '2021-09-02 16:25:38', NULL),
+(2, 'Aberto', 'Uma nova denúncia foi criada.', 4, '2021-09-02 16:25:38', NULL),
+(3, 'Finalizado com Notificação', 'O responsável foi notificado para regularizar a situação e reparar o dano causado. ', 1, '2021-09-02 16:25:38', NULL),
+(4, 'Finalizado com Processo', 'Já que a situação não foi resolvida após a notificação, foi aberto um processo contra o responsável.', 5, '2021-09-27 03:00:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -927,7 +929,7 @@ ALTER TABLE `adms_confirmar_email`
 -- AUTO_INCREMENT de tabela `adms_cors`
 --
 ALTER TABLE `adms_cors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `adms_grups_pags`
@@ -1011,7 +1013,7 @@ ALTER TABLE `sts_denuncias_anonimas`
 -- AUTO_INCREMENT de tabela `sts_denuncias_comuns`
 --
 ALTER TABLE `sts_denuncias_comuns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `sts_grups_pags`
@@ -1047,7 +1049,7 @@ ALTER TABLE `sts_sits_usuarios`
 -- AUTO_INCREMENT de tabela `sts_status_denuncias`
 --
 ALTER TABLE `sts_status_denuncias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `sts_tipos_pags`

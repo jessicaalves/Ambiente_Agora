@@ -59,7 +59,7 @@
                                 <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="created" class="col-sm-2 col-form-label tamanho-font alin-tip"> <?php echo $created; ?>&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
-                                        <input class="form-control-plaintext tamanho-font bg-white" name="created" type="text" id="created" placeholder="Data de Criação da Denúncia"
+                                        <input class="form-control-plaintext tamanho-font bg-white" name="created" type="text" id="created" placeholder="<?php echo $descricao_status; ?>"
                                                value="<?php
                                                if (isset($valorForm['created'])) {
                                                    echo $valorForm['created'];
@@ -72,7 +72,7 @@
                             <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="modified" class="col-sm-2 col-form-label tamanho-font alin-tip"> <?php echo $modified; ?>&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
-                                        <input class="form-control-plaintext tamanho-font bg-white" name="modified" type="text" id="modified" placeholder="Data de Alteração do Status da Denúncia"
+                                        <input class="form-control-plaintext tamanho-font bg-white" name="modified" type="text" id="modified" placeholder="..."
                                                value="<?php
                                                if (isset($valorForm['modified'])) {
                                                    echo $valorForm['modified'];
