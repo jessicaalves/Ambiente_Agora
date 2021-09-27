@@ -68,6 +68,19 @@
                                                readonly>
                                     </div>
                                 </div>
+                            
+                            <div class="form-group row alinhamento c-tipo-resp">
+                                    <label for="modified" class="col-sm-2 col-form-label tamanho-font alin-tip"> <?php echo $modified; ?>&nbsp;&nbsp;</label> 
+                                    <div class="col-sm-8">
+                                        <input class="form-control-plaintext tamanho-font bg-white" name="modified" type="text" id="modified" placeholder="Data de Alteração do Status da Denúncia"
+                                               value="<?php
+                                               if (isset($valorForm['modified'])) {
+                                                   echo $valorForm['modified'];
+                                               }
+                                               ?>"
+                                               readonly>
+                                    </div>
+                                </div>
 
 
                                 <?php

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Set-2021 às 06:05
+-- Tempo de geração: 27-Set-2021 às 00:52
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -474,7 +474,7 @@ CREATE TABLE `sts_denuncias_anonimas` (
   `nome_envolvido` varchar(220) NOT NULL,
   `funcao_envolvido` varchar(220) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `sts_status_denuncia_id` int(11) DEFAULT NULL,
+  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 2,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
