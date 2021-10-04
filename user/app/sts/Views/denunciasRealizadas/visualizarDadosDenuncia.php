@@ -71,7 +71,7 @@
                                     </div>
                                     
                                     <div>
-                                        <a href="<?php echo URL . 'user/visualizar-linha-tempo-denuncia/visualizar-linha-tempo-denuncia/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar </a>
+                                        <a href="<?php echo URL . 'user/visualizar-status-denuncia/visualizar-status-denuncia/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar </a>
                                     </div>
                                 </div>
 

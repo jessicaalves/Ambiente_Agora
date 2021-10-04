@@ -26,7 +26,7 @@ class VisualizarDadosDenuncia {
             $this->dados['dados_denuncia'] = $visualizarDadosDenuncia->visualizarDadosDenuncia($this->dadosId);
             if ($this->dados['dados_denuncia']) {
                 $carregarView = new \Core\ConfigView('sts/Views/denunciasRealizadas/visualizarDadosDenuncia', $this->dados);
-                $carregarView->renderizarDadosDenuncia();
+                $carregarView->renderizarVisualizarDadosDenuncia();
             } else {
                 $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao encontrar denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
                 $urlDestino = URL . 'user/listar-denuncias-realizadas/listar-denuncias-realizadas';

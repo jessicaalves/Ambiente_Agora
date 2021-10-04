@@ -38,7 +38,7 @@
                 </div>
             </a>
 
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR LINHA DO TEMPO DA DENÚNCIA</b></h5>
+            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR STATUS DA DENÚNCIA</b></h5>
             <fieldset class="the-fieldset">
                 <div class="row">
                     <div class="col-md-12">

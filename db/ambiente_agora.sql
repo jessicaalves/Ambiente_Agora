@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Set-2021 às 04:09
+-- Tempo de geração: 04-Out-2021 às 05:56
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -475,7 +475,7 @@ CREATE TABLE `sts_denuncias_anonimas` (
   `nome_envolvido` varchar(220) NOT NULL,
   `funcao_envolvido` varchar(220) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 2,
+  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -503,7 +503,8 @@ CREATE TABLE `sts_denuncias_comuns` (
   `nome_envolvido` varchar(220) NOT NULL,
   `funcao_envolvido` varchar(220) NOT NULL,
   `imagem` varchar(220) NOT NULL,
-  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 2,
+  `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
+  `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -512,8 +513,31 @@ CREATE TABLE `sts_denuncias_comuns` (
 -- Extraindo dados da tabela `sts_denuncias_comuns`
 --
 
-INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, '2021-06-28 19:15:13', '2021-09-27 04:07:52');
+INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, 1, '2021-06-28 19:15:13', '2021-09-27 04:07:52');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `sts_descricoes_status_denuncias`
+--
+
+CREATE TABLE `sts_descricoes_status_denuncias` (
+  `id` int(11) NOT NULL,
+  `descricao` varchar(220) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `sts_descricoes_status_denuncias`
+--
+
+INSERT INTO `sts_descricoes_status_denuncias` (`id`, `descricao`, `created`, `modified`) VALUES
+(1, 'Uma nova denúncia foi criada.', '2021-10-04 05:29:16', NULL),
+(2, 'Os fiscais estão averiguando os fatos para comprovar a veracidade das informações da denúncia.', '2021-10-04 05:29:16', NULL),
+(3, 'O responsável foi notificado para regularizar a situação e reparar o dano causado. ', '2021-10-04 05:29:16', '2021-10-04 05:29:16'),
+(4, 'Já que a situação não foi resolvida após a notificação, foi aberto um processo contra o responsável.\r\n', '2021-10-04 05:29:16', '2021-10-04 05:29:16');
 
 -- --------------------------------------------------------
 
@@ -580,7 +604,7 @@ INSERT INTO `sts_pags` (`id`, `controller`, `metodo`, `nome`, `titulo`, `liberad
 (12, 'VisualizarDadosDenuncia', 'visualizarDadosDenuncia', 'Página de Visualizar Dados da Denúncia Realizada', 'Minha Conta - Ambiente Agora ', 1, 5, 1, 4, '2021-06-27 05:42:16', NULL),
 (13, 'AtualSenha', 'atualSenha', 'Página para Atualizar a Senha', 'Página para Atualizar a Senha - Ambiente Agora', 1, 5, 1, 5, '2021-06-27 05:42:16', NULL),
 (14, 'ConfirmarEmail', 'confirmarEmail', 'Página de Confirmar E-mail', 'Página de Confirmar E-mail - Ambiente Agora', 1, 3, 1, 5, '2021-08-06 07:08:16', NULL),
-(15, 'VisualizarLinhaTempoDenuncia', 'visualizarLinhaTempoDenuncia', 'Página de Visualizar Linha do Tempo da Denuncia', 'Página de Visualizar Linha do Tempo da Denuncia - Ambiente Agora', 1, 5, 1, 4, '2021-09-25 03:57:56', NULL);
+(15, 'VisualizarStatusDenuncia', 'visualizarStatusDenuncia', 'Página de Visualizar Status da Denúncia', 'Página de Visualizar Status da Denúncia - Ambiente Agora', 1, 5, 1, 4, '2021-09-25 03:57:56', NULL);
 
 -- --------------------------------------------------------
 
@@ -656,8 +680,8 @@ INSERT INTO `sts_sits_usuarios` (`id`, `nome`, `created`, `modified`) VALUES
 CREATE TABLE `sts_status_denuncias` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `descricao` varchar(220) NOT NULL,
   `adms_cor_id` int(11) NOT NULL,
+  `sts_descricao_status_denuncia` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -666,11 +690,11 @@ CREATE TABLE `sts_status_denuncias` (
 -- Extraindo dados da tabela `sts_status_denuncias`
 --
 
-INSERT INTO `sts_status_denuncias` (`id`, `nome`, `descricao`, `adms_cor_id`, `created`, `modified`) VALUES
-(1, 'Andamento', 'Os fiscais estão averiguando os fatos para comprovar a veracidade das informações da denúncia.', 3, '2021-09-02 16:25:38', NULL),
-(2, 'Aberto', 'Uma nova denúncia foi criada.', 4, '2021-09-02 16:25:38', NULL),
-(3, 'Finalizado com Notificação', 'O responsável foi notificado para regularizar a situação e reparar o dano causado. ', 1, '2021-09-02 16:25:38', NULL),
-(4, 'Finalizado com Processo', 'Já que a situação não foi resolvida após a notificação, foi aberto um processo contra o responsável.', 5, '2021-09-27 03:00:55', NULL);
+INSERT INTO `sts_status_denuncias` (`id`, `nome`, `adms_cor_id`, `sts_descricao_status_denuncia`, `created`, `modified`) VALUES
+(1, 'Aberto', 4, 0, '2021-09-02 16:25:38', NULL),
+(2, 'Andamento', 3, 0, '2021-09-02 16:25:38', NULL),
+(3, 'Finalizado com Notificação', 1, 0, '2021-09-02 16:25:38', NULL),
+(4, 'Finalizado com Processo', 5, 0, '2021-09-27 03:00:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -852,7 +876,14 @@ ALTER TABLE `sts_denuncias_anonimas`
 ALTER TABLE `sts_denuncias_comuns`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sts_usuario_id_fk` (`sts_usuario_id`),
-  ADD KEY `sts_status_denuncia_id_fk` (`sts_status_denuncia_id`);
+  ADD KEY `sts_status_denuncia_id_fk` (`sts_status_denuncia_id`),
+  ADD KEY `sts_descricao_stat_id_fk` (`sts_descricao_stat_id`);
+
+--
+-- Índices para tabela `sts_descricoes_status_denuncias`
+--
+ALTER TABLE `sts_descricoes_status_denuncias`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `sts_grups_pags`
@@ -892,7 +923,8 @@ ALTER TABLE `sts_sits_usuarios`
 --
 ALTER TABLE `sts_status_denuncias`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `adms_cores_id_fk` (`adms_cor_id`);
+  ADD KEY `adms_cores_id_fk` (`adms_cor_id`),
+  ADD KEY `sts_descricao_stat_denun_fk` (`sts_descricao_status_denuncia`) USING BTREE;
 
 --
 -- Índices para tabela `sts_tipos_pags`
@@ -1016,6 +1048,12 @@ ALTER TABLE `sts_denuncias_comuns`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de tabela `sts_descricoes_status_denuncias`
+--
+ALTER TABLE `sts_descricoes_status_denuncias`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de tabela `sts_grups_pags`
 --
 ALTER TABLE `sts_grups_pags`
@@ -1126,6 +1164,7 @@ ALTER TABLE `sts_denuncias_anonimas`
 -- Limitadores para a tabela `sts_denuncias_comuns`
 --
 ALTER TABLE `sts_denuncias_comuns`
+  ADD CONSTRAINT `sts_descricao_stat_id_fk` FOREIGN KEY (`sts_descricao_stat_id`) REFERENCES `sts_descricoes_status_denuncias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_status_denuncia_id_fk` FOREIGN KEY (`sts_status_denuncia_id`) REFERENCES `sts_status_denuncias` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `sts_usuario_id_fk` FOREIGN KEY (`sts_usuario_id`) REFERENCES `sts_usuarios` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 

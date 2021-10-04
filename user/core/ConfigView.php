@@ -135,25 +135,25 @@ class ConfigView {
         }
     }
 
-    public function renderizarDadosDenuncia() {
+    public function renderizarVisualizarDadosDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
             include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
             include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Denúncias Realizadas: {$this->nome}!";
+            echo "Erro ao carregar a página de Visualizar Denúncias Realizadas: {$this->nome}!";
         }
     }
 
-    public function renderizarLinhaTempoDenuncia() {
+    public function renderizarVisualizarStatusDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarLinhaTempoDenuncia.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarStatusDenuncia.php';
             include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Linha do Tempo da Denúncia: {$this->nome}!";
+            echo "Erro ao carregar a página de Visualizar Status da Denúncia: {$this->nome}!";
         }
     }
 

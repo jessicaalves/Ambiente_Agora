@@ -22,7 +22,6 @@ class StsVisualizarDadosDenuncia {
                  FROM sts_denuncias_comuns denun
                  INNER JOIN sts_status_denuncias sts ON sts.id=denun.sts_status_denuncia_id
                  WHERE denun.id =:id LIMIT :limit", "id=" . $this->dadosId . "&limit=1");
-
         $this->resultado = $visualizarDadosDenuncia->getResultado();
         return $this->resultado;
     }
