@@ -61,7 +61,7 @@ if (!defined('URL')) {
                             <td><?php echo $id; ?></td>                                  
                             <td><?php echo $tipo; ?></td>  
                             <td class="d-none d-lg-table-cell">
-                                <span class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></span>
+                                <a href="<?php echo URLADM . 'alterar-status-denuncia-anonima/alterar-status-denuncia-anonima/' . $id; ?>" class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></a>
                             </td>
 
                             <td class="align-center">

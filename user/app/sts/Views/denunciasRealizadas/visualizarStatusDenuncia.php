@@ -57,12 +57,12 @@
                                     ?>
 
                                 <div class="form-group row alinhamento c-tipo-resp">
-                                    <label for="created" class="col-sm-2 col-form-label tamanho-font alin-tip"> <?php echo $created; ?>&nbsp;&nbsp;</label> 
+                                    <label for="id" class="col-sm-2 col-form-label tamanho-font alin-tip"> Id&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
-                                        <input class="form-control-plaintext tamanho-font bg-white" name="created" type="text" id="created" placeholder="<?php echo $descricao_status; ?>"
+                                        <input class="form-control-plaintext tamanho-font bg-white" name="id" type="text" id="created" placeholder="<?php echo $id; ?>"
                                                value="<?php
-                                               if (isset($valorForm['created'])) {
-                                                   echo $valorForm['created'];
+                                               if (isset($valorForm['id'])) {
+                                                   echo $valorForm['id'];
                                                }
                                                ?>"
                                                readonly>
@@ -70,12 +70,25 @@
                                 </div>
                             
                             <div class="form-group row alinhamento c-tipo-resp">
-                                    <label for="modified" class="col-sm-2 col-form-label tamanho-font alin-tip"> <?php echo $modified; ?>&nbsp;&nbsp;</label> 
+                                    <label for="status" class="col-sm-2 col-form-label tamanho-font alin-tip"> Status&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
-                                        <input class="form-control-plaintext tamanho-font bg-white" name="modified" type="text" id="modified" placeholder="..."
+                                        <input class="form-control-plaintext tamanho-font bg-white" name="status" type="text" id="modified" placeholder="<?php echo $nome_status; ?>"
                                                value="<?php
-                                               if (isset($valorForm['modified'])) {
-                                                   echo $valorForm['modified'];
+                                               if (isset($valorForm['nome_status'])) {
+                                                   echo $valorForm['nome_status'];
+                                               }
+                                               ?>"
+                                               readonly>
+                                    </div>
+                                </div>
+                            
+                            <div class="form-group row alinhamento c-tipo-resp">
+                                    <label for="descricao" class="col-sm-2 col-form-label tamanho-font alin-tip"> Descrição&nbsp;&nbsp;</label> 
+                                    <div class="col-sm-8">
+                                        <input class="form-control-plaintext tamanho-font bg-white" name="descricao" type="text" id="modified" placeholder="<?php echo $descricao_status; ?>"
+                                               value="<?php
+                                               if (isset($valorForm['descricao_status'])) {
+                                                   echo $valorForm['descricao_status'];
                                                }
                                                ?>"
                                                readonly>

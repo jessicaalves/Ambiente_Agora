@@ -92,6 +92,25 @@ if (isset($this->dados['form'][0])) {
                                 </select>
                             </div>
                         </div>
+                        
+                        <div class="form-group row alinhamento c-tipo-resp">
+                            <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Descrição&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                            <div class="col-sm-8">
+                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_descricao_stat_id" id="sts_status_denuncia_id">
+                                    <option value="">Selecione a descrição da denúncia</option>
+                                    <?php
+                                    foreach ($this->dados['select']['descr'] as $descr) {
+                                        extract($descr);
+                                        if ($valorForm['sts_descricao_stat_id'] == $id_descr) {
+                                            echo "<option value='$id_descr' selected>$descr_stat</option>";
+                                        } else {
+                                            echo "<option value='$id_descr'>$descr_stat</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Atualizar</button></div> 
 
