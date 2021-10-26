@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Out-2021 às 05:52
+-- Tempo de geração: 26-Out-2021 às 05:19
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -410,8 +410,7 @@ CREATE TABLE `adms_usuarios` (
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$zDJxF.5mvIvT4YE1t.POT.82JO6gPrOeZvKqkD3vtQHQVj0O0cLCe', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie J', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-09-21 05:59:18'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$cKTJ7Y8apxIzX64GRwIx2Oar9dT9KciXLnQQFCt93Bwiop6F381MG', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-06 02:27:04'),
-(3, 'nobphs@gmail.com', '$2y$10$ds/WXmy71sqE8Hdpqi3P7uontgyDd.GFb2I.2Wq4xYc5H4jyJ98q6', 'Nobilar Alves Moreira', 'nobphs@gmail.com', 'Noby', NULL, NULL, 2, NULL, 1, '2021-08-21 00:56:34', '2021-09-21 05:03:11');
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$cKTJ7Y8apxIzX64GRwIx2Oar9dT9KciXLnQQFCt93Bwiop6F381MG', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-06 02:27:04');
 
 -- --------------------------------------------------------
 
@@ -515,7 +514,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2021-06-28 19:15:13', '2021-10-16 05:28:33');
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, 1, '2021-06-28 19:15:13', '2021-10-26 05:10:22');
 
 -- --------------------------------------------------------
 
@@ -535,10 +534,10 @@ CREATE TABLE `sts_descricoes_status_denuncias` (
 --
 
 INSERT INTO `sts_descricoes_status_denuncias` (`id`, `descricao`, `created`, `modified`) VALUES
-(1, 'Uma nova denúncia foi criada.', '2021-10-04 05:29:16', NULL),
-(2, 'Os fiscais estão averiguando os fatos para comprovar a veracidade das informações da denúncia.', '2021-10-04 05:29:16', NULL),
-(3, 'O responsável foi notificado para regularizar a situação e reparar o dano causado. ', '2021-10-04 05:29:16', '2021-10-04 05:29:16'),
-(4, 'Já que a situação não foi resolvida após a notificação, foi aberto um processo contra o responsável.\r\n', '2021-10-04 05:29:16', '2021-10-04 05:29:16');
+(1, 'Uma nova denúncia foi criada', '2021-10-04 05:29:16', NULL),
+(2, 'Os fiscais estão averiguando os fatos para comprovar a veracidade das informações da denúncia', '2021-10-04 05:29:16', NULL),
+(3, 'O responsável foi notificado para regularizar a situação e reparar o dano causado', '2021-10-04 05:29:16', '2021-10-04 05:29:16'),
+(4, 'Já que a situação não foi resolvida após a notificação, foi aberto um processo contra o responsável', '2021-10-04 05:29:16', '2021-10-04 05:29:16');
 
 -- --------------------------------------------------------
 
@@ -753,8 +752,7 @@ CREATE TABLE `sts_usuarios` (
 --
 
 INSERT INTO `sts_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `chave_descadastro`, `sts_perm_ace_id`, `sts_sit_usuario_id`, `sts_grup_pag_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$V7jWvDVY0279uYBBiXK7DeleUXxxakpixFJRpebYvW6llAGxrVmPq', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', 'Jess', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', NULL),
-(2, 'simoneBarbosaVieira@hotmail.com', '$2y$10$qrQjIApVUivXIYnVA6gt/O/2x7C6pc9tbvegjLZelAzrmFJbUPgPS', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@hotmail.com', 'Simon', 'Rua da Solidão', 'Santa Maria', NULL, NULL, NULL, 1, 1, 6, '2021-08-12 00:54:23', '2021-08-12 00:56:35');
+(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$V7jWvDVY0279uYBBiXK7DeleUXxxakpixFJRpebYvW6llAGxrVmPq', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', 'Jess', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -1023,7 +1021,7 @@ ALTER TABLE `adms_tipos_pags`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `sts_cads_usuarios`
@@ -1101,7 +1099,7 @@ ALTER TABLE `sts_tipos_pags`
 -- AUTO_INCREMENT de tabela `sts_usuarios`
 --
 ALTER TABLE `sts_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas

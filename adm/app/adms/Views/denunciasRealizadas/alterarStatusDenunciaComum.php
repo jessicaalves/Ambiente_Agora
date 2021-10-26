@@ -94,9 +94,9 @@ if (isset($this->dados['form'][0])) {
                         </div>
                         
                         <div class="form-group row alinhamento c-tipo-resp">
-                            <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Descrição&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                            <label for="Descricao" class="col-sm-2 col-form-label tamanho-font alin-tip">Descrição&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
-                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_descricao_stat_id" id="sts_status_denuncia_id">
+                                <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_descricao_stat_id" id="sts_descricao_stat_id">
                                     <option value="">Selecione a descrição da denúncia</option>
                                     <?php
                                     foreach ($this->dados['select']['descr'] as $descr) {

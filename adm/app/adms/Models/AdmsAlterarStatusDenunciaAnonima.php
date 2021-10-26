@@ -22,7 +22,7 @@ class AdmsAlterarStatusDenunciaAnonima {
     public function visualizarDenunciaAnonima($dadosId) {
         $this->dadosId = (int) $dadosId;
         $visualizarDenunciaAnonima = new \App\adms\Models\helper\AdmsRead();
-        $visualizarDenunciaAnonima->fullRead("SELECT denun.id, denun.sts_status_denuncia_id 
+        $visualizarDenunciaAnonima->fullRead("SELECT denun.id, denun.sts_status_denuncia_id, denun.sts_descricao_stat_id
                  FROM sts_denuncias_anonimas AS denun
                  INNER JOIN sts_status_denuncias AS stat ON stat.id=denun.sts_status_denuncia_id
                  INNER JOIN sts_descricoes_status_denuncias AS descr ON descr.id=denun.sts_descricao_stat_id

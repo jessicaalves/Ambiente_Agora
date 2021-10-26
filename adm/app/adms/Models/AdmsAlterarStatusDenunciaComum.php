@@ -22,7 +22,7 @@ class AdmsAlterarStatusDenunciaComum {
     public function visualizarDenunciaComum($dadosId) {
         $this->dadosId = (int) $dadosId;
         $visualizarDenunciaComum = new \App\adms\Models\helper\AdmsRead();
-        $visualizarDenunciaComum->fullRead("SELECT denun.id, denun.sts_status_denuncia_id 
+        $visualizarDenunciaComum->fullRead("SELECT denun.id, denun.sts_status_denuncia_id, denun.sts_descricao_stat_id 
                  FROM sts_denuncias_comuns AS denun
                  INNER JOIN sts_status_denuncias AS stat ON stat.id=denun.sts_status_denuncia_id
                  INNER JOIN sts_descricoes_status_denuncias AS descr ON descr.id=denun.sts_descricao_stat_id
@@ -63,9 +63,8 @@ class AdmsAlterarStatusDenunciaComum {
         $listar->fullRead("SELECT id id_stat, nome nome_stat FROM sts_status_denuncias ORDER BY nome ASC");
         $registro['stat'] = $listar->getResultado();
 
-        $listar->fullRead("SELECT id id_descr, descricao descr_stat FROM sts_descricoes_status_denuncias ORDER BY descricao ASC");
+        $listar->fullRead("SELECT id id_descr, descricao descr_stat FROM sts_descricoes_status_denuncias");
         $registro['descr'] = $listar->getResultado();
-
 
         $this->resultado = ['stat' => $registro['stat'], 'descr' => $registro['descr']];
         return $this->resultado;

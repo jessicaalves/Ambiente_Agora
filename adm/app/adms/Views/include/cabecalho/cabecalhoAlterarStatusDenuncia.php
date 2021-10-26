@@ -31,4 +31,6 @@ if (!defined('URL')) {
         <!-- Custom Fonts -->
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/font-awesome/css/all.css'; ?>">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
