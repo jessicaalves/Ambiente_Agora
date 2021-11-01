@@ -21,6 +21,7 @@ class StsCadastro {
     private $apelido;
     private $logradouro;
     private $bairro;
+    private $dadosEmail;
 
     function getResultado() {
         return $this->resultado;
@@ -176,12 +177,12 @@ class StsCadastro {
     }
 
     private function dadosEmail() {
-        $nome = explode(" ", $this->dadosUsuario[0]['nome']);
+        $nome = explode(" ", $this->dados['nome']);
         $prim_nome = $nome[0];
         $this->dadosEmail['dest_nome'] = $prim_nome;
         $this->dadosEmail['dest_email'] = $this->dados['email'];
         $this->dadosEmail['titulo_email'] = "Confirmar e-mail";
-        $this->dadosEmail['cont_email'] = "Caro(a), " . $prim_nome . "<br><br>";
+        $this->dadosEmail['cont_email'] = "Caro(a), " . $prim_nome . ".<br><br>";
         $this->dadosEmail['cont_email'] .= "Obrigada por se cadastrar conosco.<br>";
         $this->dadosEmail['cont_email'] .= "Seguindo o link abaixo você poderá ativar seu perfil.<br>";
         $this->dadosEmail['cont_email'] .= "Para continuar o processo de confirmação de e-mail, clique no link abaixo ou cole o endereço abaixo no seu navegador.<br><br>";

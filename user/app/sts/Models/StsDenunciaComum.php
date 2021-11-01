@@ -14,6 +14,7 @@ class StsDenunciaComum extends StsDenuncia {
     private $dados;
     private $resultado;
     private $status;
+    private $dadosEmail;
 
     function getResultado() {
         return $this->resultado;
@@ -84,8 +85,9 @@ class StsDenunciaComum extends StsDenuncia {
         $cadDenunciaComum->executarCreate('sts_denuncias_comuns', $this->dados);
         if ($cadDenunciaComum->getResultado()) {
             if (empty($this->imagem['name'])) {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia criada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-                $this->resultado = true;
+                //$_SESSION['msg'] = "<div class='alert alert-success'>Denúncia criada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                //$this->resultado = true;
+                $this->dadosEmail();
             } else {
                 $this->dados['id'] = $cadDenunciaComum->getResultado();
                 $this->validarFoto();
@@ -104,6 +106,32 @@ class StsDenunciaComum extends StsDenuncia {
             $this->resultado = true;
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: A extensão da imagem é inválida. Selecione uma imagem JPEG ou PNG!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $this->resultado = false;
+        }
+    }
+
+    private function dadosEmail() {
+        $nome = explode(" ", $this->dados['nome']);
+        $prim_nome = $nome[0];
+        $this->dadosEmail['dest_nome'] = $prim_nome;
+        $this->dadosEmail['dest_email'] = $this->dados['email'];
+        $this->dadosEmail['titulo_email'] = "Nova Denúncia";
+        $this->dadosEmail['cont_email'] = "Caro(a), " . $prim_nome . ".<br><br>";
+        $this->dadosEmail['cont_email'] .= "Uma nova denúncia acaba de ser criada.<br>";
+        $this->dadosEmail['cont_email'] .= "Acesse sua conta e confira as denúncias realizadas pelo usuário.<br>";
+        $this->dadosEmail['cont_email'] .= "Obrigada!<br>";
+
+        $this->dadosEmail['cont_text_email'] = "Olá " . $prim_nome . " Uma nova denúncia acaba de ser criada. Acesse sua conta e confira as denúncias realizadas pelo usuário.<br><br>";
+        $this->dadosEmail['cont_text_email'] .= "Obrigada!";
+        
+        $emailPHPMailer = new \App\sts\Models\helper\StsPhpMailer();
+        $emailPHPMailer->emailPhpMailer($this->dadosEmail);
+        
+        if ($emailPHPMailer->getResultado()) {
+            $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia criada com sucesso! <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $this->resultado = true;
+        } else {
+            $_SESSION['msg'] = "<div class='alert alert-primary'>Denúncia criada com sucesso! Erro: Não foi possivel enviar o e-mail de nova denúncia criada!</div>";
             $this->resultado = false;
         }
     }
