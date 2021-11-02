@@ -30,31 +30,33 @@
     <section id="" class="p-4 alinhamento"> <!-- Início Seção Nova Denúncia Comum -->
         <div class="container">
 
-            <a href="<?php echo URL . 'user/listar-denuncias-realizadas/listar-denuncias-realizadas'; ?>">
-                <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
-                        Listar
-                    </button>
-                </div>
-            </a>
+            <?php
+            if (!empty($this->dados['dados_denuncia'][0])) {
+                //var_dump($this->dados ['dados_denuncia'][0]);
+                extract($this->dados ['dados_denuncia'][0]);
+                ?>
 
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR STATUS DA DENÚNCIA</b></h5>
-            <fieldset class="the-fieldset">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="borda-sup">
-                            <h6 class="ml-2 pt-1">Linha do Tempo</h6>
-                        </div>
+                <a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id ?>">
+                    <div class="p-2">
+                        <button style="float:right; vertical-align:middle;" class="btn btn-outline-primary btn-sm">
+                            Visualizar
+                        </button>
+                    </div>
+                </a>
 
-                        <form class="p-2" class="form" method="POST" id="formDenunciaComum" enctype="multipart/form-data"> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
+                <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR STATUS DA DENÚNCIA</b></h5>
+                <fieldset class="the-fieldset">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="borda-sup">
+                                <h6 class="ml-2 pt-1">Linha do Tempo</h6>
+                            </div>
 
-                            <h5 class="p-2 margem-titulo borda-conteudo" id="">Detalhes da Denúncia</h5><p><p>
+                            <form class="p-2" class="form" method="POST" id="formDenunciaComum" enctype="multipart/form-data"> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
 
-                                <?php
-                                if (!empty($this->dados['dados_denuncia'][0])) {
-                                    //var_dump($this->dados ['dados_denuncia'][0]);
-                                    extract($this->dados ['dados_denuncia'][0]);
-                                    ?>
+                                <h5 class="p-2 margem-titulo borda-conteudo" id="">Detalhes da Denúncia</h5><p><p>
+
+
 
                                 <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="id" class="col-sm-2 col-form-label tamanho-font alin-tip"> Id&nbsp;&nbsp;</label> 
@@ -68,8 +70,8 @@
                                                readonly>
                                     </div>
                                 </div>
-                            
-                            <div class="form-group row alinhamento c-tipo-resp">
+
+                                <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="status" class="col-sm-2 col-form-label tamanho-font alin-tip"> Status&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
                                         <input class="form-control-plaintext tamanho-font bg-white" name="status" type="text" id="modified" placeholder="<?php echo $nome_status; ?>"
@@ -81,8 +83,8 @@
                                                readonly>
                                     </div>
                                 </div>
-                            
-                            <div class="form-group row alinhamento c-tipo-resp">
+
+                                <div class="form-group row alinhamento c-tipo-resp">
                                     <label for="descricao" class="col-sm-2 col-form-label tamanho-font alin-tip"> Descrição&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
                                         <input class="form-control-plaintext tamanho-font bg-white" name="descricao" type="text" id="modified" placeholder="<?php echo $descricao_status; ?>"
