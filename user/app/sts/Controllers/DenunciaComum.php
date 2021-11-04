@@ -38,7 +38,7 @@ class DenunciaComum {
             $novaDenunciaComum->setImagem($this->dados['imagem']);
 
             if ($novaDenunciaComum->getResultado()) {
-                $urlDestino = URL . 'user/denuncia-comum/cadastrar-denuncia-comum';
+                $urlDestino = URL . 'user/listar-denuncias-realizadas/listar-denuncias-realizadas';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

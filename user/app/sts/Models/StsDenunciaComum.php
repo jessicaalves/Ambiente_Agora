@@ -15,6 +15,7 @@ class StsDenunciaComum extends StsDenuncia {
     private $resultado;
     private $status;
     private $dadosEmail;
+    private $infoEmailAdmin;
 
     function getResultado() {
         return $this->resultado;
@@ -85,12 +86,13 @@ class StsDenunciaComum extends StsDenuncia {
         $cadDenunciaComum->executarCreate('sts_denuncias_comuns', $this->dados);
         if ($cadDenunciaComum->getResultado()) {
             if (empty($this->imagem['name'])) {
-                //$_SESSION['msg'] = "<div class='alert alert-success'>Denúncia criada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-                //$this->resultado = true;
+                $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia criada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                $this->resultado = true;
                 $this->dadosEmail();
             } else {
                 $this->dados['id'] = $cadDenunciaComum->getResultado();
                 $this->validarFoto();
+                $this->dadosEmail();
             }
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao criar denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
@@ -109,20 +111,27 @@ class StsDenunciaComum extends StsDenuncia {
             $this->resultado = false;
         }
     }
+    
+    private function infoEmailAdmin() {
+        $infoEmailAdmin = new \App\sts\Models\helper\StsRead();
+        $infoEmailAdmin->fullRead("SELECT nome, email FROM adms_usuarios WHERE adms_nivel_acesso_id =:adms_nivel_acesso_id", "adms_nivel_acesso_id=1");
+        $this->infoEmailAdmin = $infoEmailAdmin->getResultado();
+    }
 
     private function dadosEmail() {
-        $nome = explode(" ", $this->dados['nome']);
+        $this->infoEmailAdmin();
+        $nome = explode(" ", $this->infoEmailAdmin[0]['nome']);
         $prim_nome = $nome[0];
         $this->dadosEmail['dest_nome'] = $prim_nome;
-        $this->dadosEmail['dest_email'] = $this->dados['email'];
-        $this->dadosEmail['titulo_email'] = "Nova Denúncia";
+        $this->dadosEmail['dest_email'] = $this->infoEmailAdmin[0]['email'];
+        $this->dadosEmail['titulo_email'] = "Alerta - Nova Denúncia";
         $this->dadosEmail['cont_email'] = "Caro(a), " . $prim_nome . ".<br><br>";
         $this->dadosEmail['cont_email'] .= "Uma nova denúncia acaba de ser criada.<br>";
-        $this->dadosEmail['cont_email'] .= "Acesse sua conta e confira as denúncias realizadas pelo usuário.<br>";
-        $this->dadosEmail['cont_email'] .= "Obrigada!<br>";
+        $this->dadosEmail['cont_email'] .= "Acesse sua conta no Ambiente Agora para conferir as denúncias criadas pelo usuário.<br>";
+        $this->dadosEmail['cont_email'] .= "~Ambiente Agora<br>";
 
-        $this->dadosEmail['cont_text_email'] = "Olá " . $prim_nome . " Uma nova denúncia acaba de ser criada. Acesse sua conta e confira as denúncias realizadas pelo usuário.<br><br>";
-        $this->dadosEmail['cont_text_email'] .= "Obrigada!";
+        $this->dadosEmail['cont_text_email'] = "Olá " . $prim_nome . " Uma nova denúncia acaba de ser criada. Acesse sua conta no Ambiente Agora para conferir as denúncias criadas pelo usuário.<br><br>";
+        $this->dadosEmail['cont_text_email'] .= "~Ambiente Agora";
         
         $emailPHPMailer = new \App\sts\Models\helper\StsPhpMailer();
         $emailPHPMailer->emailPhpMailer($this->dadosEmail);
