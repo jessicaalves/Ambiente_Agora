@@ -9,16 +9,16 @@ if (!defined('URL')) {
     exit();
 }
 
-class AlterarStatusDenunciaComum {
+class AvaliarDenunciaComum {
 
     private $dados;
     private $dadosId;
 
-    public function alterarStatusDenunciaComum($dadosId = null) {
+    public function avaliarDenunciaComum($dadosId = null) {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         $this->dadosId = (int) $dadosId;
         if (!empty($this->dadosId)) {
-            $this->alterarStatusDenunciaPriv();
+            $this->avaliarDenunciaPriv();
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Denúncia não encontrada!</div>";
             $UrlDestino = URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns';
@@ -26,41 +26,41 @@ class AlterarStatusDenunciaComum {
         }
     }
 
-    private function alterarStatusDenunciaPriv() {
+    private function avaliarDenunciaPriv() {
         if (!empty($this->dados['atualizarStatusDenuncia'])) {
             unset($this->dados['atualizarStatusDenuncia']);
             //var_dump($this->dados);
-            $altStatusDenuncia = new \App\adms\Models\AdmsAlterarStatusDenunciaComum();
-            $altStatusDenuncia->alterarStatusDenunciaComum($this->dados);
-            if ($altStatusDenuncia->getResultado()) {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Status da denúncia alterado com sucesso!</div>";
+            $avaliarDenuncia = new \App\adms\Models\AdmsAvaliarDenunciaComum();
+            $avaliarDenuncia->avaliarDenunciaComum($this->dados);
+            if ($avaliarDenuncia->getResultado()) {
+                $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia avaliada com sucesso!</div>";
                 $UrlDestino = URLADM . 'visualizar-denuncia-comum/visualizar-denuncia-comum/' . $this->dados['id'];
                 header("Location: $UrlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
-                $this->alterarStatusDenunciaViewPriv();
+                $this->avaliarDenunciaViewPriv();
             }
         } else {
-            $verDenuncia = new \App\adms\Models\AdmsAlterarStatusDenunciaComum();
+            $verDenuncia = new \App\adms\Models\AdmsAvaliarDenunciaComum();
             $this->dados['form'] = $verDenuncia->visualizarDenunciaComum($this->dadosId);
-            $this->alterarStatusDenunciaViewPriv();
+            $this->avaliarDenunciaViewPriv();
         }
     }
 
-    private function alterarStatusDenunciaViewPriv() {
+    private function avaliarDenunciaViewPriv() {
         if ($this->dados['form']) {
             $botao = ['listDenuncias' => ['menu_controller' => 'listar-denuncias-comuns', 'menu_metodo' => 'listar-denuncias-comuns'],
                 'visDenuncia' => ['menu_controller' => 'visualizar-denuncia-comum', 'menu_metodo' => 'visualizar-denuncia-comum']];
             $listarBotao = new \App\adms\Models\AdmsBotao();
             $this->dados['botao'] = $listarBotao->valBotao($botao);
 
-            $listarSelect = new \App\adms\Models\AdmsAlterarStatusDenunciaComum();
+            $listarSelect = new \App\adms\Models\AdmsAvaliarDenunciaComum();
             $this->dados['select'] = $listarSelect->listarCadastrar();
 
             $listarMenu = new \App\adms\Models\AdmsMenu();
             $this->dados['menu'] = $listarMenu->itemMenu();
-            $carregarView = new \Core\ConfigView("adms/Views/denunciasRealizadas/alterarStatusDenunciaComum", $this->dados);
-            $carregarView->renderizarAlterarStatusDenuncia();
+            $carregarView = new \Core\ConfigView("adms/Views/denunciasRealizadas/avaliarDenunciaComum", $this->dados);
+            $carregarView->renderizarAvaliarDenuncia();
         } else {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Denúncia não encontrada!</div>";
             $UrlDestino = URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns';

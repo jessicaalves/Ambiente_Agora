@@ -15,7 +15,7 @@ if (!defined('URL')) {
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
 
-        <title>Alterar Status Denúncia Anônima | Ambiente Agora</title>
+        <title>Avaliar Denúncia Anônima | Ambiente Agora</title>
 
         <link rel="icon" href="<?php echo URLADM . '/assets/img/imagensSistema/icon.png'; ?>">
 
@@ -23,7 +23,7 @@ if (!defined('URL')) {
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/bootstrap.min.css'; ?>">
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" text="text/css" href="<?php echo URLADM . '/assets/css/adm_alterar_status_denuncia.css'; ?>">
+        <link rel="stylesheet" text="text/css" href="<?php echo URLADM . '/assets/css/adm_avaliar_denuncia.css'; ?>">
 
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/reboot.css'; ?>">

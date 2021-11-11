@@ -9,7 +9,7 @@ if (!defined('URL')) {
     exit();
 }
 
-class AdmsAlterarStatusDenunciaAnonima {
+class AdmsAvaliarDenunciaAnonima {
 
     private $resultado;
     private $dados;
@@ -31,28 +31,28 @@ class AdmsAlterarStatusDenunciaAnonima {
         return $this->resultado;
     }
 
-    public function alterarStatusDenunciaAnonima(array $dados) {
+    public function avaliarDenunciaAnonima(array $dados) {
         $this->dados = $dados;
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
 
         if ($validarCampos->getResultado()) {
-            $this->updateAlterarStatusDenuncia();
+            $this->updateAvaliarDenuncia();
         } else {
             $this->resultado = false;
         }
     }
 
-    private function updateAlterarStatusDenuncia() {
+    private function updateAvaliarDenuncia() {
         $this->dados['modified'] = date("Y-m-d H:i:s");
         $upAltStatDenun = new \App\adms\Models\helper\AdmsUpdate();
         $upAltStatDenun->exeUpdate("sts_denuncias_anonimas", $this->dados, "WHERE id =:id", "id=" . $this->dados['id']);
         if ($upAltStatDenun->getResultado()) {
-            $_SESSION['msg'] = "<div class='alert alert-success'>Status da denúncia alterado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia avaliada com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Erro ao alterar status da denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Erro ao avaliar denúncia!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }

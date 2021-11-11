@@ -36,13 +36,13 @@ if (isset($this->dados['form'][0])) {
         ?>
 
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR STATUS DENÚNCIA ANÔNIMA</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>AVALIAR DENÚNCIA ANÔNIMA</b></h5>
 
         <fieldset class="the-fieldset">    
             <div class="row">
                 <div class="col-md-12">
                     <div class="borda-sup">
-                        <h6 class="ml-2 pt-1">Dados Denúncia</h6>
+                        <h6 class="ml-2 pt-1">Dados Denúncia Anônima</h6>
                     </div>
 
                     <?php
@@ -58,7 +58,7 @@ if (isset($this->dados['form'][0])) {
                         echo $valorForm['id'];
                     }
                     ?>">
-                        <h5 class="p-2 borda-conteudo" id="">Dados - Alterar Status Denúncia Anônima</h5><p><p>
+                        <h5 class="p-2 borda-conteudo" id="">Dados - Avaliar Denúncia Anônima</h5><p><p>
 
                         <div class="form-group row alinhamento c-login-resp"> 
                             <label for="Id" class="col-sm-2 tamanho-font">Id&nbsp;</label>

@@ -214,15 +214,15 @@ class ConfigView {
         }
     }
 
-    public function renderizarAlterarStatusDenuncia() {
+    public function renderizarAvaliarDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoAlterarStatusDenuncia.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoAvaliarDenuncia.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Alterar Status Denúncia Comum: {$this->nome}!";
+            echo "Erro ao carregar a página de Avaliar Denúncia Comum: {$this->nome}!";
         }
     }
 
@@ -250,15 +250,15 @@ class ConfigView {
         }
     }
     
-    public function renderizarAlterarStatusDenunciaAnonima() {
+    public function renderizarAvaliarDenunciaAnonima() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoAlterarStatusDenunciaAnonima.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoAvaliarDenunciaAnonima.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Alterar Status Denúncia Anônima: {$this->nome}!";
+            echo "Erro ao carregar a página de Avaliar Denúncia Anônima: {$this->nome}!";
         }
     }
 
