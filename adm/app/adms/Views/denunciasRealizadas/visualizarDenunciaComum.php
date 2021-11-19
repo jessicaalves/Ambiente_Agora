@@ -159,7 +159,7 @@
                             </div>
 
                             <!--<div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-outline-success alin-de">Denunciar</button></div>-->
-                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-status-denuncia-comum/alterar-status-denuncia-comum/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
+                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'avaliar-denuncia-comum/avaliar-denuncia-comum/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
 
                         </form> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
 
