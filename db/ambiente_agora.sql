@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Nov-2021 às 05:22
+-- Tempo de geração: 24-Nov-2021 às 05:18
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -212,7 +212,6 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 (17, 1, 17, 1, 1, 2, 2, 8, '2021-08-20 18:32:30', NULL),
 (18, 1, 18, 1, 1, 2, 2, 12, '2021-08-20 18:33:47', NULL),
 (19, 1, 19, 2, 2, 2, 2, 15, '2021-08-20 18:39:48', NULL),
-(20, 1, 20, 2, 2, 2, 2, 16, '2021-08-20 18:40:40', NULL),
 (21, 2, 21, 2, 2, 2, 2, 17, '2021-08-20 18:41:47', NULL),
 (22, 1, 22, 2, 2, 2, 2, 18, '2021-08-20 18:44:32', NULL),
 (23, 1, 23, 2, 2, 2, 1, 18, '2021-08-20 18:45:26', NULL),
@@ -410,7 +409,8 @@ CREATE TABLE `adms_usuarios` (
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$zDJxF.5mvIvT4YE1t.POT.82JO6gPrOeZvKqkD3vtQHQVj0O0cLCe', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie J', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-09-21 05:59:18'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$cKTJ7Y8apxIzX64GRwIx2Oar9dT9KciXLnQQFCt93Bwiop6F381MG', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-06 02:27:04');
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$cKTJ7Y8apxIzX64GRwIx2Oar9dT9KciXLnQQFCt93Bwiop6F381MG', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-06 02:27:04'),
+(3, 'nobphs@ambiente.com.br', '$2y$10$Yc/4OEmNq/UTAwmjM/v5Eu9NI5rlX99aPKHE59vxrSASFAJyhrsUi', 'Nobilar', 'nobphs@ambiente.com.br', 'Nob', NULL, NULL, 2, NULL, 1, '2021-11-24 04:48:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -1023,7 +1023,7 @@ ALTER TABLE `adms_tipos_pags`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `sts_cads_usuarios`

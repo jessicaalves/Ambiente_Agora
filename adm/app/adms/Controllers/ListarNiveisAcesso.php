@@ -37,7 +37,8 @@ class ListarNiveisAcesso {
         $this->dados['paginacao'] = $listarNiveisAcesso->getResultadoPg();
 
         $listarMenu = new \App\adms\Models\AdmsMenu();
-        $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['menu'] = $listarMenu->itemMenu();        
+        $this->dados['sidebarActive'] = "listar-niveis-acesso";
 
         $carregarView = new \Core\ConfigView("adms/Views/niveisAcesso/listarNiveisAcesso", $this->dados);
         $carregarView->renderizarListarNiveisAcesso();

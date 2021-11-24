@@ -47,6 +47,7 @@ class AlterarDadosCadastrais {
     private function altDadosCadastraisPriv() {
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "alterar-dados-cadastrais";
         $carregarView = new \Core\ConfigView("adms/Views/dadosCadastrais/alterarDadosCadastrais", $this->dados);
         $carregarView->renderizarAlterarDadosCadastrais();
     }

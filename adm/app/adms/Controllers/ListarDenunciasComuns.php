@@ -33,6 +33,7 @@ class ListarDenunciasComuns {
 
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "listar-denuncias-comuns";
 
         $carregarView = new \Core\ConfigView('adms/Views/denunciasRealizadas/listarDenunciasComuns', $this->dados);
         $carregarView->renderizarListarDenunciasComuns();

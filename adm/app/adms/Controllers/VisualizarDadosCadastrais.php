@@ -21,6 +21,7 @@ class VisualizarDadosCadastrais {
     public function visualizarDadosCadastrais() {
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "visualizar-dados-cadastrais";
         
         $visualizarDadosUsuario = new \App\adms\Models\AdmsVisualizarDadosCadastrais();
         $this->dados ['dados_usuario'] = $visualizarDadosUsuario->visualizarDadosCadastrais();

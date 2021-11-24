@@ -21,6 +21,7 @@ class MinhaConta {
     public function acessoMinhaConta() {
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "minha-conta";
 
         $carregarView = new \Core\ConfigView("adms/Views/minhaConta/minhaConta", $this->dados);
         $carregarView->renderizarMinhaConta();

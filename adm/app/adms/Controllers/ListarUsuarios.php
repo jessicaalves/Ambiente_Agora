@@ -37,6 +37,7 @@ class ListarUsuarios {
 
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "listar-usuarios";
 
         $carregarView = new \Core\ConfigView("adms/Views/usuarios/listarUsuarios", $this->dados);
         $carregarView->renderizarListarUsuarios();

@@ -3,47 +3,61 @@ if (!defined('URL')) {
     header("Location: /");
     exit();
 }
+$sidebar_active = "";
+if (isset($this->dados['sidebarActive'])) {
+    $sidebar_active = $this->dados['sidebarActive'];
+}
 ?>
 
-<div class="d-flex"> <!-- Início Sidebar Minha Conta -->
-    <nav class="sidebar"> 
+<div class="d-flex">
+    <!-- Início Sidebar Minha Conta -->
+    <nav class="sidebar">
         <ul class="list-unstyled">
 
             <?php
-            $cont_drop = 0;
-            $cont_drop_fech = 0;
-            foreach ($this->dados['menu'] as $menu) {
-                extract($menu);
+
+            $count_drop_start = 0;
+            $count_drop_end = 0;
+
+            foreach ($this->dados['menu'] as $item_menu) {
+                extract($item_menu);
+
+                //var_dump($item_menu);
+
+                $active = "";
+                if ($sidebar_active == $menu_controller) {
+                    $active = 'active';
+                }
+
                 if ($dropdown == 1) {
-                    if ($cont_drop != $id_men) {
-                        if (($cont_drop_fech == 1) AND ( $cont_drop != 0)) {
+                    if ($count_drop_start != $id_men) {
+                        if (($count_drop_end == 1) and ($count_drop_start != 0)) {
                             echo "</ul>";
                             echo "</li>";
-                            $cont_drop_fech = 0;
+                            $count_drop_end = 0;
                         }
                         echo "<li>";
-                        echo "<a href='#submenu" . $id_men . "'data-toggle='collapse'>" . $nome_men;
-                        echo "</a>";
-                        echo "<ul id='submenu" . $id_men . "' class='list-unstyled collapse'>";
-                        $cont_drop = $id_men;
+                        echo "<a href='#submenu$id_men' data-toggle='collapse'> $nome_men</a>";
+                        echo "<ul id='submenu$id_men' class='list-unstyled collapse'>";
                     }
-                    echo "<li><a href='" . URLADM . $menu_controller . "/" . $menu_metodo . "'> <i class='fas fa-seedling text-warning'></i> " . $nome . "</a></li>";
-                    $cont_drop_fech = 1;
+                    echo "<li class='$active'><a href='" . URLADM . "$menu_controller/$menu_metodo'><i class='fas fa-seedling text-warning'></i> $nome</a></li>";
+                    $count_drop_start = $id_men;
+                    $count_drop_end = 1;
                 } else {
-                    if ($cont_drop_fech == 1) {
+                    if ($count_drop_end == 1) {
                         echo "</ul>";
                         echo "</li>";
-                        $cont_drop_fech = 0;
+                        $count_drop_end = 0;
                     }
-                    echo "<li><a href='" . URLADM . $menu_controller . "/" . $menu_metodo . "'>" . $nome_men . "</a></li>";
+                    echo "<li class='$active'><a href='" . URLADM . "$menu_controller/$menu_metodo'> $nome_men</a></li>";
                 }
             }
-            if ($cont_drop_fech == 1) {
+            if ($count_drop_end == 1) {
                 echo "</ul>";
                 echo "</li>";
-                $cont_drop_fech = 0;
+                $count_drop_end = 0;
             }
+            echo "</ul>";
             ?>
         </ul>
     </nav>
-

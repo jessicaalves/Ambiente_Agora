@@ -26,7 +26,8 @@ class VisualizarUsuario {
             $this->dados['dados_usuario'] = $visualizarUsuario->visualizarUsuario($this->dadosId);
 
             if ($this->dados['dados_usuario']) {
-                $botao = ['visUsuario' => ['menu_controller' => 'visualizar-usuario', 'menu_metodo' => 'visualizar-usuario']];
+                $botao = ['visUsuario' => ['menu_controller' => 'visualizar-usuario', 'menu_metodo' => 'visualizar-usuario'],
+                    'altUsuario' => ['menu_controller' => 'alterar-usuario', 'menu_metodo' => 'alterar-usuario']];
                 $listarBotao = new \App\adms\Models\AdmsBotao();
                 $this->dados['botao'] = $listarBotao->valBotao($botao);
                 

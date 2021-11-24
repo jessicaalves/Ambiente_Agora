@@ -152,7 +152,12 @@ if (!defined('URL')) {
                         }
                         ?>
 
-                        <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterarUsuario/alterar-usuario/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
+                        <?php
+                        if ($this->dados['botao']['altUsuario']) {
+                            //echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-outline-success btn-sm'>Alterar</a>&nbsp;";
+                            echo "<div class='botao-atualizar b-atualizar pt-3'><a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-outline-success btn-sm'>Alterar</a></div>";
+                        }
+                        ?>
 
 
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->

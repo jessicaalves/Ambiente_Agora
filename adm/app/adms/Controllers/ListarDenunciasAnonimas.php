@@ -33,6 +33,7 @@ class ListarDenunciasAnonimas {
 
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "listar-denuncias-anonimas";
 
         $carregarView = new \Core\ConfigView('adms/Views/denunciasRealizadas/listarDenunciasAnonimas', $this->dados);
         $carregarView->renderizarListarDenunciasAnonimas();
