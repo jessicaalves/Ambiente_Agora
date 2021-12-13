@@ -8,7 +8,7 @@
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
 
-        <title>Página Inicial | Ambiente Agora</title>
+        <title>Página de Login | Ambiente Agora</title>
 
         <link rel="icon" href="<?php echo URL . 'user/assets/img/imagensSistema/icon.png'; ?>">
 

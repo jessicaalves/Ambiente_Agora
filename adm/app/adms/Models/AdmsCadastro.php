@@ -105,7 +105,7 @@ class AdmsCadastro {
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));
                 $this->dados['adms_nivel_acesso_id'] = $this->infoCadUser[0]['adms_nivel_acesso_id'];
                 $this->dados['adms_sit_usuario_id'] = $this->infoCadUser[0]['adms_sit_usuario_id'];
-                $this->dados['adms_grupo_pag_id'] = 7;
+                //this->dados['adms_grupo_pag_id'] = 7;
                 $this->dados['created'] = date('Y-m-d H:i:s');
                 $this->inserir();
             } else {
@@ -122,6 +122,8 @@ class AdmsCadastro {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Necessário preencher todos os campos!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         } else {
+            $validarEmail = new \App\adms\Models\helper\AdmsEmail();
+            $validarEmail->validarEmail($this->dados['email']);
             $this->resultado = true;
         }
     }
