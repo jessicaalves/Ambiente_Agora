@@ -31,7 +31,7 @@
 
     <section id="" class="p-4 alinhamento"> <!-- Início Seção Visualizar Cadastro -->
         <div class="container">
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS CADASTRAIS</b></h5>
+            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS DO DENUNCIANTE </b></h5>
             <fieldset class="the-fieldset">    
                 <div class="row">
                     <div class="col-md-12">
@@ -162,7 +162,7 @@
                             ?>
 
 
-                            <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="editar" class="btn btn-outline-success btn-sm" value="atualizar">Editar</button></div>
+<!--                            <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="editar" class="btn btn-success btn-sm" value="atualizar">Alterar</button></div>-->
                         </form> <!-- Final Formulário Alterar Dados Cadastrais -->
                     </div>
                 </div>

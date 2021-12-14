@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Dez-2021 às 03:46
+-- Tempo de geração: 14-Dez-2021 às 04:47
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -269,14 +269,14 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (1, 'Login', 'acessoLogin', 'login', 'acesso-login', 'Página de Login do Administrador ', 'Página de Login - Ambiente Agora', 1, 1, 1, 7, '2021-06-26 06:22:51', NULL),
 (2, 'Cadastro', 'cadastrarUsuario', 'cadastro', 'cadastrar-usuario', 'Página de Login do Administrador ', 'Página de Login do Administrador - Ambiente Agora', 1, 1, 1, 2, '2021-06-26 06:28:36', NULL),
 (3, 'MinhaConta', 'acessoMinhaConta', 'minha-conta', 'acesso-minha-conta', 'Página de Acesso à Minha Conta do Administrador', 'Minha Conta - Ambiente Agora', 1, 2, 1, 7, '2021-06-26 06:32:57', NULL),
-(4, 'VisualizarDadosCadastrais', 'visualizarDadosCadastrais', 'visualizar-dados-cadastrais', 'visualizar-dados-cadastrais', 'Visualizar Dados ', 'Minha Conta - Ambiente Agora', 2, 2, 1, 5, '2021-06-26 06:35:26', NULL),
+(4, 'VisualizarDadosCadastrais', 'visualizarDadosCadastrais', 'visualizar-dados-cadastrais', 'visualizar-dados-cadastrais', 'Visualizar Dados', 'Minha Conta - Ambiente Agora', 2, 2, 1, 5, '2021-06-26 06:35:26', NULL),
 (5, 'Login', 'logout', 'login', 'logout', 'Página de Logout', 'Página de Logout - Ambiente Agora', 2, 2, 1, 7, '2021-06-26 06:41:13', NULL),
 (6, 'EsqueceuSenha', 'esqueceuSenha', 'esqueceu-senha', 'esqueceu-senha', 'Página de Esqueceu Senha', 'Página de Esqueceu Senha - Ambiente Agora', 1, 1, 1, 7, '2021-06-26 06:43:45', NULL),
 (7, 'AtualSenha', 'atualSenha', 'atual-senha', 'atual-senha', 'Página de atualizar a senha', 'Página de atualizar a senha - Ambiente Agora', 1, 1, 1, 3, '2021-06-26 06:51:25', NULL),
-(8, 'ListarUsuarios', 'listarUsuarios', 'listar-usuarios', 'listar-usuarios', 'Listar Administradores', 'Página para ter acesso a lista dos usuários cadastrados - Ambiente Agora', 1, 2, 1, 1, '2021-06-26 06:56:19', NULL),
+(8, 'ListarUsuarios', 'listarUsuarios', 'listar-usuarios', 'listar-usuarios', 'Gerenciar Admnistradores', 'Página para ter acesso a lista dos usuários cadastrados - Ambiente Agora', 1, 2, 1, 1, '2021-06-26 06:56:19', NULL),
 (9, 'Menu', 'menu', 'menu', 'menu', 'Páginas', 'Página de Menu', 2, 2, 1, 7, '2021-07-11 01:02:32', NULL),
 (10, 'DenunciasRealizadas', 'denunciasRealizadas', 'denuncias-realizadas', 'denuncias-realizadas', 'Denúncias Realizadas', 'Página de Denúncias Realizadas - Ambiente Agora', 2, 2, 1, 5, '2021-07-11 02:18:32', NULL),
-(11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'alterar-dados-cadastrais', 'alterar-dados-cadastrais', 'Alterar Dados ', 'Minha Conta - Ambiente Agora', 1, 2, 1, 3, '2021-07-29 01:04:35', NULL),
+(11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'alterar-dados-cadastrais', 'alterar-dados-cadastrais', 'Alterar Dados', 'Minha Conta - Ambiente Agora', 1, 2, 1, 3, '2021-07-29 01:04:35', NULL),
 (12, 'ListarNiveisAcesso', 'listarNiveisAcesso', 'listar-niveis-acesso', 'listar-niveis-acesso', 'Níveis de Acesso', 'Minha Conta - Ambiente Agora', 1, 2, 1, 6, '2021-07-29 03:30:10', NULL),
 (13, 'Menu', 'menu', 'menu', 'menu', 'Item de Menu', 'Minha Conta - Ambiente Agora', 1, 2, 2, 6, '2021-07-29 03:39:08', NULL),
 (14, 'ConfirmarEmail', 'confirmarEmail', 'confirmar-email', 'confirmar-email', 'Página de Confirmar E-mail', 'Página de Confirmar E-mail - Ambiente Agora', 1, 1, 2, 7, '2021-08-05 03:52:20', NULL),
@@ -414,9 +414,8 @@ CREATE TABLE `adms_usuarios` (
 --
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$zDJxF.5mvIvT4YE1t.POT.82JO6gPrOeZvKqkD3vtQHQVj0O0cLCe', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie J', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-09-21 05:59:18'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$cKTJ7Y8apxIzX64GRwIx2Oar9dT9KciXLnQQFCt93Bwiop6F381MG', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-09-06 02:27:04'),
-(3, 'nobphs@ambiente.com.br', '$2y$10$NA2tq2Y5ESOM9wxnlfUeMOh9rfLsuTQnpzKDJn/wWKY8OW17OsuBm', 'Nobilar', 'nobphs@ambiente.com.br', 'Nob', NULL, NULL, 2, NULL, 1, '2021-11-24 04:48:54', '2021-12-12 05:26:47');
+(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$JfpULav3t7NdgJn1cSAuweu6tIUUCugrw8Q6/ilWd.cQbF6cd4Uuy', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie J', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-12-14 01:31:04'),
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$AWCbgdiQOWs10QrUCIOK1O/f8R0fHYVenOko/H.YEKxrvSzDYOVHe', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-12-13 18:57:26');
 
 -- --------------------------------------------------------
 

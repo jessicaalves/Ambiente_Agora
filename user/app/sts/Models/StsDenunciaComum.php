@@ -43,8 +43,6 @@ class StsDenunciaComum extends StsDenuncia {
         $this->nomeEnvolvido = isset($this->dados['nomeEnvolvido']);
         $this->funcaoEnvolvido = isset($this->dados['funcaoEnvolvido']);
         $this->imagem = isset($this->dados['imagem']);
-        //$this->status = isset($this->dados['status']);
-
         $this->dados = $dados;
 
         $this->titulo = ($this->dados['titulo']);
@@ -58,9 +56,6 @@ class StsDenunciaComum extends StsDenuncia {
 
         $this->imagem = $this->dados['imagem'];
         unset($this->dados['imagem']);
-
-        //$this->status = $this->dados['status'];
-        //unset($this->dados['status']);
 
         $validarCampoVazio = new \App\sts\Models\helper\StsValidarCampoVazio();
         $validarCampoVazio->validarDados($this->dados);

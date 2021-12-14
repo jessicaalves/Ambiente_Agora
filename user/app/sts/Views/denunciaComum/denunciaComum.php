@@ -29,7 +29,7 @@
 
     <section id="" class="p-4 alinhamento"> <!-- Início Seção Nova Denúncia Comum -->
         <div class="container">
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>CRIAR UMA NOVA DENÚNCIA</b></h5>
+            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>CADASTRAR NOVA DENÚNCIA</b></h5>
             <fieldset class="the-fieldset">
                 <div class="row">
                     <div class="col-md-12">
@@ -154,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-outline-success alin-de btn-sm">Denunciar</button></div>
+                            <div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-success alin-de btn-sm">Cadastrar</button></div>
 
                         </form> <!-- Final Formulário Nova Denúncia Comum -->
                     </div>

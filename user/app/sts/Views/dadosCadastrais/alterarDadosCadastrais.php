@@ -32,15 +32,15 @@
     <section id="" class="p-4"> <!-- Início Seção Alterar Cadastro -->
         <div class="container">
 
-            <a href="<?php echo URL . 'user/visualizar-dados-cadastrais/visualizar-dados-cadastrais'; ?>">
+<!--            <a href="<?php echo URL . 'user/visualizar-dados-cadastrais/visualizar-dados-cadastrais'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-primary btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-primary btn-sm">
                         Visualizar
                     </button>
                 </div>
-            </a>
+            </a>-->
 
-            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR DADOS CADASTRAIS</b></h5>
+            <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR DADOS DO DENUNCIANTE</b></h5>
             <fieldset class="the-fieldset">    
                 <div class="row">
                     <div class="col-md-12">
@@ -163,7 +163,7 @@
                             </div>
 
 
-                            <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="atualizar" class="btn btn-outline-success btn-sm" value="atualizar">Atualizar</button></div>
+                            <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="atualizar" class="btn btn-success btn-sm" value="atualizar">Alterar</button></div>
                         </form> <!-- Final Formulário Alterar Dados Cadastrais -->
                     </div>
                 </div>

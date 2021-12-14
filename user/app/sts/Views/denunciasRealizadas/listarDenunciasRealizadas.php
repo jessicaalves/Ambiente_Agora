@@ -84,7 +84,11 @@
                                     <a href="<?php echo URL . 'user/visualizar-status-denuncia/visualizar-status-denuncia/' . $id; ?>" class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></a>
                                 </td>
 
-                                <td class="align-center d-sm-table-cell"><a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-outline-primary btn-sm">Visualizar </a></td>
+                                <td class="align-center d-sm-table-cell">
+                                    <a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Denúncia</a>
+                                    <a href="<?php echo URL . 'user/visualizar-status-denuncia/visualizar-status-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Avaliação </a>
+                                </td>
+                                
                             </tr>
 
                         </tbody>
