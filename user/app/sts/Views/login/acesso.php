@@ -52,7 +52,7 @@
                         </div> 
                     </form> <!-- Final Login -->
 
-                    <form action="<?php echo URL . 'user/cadastro/cadastrar-usuario'; ?>" class="form pl-3" method="POST"> <!-- Início Cadastro -->
+                    <form action="<?php echo URL . 'user/cadastro/cadastrar-denunciante'; ?>" class="form pl-3" method="POST"> <!-- Início Cadastro -->
                         <div class="borda-cadastro pb-3"> 
                             <h5>Não possui uma conta? Cadastre-se!</h5>
                             <button type="submit" name="cadastrar" class="btn btn-success ml-2 btn-sm" value="cadastrar">Cadastrar</button>

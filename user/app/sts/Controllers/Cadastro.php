@@ -18,7 +18,7 @@ class Cadastro {
         $cadastroUsuario->cadastrarUsuario();
     }
 
-    public function cadastrarUsuario() {
+    public function cadastrarDenunciante() {
 
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         //var_dump($this->dados);
@@ -43,7 +43,7 @@ class Cadastro {
             
 
             if ($novoCadastro->getResultado()) {
-                $urlDestino = URL . 'user/cadastro/cadastrar-usuario';
+                $urlDestino = URL . 'user/cadastro/cadastrar-denunciante';
                 header("Location: $urlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
