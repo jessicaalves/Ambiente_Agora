@@ -35,7 +35,7 @@
                                        >
                             </div>
 
-                            <button class="btn btn-outline-success bto-enviar-c" type="submit" name="RecupUserLogin" value="enviar">Enviar</button>
+                            <button class="btn btn-success bto-enviar-c" type="submit" name="RecupUserLogin" value="enviar">Enviar</button>
 
                         </div>
                     </form>

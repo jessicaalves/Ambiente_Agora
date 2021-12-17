@@ -15,7 +15,7 @@ if (!defined('URL')) {
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
 
-        <title>Listar Usuários | Ambiente Agora</title>
+        <title>Listar Administradores | Ambiente Agora</title>
 
         <link rel="icon" href="<?php echo URLADM . '/assets/img/imagensSistema/icon.png'; ?>">       
 

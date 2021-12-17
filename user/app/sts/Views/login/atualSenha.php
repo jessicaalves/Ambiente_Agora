@@ -28,7 +28,7 @@
                             <div class="col-sm-8">
                                 <input class="form-control tamanho-text c-campo-email-resp" name="senha" type="password" required="required" placeholder="Digite a senha">
                             </div>
-                            <input class="btn btn-outline-success bto-enviar-c" type="submit" name="AtualSenha" value="Atualizar">
+                            <input class="btn btn-success bto-enviar-c" type="submit" name="AtualSenha" value="Atualizar">
                         </div>
                     </form>
                 </div>

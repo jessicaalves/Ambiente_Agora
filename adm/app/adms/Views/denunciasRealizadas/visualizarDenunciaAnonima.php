@@ -3,13 +3,13 @@
     <section id="" class="p-4 alinhamento"> <!-- Início Seção Nova Denúncia Comum -->
         <div class="container">
 
-            <a href="<?php echo URLADM . 'listar-denuncias-anonimas/listar-denuncias-anonimas'; ?>">
+<!--            <a href="<?php echo URLADM . 'listar-denuncias-anonimas/listar-denuncias-anonimas'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                         Listar
                     </button>
                 </div>
-            </a>
+            </a>-->
 
             <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DENÚNCIA ANÔNIMA</b></h5>
             <fieldset class="the-fieldset">
@@ -158,8 +158,8 @@
 
                             </div>
 
-                            <!--<div class="pt-3 botao-denunciar b-denunciar"><button name="cadastrarDenunciaComum" type="submit" value="Denunciar" class="btn btn-outline-success alin-de">Denunciar</button></div>-->
-                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'avaliar-denuncia-anonima/avaliar-denuncia-anonima/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
+                           
+<!--                            <div class="botao-atualizar"><a href="<?php echo URLADM . 'avaliar-denuncia-anonima/avaliar-denuncia-anonima/' . $id; ?>" class="btn btn-success btn-sm">Alterar</a></div>-->
                         
                         </form> <!-- Final Formulário Visualizar Dados da Denúncia Comum -->
 

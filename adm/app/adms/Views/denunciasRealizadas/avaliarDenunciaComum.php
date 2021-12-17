@@ -22,18 +22,17 @@ if (isset($this->dados['form'][0])) {
     <div class="container">
 
         <?php
-        if ($this->dados['botao']['listDenuncias']) {
+        //if ($this->dados['botao']['listDenuncias']) {
             ?>
-
-            <a href="<?php echo URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns'; ?>">
+<!--            <a href="<?php echo URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                         Listar
                     </button>
                 </div>
-            </a>
+            </a>-->
             <?php
-        }
+        //}
         ?>
 
 
@@ -112,16 +111,16 @@ if (isset($this->dados['form'][0])) {
                             </div>
                         </div>
 
-                        <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Atualizar</button></div> 
+                        <div class="botao-atualizar"><button class="btn btn-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Alterar</button></div> 
 
                         <?php
-                        if ($this->dados['botao']['visDenuncia']) {
+                        //if ($this->dados['botao']['visDenuncia']) {
                             ?>
-                            <div class="botao-visualizar">
-                                <a href="<?php echo URLADM . 'visualizar-denuncia-comum/visualizar-denuncia-comum/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                            </div>
+<!--                            <div class="botao-visualizar">
+                                <a href="<?php echo URLADM . 'visualizar-denuncia-comum/visualizar-denuncia-comum/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-primary btn-sm">Visualizar</a>
+                            </div>-->
                             <?php
-                        }
+                        //}
                         ?>
 
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->

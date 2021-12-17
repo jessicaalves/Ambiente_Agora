@@ -8,17 +8,17 @@ if (!defined('URL')) {
 <section id="" class="p-4"> <!-- Início Seção Denúncias Realizadas -->  
     <div class="container">
         <?php
-        if ($this->dados['botao']['listNivelAcesso']) {
+        //if ($this->dados['botao']['listNivelAcesso']) {
             ?>
-            <a href="<?php echo URLADM . 'listar-niveis-acesso/listar-niveis-acesso'; ?>">
+<!--            <a href="<?php echo URLADM . 'listar-niveis-acesso/listar-niveis-acesso'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                         Listar
                     </button>
                 </div>
-            </a>
+            </a>-->
             <?php
-        }
+        //}
         ?>
 
 
@@ -59,7 +59,7 @@ if (!defined('URL')) {
                             </div>
                         </div>
 
-                        <div class="botao-atualizar b-cadastrar"><button type="submit" name="cadastrarNivelAcesso" class="btn btn-outline-success btn-sm" value="Cadastrar">Cadastrar</button></div>
+                        <div class="botao-atualizar b-cadastrar"><button type="submit" name="cadastrarNivelAcesso" class="btn btn-success btn-sm" value="Cadastrar">Cadastrar</button></div>
                     </form> <!-- Final Formulário Cadastro -->
                 </div>
             </div>

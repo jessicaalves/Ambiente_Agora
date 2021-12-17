@@ -35,6 +35,7 @@ class AdmsListarUsuarios {
 
         $listarUsuarios = new \App\adms\Models\helper\AdmsRead();
         $listarUsuarios->fullRead("SELECT user.id, user.nome, user.email,
+                nivac.nome nome_nivac,
                 sit.nome nome_sit,
                 cr.cor cor_cr
                 FROM adms_usuarios user

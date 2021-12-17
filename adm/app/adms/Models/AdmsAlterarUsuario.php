@@ -31,8 +31,8 @@ class AdmsAlterarUsuario {
 
     public function alterarUsuario(array $dados) {
         $this->dados = $dados;
-        $this->apelido = $this->dados['apelido'];
-        unset($this->dados['apelido']);
+//        $this->apelido = $this->dados['apelido'];
+//        unset($this->dados['apelido']);
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
@@ -67,7 +67,7 @@ class AdmsAlterarUsuario {
 
     private function updateAlterarUsuario() {
         $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
-        $this->dados['apelido'] = $this->apelido;
+        //$this->dados['apelido'] = $this->apelido;
         $this->dados['modified'] = date("Y-m-d H:i:s");
         $upAltSenha = new \App\adms\Models\helper\AdmsUpdate();
         $upAltSenha->exeUpdate("adms_usuarios", $this->dados, "WHERE id =:id", "id=" . $this->dados['id']);

@@ -107,7 +107,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row alinhamento c-email-resp"> 
+<!--                            <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido</label> 
                                 <div class="col-sm-8">
                                     <input class="form-control tamanho-font" name="apelido" type="text" id="apelido" placeholder="Digite o seu apelido"
@@ -118,7 +118,7 @@
                                            ?>"
                                            >
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="Email" class="col-sm-2 tamanho-font">E-mail&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
@@ -137,7 +137,7 @@
 
 
                             <div class="form-group row alinhamento c-logradouro-resp"> 
-                                <label for="Logradouro" class="col-sm-2 tamanho-font a-alinhar">Logradouro *</label> 
+                                <label for="Logradouro" class="col-sm-2 tamanho-font a-alinhar">Logradouro&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                                 <div class="col-sm-8 t-c-logradouro">
                                     <input class="form-control tamanho-font" name="logradouro" type="text" id="logradouro" placeholder="Digite o seu endereço completo"
                                            value="<?php

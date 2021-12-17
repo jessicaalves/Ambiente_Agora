@@ -9,17 +9,17 @@ if (!defined('URL')) {
     <div class="container">
 
         <?php
-        if ($this->dados['botao']['listNivelAcesso']) {
+        //if ($this->dados['botao']['listNivelAcesso']) {
             ?>
-            <a href="<?php echo URLADM . 'listar-niveis-acesso/listar-niveis-acesso'; ?>">
+<!--            <a href="<?php echo URLADM . 'listar-niveis-acesso/listar-niveis-acesso'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                         Listar
                     </button>
                 </div>
-            </a>
+            </a>-->
             <?php
-        }
+        //}
         ?>
 
 
@@ -40,7 +40,7 @@ if (!defined('URL')) {
 
                     <form class="p-2" class="form" action="" method="POST"> <!-- Início Formulário Alterar Usuário -->
 
-                        <h5 class="p-2 borda-conteudo" id="">Dados - Visualizar Nível de Acesso</h5><p><p>
+                        <h5 class="p-2 borda-conteudo" id="">Dados Nível de Acesso</h5><p><p>
 
                             <?php
                             if (!empty($this->dados['dados_nivel_acesso'][0])) {
@@ -118,7 +118,7 @@ if (!defined('URL')) {
                         }
                         ?>
 
-                        <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-nivel-acesso/alterar-nivel-acesso/' . $id; ?>" class="btn btn-outline-success btn-sm">Alterar</a></div>
+<!--                        <div class="botao-atualizar"><a href="<?php echo URLADM . 'alterar-nivel-acesso/alterar-nivel-acesso/' . $id; ?>" class="btn btn-success btn-sm">Alterar</a></div>-->
 
 
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->

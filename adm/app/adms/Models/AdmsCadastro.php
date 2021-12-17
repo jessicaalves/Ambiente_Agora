@@ -18,7 +18,7 @@ class AdmsCadastro {
     private $senha;
     private $nome;
     private $email;
-    private $apelido;
+    //private $apelido;
 
     function getResultado() {
         return $this->resultado;
@@ -44,9 +44,9 @@ class AdmsCadastro {
         return $this->email;
     }
 
-    function getApelido() {
-        return $this->apelido;
-    }
+//    function getApelido() {
+//        return $this->apelido;
+//    }
 
     function setId($id) {
         $this->id = $id;
@@ -68,9 +68,9 @@ class AdmsCadastro {
         $this->email = $email;
     }
 
-    function setApelido($apelido) {
-        $this->apelido = $apelido;
-    }
+//    function setApelido($apelido) {
+//        $this->apelido = $apelido;
+//    }
 
     public function cadastro(array $dados) {
         //$this->id = isset($this->dados['id']);
@@ -78,11 +78,11 @@ class AdmsCadastro {
         $this->senha = isset($this->dados['senha']);
         $this->nome = isset($this->dados['nome']);
         $this->email = isset($this->dados['email']);
-        $this->apelido = isset($this->dados['apelido']);
+        //$this->apelido = isset($this->dados['apelido']);
 
         $this->dados = $dados;
-        $this->apelido = ($this->dados['apelido']); //(Remove o campo apelido da validação) Atribui o valor do campo apelido que vem do formulário para o novo atributo $this->telefone
-        unset($this->dados['apelido']); //(Remove o campo apelido da validadação) Remove a posição $this->dados['apelido'] que vem do formulário.
+//        $this->apelido = ($this->dados['apelido']); //(Remove o campo apelido da validação) Atribui o valor do campo apelido que vem do formulário para o novo atributo $this->telefone
+//        unset($this->dados['apelido']); //(Remove o campo apelido da validadação) Remove a posição $this->dados['apelido'] que vem do formulário.
 
         $this->validarDados();
         if ($this->resultado) {
@@ -100,7 +100,7 @@ class AdmsCadastro {
 
             if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado())) {
                 $this->infoCadUser();
-                $this->dados['apelido'] = $this->apelido;
+                //$this->dados['apelido'] = $this->apelido;
                 $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));
                 $this->dados['adms_nivel_acesso_id'] = $this->infoCadUser[0]['adms_nivel_acesso_id'];

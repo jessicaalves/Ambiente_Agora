@@ -48,7 +48,7 @@
 
                         <form class="p-2" class="form" action="<?php echo URL . 'user/alterar-dados-cadastrais/alterar-dados-cadastrais'; ?>" method="POST"> <!-- Início Formulário Alterar Dados Cadastrais -->
 
-                            <h5 class="p-2 borda-conteudo" id="">Dados de Acesso - Usuário</h5><p><p>
+                            <h5 class="p-2 borda-conteudo" id="">Dados de Acesso</h5><p><p>
 
                                 <?php
                                 if (!empty($this->dados['dados_usuario'][0])) {
@@ -98,7 +98,7 @@
                                 </div>
 
 
-                                <div class="form-group row alinhamento c-email-resp"> 
+<!--                                <div class="form-group row alinhamento c-email-resp"> 
                                     <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido</label> 
                                     <div class="col-sm-8">
                                         <input class="form-control tamanho-font bg-white" name="apelido" type="text" id="apelido" placeholder="<?php echo $apelido; ?>"
@@ -109,7 +109,7 @@
                                                ?>"
                                                readonly>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <div class="form-group row alinhamento c-email-resp"> 
                                     <label for="Email" class="col-sm-2  tamanho-font">E-mail</label> 

@@ -8,7 +8,7 @@
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
         
-        <title>Visualizar Status da Denúncia | Ambiente Agora</title>
+        <title>Visualizar Avaliação da Denúncia | Ambiente Agora</title>
         
         <link rel="icon" href="<?php echo URL . 'user/assets/img/imagensSistema/icon.png'; ?>">
 

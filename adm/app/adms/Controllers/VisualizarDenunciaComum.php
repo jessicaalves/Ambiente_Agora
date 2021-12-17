@@ -28,7 +28,8 @@ class VisualizarDenunciaComum {
             if ($this->dados['dados_denuncia']) {
                 $listarMenu = new \App\adms\Models\AdmsMenu();
                 $this->dados['menu'] = $listarMenu->itemMenu();
-                
+                $this->dados['sidebarActive'] = "listar-denuncias-comuns";
+
                 $carregarView = new \Core\ConfigView('adms/Views/denunciasRealizadas/visualizarDenunciaComum', $this->dados);
                 $carregarView->renderizarVisualizarDenunciaComum();
             } else {

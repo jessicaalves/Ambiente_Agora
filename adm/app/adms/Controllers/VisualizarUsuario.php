@@ -30,9 +30,10 @@ class VisualizarUsuario {
                     'altUsuario' => ['menu_controller' => 'alterar-usuario', 'menu_metodo' => 'alterar-usuario']];
                 $listarBotao = new \App\adms\Models\AdmsBotao();
                 $this->dados['botao'] = $listarBotao->valBotao($botao);
-                
+
                 $listarMenu = new \App\adms\Models\AdmsMenu();
                 $this->dados['menu'] = $listarMenu->itemMenu();
+                $this->dados['sidebarActive'] = "listar-usuarios";
 
                 $carregarView = new \Core\ConfigView("adms/Views/usuarios/visualizarUsuario", $this->dados);
                 $carregarView->renderizarVisualizarUsuario();

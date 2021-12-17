@@ -14,7 +14,7 @@ if (!defined('URL')) {
             ?>
             <a href="<?php echo URLADM . 'cadastrar-usuario/cadastrar-usuario'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                         Cadastrar
                     </button>
                 </div>
@@ -23,7 +23,7 @@ if (!defined('URL')) {
         }
         ?>
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR USUÁRIOS</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR ADMINISTRADORES</b></h5>
 
 
         <div class="table table-responsive text-center">   
@@ -51,12 +51,13 @@ if (!defined('URL')) {
 
             <table class="table table-bordered"> <!-- Início Tabela de Listar Usuários -->
                 <thead>                                                    
-                <th colspan="6" class="bg-success text-white">Quadro de Usuários</th>
+                <th colspan="6" class="bg-success text-white">Quadro de Administradores</th>
                 <tr>                           
                     <th>Id</th>
                     <th>Nome</th>
                     <th class="d-sm-table-cell">E-mail</th>
                     <th>Situação</th>
+                    <th>Nível de Acesso</th>
                     <th class="d-sm-table-cell text-center">Ações</th>
                 </tr>
                 </thead>
@@ -75,20 +76,21 @@ if (!defined('URL')) {
                             <td class="d-none d-lg-table-cell">
                                 <span class="badge badge-<?php echo $cor_cr; ?>"><?php echo $nome_sit; ?></span>
                             </td>
+                            <td><?php echo $nome_nivac; ?></td> 
 
                             <td class="align-center">
                                 <span class="d-none d-md-block">
 
                                     <?php
                                     if ($this->dados['botao']['visUsuario']) {
-                                        echo "<a href='" . URLADM . "visualizar-usuario/visualizar-usuario/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "visualizar-usuario/visualizar-usuario/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altUsuario']) {
-                                        echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-warning btn-sm'>Alterar</a>&nbsp;";
                                     }
 
                                     if ($this->dados['botao']['delUsuario']) {
-                                        echo "<a href='" . URLADM . "apagar-usuario/apagar-usuario/$id' class='btn btn-outline-danger btn-sm' data-confirm='Tem certeza que deseja apagar o usuário selecionado?'>Apagar</a>";
+                                        echo "<a href='" . URLADM . "apagar-usuario/apagar-usuario/$id' class='btn btn-danger btn-sm' data-confirm='Tem certeza que deseja apagar o usuário selecionado?'>Apagar</a>";
                                     }
                                     ?>
 

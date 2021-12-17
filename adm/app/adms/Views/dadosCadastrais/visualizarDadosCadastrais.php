@@ -7,7 +7,7 @@ if (!defined('URL')) {
 
 <section id="" class="p-4 alinhamento"> <!-- Início Seção Visualizar Cadastro -->
     <div class="container">
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS CADASTRAIS</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS DO ADMNISTRADOR</b></h5>
         <fieldset class="the-fieldset">    
             <div class="row">
                 <div class="col-md-12">
@@ -24,7 +24,7 @@ if (!defined('URL')) {
 
                     <form class="p-2" class="form" action="<?php echo URLADM . 'alterar-dados-cadastrais/alterar-dados-cadastrais'; ?>" method="POST"> <!-- Início Formulário Alterar Dados Cadastrais -->
 
-                        <h5 class="p-2 borda-conteudo" id="">Dados de Acesso - Usuário</h5><p><p>
+                        <h5 class="p-2 borda-conteudo" id="">Dados de Acesso</h5><p><p>
 
                             <?php
                             if (!empty($this->dados['dados_usuario'][0])) {
@@ -73,7 +73,7 @@ if (!defined('URL')) {
                                 </div>
                             </div>
 
-                            <div class="form-group row alinhamento c-nome-resp"> 
+<!--                            <div class="form-group row alinhamento c-nome-resp"> 
                                 <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
                                 <div class="col-sm-8">
                                     <input class="form-control tamanho-font bg-white" name="apelido" type="text" id="apelido" placeholder="<?php echo $apelido; ?>"
@@ -85,7 +85,7 @@ if (!defined('URL')) {
                                            readonly>
 
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="Email" class="col-sm-2  tamanho-font">E-mail</label> 
@@ -106,7 +106,7 @@ if (!defined('URL')) {
                         ?>
 
 
-                        <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="editar" class="btn btn-outline-success btn-sm" value="atualizar">Editar</button></div>
+<!--                        <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="editar" class="btn btn-success btn-sm" value="atualizar">Alterar</button></div>-->
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->
                 </div>
             </div>

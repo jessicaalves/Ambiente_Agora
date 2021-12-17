@@ -57,7 +57,9 @@ class AlterarUsuario {
             $this->dados['select'] = $listarSelect->listarCadastrar();
 
             $listarMenu = new \App\adms\Models\AdmsMenu();
-            $this->dados['menu'] = $listarMenu->itemMenu();
+                $this->dados['menu'] = $listarMenu->itemMenu();
+                $this->dados['sidebarActive'] = "listar-usuarios";
+            
             $carregarView = new \Core\ConfigView("adms/Views/usuarios/alterarUsuario", $this->dados);
             $carregarView->renderizarAlterarUsuario();
         } else {

@@ -68,8 +68,8 @@ footer p{
 /* ______Estrutura cadastro e login______*/
 
 .secao-cadastro-login{
-    padding-top: 93px;
-    padding-bottom: 60px;
+    padding-top: 25px;
+    padding-bottom: 5px;
 }
 
 .esqueceuSenha {
@@ -88,6 +88,7 @@ footer p{
 
 .borda-cadastro{
     border-bottom: dotted;
+    padding: 15px;
 }
 
 .a-modal:hover{ 

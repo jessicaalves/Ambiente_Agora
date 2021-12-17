@@ -146,14 +146,14 @@ class ConfigView {
         }
     }
 
-    public function renderizarVisualizarStatusDenuncia() {
+    public function renderizarVisualizarAvaliacaoDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarStatusDenuncia.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarAvaliacaoDenuncia.php';
             include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Status da Denúncia: {$this->nome}!";
+            echo "Erro ao carregar a página de Visualizar Avaliação da Denúncia: {$this->nome}!";
         }
     }
 

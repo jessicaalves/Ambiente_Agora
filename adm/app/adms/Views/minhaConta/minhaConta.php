@@ -14,7 +14,7 @@ if (!defined('URL')) {
                 $primeiro_nome = $nome[0];
                 echo $primeiro_nome;
                 ?> 
-                <i class="fas fa-seedling text-success"></i>, Seja Bem-Vindo(a)!"</b></h5>
+                <i class="fas fa-seedling text-success"></i>, Seja Bem-Vindo(a) ao <i class="fas fa-seedling text-success"></i> Ambiente Agora!"</b></h5>
         <img src="<?php echo URLADM . '/assets/img/imagensSistema/imagem8-2.png'; ?>" width="60%" class="img-fluid">
 
     </section><!-- Final Seção Minha Conta -->

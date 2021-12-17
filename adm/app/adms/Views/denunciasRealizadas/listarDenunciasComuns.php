@@ -58,7 +58,7 @@ if (!defined('URL')) {
 
                         <tr>
                             <th class="text-success"><?php echo $id; ?></th>
-                            <td><?php echo $id; ?></td>                                  
+                            <td><?php echo $titulo; ?></td>                                  
                             <td><?php echo $tipo; ?></td> 
                             <td class="d-none d-lg-table-cell">
                                 <a href="<?php echo URLADM . 'avaliar-denuncia-comum/avaliar-denuncia-comum/' . $id; ?>" class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></a>
@@ -69,10 +69,10 @@ if (!defined('URL')) {
 
                                     <?php
                                     if ($this->dados['botao']['visDenuncia']) {
-                                        echo "<a href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altAvaliacaoDenuncia']) {
-                                        echo "<a href='" . URLADM . "avaliar-denuncia-comum/avaliar-denuncia-comum/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "avaliar-denuncia-comum/avaliar-denuncia-comum/$id' class='btn btn-warning btn-sm'>Alterar</a>&nbsp;";
                                     }
                                     ?>
 

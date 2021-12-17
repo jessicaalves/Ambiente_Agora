@@ -43,6 +43,8 @@ class CadastrarNivelAcesso {
 
         $listarMenu = new \App\adms\Models\AdmsMenu();
         $this->dados['menu'] = $listarMenu->itemMenu();
+        $this->dados['sidebarActive'] = "listar-niveis-acesso";
+        
         $carregarView = new \Core\ConfigView("adms/Views/niveisAcesso/cadastrarNiveisAcesso", $this->dados);
         $carregarView->renderizarCadastrarNivelAcesso();
     }

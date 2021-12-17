@@ -20,13 +20,13 @@ if (isset($this->dados['form'][0])) {
 <section id="" class="p-4"> <!-- Início Seção Denúncias Realizadas -->  
     <div class="container">
 
-        <a href="<?php echo URLADM . 'listar-niveis-acesso/listar-niveis-acesso'; ?>">
+<!--        <a href="<?php echo URLADM . 'listar-niveis-acesso/listar-niveis-acesso'; ?>">
             <div class="p-2">
                 <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
                     Listar
                 </button>
             </div>
-        </a>
+        </a>-->
 
 
         <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>ALTERAR NÍVEL DE ACESSO</b></h5>
@@ -47,7 +47,7 @@ if (isset($this->dados['form'][0])) {
 
                     <form class="p-2 form" method="POST" action=""> <!-- Início Formulário Alterar Dados Cadastrais -->
 
-                        <h5 class="p-2 borda-conteudo" id="">Dados - Alterar Nível de Acesso</h5><p><p>
+                        <h5 class="p-2 borda-conteudo" id="">Dados Nível de Acesso</h5><p><p>
 
                         <div class="form-group row alinhamento c-login-resp"> 
                             <label for="Id" class="col-sm-2 tamanho-font">Id&nbsp;</label>
@@ -91,16 +91,16 @@ if (isset($this->dados['form'][0])) {
 
 
 
-                        <div class="botao-atualizar"><button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm" type="submit" name="atualizarNivelAcesso" value="atualizarNivelAcesso">Atualizar</button></div> 
+                        <div class="botao-atualizar b-atualizar pt-3"><button class="btn btn-success btn-sm" type="submit" name="atualizarNivelAcesso" value="atualizarNivelAcesso">Alterar</button></div> 
 
                         <?php
-                        if ($this->dados['botao']['visNivelAcesso']) {
+                       // if ($this->dados['botao']['visNivelAcesso']) {
                             ?>
-                            <div class="botao-visualizar">
-                                <a href="<?php echo URLADM . 'visualizar-nivel-acesso/visualizar-nivel-acesso/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-outline-primary btn-sm">Visualizar</a>
-                            </div>
+<!--                            <div class="botao-visualizar">
+                                <a href="<?php echo URLADM . 'visualizar-nivel-acesso/visualizar-nivel-acesso/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-primary btn-sm">Visualizar</a>
+                            </div>-->
                             <?php
-                        }
+                       // }
                         ?>
 
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->

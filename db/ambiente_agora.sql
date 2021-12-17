@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Dez-2021 às 04:47
+-- Tempo de geração: 17-Dez-2021 às 02:53
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -167,7 +167,7 @@ CREATE TABLE `adms_niveis_acessos` (
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
 (1, 'Super Administrador', 1, '2021-06-26 07:00:32', '2021-12-02 05:10:20'),
-(2, 'Administrador', 2, '2021-06-26 07:00:32', '2021-09-15 03:12:12');
+(2, 'Administrador', 2, '2021-06-26 07:00:32', '2021-12-14 19:17:40');
 
 -- --------------------------------------------------------
 
@@ -415,7 +415,7 @@ CREATE TABLE `adms_usuarios` (
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `apelido`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$JfpULav3t7NdgJn1cSAuweu6tIUUCugrw8Q6/ilWd.cQbF6cd4Uuy', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', 'Jessie J', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2021-12-14 01:31:04'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$AWCbgdiQOWs10QrUCIOK1O/f8R0fHYVenOko/H.YEKxrvSzDYOVHe', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-12-13 18:57:26');
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$1G8UKx0JHriPqzKC6sz0a.F9L0WNlQ0nmzuEJGpgAeTqoyf5nb.s6', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', 'Simon', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-12-14 19:03:52');
 
 -- --------------------------------------------------------
 
@@ -491,7 +491,7 @@ CREATE TABLE `sts_denuncias_anonimas` (
 
 INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
 (1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', 'gatoferido.jpg', 2, 2, '2021-06-28 19:09:47', '2021-11-11 01:53:19'),
-(2, 'Denúncia Anônima Teste', 'Flora', 'Teste...', 'Pessoa Física', 'Josefino Teixeira', 'Jardineiro', 'doguinhoatropelado.png', 1, 1, '2021-11-04 01:38:48', NULL);
+(2, 'Denúncia Anônima Teste', 'Flora', 'Teste...', 'Pessoa Física', 'Josefino Teixeira', 'Jardineiro', 'doguinhoatropelado.png', 1, 1, '2021-11-04 01:38:48', '2021-12-14 19:40:31');
 
 -- --------------------------------------------------------
 
@@ -520,7 +520,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2021-06-28 19:15:13', '2021-12-02 02:20:42'),
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2021-06-28 19:15:13', '2021-12-14 19:36:04'),
 (2, 1, 'Denúncia Teste', 'Fauna', 'Teste', 'Pessoa Física', 'Josué', 'Jardineiro', 'doguinhoatropelado.png', 1, 1, '2021-11-04 01:13:58', NULL);
 
 -- --------------------------------------------------------
@@ -611,7 +611,7 @@ INSERT INTO `sts_pags` (`id`, `controller`, `metodo`, `nome`, `titulo`, `liberad
 (12, 'VisualizarDadosDenuncia', 'visualizarDadosDenuncia', 'Página de Visualizar Dados da Denúncia Realizada', 'Minha Conta - Ambiente Agora ', 1, 5, 1, 4, '2021-06-27 05:42:16', NULL),
 (13, 'AtualSenha', 'atualSenha', 'Página para Atualizar a Senha', 'Página para Atualizar a Senha - Ambiente Agora', 1, 5, 1, 5, '2021-06-27 05:42:16', NULL),
 (14, 'ConfirmarEmail', 'confirmarEmail', 'Página de Confirmar E-mail', 'Página de Confirmar E-mail - Ambiente Agora', 1, 3, 1, 5, '2021-08-06 07:08:16', NULL),
-(15, 'VisualizarStatusDenuncia', 'visualizarStatusDenuncia', 'Página de Visualizar Status da Denúncia', 'Página de Visualizar Status da Denúncia - Ambiente Agora', 1, 5, 1, 4, '2021-09-25 03:57:56', NULL);
+(15, 'VisualizarAvaliacaoDenuncia', 'visualizarAvaliacaoDenuncia', 'Página de Visualizar Avaliação da Denúncia', 'Página de Visualizar Avaliação da Denúncia - Ambiente Agora', 1, 5, 1, 4, '2021-09-25 03:57:56', NULL);
 
 -- --------------------------------------------------------
 
@@ -1028,7 +1028,7 @@ ALTER TABLE `adms_tipos_pags`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `sts_cads_usuarios`

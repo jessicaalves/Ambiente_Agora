@@ -86,7 +86,7 @@
 
                                 <td class="align-center d-sm-table-cell">
                                     <a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Denúncia</a>
-                                    <a href="<?php echo URL . 'user/visualizar-status-denuncia/visualizar-status-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Avaliação </a>
+                                    <a href="<?php echo URL . 'user/visualizar-avaliacao-denuncia/visualizar-avaliacao-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Avaliação </a>
                                 </td>
                                 
                             </tr>

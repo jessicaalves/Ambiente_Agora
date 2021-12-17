@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/bootstrap.min.css'; ?>">
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/adm_login.css'; ?>">  
+        <link rel="stylesheet" type="text/css" href="<?php echo URLADM . 'assets/css/adm_login.css'; ?>">  
         
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/reboot.css'; ?>">

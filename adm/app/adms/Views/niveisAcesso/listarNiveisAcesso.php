@@ -12,7 +12,7 @@ if (!defined('URL')) {
             ?>
             <a href="<?php echo URLADM . 'cadastrar-nivel-acesso/cadastrar-nivel-acesso'; ?>">
                 <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                         Cadastrar
                     </button>
                 </div>
@@ -81,20 +81,20 @@ if (!defined('URL')) {
                                         }
                                     } else {
                                         if ($this->dados['botao']['altOrdemNivelAcesso']) {
-                                            echo "<a href='" . URLADM . "alterar-ordem-nivel-acesso/alterar-ordem-nivel-acesso/$id' class='btn btn-outline-secondary btn-sm'><i class='fas fa-angle-double-up'></i></a>&nbsp;";
+                                            echo "<a href='" . URLADM . "alterar-ordem-nivel-acesso/alterar-ordem-nivel-acesso/$id' class='btn btn-secondary btn-sm'><i class='fas fa-angle-double-up'></i></a>&nbsp;";
                                         }
                                     }
                                     $qnt_linhas_exe++;
 
                                     if ($this->dados['botao']['visNivelAcesso']) {
-                                        echo "<a href='" . URLADM . "visualizar-nivel-acesso/visualizar-nivel-acesso/$id' class='btn btn-outline-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "visualizar-nivel-acesso/visualizar-nivel-acesso/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altNivelAcesso']) {
-                                        echo "<a href='" . URLADM . "alterar-nivel-acesso/alterar-nivel-acesso/$id' class='btn btn-outline-warning btn-sm'>Alterar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "alterar-nivel-acesso/alterar-nivel-acesso/$id' class='btn btn-warning btn-sm'>Alterar</a>&nbsp;";
                                     }
 
                                     if ($this->dados['botao']['delNivelAcesso']) {
-                                        echo "<a href='" . URLADM . "apagar-nivel-acesso/apagar-nivel-acesso/$id' class='btn btn-outline-danger btn-sm' data-confirm='Tem certeza que deseja apagar o nível de acesso selecionado?'>Apagar</a>";
+                                        echo "<a href='" . URLADM . "apagar-nivel-acesso/apagar-nivel-acesso/$id' class='btn btn-danger btn-sm' data-confirm='Tem certeza que deseja apagar o nível de acesso selecionado?'>Apagar</a>";
                                     }
                                     ?>
 

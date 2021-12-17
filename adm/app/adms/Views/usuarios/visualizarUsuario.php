@@ -8,15 +8,15 @@ if (!defined('URL')) {
 <section id="" class="p-4 alinhamento"> <!-- Início Seção Visualizar Cadastro -->
     <div class="container">
 
-        <a href="<?php echo URLADM . 'listar-usuarios/listar-usuarios'; ?>">
+<!--        <a href="<?php echo URLADM . 'listar-usuarios/listar-usuarios'; ?>">
             <div class="p-2">
-                <button style="float:right; vertical-align:middle;" class="btn btn-outline-success btn-sm">
+                <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
                     Listar
                 </button>
             </div>
-        </a>
+        </a>-->
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR USUÁRIO</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS DO ADMINISTRADOR</b></h5>
         <fieldset class="the-fieldset">    
             <div class="row">
                 <div class="col-md-12">
@@ -33,7 +33,7 @@ if (!defined('URL')) {
 
                     <form class="p-2" class="form" action="" method="POST"> <!-- Início Formulário Alterar Usuário -->
 
-                        <h5 class="p-2 borda-conteudo" id="">Dados de Acesso - Visualizar Usuário</h5><p><p>
+                        <h5 class="p-2 borda-conteudo" id="">Dados de Acesso</h5><p><p>
 
                             <?php
                             if (!empty($this->dados['dados_usuario'][0])) {
@@ -95,7 +95,7 @@ if (!defined('URL')) {
                                 </div>
                             </div>
 
-                            <div class="form-group row alinhamento c-nome-resp"> 
+<!--                            <div class="form-group row alinhamento c-nome-resp"> 
                                 <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
                                 <div class="col-sm-8">
                                     <input class="form-control tamanho-font bg-white" name="apelido" type="text" id="apelido" placeholder="<?php echo $apelido; ?>"
@@ -107,7 +107,7 @@ if (!defined('URL')) {
                                            readonly>
 
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="Email" class="col-sm-2  tamanho-font">E-mail</label> 
@@ -153,11 +153,11 @@ if (!defined('URL')) {
                         ?>
 
                         <?php
-                        if ($this->dados['botao']['altUsuario']) {
-                            //echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-outline-success btn-sm'>Alterar</a>&nbsp;";
-                            echo "<div class='botao-atualizar b-atualizar pt-3'><a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-outline-success btn-sm'>Alterar</a></div>";
-                        }
-                        ?>
+//                        if ($this->dados['botao']['altUsuario']) {
+//                            //echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-outline-success btn-sm'>Alterar</a>&nbsp;";
+//                            echo "<div class='botao-atualizar b-atualizar pt-3'><a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-success btn-sm'>Alterar</a></div>";
+//                        }
+//                        ?>
 
 
                     </form> <!-- Final Formulário Alterar Dados Cadastrais -->

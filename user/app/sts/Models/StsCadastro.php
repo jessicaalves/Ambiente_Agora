@@ -18,7 +18,7 @@ class StsCadastro {
     private $senha;
     private $nome;
     private $email;
-    private $apelido;
+    //private $apelido;
     private $logradouro;
     private $bairro;
     private $dadosEmail;
@@ -43,9 +43,9 @@ class StsCadastro {
         return $this->nome;
     }
 
-    function getApelido() {
-        return $this->apelido;
-    }
+//    function getApelido() {
+//        return $this->apelido;
+//    }
 
     function getEmail() {
         return $this->email;
@@ -75,9 +75,9 @@ class StsCadastro {
         $this->nome = $nome;
     }
 
-    function setApelido($apelido) {
-        $this->apelido = $apelido;
-    }
+//    function setApelido($apelido) {
+//        $this->apelido = $apelido;
+//    }
 
     function setEmail($email) {
         $this->email = $email;
@@ -101,8 +101,8 @@ class StsCadastro {
         $this->bairro = isset($this->dados['bairro']);
 
         $this->dados = $dados;
-        $this->apelido = ($this->dados['apelido']); //(Remove o campo apelido da validação) Atribui o valor do campo telefone que vem do formulário para o novo atributo $this->apelido
-        unset($this->dados['apelido']); //(Remove o campo apelido da valiadação) Remove a posição $this->dados['apelido'] que vem do formulário.
+//        $this->apelido = ($this->dados['apelido']); //(Remove o campo apelido da validação) Atribui o valor do campo telefone que vem do formulário para o novo atributo $this->apelido
+//        unset($this->dados['apelido']); //(Remove o campo apelido da valiadação) Remove a posição $this->dados['apelido'] que vem do formulário.
 
         $this->validarDados();
         if ($this->resultado) {
@@ -120,7 +120,7 @@ class StsCadastro {
 
             if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado())) {
                 $this->infoCadUser();
-                $this->dados['apelido'] = $this->apelido;
+//                $this->dados['apelido'] = $this->apelido;
                 $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));
                 $this->dados['sts_perm_ace_id'] = $this->infoCadUser[0]['sts_perm_ace_id'];

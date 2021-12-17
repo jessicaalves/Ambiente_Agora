@@ -21,8 +21,8 @@ class StsAlterarDadosCadastrais {
     public function alterarDadosCadastrais(array $dados) {
         $this->dados = $dados;
 
-        $this->telefone = $this->dados['telefone'];
-        unset($this->dados['telefone']);
+//        $this->apelido = $this->dados['apelido'];
+//        unset($this->dados['apelido']);
 
         $validarCampos = new \App\sts\Models\helper\StsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
@@ -52,7 +52,7 @@ class StsAlterarDadosCadastrais {
 
     private function updateAlterarDadosCadastrais() {
         $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
-        $this->dados['telefone'] = $this->telefone;
+        //$this->dados['apelido'] = $this->apelido;
         $this->dados['modified'] = date("Y-m-d H:i:s");
 
         $upAltSenha = new \App\sts\Models\helper\StsUpdate();

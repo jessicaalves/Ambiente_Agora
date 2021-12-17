@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <div class="">
                     <i class="fas fa-user-circle text-success display-4 ml-3"></i>
-                    <h5 class="p-2 ml-3">Minha Conta</h5>
+                    <h5 class="p-3 ml-3">Minha Conta <i class="fas fa-seedling text-success"></i> Administrador</h5>
 
                     <form  action="<?php echo URLADM . 'login/acesso-login'; ?>" class="form" method="POST"> <!-- Início Login -->
                         <?php

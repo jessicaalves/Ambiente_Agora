@@ -29,9 +29,10 @@ class VisualizarNivelAcesso {
                 $botao = ['listNivelAcesso' => ['menu_controller' => 'listar-niveis-acesso', 'menu_metodo' => 'listar-niveis-acesso']];
                 $listarBotao = new \App\adms\Models\AdmsBotao();
                 $this->dados['botao'] = $listarBotao->valBotao($botao);
-                
+
                 $listarMenu = new \App\adms\Models\AdmsMenu();
                 $this->dados['menu'] = $listarMenu->itemMenu();
+                $this->dados['sidebarActive'] = "listar-niveis-acesso";
 
                 $carregarView = new \Core\ConfigView("adms/Views/niveisAcesso/visualizarNivelAcesso", $this->dados);
                 $carregarView->renderizarVisualizarNivelAcesso();

@@ -9,7 +9,7 @@
                 <h5>Ambiente <i class="fas fa-seedling text-warning"></i> Agora</h5>
             </div>    
             <div class = "col-md-12 text-center">
-                <p><small>&copy; Copyright 2021 | Desenvolvido por Jéssica Alves Ferreira.</small></p>
+                <p><small>&copy; Copyright 2022 | Desenvolvido por Jéssica Alves Ferreira.</small></p>
             </div>   
         </div>
     </div>
