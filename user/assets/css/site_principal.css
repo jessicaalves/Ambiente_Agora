@@ -373,7 +373,7 @@ h2{
         width: 55px;
         height: 54px;
         font-size: 29px;
-        color: yellowgreen; /* Cor do botão círculo localizado na tela inicial */
+        color: white; /* Cor do botão círculo localizado na tela inicial */
         padding-top: 5px;
         padding-bottom: 15px;
     }
@@ -522,7 +522,7 @@ h2{
         width: 65px;
         height: 65px;
         font-size: 35px;
-        color: greenyellow; /* Cor do botão círculo localizado na tela inicial */
+        color: white; /* Cor do botão círculo localizado na tela inicial */
         padding-top: 5px;
         padding-bottom: 8px;
     }

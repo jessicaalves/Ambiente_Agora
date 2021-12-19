@@ -16,12 +16,16 @@
             <div class="collapse navbar-collapse" id="nav-principal">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <a href="<?php echo URLADM . 'adm/login/acesso-login'; ?>" class="nav-link mx-auto">Administrativo</a>
+                    </li>                   
+                    <li class="nav-item divisor"></li>
+                    <li class="nav-item">
                         <a href="<?php echo URL . 'user/home/index/#legislacao-ambiental'; ?>" class="nav-link mx-auto">Legislação Ambiental</a>
                     </li>
                     <li class="nav-item divisor"></li>
                     <li class="nav-item">
                         <a href="<?php echo URL . 'user/login/acesso-login'; ?>" class="nav-link mx-auto">Entrar / Criar Conta</a>
-                    </li>
+                    </li>                  
                 </ul>
             </div>
         </div>
