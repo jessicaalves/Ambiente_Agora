@@ -33,7 +33,7 @@ class Cadastro {
             $novoCadastro->setNome($this->dados['nome']);
             $novoCadastro->setEmail($this->dados['email']);
             
-            $novoCadastro->setApelido($this->dados['apelido']);
+            //$novoCadastro->setApelido($this->dados['apelido']);
             
             $novoCadastro->setLogradouro($this->dados['logradouro']);
             $novoCadastro->setBairro($this->dados['bairro']);

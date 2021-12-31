@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Dez-2021 às 02:53
+-- Tempo de geração: 31-Dez-2021 às 06:16
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -210,7 +210,6 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 (15, 1, 15, 2, 2, 2, 1, 16, '2021-08-15 01:59:55', NULL),
 (16, 1, 16, 2, 2, 2, 1, 17, '2021-08-17 01:09:31', NULL),
 (17, 1, 17, 1, 1, 2, 2, 8, '2021-08-20 18:32:30', NULL),
-(18, 1, 18, 1, 1, 2, 2, 12, '2021-08-20 18:33:47', NULL),
 (19, 1, 19, 2, 2, 2, 2, 15, '2021-08-20 18:39:48', NULL),
 (20, 2, 20, 2, 2, 2, 2, 17, '2021-08-20 18:41:47', NULL),
 (21, 1, 21, 2, 2, 2, 2, 18, '2021-08-20 18:44:32', NULL),
@@ -222,22 +221,17 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 (27, 1, 27, 2, 2, 2, 1, 23, '2021-08-22 06:10:44', NULL),
 (28, 1, 28, 2, 2, 2, 1, 12, '2021-08-22 06:41:37', NULL),
 (29, 1, 29, 2, 2, 2, 1, 22, '2021-08-23 01:07:30', NULL),
-(30, 1, 30, 2, 2, 2, 2, 21, '2021-08-23 02:17:27', NULL),
-(31, 1, 31, 2, 2, 2, 2, 20, '2021-08-23 02:18:18', NULL),
-(32, 1, 32, 2, 2, 2, 2, 22, '2021-08-23 02:19:43', NULL),
-(33, 1, 33, 2, 2, 2, 2, 19, '2021-08-23 02:20:36', NULL),
-(34, 1, 34, 2, 2, 2, 2, 23, '2021-08-23 02:53:46', NULL),
-(35, 1, 35, 2, 2, 4, 1, 25, '2021-08-23 07:50:32', NULL),
-(36, 1, 36, 2, 2, 4, 1, 26, '2021-08-23 08:17:26', NULL),
-(37, 1, 37, 1, 1, 4, 1, 27, '2021-08-30 21:53:37', NULL),
-(38, 1, 38, 2, 2, 4, 1, 28, '2021-08-31 04:41:52', NULL),
-(39, 1, 39, 2, 2, 4, 1, 29, '2021-12-13 03:22:22', NULL),
-(40, 1, 40, 1, 1, 4, 2, 24, '2021-12-13 03:32:28', NULL),
-(41, 1, 41, 1, 1, 4, 2, 27, '2021-12-13 03:39:52', NULL),
-(42, 1, 42, 1, 2, 4, 2, 25, '2021-12-13 03:40:47', NULL),
-(43, 1, 43, 1, 2, 4, 2, 26, '2021-12-13 03:41:47', NULL),
-(44, 1, 44, 1, 2, 4, 2, 28, '2021-12-13 03:42:45', NULL),
-(45, 1, 45, 1, 2, 4, 2, 29, '2021-12-13 03:44:31', NULL);
+(30, 1, 30, 2, 2, 4, 1, 25, '2021-08-23 07:50:32', NULL),
+(31, 1, 31, 2, 2, 4, 1, 26, '2021-08-23 08:17:26', NULL),
+(32, 1, 32, 1, 1, 4, 1, 27, '2021-08-30 21:53:37', NULL),
+(33, 1, 33, 2, 2, 4, 1, 28, '2021-08-31 04:41:52', NULL),
+(34, 1, 34, 2, 2, 4, 1, 29, '2021-12-13 03:22:22', NULL),
+(35, 1, 35, 1, 1, 4, 2, 24, '2021-12-13 03:32:28', NULL),
+(36, 1, 36, 1, 1, 4, 2, 27, '2021-12-13 03:39:52', NULL),
+(37, 1, 37, 1, 2, 4, 2, 25, '2021-12-13 03:40:47', NULL),
+(38, 1, 38, 1, 2, 4, 2, 26, '2021-12-13 03:41:47', NULL),
+(39, 1, 39, 1, 2, 4, 2, 28, '2021-12-13 03:42:45', NULL),
+(40, 1, 40, 1, 2, 4, 2, 29, '2021-12-13 03:44:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -273,7 +267,7 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (5, 'Login', 'logout', 'login', 'logout', 'Página de Logout', 'Página de Logout - Ambiente Agora', 2, 2, 1, 7, '2021-06-26 06:41:13', NULL),
 (6, 'EsqueceuSenha', 'esqueceuSenha', 'esqueceu-senha', 'esqueceu-senha', 'Página de Esqueceu Senha', 'Página de Esqueceu Senha - Ambiente Agora', 1, 1, 1, 7, '2021-06-26 06:43:45', NULL),
 (7, 'AtualSenha', 'atualSenha', 'atual-senha', 'atual-senha', 'Página de atualizar a senha', 'Página de atualizar a senha - Ambiente Agora', 1, 1, 1, 3, '2021-06-26 06:51:25', NULL),
-(8, 'ListarUsuarios', 'listarUsuarios', 'listar-usuarios', 'listar-usuarios', 'Gerenciar Admnistradores', 'Página para ter acesso a lista dos usuários cadastrados - Ambiente Agora', 1, 2, 1, 1, '2021-06-26 06:56:19', NULL),
+(8, 'ListarUsuarios', 'listarUsuarios', 'listar-usuarios', 'listar-usuarios', 'Gerenciar Administradores', 'Página para ter acesso a lista dos usuários cadastrados - Ambiente Agora', 1, 2, 1, 1, '2021-06-26 06:56:19', NULL),
 (9, 'Menu', 'menu', 'menu', 'menu', 'Páginas', 'Página de Menu', 2, 2, 1, 7, '2021-07-11 01:02:32', NULL),
 (10, 'DenunciasRealizadas', 'denunciasRealizadas', 'denuncias-realizadas', 'denuncias-realizadas', 'Denúncias Realizadas', 'Página de Denúncias Realizadas - Ambiente Agora', 2, 2, 1, 5, '2021-07-11 02:18:32', NULL),
 (11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'alterar-dados-cadastrais', 'alterar-dados-cadastrais', 'Alterar Dados', 'Minha Conta - Ambiente Agora', 1, 2, 1, 3, '2021-07-29 01:04:35', NULL),
@@ -475,9 +469,9 @@ CREATE TABLE `sts_denuncias_anonimas` (
   `titulo` varchar(255) NOT NULL,
   `tipo` varchar(255) NOT NULL,
   `descricao` varchar(255) NOT NULL,
-  `envolvido` varchar(220) NOT NULL,
-  `nome_envolvido` varchar(220) NOT NULL,
-  `funcao_envolvido` varchar(220) NOT NULL,
+  `tipo_pessoa` varchar(220) NOT NULL,
+  `nome_suspeito` varchar(220) NOT NULL,
+  `ocupacao_suspeito` varchar(220) NOT NULL,
   `imagem` varchar(220) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
@@ -489,7 +483,7 @@ CREATE TABLE `sts_denuncias_anonimas` (
 -- Extraindo dados da tabela `sts_denuncias_anonimas`
 --
 
-INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
+INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `tipo_pessoa`, `nome_suspeito`, `ocupacao_suspeito`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
 (1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', 'gatoferido.jpg', 2, 2, '2021-06-28 19:09:47', '2021-11-11 01:53:19'),
 (2, 'Denúncia Anônima Teste', 'Flora', 'Teste...', 'Pessoa Física', 'Josefino Teixeira', 'Jardineiro', 'doguinhoatropelado.png', 1, 1, '2021-11-04 01:38:48', '2021-12-14 19:40:31');
 

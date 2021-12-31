@@ -67,15 +67,15 @@
                         </div>   
 
                         <div class="form-group row alinhamento c-envolvido-resp">
-                            <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Envolvido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                            <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Tipo de Pessoa&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
-                                <select class="form-control tamanho-font-tipo tamanho bg-white" name="envolvido" type="select" id="Envolvido"
+                                <select class="form-control tamanho-font-tipo tamanho bg-white" name="tipoPessoa" type="select" id="Envolvido"
                                         value="<?php
-                                        if (isset($valorForm['envolvido'])) {
-                                            echo $valorForm['envolvido'];
+                                        if (isset($valorForm['tipoPessoa'])) {
+                                            echo $valorForm['tipoPessoa'];
                                         }
                                         ?>">
-                                    <option selected>Selecione o envolvido</option>
+                                    <option selected>Selecione o tipo de pessoa</option>
                                     <option value="Pessoa Física">Pessoa Física</option>
                                     <option value="Pessoa Jurídica">Pessoa Jurídica</option>
                                 </select>
@@ -85,22 +85,22 @@
                         <div class="form-group row alinhamento c-infrator-resp"> 
                             <label for="NomeEnvolvido" class="col-sm-2 col-form-label tamanho-font al-nome-funcao">Nome&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                             <div class="col-sm-8">
-                                <input class="form-control tamanho-font" name="nomeEnvolvido" type="text" id="nomeEnvolvido" placeholder="Digite o nome do envolvido"
+                                <input class="form-control tamanho-font" name="nomeSuspeito" type="text" id="nomeEnvolvido" placeholder="Digite o nome do suspeito"
                                        value="<?php
-                                       if (isset($valorForm['nomeEnvolvido'])) {
-                                           echo $valorForm['nomeEnvolvido'];
+                                       if (isset($valorForm['nomeSuspeito'])) {
+                                           echo $valorForm['nomeSuspeito'];
                                        }
                                        ?>">
                             </div>
                         </div> 
 
                         <div class="form-group row alinhamento c-funcao-infrator-resp"> 
-                            <label for="FuncaoEnvolvido" class="col-sm-2 col-form-label tamanho-font al-nome-funcao">Função&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                            <label for="FuncaoEnvolvido" class="col-sm-2 col-form-label tamanho-font al-nome-funcao">Ocupação&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                             <div class="col-sm-8">
-                                <input class="form-control tamanho-font" name="funcaoEnvolvido" type="text" id="funcaoEnvolvido" placeholder="Digite a função do envolvido"
+                                <input class="form-control tamanho-font" name="ocupacaoSuspeito" type="text" id="funcaoEnvolvido" placeholder="Digite a ocupação do suspeito"
                                        value="<?php
-                                       if (isset($valorForm['funcaoEnvolvido'])) {
-                                           echo $valorForm['funcaoEnvolvido'];
+                                       if (isset($valorForm['ocupacaoSuspeito'])) {
+                                           echo $valorForm['ocupacaoSuspeito'];
                                        }
                                        ?>">
                             </div>

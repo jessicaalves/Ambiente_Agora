@@ -64,7 +64,7 @@
                         <th>Id</th>
                         <th>Título</th>
                         <th>Tipo</th>
-                        <th class="d-lg-table-cell">Status</th>
+                        <th class="d-lg-table-cell">Status de Avaliação</th>
                         <th class="d-sm-table-cell">Ações</th>
                     </tr>
                     </thead>
@@ -81,12 +81,12 @@
                                 <td><?php echo $titulo; ?></td>
                                 <td><?php echo $tipo; ?></td>
                                 <td class="d-none d-lg-table-cell">
-                                    <a href="<?php echo URL . 'user/visualizar-status-denuncia/visualizar-status-denuncia/' . $id; ?>" class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></a>
+                                    <a href="" class="badge badge-<?php echo $nome_cor; ?>"><?php echo $nome_status; ?></a>
                                 </td>
 
                                 <td class="align-center d-sm-table-cell">
-                                    <a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Denúncia</a>
-                                    <a href="<?php echo URL . 'user/visualizar-avaliacao-denuncia/visualizar-avaliacao-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar Avaliação </a>
+                                    <a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar</a>
+                                    <a href="<?php echo URL . 'user/visualizar-avaliacao-denuncia/visualizar-avaliacao-denuncia/' . $id; ?>" class="btn btn-success btn-sm">Consultar Avaliação </a>
                                 </td>
                                 
                             </tr>

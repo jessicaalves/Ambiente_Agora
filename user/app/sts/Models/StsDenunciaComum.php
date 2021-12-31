@@ -13,25 +13,11 @@ class StsDenunciaComum extends StsDenuncia {
 
     private $dados;
     private $resultado;
-    private $status;
     private $dadosEmail;
     private $infoEmailAdmin;
 
     function getResultado() {
         return $this->resultado;
-    }
-
-    function getStatus() {
-        return $this->status;
-    }
-
-    function setStatus($status) {
-        $this->status = $status;
-    }
-
-    public function __construct($status) {
-        parent::__construct($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem);
-        $this->status = $status;
     }
 
     public function cadastrarDenunciaComum(array $dados) {

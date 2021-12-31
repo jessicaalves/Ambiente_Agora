@@ -23,16 +23,16 @@ class DenunciaAnonima {
         if (!empty($this->dados['cadastrarDenunciaAnonima'])) {
             unset($this->dados['cadastrarDenunciaAnonima']);
 
-            $this->dados['imagem'] = ($_FILES['imagem'] ? $_FILES['imagem'] : null);
-            $novaDenunciaAnonima = new \App\sts\Models\StsDenunciaAnonima($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem);
+            $this->dados['imagem'] = ($_FILES['imagem'] ? $_FILES['imagem'] : null);         
+            $novaDenunciaAnonima = new \App\sts\Models\StsDenunciaAnonima($id, $titulo, $tipo, $descricao, $tipoPessoa, $nomeSuspeito, $ocupacaoSuspeito, $imagem);
             $novaDenunciaAnonima->cadastrarDenunciaAnonima($this->dados);
             //$novaDenunciaAnonima->setId($this->dados['id']);
             $novaDenunciaAnonima->setTitulo($this->dados['titulo']);
             $novaDenunciaAnonima->setTipo($this->dados['tipo']);
             $novaDenunciaAnonima->setDescricao($this->dados['descricao']);
-            $novaDenunciaAnonima->setEnvolvido($this->dados['envolvido']);
-            $novaDenunciaAnonima->setNomeEnvolvido($this->dados['nomeEnvolvido']);
-            $novaDenunciaAnonima->setFuncaoEnvolvido($this->dados['funcaoEnvolvido']);
+            $novaDenunciaAnonima->setTipoPessoa($this->dados['tipoPessoa']);
+            $novaDenunciaAnonima->setNomeSuspeito($this->dados['nomeSuspeito']);
+            $novaDenunciaAnonima->setOcupacaoSuspeito($this->dados['ocupacaoSuspeito']);
             // $novaDenunciaAnonima->setImagem($this->dados['imagem'] = ($_FILES['imagem'] ? $_FILES['imagem'] : null));
             $novaDenunciaAnonima->setImagem($this->dados['imagem']);
             //var_dump($this->dados);
