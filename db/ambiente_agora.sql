@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31-Dez-2021 às 06:16
+-- Tempo de geração: 02-Jan-2022 às 04:37
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -469,13 +469,13 @@ CREATE TABLE `sts_denuncias_anonimas` (
   `titulo` varchar(255) NOT NULL,
   `tipo` varchar(255) NOT NULL,
   `descricao` varchar(255) NOT NULL,
-  `tipo_pessoa` varchar(220) NOT NULL,
-  `nome_suspeito` varchar(220) NOT NULL,
-  `ocupacao_suspeito` varchar(220) NOT NULL,
+  `envolvido` varchar(220) NOT NULL,
+  `nome_envolvido` varchar(220) NOT NULL,
+  `funcao_envolvido` varchar(220) NOT NULL,
   `imagem` varchar(220) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
-  `created` datetime DEFAULT NULL,
+  `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -483,9 +483,8 @@ CREATE TABLE `sts_denuncias_anonimas` (
 -- Extraindo dados da tabela `sts_denuncias_anonimas`
 --
 
-INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `tipo_pessoa`, `nome_suspeito`, `ocupacao_suspeito`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado e Pensionista', 'gatoferido.jpg', 2, 2, '2021-06-28 19:09:47', '2021-11-11 01:53:19'),
-(2, 'Denúncia Anônima Teste', 'Flora', 'Teste...', 'Pessoa Física', 'Josefino Teixeira', 'Jardineiro', 'doguinhoatropelado.png', 1, 1, '2021-11-04 01:38:48', '2021-12-14 19:40:31');
+INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
+(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, 1, '2022-01-02 03:08:18', NULL);
 
 -- --------------------------------------------------------
 
@@ -514,8 +513,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2021-06-28 19:15:13', '2021-12-14 19:36:04'),
-(2, 1, 'Denúncia Teste', 'Fauna', 'Teste', 'Pessoa Física', 'Josué', 'Jardineiro', 'doguinhoatropelado.png', 1, 1, '2021-11-04 01:13:58', NULL);
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2022-01-02 03:25:04', '2022-01-02 04:37:01');
 
 -- --------------------------------------------------------
 
@@ -1040,13 +1038,13 @@ ALTER TABLE `sts_confirmar_email`
 -- AUTO_INCREMENT de tabela `sts_denuncias_anonimas`
 --
 ALTER TABLE `sts_denuncias_anonimas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `sts_denuncias_comuns`
 --
 ALTER TABLE `sts_denuncias_comuns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `sts_descricoes_status_denuncias`

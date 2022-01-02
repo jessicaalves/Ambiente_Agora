@@ -95,7 +95,7 @@
                             </div>   
 
                             <div class="form-group row alinhamento c-envolvido-resp">
-                                <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Envolvido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                                <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Tipo/Envolvido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                                 <div class="col-sm-8">
                                     <select class="form-control tamanho-font-tipo tamanho bg-white" name="envolvido" type="select" id="Envolvido"
                                             value="<?php
@@ -103,7 +103,7 @@
                                                 echo $valorForm['envolvido'];
                                             }
                                             ?>">
-                                        <option selected>Selecione o envolvido</option>
+                                        <option selected>Selecione o tipo de envolvido</option>
                                         <option value="Pessoa Física">Pessoa Física</option>
                                         <option value="Pessoa Jurídica">Pessoa Jurídica</option>
                                     </select>
@@ -135,7 +135,7 @@
                             </div>
 
                             <div class="form-group row alinhamento c-anexos-resp">
-                                <label for="imagem" class="col-sm-2 col-form-label tamanho-font alin-img">Imagem&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
+                                <label for="imagem" class="col-sm-2 col-form-label tamanho-font alin-img">Imagem/Incidente&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
                                 <div class="col-sm-8 borda-imagem alin-img">
                                     <input class="tamanho-font padd-inserir-imagem" name="imagem" type="file" id="imagem" onchange="previewImagem();" required>  
 

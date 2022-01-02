@@ -38,8 +38,7 @@ class AdmsListarDenunciasComuns {
                 FROM sts_denuncias_comuns AS denun
                 INNER JOIN sts_status_denuncias AS stat ON stat.id=denun.sts_status_denuncia_id
                 INNER JOIN adms_cors AS color ON color.id=stat.adms_cor_id
-                WHERE sts_usuario_id =:sts_usuario_id
-                ORDER BY id ASC LIMIT :limit OFFSET :offset", "sts_usuario_id={$_SESSION['id']}&limit={$this->limiteResultado}&offset={$paginacao->getOffset()}");
+                WHERE sts_usuario_id =:sts_usuario_id ORDER BY id ASC LIMIT :limit OFFSET :offset", "sts_usuario_id={$_SESSION['id']}&limit={$this->limiteResultado}&offset={$paginacao->getOffset()}");
         $this->resultado = $listarDenunciasComuns->getResultado();
         return $this->resultado;
     }

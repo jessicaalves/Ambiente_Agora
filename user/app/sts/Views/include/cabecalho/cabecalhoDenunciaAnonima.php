@@ -16,7 +16,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/bootstrap.min.css'; ?>">
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" type="text/css" href="<?php echo URL . '/user/assets/css/site_denuncia_anonima.css'; ?>">
+        <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/site_denuncia_anonima.css'; ?>">
 
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URL . 'user/assets/css/reboot.css'; ?>">

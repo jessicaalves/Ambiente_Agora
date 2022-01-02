@@ -15,19 +15,19 @@ abstract class StsDenuncia {
     private $titulo;
     private $tipo;
     private $descricao;
-    private $tipoPessoa;
-    private $nomeSuspeito;
-    private $ocupacaoSuspeito;
+    private $envolvido;
+    private $nomeEnvolvido;
+    private $funcaoEnvolvido;
     private $imagem;
 
-    public function __construct($id, $titulo, $tipo, $descricao, $tipoPessoa, $nomeSuspeito, $ocupacaoSuspeito, $imagem) {
+    public function __construct($id, $titulo, $tipo, $descricao, $envolvido, $nomeEnvolvido, $funcaoEnvolvido, $imagem) {
         $this->id = $id;
         $this->titulo = $titulo;
         $this->tipo = $tipo;
         $this->descricao = $descricao;
-        $this->tipoPessoa = $tipoPessoa;
-        $this->nomeSuspeito = $nomeSuspeito;
-        $this->ocupacaoSuspeito = $ocupacaoSuspeito;
+        $this->envolvido = $envolvido;
+        $this->nomeEnvolvido = $nomeEnvolvido;
+        $this->funcaoEnvolvido = $funcaoEnvolvido;
         $this->imagem = $imagem;
     }
 
@@ -47,16 +47,16 @@ abstract class StsDenuncia {
         return $this->descricao;
     }
 
-    function getTipoPessoa() {
-        return $this->tipoPessoa;
+    function getEnvolvido() {
+        return $this->envolvido;
     }
 
-    function getNomeSuspeito() {
-        return $this->nomeSuspeito;
+    function getNomeEnvolvido() {
+        return $this->nomeEnvolvido;
     }
 
-    function getOcupacaoSuspeito() {
-        return $this->ocupacaoSuspeito;
+    function getFuncaoEnvolvido() {
+        return $this->funcaoEnvolvido;
     }
 
     function getImagem() {
@@ -79,16 +79,16 @@ abstract class StsDenuncia {
         $this->descricao = $descricao;
     }
 
-    function setTipoPessoa($tipoPessoa) {
-        $this->tipoPessoa = $tipoPessoa;
+    function setEnvolvido($envolvido) {
+        $this->envolvido = $envolvido;
     }
 
-    function setNomeSuspeito($nomeSuspeito) {
-        $this->nomeSuspeito = $nomeSuspeito;
+    function setNomeEnvolvido($nomeEnvolvido) {
+        $this->nomeEnvolvido = $nomeEnvolvido;
     }
 
-    function setOcupacaoSuspeito($ocupacaoSuspeito) {
-        $this->ocupacaoSuspeito = $ocupacaoSuspeito;
+    function setFuncaoEnvolvido($funcaoEnvolvido) {
+        $this->funcaoEnvolvido = $funcaoEnvolvido;
     }
 
     function setImagem($imagem) {

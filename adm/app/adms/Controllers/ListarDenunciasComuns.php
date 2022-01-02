@@ -25,7 +25,7 @@ class ListarDenunciasComuns {
 
         $listarBotao = new \App\adms\Models\AdmsBotao();
         $this->dados['botao'] = $listarBotao->valBotao($botao);
-
+        
         $this->pageId = (int) $pageId ? $pageId : 1;
         $listarDenunciasComuns = new \App\adms\Models\AdmsListarDenunciasComuns();
         $this->dados['denunciasRealizadas'] = $listarDenunciasComuns->listarDenunciasComuns($this->pageId);
