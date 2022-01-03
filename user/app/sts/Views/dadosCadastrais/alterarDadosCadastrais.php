@@ -107,18 +107,18 @@
                                 </div>
                             </div>
 
-<!--                            <div class="form-group row alinhamento c-email-resp"> 
-                                <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido</label> 
+                           <div class="form-group row alinhamento c-email-resp"> 
+                                <label for="telefone" class="col-sm-2 tamanho-font a-alinhar">Telefone&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                                 <div class="col-sm-8">
-                                    <input class="form-control tamanho-font" name="apelido" type="text" id="apelido" placeholder="Digite o seu apelido"
+                                    <input class="form-control tamanho-font" name="telefone" type="text" id="telefone" placeholder="Digite o seu telefone"
                                            value="<?php
-                                           if (isset($valorForm['apelido'])) {
-                                               echo $valorForm['apelido'];
+                                           if (isset($valorForm['telefone'])) {
+                                               echo $valorForm['telefone'];
                                            }
                                            ?>"
                                            >
                                 </div>
-                            </div>-->
+                            </div>
 
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="Email" class="col-sm-2 tamanho-font">E-mail&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 

@@ -38,7 +38,7 @@
                         <div class="borda-sup">
                             <h6 class="ml-2 pt-1">Dados Cadastrais</h6>
                         </div>
-                        
+
                         <?php
                         if (isset($_SESSION['msg'])) {
                             echo $_SESSION['msg'];
@@ -98,18 +98,18 @@
                                 </div>
 
 
-<!--                                <div class="form-group row alinhamento c-email-resp"> 
-                                    <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido</label> 
+                                <div class="form-group row alinhamento c-email-resp"> 
+                                    <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Telefone</label> 
                                     <div class="col-sm-8">
-                                        <input class="form-control tamanho-font bg-white" name="apelido" type="text" id="apelido" placeholder="<?php echo $apelido; ?>"
+                                        <input class="form-control tamanho-font bg-white" name="telefone" type="text" id="telefone" placeholder="<?php echo $telefone; ?>"
                                                value="<?php
-                                               if (isset($valorForm['apelido'])) {
-                                                   echo $valorForm['apelido'];
+                                               if (isset($valorForm['telefone'])) {
+                                                   echo $valorForm['telefone'];
                                                }
                                                ?>"
                                                readonly>
                                     </div>
-                                </div>-->
+                                </div>
 
                                 <div class="form-group row alinhamento c-email-resp"> 
                                     <label for="Email" class="col-sm-2  tamanho-font">E-mail</label> 
@@ -162,7 +162,7 @@
                             ?>
 
 
-<!--                            <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="editar" class="btn btn-success btn-sm" value="atualizar">Alterar</button></div>-->
+                            <!--                            <div class="botao-atualizar b-atualizar pt-3"><button type="submit" name="editar" class="btn btn-success btn-sm" value="atualizar">Alterar</button></div>-->
                         </form> <!-- Final Formulário Alterar Dados Cadastrais -->
                     </div>
                 </div>

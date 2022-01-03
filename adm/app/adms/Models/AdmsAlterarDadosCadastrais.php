@@ -20,8 +20,6 @@ class AdmsAlterarDadosCadastrais {
 
     public function alterarDadosCadastrais(array $dados) {
         $this->dados = $dados;
-        $this->apelido = $this->dados['apelido'];
-        unset($this->dados['apelido']);
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
@@ -39,7 +37,11 @@ class AdmsAlterarDadosCadastrais {
 
             $validarSenha = new \App\adms\Models\helper\AdmsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado())) {
+
+            $validarTelefone = new \App\adms\Models\helper\AdmsValidarTelefone();
+            $validarTelefone->validarTelefone($this->dados['telefone'], $editarUnico, $_SESSION['id']);
+
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
                 $this->updateAlterarDadosCadastrais();
             } else {
                 $this->resultado = false;
@@ -51,7 +53,6 @@ class AdmsAlterarDadosCadastrais {
 
     private function updateAlterarDadosCadastrais() {
         $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
-        $this->dados['apelido'] = $this->apelido;
         $this->dados['modified'] = date("Y-m-d H:i:s");
 
         $upAltSenha = new \App\adms\Models\helper\AdmsUpdate();

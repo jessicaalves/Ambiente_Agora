@@ -83,18 +83,18 @@ if (!defined('URL')) {
                             </div>
                         </div>
 
-<!--                        <div class="form-group row alinhamento c-nome-resp"> 
-                            <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
+                        <div class="form-group row alinhamento c-nome-resp"> 
+                            <label for="telefone" class="col-sm-2 tamanho-font a-alinhar">Telefone&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
-                                <input class="form-control tamanho-font" name="apelido" type="text" id="apelido" placeholder="Digite o seu apelido"
+                                <input class="form-control tamanho-font telefone" name="telefone" type="text" id="apelido" placeholder="Digite o seu telefone"
                                        value="<?php
-                                       if (isset($valorForm['apelido'])) {
-                                           echo $valorForm['apelido'];
+                                       if (isset($valorForm['telefone'])) {
+                                           echo $valorForm['telefone'];
                                        }
                                        ?>"
                                        >
                             </div>
-                        </div>-->
+                        </div>
 
                         <div class="form-group row alinhamento c-email-resp"> 
                             <label for="Email" class="col-sm-2 tamanho-font">E-mail&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
@@ -118,5 +118,23 @@ if (!defined('URL')) {
     </div>
 </section><!-- Final Seção Alterar Cadastro -->
 </div>
+
+<script type="text/javascript">
+    jQuery("input.telefone")
+        .mask("(99) 9999-9999?9")
+        .focusout(function (event) {  
+            var target, phone, element;  
+            target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+            phone = target.value.replace(/\D/g, '');
+            element = $(target);  
+            element.unmask();  
+            if(phone.length > 10) {  
+                element.mask("(99) 99999-999?9");  
+            } else {  
+                element.mask("(99) 9999-9999?9");  
+            }  
+        });
+    
+</script>
 
 

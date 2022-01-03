@@ -21,9 +21,6 @@ class StsAlterarDadosCadastrais {
     public function alterarDadosCadastrais(array $dados) {
         $this->dados = $dados;
 
-//        $this->apelido = $this->dados['apelido'];
-//        unset($this->dados['apelido']);
-
         $validarCampos = new \App\sts\Models\helper\StsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
 
@@ -38,9 +35,13 @@ class StsAlterarDadosCadastrais {
             $validarUsuario = new \App\sts\Models\helper\StsValidarUsuario();
             $validarUsuario->validarUsuario($this->dados['login'], $editarUnico, $_SESSION['id']);
 
-            $validarSenha = new \App\sts\Models\helper\StsValidarSenha(); 
+            $validarSenha = new \App\sts\Models\helper\StsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado())) {
+
+            $validarTelefone = new \App\sts\Models\helper\StsValidarTelefone();
+            $validarTelefone->validarTelefone($this->dados['telefone'], $editarUnico, $_SESSION['id']);
+
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
                 $this->updateAlterarDadosCadastrais();
             } else {
                 $this->resultado = false;
@@ -52,7 +53,6 @@ class StsAlterarDadosCadastrais {
 
     private function updateAlterarDadosCadastrais() {
         $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
-        //$this->dados['apelido'] = $this->apelido;
         $this->dados['modified'] = date("Y-m-d H:i:s");
 
         $upAltSenha = new \App\sts\Models\helper\StsUpdate();

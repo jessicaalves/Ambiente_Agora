@@ -18,7 +18,7 @@ class StsCadastro {
     private $senha;
     private $nome;
     private $email;
-    //private $apelido;
+    private $telefone;
     private $logradouro;
     private $bairro;
     private $dadosEmail;
@@ -43,9 +43,9 @@ class StsCadastro {
         return $this->nome;
     }
 
-//    function getApelido() {
-//        return $this->apelido;
-//    }
+    function getTelefone() {
+        return $this->telefone;
+    }
 
     function getEmail() {
         return $this->email;
@@ -75,9 +75,9 @@ class StsCadastro {
         $this->nome = $nome;
     }
 
-//    function setApelido($apelido) {
-//        $this->apelido = $apelido;
-//    }
+    function setTelefone($telefone) {
+        $this->cpf = $telefone;
+    }
 
     function setEmail($email) {
         $this->email = $email;
@@ -97,14 +97,13 @@ class StsCadastro {
         $this->senha = isset($this->dados['senha']);
         $this->nome = isset($this->dados['nome']);
         $this->email = isset($this->dados['email']);
+        $this->telefone = isset($this->dados['telefone']);
         $this->logradouro = isset($this->dados['logradouro']);
         $this->bairro = isset($this->dados['bairro']);
-
         $this->dados = $dados;
-//        $this->apelido = ($this->dados['apelido']); //(Remove o campo apelido da validação) Atribui o valor do campo telefone que vem do formulário para o novo atributo $this->apelido
-//        unset($this->dados['apelido']); //(Remove o campo apelido da valiadação) Remove a posição $this->dados['apelido'] que vem do formulário.
 
         $this->validarDados();
+
         if ($this->resultado) {
             $validarEmail = new \App\sts\Models\helper\StsEmail();
             $validarEmail->validarEmail($this->dados['email']);
@@ -118,9 +117,11 @@ class StsCadastro {
             $validarSenha = new \App\sts\Models\helper\StsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
 
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado())) {
+            $validarTelefone = new \App\sts\Models\helper\StsValidarTelefone();
+            $validarTelefone->validarTelefone($this->dados['telefone']);
+
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
                 $this->infoCadUser();
-//                $this->dados['apelido'] = $this->apelido;
                 $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));
                 $this->dados['sts_perm_ace_id'] = $this->infoCadUser[0]['sts_perm_ace_id'];
@@ -160,11 +161,11 @@ class StsCadastro {
             if ($this->infoCadUser[0]['env_email_conf'] == 1) {
                 $this->dadosEmail();
             } else {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                $_SESSION['msg'] = "<div class='alert alert-success'>Denunciante cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
                 $this->resultado = true;
             }
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar usuário!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar denunciante!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }
@@ -196,10 +197,10 @@ class StsCadastro {
         $emailPHPMailer->emailPhpMailer($this->dadosEmail);
 
         if ($emailPHPMailer->getResultado()) {
-            $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso! Verifique sua caixa de entrada para confirmar seu e-mail.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-success'>Denunciante cadastrado com sucesso! Verifique sua caixa de entrada para confirmar seu e-mail.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-primary'>Usuário cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-primary'>Denunciante cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!</div>";
             $this->resultado = false;
         }
     }
