@@ -95,19 +95,19 @@ if (!defined('URL')) {
                                 </div>
                             </div>
 
-<!--                            <div class="form-group row alinhamento c-nome-resp"> 
-                                <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Apelido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
+                            <div class="form-group row alinhamento c-nome-resp"> 
+                                <label for="cpf" class="col-sm-2 tamanho-font a-alinhar">CPF&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
                                 <div class="col-sm-8">
-                                    <input class="form-control tamanho-font bg-white" name="apelido" type="text" id="apelido" placeholder="<?php echo $apelido; ?>"
+                                    <input class="form-control tamanho-font bg-white" name="cpf" type="text" id="cpf" placeholder="<?php echo $cpf; ?>"
                                            value="<?php
-                                           if (isset($valorForm['apelido'])) {
-                                               echo $valorForm['apelido'];
+                                           if (isset($valorForm['cpf'])) {
+                                               echo $valorForm['cpf'];
                                            }
                                            ?>"
                                            readonly>
 
                                 </div>
-                            </div>-->
+                            </div>
 
                             <div class="form-group row alinhamento c-email-resp"> 
                                 <label for="Email" class="col-sm-2  tamanho-font">E-mail</label> 

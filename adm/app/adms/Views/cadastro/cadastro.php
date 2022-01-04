@@ -64,14 +64,14 @@
                                        >
                             </div>
                         </div>
-                        
-                       <div class="form-group row alinhamento c-nome-resp"> 
-                            <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Telefone&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+
+                        <div class="form-group row alinhamento c-nome-resp"> 
+                            <label for="cpf" class="col-sm-2 tamanho-font a-alinhar">CPF&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
-                                <input class="form-control tamanho-font telefone" name="telefone" type="text" id="telefone" placeholder="Digite o seu telefone"
+                                <input class="form-control tamanho-font cpf" name="cpf" type="text" id="cpf" placeholder="Digite o seu cpf"
                                        value="<?php
-                                       if (isset($valorForm['telefone'])) {
-                                           echo $valorForm['telefone'];
+                                       if (isset($valorForm['cpf'])) {
+                                           echo $valorForm['cpf'];
                                        }
                                        ?>"
                                        >
@@ -101,22 +101,12 @@
     </div>
 </section> <!-- Final Seção Cadastro -->
 
+
 <script type="text/javascript">
-    jQuery("input.telefone")
-        .mask("(99) 9999-9999?9")
-        .focusout(function (event) {  
-            var target, phone, element;  
-            target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
-            phone = target.value.replace(/\D/g, '');
-            element = $(target);  
-            element.unmask();  
-            if(phone.length > 10) {  
-                element.mask("(99) 99999-999?9");  
-            } else {  
-                element.mask("(99) 9999-9999?9");  
-            }  
-        });
-    
+    $(document).ready(function () {
+        $("#cpf").mask("999.999.999-99");
+    });
 </script>
+
 
 

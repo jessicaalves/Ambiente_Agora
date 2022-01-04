@@ -24,6 +24,10 @@ class StsAlterarDadosCadastrais {
         $validarCampos = new \App\sts\Models\helper\StsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
 
+        $validarCpf = new \App\sts\Models\helper\StsValidarCpf();
+        $editarUnico = true;
+        $validarCpf->validarCpf($this->dados['cpf'], $editarUnico, $_SESSION['id']);
+
         if ($validarCampos->getResultado()) {
             $validarEmail = new \App\sts\Models\helper\StsEmail();
             $validarEmail->validarEmail($this->dados['email']);
@@ -38,10 +42,10 @@ class StsAlterarDadosCadastrais {
             $validarSenha = new \App\sts\Models\helper\StsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
 
-            $validarTelefone = new \App\sts\Models\helper\StsValidarTelefone();
-            $validarTelefone->validarTelefone($this->dados['telefone'], $editarUnico, $_SESSION['id']);
+            $validarCpf = new \App\sts\Models\helper\StsValidarCpf();
+            $validarCpf->validarCpf($this->dados['cpf'], $editarUnico, $_SESSION['id']);
 
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
                 $this->updateAlterarDadosCadastrais();
             } else {
                 $this->resultado = false;

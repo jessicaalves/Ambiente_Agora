@@ -35,5 +35,14 @@ if (!defined('URL')) {
 <!-- JS Personalizado -->
 <script src="<?php echo URLADM . '/assets/js/previewImagem.js'; ?>"></script>
 
+<!-- jQuery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- jQuery Mask -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
+<!-- jQuery Mask -->
+<script type="text/javascript" src="<?php echo URLADM . '/assets/js/jquery.mask.min.js'; ?>"></script> 
+
 
 </html>

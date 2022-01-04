@@ -31,8 +31,6 @@ class AdmsAlterarUsuario {
 
     public function alterarUsuario(array $dados) {
         $this->dados = $dados;
-//        $this->apelido = $this->dados['apelido'];
-//        unset($this->dados['apelido']);
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
         $validarCampos->validarDados($this->dados);
@@ -58,7 +56,10 @@ class AdmsAlterarUsuario {
         $validarSenha = new \App\adms\Models\helper\AdmsValidarSenha();
         $validarSenha->validarSenha($this->dados['senha']);
 
-        if (( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarSenha->getResultado())) {
+        $validarCpf = new \App\adms\Models\helper\AdmsValidarCpf();
+        $validarCpf->validarCpf($this->dados['cpf'], $editarUnico, $this->dados['id']);
+
+        if (( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarSenha->getResultado())AND ( $validarCpf->getResultado())) {
             $this->updateAlterarUsuario();
         } else {
             $this->resultado = false;
@@ -67,15 +68,14 @@ class AdmsAlterarUsuario {
 
     private function updateAlterarUsuario() {
         $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
-        //$this->dados['apelido'] = $this->apelido;
         $this->dados['modified'] = date("Y-m-d H:i:s");
         $upAltSenha = new \App\adms\Models\helper\AdmsUpdate();
         $upAltSenha->exeUpdate("adms_usuarios", $this->dados, "WHERE id =:id", "id=" . $this->dados['id']);
         if ($upAltSenha->getResultado()) {
-            $_SESSION['msg'] = "<div class='alert alert-success'>Usuário alterado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-success'>Administrador alterado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao alterar usuário!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao alterar administrador!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }
@@ -83,7 +83,7 @@ class AdmsAlterarUsuario {
     public function listarCadastrar() {
         $listar = new \App\adms\Models\helper\AdmsRead();
         $listar->fullRead("SELECT id id_nivac, nome nome_nivac FROM adms_niveis_acessos WHERE ordem >=:ordem ORDER BY nome ASC", "ordem=" . $_SESSION['ordem_nivac']);
-        
+
         $registro['nivac'] = $listar->getResultado();
 
         $listar->fullRead("SELECT id id_sit, nome nome_sit FROM adms_sits_usuarios ORDER BY nome ASC");

@@ -18,7 +18,7 @@ class StsCadastro {
     private $senha;
     private $nome;
     private $email;
-    private $telefone;
+    private $cpf;
     private $logradouro;
     private $bairro;
     private $dadosEmail;
@@ -43,8 +43,8 @@ class StsCadastro {
         return $this->nome;
     }
 
-    function getTelefone() {
-        return $this->telefone;
+    function getCpf() {
+        return $this->cpf;
     }
 
     function getEmail() {
@@ -75,8 +75,8 @@ class StsCadastro {
         $this->nome = $nome;
     }
 
-    function setTelefone($telefone) {
-        $this->cpf = $telefone;
+    function setCpf($cpf) {
+        $this->cpf = $cpf;
     }
 
     function setEmail($email) {
@@ -97,7 +97,7 @@ class StsCadastro {
         $this->senha = isset($this->dados['senha']);
         $this->nome = isset($this->dados['nome']);
         $this->email = isset($this->dados['email']);
-        $this->telefone = isset($this->dados['telefone']);
+        $this->cpf = isset($this->dados['cpf']);
         $this->logradouro = isset($this->dados['logradouro']);
         $this->bairro = isset($this->dados['bairro']);
         $this->dados = $dados;
@@ -117,10 +117,10 @@ class StsCadastro {
             $validarSenha = new \App\sts\Models\helper\StsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
 
-            $validarTelefone = new \App\sts\Models\helper\StsValidarTelefone();
-            $validarTelefone->validarTelefone($this->dados['telefone']);
+            $validarCpf = new \App\sts\Models\helper\StsValidarCpf();
+            $validarCpf->validarCpf($this->dados['cpf']);
 
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
                 $this->infoCadUser();
                 $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));

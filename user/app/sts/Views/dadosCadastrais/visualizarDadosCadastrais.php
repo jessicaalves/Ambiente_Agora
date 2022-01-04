@@ -99,12 +99,12 @@
 
 
                                 <div class="form-group row alinhamento c-email-resp"> 
-                                    <label for="apelido" class="col-sm-2 tamanho-font a-alinhar">Telefone</label> 
+                                    <label for="cpf" class="col-sm-2 tamanho-font a-alinhar">CPF</label> 
                                     <div class="col-sm-8">
-                                        <input class="form-control tamanho-font bg-white" name="telefone" type="text" id="telefone" placeholder="<?php echo $telefone; ?>"
+                                        <input class="form-control tamanho-font bg-white" name="cpf" type="text" id="cpf" placeholder="<?php echo $cpf; ?>"
                                                value="<?php
-                                               if (isset($valorForm['telefone'])) {
-                                                   echo $valorForm['telefone'];
+                                               if (isset($valorForm['cpf'])) {
+                                                   echo $valorForm['cpf'];
                                                }
                                                ?>"
                                                readonly>
@@ -171,5 +171,10 @@
     </section><!-- Final Seção Visualizar Cadastro -->
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cpf").mask("999.999.999-99");
+    });
+</script>
 
 

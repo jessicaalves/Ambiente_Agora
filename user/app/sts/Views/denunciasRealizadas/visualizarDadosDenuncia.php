@@ -121,7 +121,7 @@
                                 </div>   
 
                                 <div class="form-group row alinhamento c-envolvido-resp">
-                                    <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Tipo/Envolvido&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                                    <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Tipo de Pessoa&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                                     <div class="col-sm-8">
                                         <select class="form-control tamanho-font-tipo tamanho bg-white" name="envolvido" type="select" id="Envolvido"
                                                 value="<?php
@@ -149,7 +149,7 @@
                                 </div> 
 
                                 <div class="form-group row alinhamento c-funcao-infrator-resp"> 
-                                    <label for="FuncaoEnvolvido" class="col-sm-2 col-form-label tamanho-font al-nome-funcao alin-fun">Função&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                                    <label for="FuncaoEnvolvido" class="col-sm-2 col-form-label tamanho-font al-nome-funcao alin-fun">Ocupação&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label> 
                                     <div class="col-sm-8">
                                         <input class="form-control tamanho-font bg-white" name="funcaoEnvolvido" type="text" id="funcaoEnvolvido" placeholder="<?php echo $funcao_envolvido; ?>"
                                                value="<?php
@@ -161,7 +161,7 @@
                                 </div>
 
                                 <div class="form-group row alinhamento c-anexos-resp">
-                                    <label for="imagem" class="col-sm-2 col-form-label tamanho-font alin-img">Imagem/Incidente&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
+                                    <label for="imagem" class="col-sm-2 col-form-label tamanho-font alin-img">Imagem (Crime)&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
                                     <div class="col-sm-8 borda-imagem alin-img">
                                         <input class="tamanho-font padd-inserir-imagem" name="imagem" type="file" id="imagem" onchange="previewImagem();" onclick="return false;" >  
 

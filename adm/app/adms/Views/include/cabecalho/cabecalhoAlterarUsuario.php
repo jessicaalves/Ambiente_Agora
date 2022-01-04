@@ -31,4 +31,10 @@ if (!defined('URL')) {
         <!-- Custom Fonts -->
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/font-awesome/css/all.css'; ?>">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"> 
+        
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!-- jQuery Mask -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
     </head>

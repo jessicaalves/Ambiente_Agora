@@ -22,9 +22,18 @@ class CadastrarUsuario {
         $this->dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
         if (!empty($this->dados['cadastrarUsuario'])) {
             unset($this->dados['cadastrarUsuario']);
+            
             $cadastrarUsuario = new \App\adms\Models\AdmsCadastrarUsuario();
             $cadastrarUsuario->cadastrarUsuario($this->dados);
-            if ($cadastrarUsuario->getResultado()) {              
+            
+            //$cadastrarUsuario->setId($this->dados['id']);
+            $cadastrarUsuario->setLogin($this->dados['login']);
+            $cadastrarUsuario->setSenha($this->dados['senha']);
+            $cadastrarUsuario->setNome($this->dados['nome']);
+            $cadastrarUsuario->setEmail($this->dados['email']);
+            $cadastrarUsuario->setCpf($this->dados['cpf']);
+            
+            if ($cadastrarUsuario->getResultado()) {
                 $UrlDestino = URLADM . 'listar-usuarios/listar-usuarios';
                 header("Location: $UrlDestino");
             } else {
@@ -36,8 +45,8 @@ class CadastrarUsuario {
         }
     }
 
-    private function cadastrarUsuarioViewPriv() {        
-        $botao = ['listUsuario' => ['menu_controller' => 'listar-usuarios', 'menu_metodo' => 'listar-usuarios']];       
+    private function cadastrarUsuarioViewPriv() {
+        $botao = ['listUsuario' => ['menu_controller' => 'listar-usuarios', 'menu_metodo' => 'listar-usuarios']];
         $listarBotao = new \App\adms\Models\AdmsBotao();
         $this->dados['botao'] = $listarBotao->valBotao($botao);
 

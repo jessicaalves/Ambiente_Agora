@@ -108,12 +108,12 @@
                             </div>
 
                            <div class="form-group row alinhamento c-email-resp"> 
-                                <label for="telefone" class="col-sm-2 tamanho-font a-alinhar">Telefone&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                                <label for="cpf" class="col-sm-2 tamanho-font a-alinhar">CPF&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                                 <div class="col-sm-8">
-                                    <input class="form-control tamanho-font" name="telefone" type="text" id="telefone" placeholder="Digite o seu telefone"
+                                    <input class="form-control tamanho-font" name="cpf" type="text" id="cpf" placeholder="Digite o seu cpf"
                                            value="<?php
-                                           if (isset($valorForm['telefone'])) {
-                                               echo $valorForm['telefone'];
+                                           if (isset($valorForm['cpf'])) {
+                                               echo $valorForm['cpf'];
                                            }
                                            ?>"
                                            >
@@ -172,8 +172,8 @@
     </section><!-- Final Seção Alterar Cadastro -->
 </div>
 
-<script>
-    jQuery(function ($) {
-        $("#telefone").mask("(99) 99999-9999");
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#cpf").mask("999.999.999-99");
     });
 </script>

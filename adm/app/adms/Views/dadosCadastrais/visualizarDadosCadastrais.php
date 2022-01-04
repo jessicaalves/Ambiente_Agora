@@ -7,7 +7,7 @@ if (!defined('URL')) {
 
 <section id="" class="p-4 alinhamento"> <!-- Início Seção Visualizar Cadastro -->
     <div class="container">
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS DO ADMNISTRADOR</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>VISUALIZAR DADOS DO ADMINISTRADOR</b></h5>
         <fieldset class="the-fieldset">    
             <div class="row">
                 <div class="col-md-12">
@@ -74,12 +74,12 @@ if (!defined('URL')) {
                             </div>
 
                            <div class="form-group row alinhamento c-nome-resp"> 
-                                <label for="telefone" class="col-sm-2 tamanho-font a-alinhar">Telefone<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
+                                <label for="cpf" class="col-sm-2 tamanho-font a-alinhar">CPF<a href="#" class="tooltip-test text-success tamanho-font a-alinhar"></a></label> 
                                 <div class="col-sm-8">
-                                    <input class="form-control tamanho-font bg-white" name="telefone" type="text" id="apelido" placeholder="<?php echo $telefone; ?>"
+                                    <input class="form-control tamanho-font bg-white" name="cpf" type="text" id="cpf" placeholder="<?php echo $cpf; ?>"
                                            value="<?php
-                                           if (isset($valorForm['telefone'])) {
-                                               echo $valorForm['telefone'];
+                                           if (isset($valorForm['cpf'])) {
+                                               echo $valorForm['cpf'];
                                            }
                                            ?>"
                                            readonly>

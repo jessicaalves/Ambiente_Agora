@@ -18,7 +18,7 @@ class AdmsCadastro {
     private $senha;
     private $nome;
     private $email;
-    private $telefone;
+    private $cpf;
 
     function getResultado() {
         return $this->resultado;
@@ -44,8 +44,8 @@ class AdmsCadastro {
         return $this->email;
     }
 
-    function getTelefone() {
-        return $this->telefone;
+    function getCpf() {
+        return $this->cpf;
     }
 
     function setId($id) {
@@ -68,8 +68,8 @@ class AdmsCadastro {
         $this->email = $email;
     }
 
-    function setTelefone($telefone) {
-        $this->telefone = $telefone;
+    function setCpf($cpf) {
+        $this->cpf = $cpf;
     }
 
     public function cadastro(array $dados) {
@@ -78,7 +78,7 @@ class AdmsCadastro {
         $this->senha = isset($this->dados['senha']);
         $this->nome = isset($this->dados['nome']);
         $this->email = isset($this->dados['email']);
-        $this->telefone = isset($this->dados['telefone']);
+        $this->cpf = isset($this->dados['cpf']);
 
         $this->dados = $dados;
         $this->validarDados();
@@ -96,10 +96,10 @@ class AdmsCadastro {
             $validarSenha = new \App\adms\Models\helper\AdmsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
 
-            $validarTelefone = new \App\adms\Models\helper\AdmsValidarTelefone();
-            $validarTelefone->validarTelefone($this->dados['telefone']);
+            $validarCpf = new \App\adms\Models\helper\AdmsValidarCpf();
+            $validarCpf->validarCpf($this->dados['cpf']);
 
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
                 $this->infoCadUser();
                 $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));
@@ -135,11 +135,11 @@ class AdmsCadastro {
             if ($this->infoCadUser[0]['env_email_conf'] == 1) {
                 $this->dadosEmail();
             } else {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                $_SESSION['msg'] = "<div class='alert alert-success'>Administrador cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
                 $this->resultado = true;
             }
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar usuário!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar administrador!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }
@@ -171,10 +171,10 @@ class AdmsCadastro {
         $emailPHPMailer->emailPhpMailer($this->dadosEmail);
 
         if ($emailPHPMailer->getResultado()) {
-            $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso! Verifique sua caixa de entrada para confirmar seu e-mail.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-success'>Administrador cadastrado com sucesso! Verifique sua caixa de entrada para confirmar seu e-mail.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-primary'>Usuário cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-primary'>Administrador cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Jan-2022 às 04:04
+-- Tempo de geração: 04-Jan-2022 às 02:34
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -393,7 +393,7 @@ CREATE TABLE `adms_usuarios` (
   `senha` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `telefone` varchar(15) NOT NULL,
+  `cpf` varchar(15) NOT NULL,
   `recuperar_senha` varchar(220) DEFAULT NULL,
   `confirmar_email` varchar(120) DEFAULT NULL,
   `adms_nivel_acesso_id` int(11) NOT NULL DEFAULT 1,
@@ -407,9 +407,9 @@ CREATE TABLE `adms_usuarios` (
 -- Extraindo dados da tabela `adms_usuarios`
 --
 
-INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `telefone`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$Q1p/UUM3AyAg9HWnaa9lV.zIxOhbQJMkCu/Dx7WTjpsnIhNe6FTBS', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '(64) 9996-23376', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-03 03:56:02'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$1G8UKx0JHriPqzKC6sz0a.F9L0WNlQ0nmzuEJGpgAeTqoyf5nb.s6', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '(64) 99967-7790', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2021-12-14 19:03:52');
+INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
+(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$Q1p/UUM3AyAg9HWnaa9lV.zIxOhbQJMkCu/Dx7WTjpsnIhNe6FTBS', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-03 03:56:02'),
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$.8n.BSYVAUm4nEU5inqpeOMbfxfceyw5qSpqgFoK4CKgJq0EbNXbu', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '406.569.130-37', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2022-01-04 01:51:56');
 
 -- --------------------------------------------------------
 
@@ -733,7 +733,7 @@ CREATE TABLE `sts_usuarios` (
   `senha` varchar(255) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `telefone` varchar(15) NOT NULL,
+  `cpf` varchar(15) NOT NULL,
   `logradouro` varchar(255) NOT NULL,
   `bairro` varchar(255) NOT NULL,
   `recuperar_senha` varchar(220) DEFAULT NULL,
@@ -750,9 +750,8 @@ CREATE TABLE `sts_usuarios` (
 -- Extraindo dados da tabela `sts_usuarios`
 --
 
-INSERT INTO `sts_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `telefone`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `chave_descadastro`, `sts_perm_ace_id`, `sts_sit_usuario_id`, `sts_grup_pag_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$Kal53Gj/DtDmNYlT/0LQVemZQe5pzJQYSoYOvaDyDMtzQOGnb7BBu', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '(64) 99962-3376', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', '2022-01-03 03:22:49'),
-(2, 'joana78@hotmail.com', '$2y$10$S7Rxsu6J67XRzVc9a2fQe.mzctv0zh.6uqBG92YkiSywZGbInwFyK', 'Joana Felizara Ramos', 'joana78@hotmail.com', '(64) 99966-9999', 'Rua Joaquim', 'Santa Luzia', NULL, '2382d1b0ec42dae84a5a7419d5d47c03', NULL, 1, 3, 6, '2022-01-03 02:45:29', NULL);
+INSERT INTO `sts_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `chave_descadastro`, `sts_perm_ace_id`, `sts_sit_usuario_id`, `sts_grup_pag_id`, `created`, `modified`) VALUES
+(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$Kal53Gj/DtDmNYlT/0LQVemZQe5pzJQYSoYOvaDyDMtzQOGnb7BBu', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '515.299.560-30', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', '2022-01-03 03:22:49');
 
 --
 -- Índices para tabelas despejadas

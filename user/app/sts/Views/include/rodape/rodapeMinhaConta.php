@@ -30,4 +30,10 @@
 <!-- Jquery Mask -->
 <script type="text/javascript" src="<?php echo URL . 'user/assets/js/jquery.mask.min.js'; ?>"></script>
 
+<!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!-- jQuery Mask -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+
 </html>

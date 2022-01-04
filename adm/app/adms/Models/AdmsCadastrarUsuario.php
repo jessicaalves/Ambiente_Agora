@@ -14,9 +14,63 @@ class AdmsCadastrarUsuario {
     private $resultado;
     private $dados;
     private $dadosId;
+    private $id;
+    private $login;
+    private $senha;
+    private $nome;
+    private $email;
+    private $cpf;
 
     function getResultado() {
         return $this->resultado;
+    }
+
+    function getId() {
+        return $this->id;
+    }
+
+    function getLogin() {
+        return $this->login;
+    }
+
+    function getSenha() {
+        return $this->senha;
+    }
+
+    function getNome() {
+        return $this->nome;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getCpf() {
+        return $this->cpf;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setLogin($login) {
+        $this->login = $login;
+    }
+
+    function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+    function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setCpf($cpf) {
+        $this->cpf = $cpf;
     }
 
     public function visualizarUsuario($dadosId) {
@@ -30,6 +84,13 @@ class AdmsCadastrarUsuario {
     }
 
     public function cadastrarUsuario(array $dados) {
+        //$this->id = isset($this->dados['id']);
+        $this->login = isset($this->dados['login']);
+        $this->senha = isset($this->dados['senha']);
+        $this->nome = isset($this->dados['nome']);
+        $this->email = isset($this->dados['email']);
+        $this->cpf = isset($this->dados['cpf']);
+        
         $this->dados = $dados;
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
@@ -55,7 +116,10 @@ class AdmsCadastrarUsuario {
         $validarSenha = new \App\adms\Models\helper\AdmsValidarSenha();
         $validarSenha->validarSenha($this->dados['senha']);
 
-        if (( $validarSenha->getResultado()) AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado())) {
+        $validarCpf = new \App\adms\Models\helper\AdmsValidarCpf();
+        $validarCpf->validarCpf($this->dados['cpf']);
+
+        if (( $validarSenha->getResultado()) AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
             $this->inserirUsuario();
         } else {
             $this->resultado = false;
@@ -67,7 +131,7 @@ class AdmsCadastrarUsuario {
         $this->dados['created'] = date("Y-m-d H:i:s");
         $cadUsuario = new \App\adms\Models\helper\AdmsCreate();
         $cadUsuario->executarCreate("adms_usuarios", $this->dados);
-        if ($cadUsuario->getResultado()) {                
+        if ($cadUsuario->getResultado()) {
             $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = true;
             $this->dados['id'] = $cadUsuario->getResultado();

@@ -31,14 +31,14 @@ class AdmsApagarUsuario {
             $apagarUsuario->exeDelete("adms_usuarios", "WHERE id =:id", "id={$this->dadosId}");
 
             if ($apagarUsuario->getResultado()) {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Usuário apagado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                $_SESSION['msg'] = "<div class='alert alert-success'>Administrador apagado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
                 $this->resultado = true;
             } else {
-                $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao apagar usuário!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao apagar administrador!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
                 $this->resultado = false;
             }
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao apagar usuário!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao apagar administrador!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }

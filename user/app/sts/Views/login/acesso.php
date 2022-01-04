@@ -83,7 +83,7 @@
                 </div>
                 <div class="modal-footer">
                     <a href="<?php echo URL . 'user/cadastro/cadastrar-usuario'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-primary" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Cadastrar Nova Conta</button></a>
-                    <a href="<?php echo URL . 'user/denuncia-anonima/cadastrar-denuncia-anonima'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-success" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Criar Denúncia Anônima</button></a>               
+                    <a href="<?php echo URL . 'user/denuncia-anonima/cadastrar-denuncia-anonima'; ?>" class="p-2 flex-fill bd-highlight"><button class="btn-success" style="border-radius: 4px; padding: 8px; cursor: pointer;  border: none; font-size: 15.5px;">Cadastrar Denúncia Anônima</button></a>               
                 </div>
             </div>
         </div>

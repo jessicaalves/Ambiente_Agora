@@ -38,10 +38,10 @@ class AdmsAlterarDadosCadastrais {
             $validarSenha = new \App\adms\Models\helper\AdmsValidarSenha();
             $validarSenha->validarSenha($this->dados['senha']);
 
-            $validarTelefone = new \App\adms\Models\helper\AdmsValidarTelefone();
-            $validarTelefone->validarTelefone($this->dados['telefone'], $editarUnico, $_SESSION['id']);
+            $validarCpf = new \App\adms\Models\helper\AdmsValidarCpf();
+            $validarCpf->validarCpf($this->dados['cpf'], $editarUnico, $_SESSION['id']);
 
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarTelefone->getResultado())) {
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
                 $this->updateAlterarDadosCadastrais();
             } else {
                 $this->resultado = false;
