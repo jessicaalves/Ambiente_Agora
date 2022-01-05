@@ -90,7 +90,7 @@ class AdmsCadastrarUsuario {
         $this->nome = isset($this->dados['nome']);
         $this->email = isset($this->dados['email']);
         $this->cpf = isset($this->dados['cpf']);
-        
+
         $this->dados = $dados;
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
@@ -120,6 +120,7 @@ class AdmsCadastrarUsuario {
         $validarCpf->validarCpf($this->dados['cpf']);
 
         if (( $validarSenha->getResultado()) AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
+            $this->infoCadUser();
             $this->inserirUsuario();
         } else {
             $this->resultado = false;
@@ -127,16 +128,60 @@ class AdmsCadastrarUsuario {
     }
 
     private function inserirUsuario() {
-        $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;        
+        $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;  
+        $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));
+        $this->dados['adms_nivel_acesso_id'] = $this->infoCadUser[0]['adms_nivel_acesso_id'];
+        $this->dados['adms_sit_usuario_id'] = $this->infoCadUser[0]['adms_sit_usuario_id'];
         $this->dados['created'] = date("Y-m-d H:i:s");
+
         $cadUsuario = new \App\adms\Models\helper\AdmsCreate();
         $cadUsuario->executarCreate("adms_usuarios", $this->dados);
+
         if ($cadUsuario->getResultado()) {
-            $_SESSION['msg'] = "<div class='alert alert-success'>Usuário cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
-            $this->resultado = true;
-            $this->dados['id'] = $cadUsuario->getResultado();
+            if ($this->infoCadUser[0]['env_email_conf'] == 1) {
+                $this->dadosEmail();
+            } else {
+                $_SESSION['msg'] = "<div class='alert alert-success'>Administrador cadastrado com sucesso!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+                $this->resultado = true;
+                //$this->dados['id'] = $cadUsuario->getResultado();
+            }
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar usuário!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro ao cadastrar administrador!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $this->resultado = false;
+        }
+    }
+
+    private function infoCadUser() {
+        $infoCadUser = new \App\adms\Models\helper\AdmsRead();
+        $infoCadUser->fullRead("SELECT env_email_conf, adms_nivel_acesso_id, adms_sit_usuario_id
+                FROM adms_cads_usuarios WHERE id =:id LIMIT :limit", "id=1&limit=1");
+        $this->infoCadUser = $infoCadUser->getResultado();
+    }
+
+    private function dadosEmail() {
+        $nome = explode(" ", $this->dados['nome']);
+        $prim_nome = $nome[0];
+        $this->dadosEmail['dest_nome'] = $prim_nome;
+        $this->dadosEmail['dest_email'] = $this->dados['email'];
+        $this->dadosEmail['titulo_email'] = "Confirmar e-mail";
+        $this->dadosEmail['cont_email'] = "Caro(a), " . $prim_nome . "<br><br>";
+        $this->dadosEmail['cont_email'] .= "Obrigada por se cadastrar conosco.<br>";
+        $this->dadosEmail['cont_email'] .= "Seguindo o link abaixo você poderá ativar seu perfil.<br>";
+        $this->dadosEmail['cont_email'] .= "Para continuar o processo de confirmação de e-mail, clique no link abaixo ou cole o endereço abaixo no seu navegador.<br><br>";
+        $this->dadosEmail['cont_email'] .= "<a href='" . URLADM . "confirmar-email/confirmarEmail?chave=" . $this->dados['confirmar_email'] . "'>Clique aqui</a><br><br>";
+        $this->dadosEmail['cont_email'] .= "Obrigada!<br>";
+
+        $this->dadosEmail['cont_text_email'] = "Olá " . $prim_nome . " Obrigada por se cadastrar conosco. Seguindo o link abaixo você poderá ativar seu perfil. Para continuar o processo de confirmação de e-mail, clique no link abaixo ou cole o endereço abaixo no seu navegador. " . URLADM . "confirmar-email/confirmarEmail?chave=" . $this->dados['confirmar_email'] . "'>Clique aqui</a><br><br>";
+        $this->dadosEmail['cont_text_email'] .= "Obrigada!";
+
+        $emailPHPMailer = new \App\adms\Models\helper\AdmsPhpMailer();
+        $emailPHPMailer->emailPhpMailer($this->dadosEmail);
+
+        if ($emailPHPMailer->getResultado()) {
+            $_SESSION['msg'] = "<div class='alert alert-success'>Administrador cadastrado com sucesso! Verifique sua caixa de entrada para confirmar seu e-mail.<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $this->resultado = true;
+        } else {
+            $_SESSION['msg'] = "<div class='alert alert-primary'>Administrador cadastrado com sucesso! Erro: Não foi possivel enviar o e-mail para confirmar e-mail!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         }
     }

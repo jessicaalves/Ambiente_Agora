@@ -114,7 +114,7 @@ if (!defined('URL')) {
                                             echo "<a class='dropdown-item btn-sm' href='" . URLADM . "alterar-nivel-acesso/alterar-nivel-acesso/$id'>Alterar</a>";
                                         }
                                         if ($this->dados['botao']['delNivelAcesso']) {
-                                            echo "<a class='dropdown-item btn-sm' data-toggle='modal' data-target='#confirm-delete' href='" . URLADM . "apagar-nivel-acesso/apagar-nivel-acesso/$id'>Apagar</a>";
+                                            echo "<a class='dropdown-item btn-sm' data-toggle='modal' data-target='#confirm-delete-nivac' href='" . URLADM . "apagar-nivel-acesso/apagar-nivel-acesso/$id'>Apagar</a>";
                                         }
                                         ?>
 

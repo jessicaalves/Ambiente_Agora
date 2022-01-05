@@ -110,7 +110,7 @@ if (!defined('URL')) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "alterar-usuario/alterar-usuario/$id'>Alterar</a>";
                                         }
                                         if ($this->dados['botao']['delUsuario']) {
-                                            echo "<a class='dropdown-item' data-toggle='modal' data-target='#confirm-delete-nivac' href='" . URLADM . "apagar-usuario/apagar-usuario/$id'>Apagar</a>";
+                                            echo "<a class='dropdown-item' data-toggle='modal' data-target='#confirm-delete' href='" . URLADM . "apagar-usuario/apagar-usuario/$id'>Apagar</a>";
                                         }
                                         ?>
 

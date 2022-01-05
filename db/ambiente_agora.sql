@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Jan-2022 às 02:34
+-- Tempo de geração: 05-Jan-2022 às 04:19
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -310,7 +310,7 @@ CREATE TABLE `adms_sits` (
 INSERT INTO `adms_sits` (`id`, `nome`, `created`, `modified`) VALUES
 (1, 'Ativo', '2021-07-12 19:26:43', NULL),
 (2, 'Inativo', '2021-07-12 19:26:43', NULL),
-(3, 'Analise', '2021-07-12 19:26:43', '2021-07-12 19:26:43');
+(3, 'Análise', '2021-07-12 19:26:43', '2021-07-12 19:26:43');
 
 -- --------------------------------------------------------
 
@@ -332,7 +332,7 @@ CREATE TABLE `adms_sits_pags` (
 INSERT INTO `adms_sits_pags` (`id`, `nome`, `created`, `modified`) VALUES
 (1, 'Ativo', '2021-06-26 06:16:28', NULL),
 (2, 'Inativo', '2021-06-26 06:16:28', NULL),
-(3, 'Analise', '2021-06-26 06:16:28', '2021-06-26 06:16:28');
+(3, 'Análise', '2021-06-26 06:16:28', '2021-06-26 06:16:28');
 
 -- --------------------------------------------------------
 
@@ -355,7 +355,7 @@ CREATE TABLE `adms_sits_usuarios` (
 INSERT INTO `adms_sits_usuarios` (`id`, `nome`, `adms_cor_id`, `created`, `modified`) VALUES
 (1, 'Ativo', 4, '2021-07-23 06:19:54', NULL),
 (2, 'Inativo', 2, '2021-07-23 06:19:54', NULL),
-(3, 'Aguardando Confirmacao', 1, '2021-07-23 06:19:54', NULL);
+(3, 'Aguardando Confirmação', 1, '2021-07-23 06:19:54', NULL);
 
 -- --------------------------------------------------------
 
@@ -409,7 +409,7 @@ CREATE TABLE `adms_usuarios` (
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$Q1p/UUM3AyAg9HWnaa9lV.zIxOhbQJMkCu/Dx7WTjpsnIhNe6FTBS', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-03 03:56:02'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$.8n.BSYVAUm4nEU5inqpeOMbfxfceyw5qSpqgFoK4CKgJq0EbNXbu', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '406.569.130-37', NULL, NULL, 2, NULL, 1, '2021-08-20 02:12:41', '2022-01-04 01:51:56');
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, 2, NULL, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52');
 
 -- --------------------------------------------------------
 
@@ -513,7 +513,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2022-01-02 03:25:04', '2022-01-02 04:37:01');
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2022-01-02 03:25:04', '2022-01-04 18:51:26');
 
 -- --------------------------------------------------------
 
@@ -624,7 +624,7 @@ CREATE TABLE `sts_perms_aces` (
 --
 
 INSERT INTO `sts_perms_aces` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
-(1, 'Usuario', 1, '2021-06-27 05:11:55', NULL);
+(1, 'Usuário', 1, '2021-06-27 05:11:55', NULL);
 
 -- --------------------------------------------------------
 
@@ -646,7 +646,7 @@ CREATE TABLE `sts_sits_pags` (
 INSERT INTO `sts_sits_pags` (`id`, `nome`, `created`, `modified`) VALUES
 (1, 'Ativo', '2021-06-27 05:07:02', NULL),
 (2, 'Inativo', '2021-06-27 05:07:02', NULL),
-(3, 'Analise', '2021-06-27 05:07:19', NULL);
+(3, 'Análise', '2021-06-27 05:07:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -668,7 +668,7 @@ CREATE TABLE `sts_sits_usuarios` (
 INSERT INTO `sts_sits_usuarios` (`id`, `nome`, `created`, `modified`) VALUES
 (1, 'Ativo', '2021-06-27 05:05:00', NULL),
 (2, 'Inativo', '2021-06-27 05:05:00', NULL),
-(3, 'Aguardando Confirmacao', '2021-06-27 05:05:29', NULL);
+(3, 'Aguardando Confirmação', '2021-06-27 05:05:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -978,7 +978,7 @@ ALTER TABLE `adms_menus`
 -- AUTO_INCREMENT de tabela `adms_niveis_acessos`
 --
 ALTER TABLE `adms_niveis_acessos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `adms_nivs_aces_pags`
@@ -1080,7 +1080,7 @@ ALTER TABLE `sts_sits_pags`
 -- AUTO_INCREMENT de tabela `sts_sits_usuarios`
 --
 ALTER TABLE `sts_sits_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `sts_status_denuncias`
@@ -1098,7 +1098,7 @@ ALTER TABLE `sts_tipos_pags`
 -- AUTO_INCREMENT de tabela `sts_usuarios`
 --
 ALTER TABLE `sts_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas

@@ -45,10 +45,10 @@ class AdmsLogin {
             $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Necessário confirmar o e-mail!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         } else if ($this->resultado[0]['adms_sit_usuario_id'] == 5) {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>E-mail descadastrado, entre em contato com a empresa!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: E-mail descadastrado, entre em contato com a empresa!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         } else if ($this->resultado[0]['adms_sit_usuario_id'] == 2) {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>E-mail inativo, entre em contato com a empresa!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: E-mail inativo, entre em contato com a empresa!<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div>";
             $this->resultado = false;
         } else {
             $this->validarSenha();
