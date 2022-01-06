@@ -21,6 +21,7 @@ class AdmsPaginacao {
     private $resultado;
     private $totalPaginas;
     private $maxLinks = 1;
+    private $var;
 
     function getResultado() {
         return $this->resultado;
@@ -30,8 +31,9 @@ class AdmsPaginacao {
         return $this->offset;
     }
 
-    function __construct($link) {
+    function __construct($link, $var = null) {
         $this->link = $link;
+        $this->var = $var;
     }
 
     public function condicao($pagina, $limiteResultado) {
@@ -68,23 +70,23 @@ class AdmsPaginacao {
         $this->resultado = "<nav aria-label='paginacao'>";
         $this->resultado .= "<ul class='pagination pagination-sm justify-content-center'>";
         $this->resultado .= "<li class='page-item text-success'>";
-        $this->resultado .= "<a class='page-link text-success' href='" . $this->link . "' tabindex='-1'>Primeira</a>";
+        $this->resultado .= "<a class='page-link text-success' href='" . $this->link . $this->var . "' tabindex='-1'>Primeira</a>";
         $this->resultado .= "</li>";
 
         for ($iPag = $this->pagina - $this->maxLinks; $iPag <= $this->pagina - 1; $iPag++) {
             if ($iPag >= 1) {
-                $this->resultado .= "<li class='page-item'><a class='page-link text-success' href='" . $this->link . "/" . $iPag . "'>$iPag</a></li>";
+                $this->resultado .= "<li class='page-item'><a class='page-link text-success' href='" . $this->link . "/" . $iPag . $this->var . "'>$iPag</a></li>";
             }
         }
 
         for ($dPag = $this->pagina + 1; $dPag <= $this->pagina + $this->maxLinks; $dPag++) {
             if ($dPag <= $this->totalPaginas) {
-                $this->resultado .= "<li class='page-item'><a class='page-link text-success' href='" . $this->link . "/" . $dPag . "'>$dPag</a></li>";
+                $this->resultado .= "<li class='page-item'><a class='page-link text-success' href='" . $this->link . "/" . $dPag . $this->var . "'>$dPag</a></li>";
             }
         }
 
         $this->resultado .= "<li class='page-item'>";
-        $this->resultado .= "<a class='page-link text-success' href='" . $this->link . "/" . $this->totalPaginas . "'>Última</a>";
+        $this->resultado .= "<a class='page-link text-success' href='" . $this->link . "/" . $this->totalPaginas . $this->var . "'>Última</a>";
         $this->resultado .= "</li>";
         $this->resultado .= "</ul>";
         $this->resultado .= "</nav>";
