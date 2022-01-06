@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Jan-2022 às 02:19
+-- Tempo de geração: 06-Jan-2022 às 04:30
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -291,7 +291,7 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (27, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
 (28, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL),
 (29, 'AvaliarDenunciaAnonima', 'avaliarDenunciaAnonima', 'avaliar-denuncia-anonima', 'avaliar-denuncia-anonima', 'Avaliar Denúncia Anônima', 'Página de Avaliar Denúncia Anônima - Ambiente Agora', 1, 2, 1, 3, '2021-09-20 04:44:51', NULL),
-(30, 'PesquisarUsuario', 'listarUsuario', 'pesquisar-usuario', 'listar-usuario', 'Pesquisar Administrador', 'Página para pesquisar os administradores cadastrados - Ambiente Agora', 1, 2, 1, 8, '2022-01-05 23:22:25', NULL);
+(30, 'PesquisarUsuarios', 'listarUsuarios', 'pesquisar-usuarios', 'listar-usuarios', 'Pesquisar Administradores', 'Página para pesquisar os administradores cadastrados - Ambiente Agora', 1, 2, 1, 8, '2022-01-05 23:22:25', NULL);
 
 -- --------------------------------------------------------
 

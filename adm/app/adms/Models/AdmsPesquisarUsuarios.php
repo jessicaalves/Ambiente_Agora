@@ -9,7 +9,7 @@ if (!defined('URL')) {
     exit();
 }
 
-class AdmsPesquisarUsuario {
+class AdmsPesquisarUsuarios {
 
     private $dados;
     private $resultado;
@@ -21,7 +21,7 @@ class AdmsPesquisarUsuario {
         return $this->resultadoPg;
     }
 
-    public function pesquisarUsuario($pageId = null, $dados = null) {
+    public function pesquisarUsuarios($pageId = null, $dados = null) {
 
         $this->pageId = (int) $pageId;
         $this->dados = $dados;
@@ -32,16 +32,16 @@ class AdmsPesquisarUsuario {
         if (!empty($this->dados['nome']) AND ! empty($this->dados['email'])) {
             
         } else if (!empty($this->dados['nome'])) {
-            $this->pesquisarUsuarioName();
+            $this->pesquisarUsuariosName();
         } else if (!empty($this->dados['email'])) {
-            //$this->pesquisarAdministradorEmail();
+            //$this->pesquisarUsuariosEmail();
         }
 
         return $this->resultado;
     }
 
-    private function pesquisarUsuarioName() {
-        $paginacao = new \App\adms\Models\helper\AdmsPaginacao(URLADM . 'pesquisar-usuario/listar-usuario', '?nome=' . $this->dados['nome']);
+    private function pesquisarUsuariosName() {
+        $paginacao = new \App\adms\Models\helper\AdmsPaginacao(URLADM . 'pesquisar-usuarios/listar-usuarios', '?nome=' . $this->dados['nome']);
         $paginacao->condicao($this->pageId, $this->limiteResultado);
 
         $paginacao->paginacao("SELECT COUNT(user.id) AS num_result 

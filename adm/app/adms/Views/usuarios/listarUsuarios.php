@@ -26,7 +26,7 @@ if (!defined('URL')) {
         <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR ADMINISTRADORES</b></h5>
 
         
-        <form class="form-inline" method="POST" action="<?php echo URLADM . 'pesquisar-usuario/listar-usuario'; ?>">
+        <form class="form-inline" method="POST" action="<?php echo URLADM . 'pesquisar-usuarios/listar-usuarios'; ?>">
             <div class="form-group">
                 <label>Nome</label>
                 <input name="nome" type="text" id="nome" class="form-control form-control-sm mx-sm-3" placeholder="Digite o nome">

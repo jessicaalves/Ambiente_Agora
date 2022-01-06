@@ -9,18 +9,18 @@ if (!defined('URL')) {
     exit();
 }
 
-class PesquisarUsuario {
+class PesquisarUsuarios {
 
     private $dados;
     private $dadosForm;
     private $pageId;
 
     public function index() {
-        $listarUsuario = new PesquisarUsuario();
-        $listarUsuario->listarUsuario();
+        $listarUsuario = new PesquisarUsuarios();
+        $listarUsuario->listarUsuarios();
     }
 
-    public function listarUsuario($pageId = null) {
+    public function listarUsuarios($pageId = null) {
 
         $botao = ['cadUsuario' => ['menu_controller' => 'cadastrar-usuario', 'menu_metodo' => 'cadastrar-usuario'],
             'visUsuario' => ['menu_controller' => 'visualizar-usuario', 'menu_metodo' => 'visualizar-usuario'],
@@ -43,8 +43,8 @@ class PesquisarUsuario {
             $this->dadosForm['nome'] = filter_input(INPUT_GET, 'nome', FILTER_DEFAULT);
         }
 
-        $listarUsuario = new \App\adms\Models\AdmsPesquisarUsuario();
-        $this->dados['listarUsuarios'] = $listarUsuario->pesquisarUsuario($this->pageId, $this->dadosForm);
+        $listarUsuario = new \App\adms\Models\AdmsPesquisarUsuarios();
+        $this->dados['listarUsuarios'] = $listarUsuario->pesquisarUsuarios($this->pageId, $this->dadosForm);
         $this->dados['paginacao'] = $listarUsuario->getResultadoPg();
 
         $carregarView = new \Core\ConfigView("adms/Views/usuarios/pesquisarUsuarios", $this->dados);
