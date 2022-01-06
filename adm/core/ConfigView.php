@@ -249,7 +249,7 @@ class ConfigView {
             echo "Erro ao carregar a página de Visualizar Denúncia Anônima: {$this->nome}!";
         }
     }
-    
+
     public function renderizarAvaliarDenunciaAnonima() {
         if (file_exists('app/' . $this->nome . '.php')) {
             include 'app/adms/Views/include/cabecalho/cabecalhoAvaliarDenunciaAnonima.php';
@@ -259,6 +259,18 @@ class ConfigView {
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
             echo "Erro ao carregar a página de Avaliar Denúncia Anônima: {$this->nome}!";
+        }
+    }
+
+    public function renderizarPesquisarUsuarios() {
+        if (file_exists('app/' . $this->nome . '.php')) {
+            include 'app/adms/Views/include/cabecalho/cabecalhoListarUsuarios.php';
+            include 'app/adms/Views/include/menu/menuListarUsuarios.php';
+            include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
+            include 'app/' . $this->nome . '.php';
+            include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
+        } else {
+            echo "Erro ao carregar a página de Pesquisar Usuários: {$this->nome}!";
         }
     }
 

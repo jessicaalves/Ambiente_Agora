@@ -25,6 +25,19 @@ if (!defined('URL')) {
 
         <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR ADMINISTRADORES</b></h5>
 
+        
+        <form class="form-inline" method="POST" action="<?php echo URLADM . 'pesquisar-usuario/listar-usuario'; ?>">
+            <div class="form-group">
+                <label>Nome</label>
+                <input name="nome" type="text" id="nome" class="form-control form-control-sm mx-sm-3" placeholder="Digite o nome">
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input name="email" type="text" id="email" class="form-control form-control-sm mx-sm-3" placeholder="Digite o e-mail">
+            </div>
+            <input name="PesqAdministrador" type="submit" class="btn btn-secondary my-2 btn-sm" value="Pesquisar">
+        </form><hr>
+        
 
         <div class="table table-responsive text-center">   
 

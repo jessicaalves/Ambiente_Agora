@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Jan-2022 às 04:19
+-- Tempo de geração: 06-Jan-2022 às 02:19
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -118,7 +118,8 @@ INSERT INTO `adms_grups_pags` (`id`, `nome`, `ordem`, `created`, `modified`) VAL
 (4, 'Apagar', 4, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
 (5, 'Visualizar', 5, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
 (6, 'Outros', 6, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
-(7, 'Acesso', 7, '2021-07-13 03:22:48', '2021-07-13 03:22:48');
+(7, 'Acesso', 7, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
+(8, 'Pesquisar', 8, '2022-01-05 23:29:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -231,7 +232,8 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 (37, 1, 37, 1, 2, 4, 2, 25, '2021-12-13 03:40:47', NULL),
 (38, 1, 38, 1, 2, 4, 2, 26, '2021-12-13 03:41:47', NULL),
 (39, 1, 39, 1, 2, 4, 2, 28, '2021-12-13 03:42:45', NULL),
-(40, 1, 40, 1, 2, 4, 2, 29, '2021-12-13 03:44:31', NULL);
+(40, 1, 40, 1, 2, 4, 2, 29, '2021-12-13 03:44:31', NULL),
+(41, 1, 41, 1, 2, 2, 1, 30, '2022-01-05 23:36:08', NULL);
 
 -- --------------------------------------------------------
 
@@ -288,7 +290,8 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (26, 'AvaliarDenunciaComum', 'avaliarDenunciaComum', 'avaliar-denuncia-comum', 'avaliar-denuncia-comum', 'Avaliar Denúncia', 'Página de Avaliar Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
 (27, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
 (28, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL),
-(29, 'AvaliarDenunciaAnonima', 'avaliarDenunciaAnonima', 'avaliar-denuncia-anonima', 'avaliar-denuncia-anonima', 'Avaliar Denúncia Anônima', 'Página de Avaliar Denúncia Anônima - Ambiente Agora', 1, 2, 1, 3, '2021-09-20 04:44:51', NULL);
+(29, 'AvaliarDenunciaAnonima', 'avaliarDenunciaAnonima', 'avaliar-denuncia-anonima', 'avaliar-denuncia-anonima', 'Avaliar Denúncia Anônima', 'Página de Avaliar Denúncia Anônima - Ambiente Agora', 1, 2, 1, 3, '2021-09-20 04:44:51', NULL),
+(30, 'PesquisarUsuario', 'listarUsuario', 'pesquisar-usuario', 'listar-usuario', 'Pesquisar Administrador', 'Página para pesquisar os administradores cadastrados - Ambiente Agora', 1, 2, 1, 8, '2022-01-05 23:22:25', NULL);
 
 -- --------------------------------------------------------
 
@@ -409,7 +412,8 @@ CREATE TABLE `adms_usuarios` (
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$Q1p/UUM3AyAg9HWnaa9lV.zIxOhbQJMkCu/Dx7WTjpsnIhNe6FTBS', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-03 03:56:02'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, 2, NULL, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52');
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, 2, NULL, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52'),
+(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$JN9Pma4Ir0QeBcRDD0K6MukEDq1/CCJlg240QTfad7YY1HYPQb9yy', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, '6cee742503bcf59ddddbc3e84ed8b60f', 2, NULL, 3, '2022-01-06 01:11:19', NULL);
 
 -- --------------------------------------------------------
 
@@ -562,7 +566,8 @@ INSERT INTO `sts_grups_pags` (`id`, `nome`, `ordem`, `created`, `modified`) VALU
 (3, 'Editar', 3, '2021-08-06 06:39:55', NULL),
 (4, 'Visualizar', 4, '2021-08-06 06:39:55', NULL),
 (5, 'Outros', 5, '2021-08-06 06:39:55', NULL),
-(6, 'Acesso', 6, '2021-08-06 06:39:55', NULL);
+(6, 'Acesso', 6, '2021-08-06 06:39:55', NULL),
+(7, 'Pesquisar', 7, '2022-01-05 23:26:13', NULL);
 
 -- --------------------------------------------------------
 
@@ -966,7 +971,7 @@ ALTER TABLE `adms_cors`
 -- AUTO_INCREMENT de tabela `adms_grups_pags`
 --
 ALTER TABLE `adms_grups_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `adms_menus`
@@ -990,7 +995,7 @@ ALTER TABLE `adms_nivs_aces_pags`
 -- AUTO_INCREMENT de tabela `adms_pags`
 --
 ALTER TABLE `adms_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `adms_sits`
@@ -1020,7 +1025,7 @@ ALTER TABLE `adms_tipos_pags`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `sts_cads_usuarios`
@@ -1056,7 +1061,7 @@ ALTER TABLE `sts_descricoes_status_denuncias`
 -- AUTO_INCREMENT de tabela `sts_grups_pags`
 --
 ALTER TABLE `sts_grups_pags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `sts_pags`
