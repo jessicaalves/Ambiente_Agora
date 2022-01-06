@@ -20,8 +20,8 @@ class ListarDenunciasComuns {
     }
 
     public function listarDenunciasComuns($pageId = null) {
-        $botao = ['altAvaliacaoDenuncia' => ['menu_controller' => 'avaliar-denuncia-comum', 'menu_metodo' => 'avaliar-denuncia-comum'],
-            'visDenuncia' => ['menu_controller' => 'visualizar-denuncia-comum', 'menu_metodo' => 'visualizar-denuncia-comum']];
+        $botao = ['altAvaliacaoDenuncia' => ['menu_controller' => 'avaliar-denuncia', 'menu_metodo' => 'avaliar-denuncia'],
+            'visDenuncia' => ['menu_controller' => 'consultar-denuncia', 'menu_metodo' => 'consultar-denuncia']];
 
         $listarBotao = new \App\adms\Models\AdmsBotao();
         $this->dados['botao'] = $listarBotao->valBotao($botao);

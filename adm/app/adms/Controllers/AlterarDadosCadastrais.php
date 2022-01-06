@@ -38,8 +38,8 @@ class AlterarDadosCadastrais {
                 $this->altDadosCadastraisPriv();
             }
         } else {
-            $visualizarDadosUsuario = new \App\adms\Models\AdmsVisualizarDadosCadastrais();
-            $this->dados['form'] = $visualizarDadosUsuario->visualizarDadosCadastrais();
+            $visualizarDadosUsuario = new \App\adms\Models\AdmsConsultarDadosCadastrais();
+            $this->dados['form'] = $visualizarDadosUsuario->consultarDadosCadastrais();
             $this->altDadosCadastraisPriv();
         }
     }

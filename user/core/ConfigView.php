@@ -113,14 +113,14 @@ class ConfigView {
         }
     }
 
-    public function renderizarDadosCadastrais() {
+    public function renderizarConsultarDadosCadastrais() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarDadosCadastrais.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoConsultarDadosCadastrais.php';
             include 'app/sts/Views/include/menu/menuDadosCadastrais.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Dados Cadastrais: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Dados Cadastrais: {$this->nome}!";
         }
     }
 
@@ -135,25 +135,25 @@ class ConfigView {
         }
     }
 
-    public function renderizarVisualizarDadosDenuncia() {
+    public function renderizarConsultarDadosDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarDadosDenuncia.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoConsultarDadosDenuncia.php';
             include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Denúncias Realizadas: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Denúncias Realizadas: {$this->nome}!";
         }
     }
 
-    public function renderizarVisualizarAvaliacaoDenuncia() {
+    public function renderizarConsultarAvaliacaoDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/sts/Views/include/cabecalho/cabecalhoVisualizarAvaliacaoDenuncia.php';
+            include 'app/sts/Views/include/cabecalho/cabecalhoConsultarAvaliacaoDenuncia.php';
             include 'app/sts/Views/include/menu/menuListarDenunciasRealizadas.php';
             include 'app/' . $this->nome . '.php';
             include 'app/sts/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Avaliação da Denúncia: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Avaliação da Denúncia: {$this->nome}!";
         }
     }
 

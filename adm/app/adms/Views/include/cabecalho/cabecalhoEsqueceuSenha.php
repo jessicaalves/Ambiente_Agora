@@ -8,7 +8,7 @@
         <meta name="description" content="Ambiente Agora">
         <meta name="author" content="Jessica">
 
-        <title>Esqueceu a Senha | Ambiente Agora</title>
+        <title>Página de Esqueceu Senha | Ambiente Agora</title>
 
         <link rel="icon" href="<?php echo URLADM . '/assets/img/imagensSistema/icon.png'; ?>">
 

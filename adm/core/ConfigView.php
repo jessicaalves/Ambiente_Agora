@@ -82,15 +82,15 @@ class ConfigView {
         }
     }
 
-    public function renderizarVisualizarUsuario() {
+    public function renderizarConsultarUsuario() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarUsuario.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoConsultarUsuario.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Usuário: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Usuário: {$this->nome}!";
         }
     }
 
@@ -106,15 +106,15 @@ class ConfigView {
         }
     }
 
-    public function renderizarDadosCadastrais() {
+    public function renderizarConsultarDadosCadastrais() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDadosCadastrais.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoConsultarDadosCadastrais.php';
             include 'app/adms/Views/include/menu/menuDadosCadastrais.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Dados Cadastrais: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Dados Cadastrais: {$this->nome}!";
         }
     }
 
@@ -166,15 +166,15 @@ class ConfigView {
         }
     }
 
-    public function renderizarVisualizarNivelAcesso() {
+    public function renderizarConsultarNivelAcesso() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarNiveisAcesso.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoConsultarNiveisAcesso.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Nível de Acesso: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Nível de Acesso: {$this->nome}!";
         }
     }
 
@@ -192,25 +192,25 @@ class ConfigView {
 
     public function renderizarListarDenunciasComuns() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoListarDenunciasComuns.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoListarDenuncias.php';
             include 'app/adms/Views/include/menu/menuDenunciasRealizadas.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Listar Denúncias Comuns: {$this->nome}!";
+            echo "Erro ao carregar a página de Listar Denúncias: {$this->nome}!";
         }
     }
 
-    public function renderizarVisualizarDenunciaComum() {
+    public function renderizarConsultarDenuncia() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDenunciaComum.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoConsultarDenuncia.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Denúncia Comum: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Denúncia: {$this->nome}!";
         }
     }
 
@@ -222,7 +222,7 @@ class ConfigView {
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Avaliar Denúncia Comum: {$this->nome}!";
+            echo "Erro ao carregar a página de Avaliar Denúncia: {$this->nome}!";
         }
     }
 
@@ -238,15 +238,15 @@ class ConfigView {
         }
     }
 
-    public function renderizarVisualizarDenunciaAnonima() {
+    public function renderizarConsultarDenunciaAnonima() {
         if (file_exists('app/' . $this->nome . '.php')) {
-            include 'app/adms/Views/include/cabecalho/cabecalhoVisualizarDenunciaAnonima.php';
+            include 'app/adms/Views/include/cabecalho/cabecalhoConsultarDenunciaAnonima.php';
             include 'app/adms/Views/include/menu/menuListarUsuarios.php';
             include 'app/adms/Views/include/sidebar/sidebarAcessoMinhaConta.php';
             include 'app/' . $this->nome . '.php';
             include 'app/adms/Views/include/rodape/rodapeMinhaConta.php';
         } else {
-            echo "Erro ao carregar a página de Visualizar Denúncia Anônima: {$this->nome}!";
+            echo "Erro ao carregar a página de Consultar Denúncia Anônima: {$this->nome}!";
         }
     }
 

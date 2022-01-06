@@ -39,8 +39,8 @@ class AlterarDadosCadastrais {
                 $carregarView->renderizarAlterarDadosCadastrais();
             }
         } else {
-            $visualizarDadosUsuario = new \App\sts\Models\StsVisualizarDadosCadastrais();
-            $this->dados['form'] = $visualizarDadosUsuario->visualizarDadosCadastrais();
+            $visualizarDadosUsuario = new \App\sts\Models\StsConsultarDadosCadastrais();
+            $this->dados['form'] = $visualizarDadosUsuario->consultarDadosCadastrais();
             $carregarView = new \Core\ConfigView("sts/Views/dadosCadastrais/alterarDadosCadastrais", $this->dados);
             $carregarView->renderizarAlterarDadosCadastrais();
         }

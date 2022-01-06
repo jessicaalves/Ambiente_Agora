@@ -20,7 +20,7 @@ class ListarDenunciasAnonimas {
     }
 
     public function listarDenunciasAnonimas($pageId = null) {
-        $botao = ['visDenuncia' => ['menu_controller' => 'visualizar-denuncia-anonima', 'menu_metodo' => 'visualizar-denuncia-anonima'],
+        $botao = ['visDenuncia' => ['menu_controller' => 'consultar-denuncia-anonima', 'menu_metodo' => 'consultar-denuncia-anonima'],
             'altAvaliacaoDenuncia' => ['menu_controller' => 'avaliar-denuncia-anonima', 'menu_metodo' => 'avaliar-denuncia-anonima']];
 
         $listarBotao = new \App\adms\Models\AdmsBotao();

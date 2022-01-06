@@ -16,7 +16,7 @@ if (!defined('URL')) {
             </li>
         </ul>
         <div class="dropdown nav-link ml-auto">
-            <a class="dropdown-toggle nav-link mx-auto" data-toggle="dropdown"> <i class="fas fa-user-circle color-green"></i><span class="d-none d-sm-inline">
+            <a class="dropdown-toggle nav-link mx-auto" data-toggle="dropdown"> <i class="fas fa-user-circle color-green"></i>&nbsp;<span class="d-none d-sm-inline">
                     <?php
                     $nome = explode(" ", $_SESSION['nome']);
                     //$nome = explode(" ", isset($POST['nome']) . $_SESSION['nome']);

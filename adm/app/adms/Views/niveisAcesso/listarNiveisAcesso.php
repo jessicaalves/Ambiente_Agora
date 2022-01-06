@@ -87,7 +87,7 @@ if (!defined('URL')) {
                                     $qnt_linhas_exe++;
 
                                     if ($this->dados['botao']['visNivelAcesso']) {
-                                        echo "<a href='" . URLADM . "visualizar-nivel-acesso/visualizar-nivel-acesso/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "consultar-nivel-acesso/consultar-nivel-acesso/$id' class='btn btn-primary btn-sm'>Consultar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altNivelAcesso']) {
                                         echo "<a href='" . URLADM . "alterar-nivel-acesso/alterar-nivel-acesso/$id' class='btn btn-warning btn-sm'>Alterar</a>&nbsp;";
@@ -108,7 +108,7 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visNivelAcesso']) {
-                                            echo "<a class='dropdown-item btn-sm' href='" . URLADM . "visualizar-nivel-acesso/visualizar-nivel-acesso/$id'>Visualizar</a>";
+                                            echo "<a class='dropdown-item btn-sm' href='" . URLADM . "consultar-nivel-acesso/consultar-nivel-acesso/$id'>Consultar</a>";
                                         }
                                         if ($this->dados['botao']['altNivelAcesso']) {
                                             echo "<a class='dropdown-item btn-sm' href='" . URLADM . "alterar-nivel-acesso/alterar-nivel-acesso/$id'>Alterar</a>";

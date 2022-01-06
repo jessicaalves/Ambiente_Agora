@@ -23,9 +23,10 @@ class PesquisarUsuarios {
     public function listarUsuarios($pageId = null) {
 
         $botao = ['cadUsuario' => ['menu_controller' => 'cadastrar-usuario', 'menu_metodo' => 'cadastrar-usuario'],
-            'visUsuario' => ['menu_controller' => 'visualizar-usuario', 'menu_metodo' => 'visualizar-usuario'],
+            'visUsuario' => ['menu_controller' => 'consultar-usuario', 'menu_metodo' => 'consultar-usuario'],
             'altUsuario' => ['menu_controller' => 'alterar-usuario', 'menu_metodo' => 'alterar-usuario'],
-            'delUsuario' => ['menu_controller' => 'apagar-usuario', 'menu_metodo' => 'apagar-usuario']];
+            'delUsuario' => ['menu_controller' => 'apagar-usuario', 'menu_metodo' => 'apagar-usuario'],
+            'listUsuario' => ['menu_controller' => 'listar-usuarios', 'menu_metodo' => 'listar-usuarios']];
 
         $listarBotao = new \App\adms\Models\AdmsBotao();
         $this->dados['botao'] = $listarBotao->valBotao($botao);
@@ -41,6 +42,7 @@ class PesquisarUsuarios {
         } else {
             $this->pageId = (int) $pageId ? $pageId : 1;
             $this->dadosForm['nome'] = filter_input(INPUT_GET, 'nome', FILTER_DEFAULT);
+            $this->dadosForm['email'] = filter_input(INPUT_GET, 'email', FILTER_DEFAULT);
         }
 
         $listarUsuario = new \App\adms\Models\AdmsPesquisarUsuarios();

@@ -96,7 +96,7 @@ if (!defined('URL')) {
 
                                     <?php
                                     if ($this->dados['botao']['visUsuario']) {
-                                        echo "<a href='" . URLADM . "visualizar-usuario/visualizar-usuario/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "consultar-usuario/consultar-usuario/$id' class='btn btn-primary btn-sm'>Consultar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altUsuario']) {
                                         echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-warning btn-sm'>Alterar</a>&nbsp;";
@@ -117,7 +117,7 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visUsuario']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-usuario/visualizar-usuario/$id'>Visualizar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "consultar-usuario/consultar-usuario/$id'>Consultar</a>";
                                         }
                                         if ($this->dados['botao']['altUsuario']) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "alterar-usuario/alterar-usuario/$id'>Alterar</a>";

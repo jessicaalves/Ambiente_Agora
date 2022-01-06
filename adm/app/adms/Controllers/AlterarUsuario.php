@@ -20,7 +20,7 @@ class AlterarUsuario {
         if (!empty($this->dadosId)) {
             $this->alterarUsuarioPriv();
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Usuário não encontrado!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Administrador não encontrado!</div>";
             $urlDestino = URLADM . 'listar-usuarios/listar-usuarios';
             header("Location: $urlDestino");
         }
@@ -32,8 +32,8 @@ class AlterarUsuario {
             $alterarUsuario = new \App\adms\Models\AdmsAlterarUsuario();
             $alterarUsuario->alterarUsuario($this->dados);
             if ($alterarUsuario->getResultado()) {
-                $_SESSION['msg'] = "<div class='alert alert-success'>Usuário alterado com sucesso!</div>";
-                $UrlDestino = URLADM . 'visualizar-usuario/visualizar-usuario/' . $this->dados['id'];
+                $_SESSION['msg'] = "<div class='alert alert-success'>Administrador alterado com sucesso!</div>";
+                $UrlDestino = URLADM . 'consultar-usuario/consultar-usuario/' . $this->dados['id'];
                 header("Location: $UrlDestino");
             } else {
                 $this->dados['form'] = $this->dados;
@@ -63,7 +63,7 @@ class AlterarUsuario {
             $carregarView = new \Core\ConfigView("adms/Views/usuarios/alterarUsuario", $this->dados);
             $carregarView->renderizarAlterarUsuario();
         } else {
-            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Usuário não encontrado!</div>";
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Administrador não encontrado!</div>";
             $urlDestino = URLADM . 'listar-usuarios/listar-usuarios';
             header("Location: $urlDestino");
         }

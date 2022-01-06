@@ -23,7 +23,7 @@ class ListarUsuarios {
         $this->pageId = (int) $pageId ? $pageId : 1;
 
         $botao = ['cadUsuario' => ['menu_controller' => 'cadastrar-usuario', 'menu_metodo' => 'cadastrar-usuario'],
-            'visUsuario' => ['menu_controller' => 'visualizar-usuario', 'menu_metodo' => 'visualizar-usuario'],
+            'visUsuario' => ['menu_controller' => 'consultar-usuario', 'menu_metodo' => 'consultar-usuario'],
             'altUsuario' => ['menu_controller' => 'alterar-usuario', 'menu_metodo' => 'alterar-usuario'],
             'delUsuario' => ['menu_controller' => 'apagar-usuario', 'menu_metodo' => 'apagar-usuario']];
 

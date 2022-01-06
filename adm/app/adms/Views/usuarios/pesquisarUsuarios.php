@@ -9,37 +9,61 @@ if (!defined('URL')) {
 
 <section id="" class="p-4"> <!-- Início Seção Denúncias Realizadas -->  
     <div class="container">
-        <?php
-        if ($this->dados['botao']['cadUsuario']) {
-            ?>
-            <a href="<?php echo URLADM . 'cadastrar-usuario/cadastrar-usuario'; ?>">
-                <div class="p-2">
-                    <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
-                        Cadastrar
-                    </button>
-                </div>
-            </a>
+
+        <span class="d-none d-md-block" style="float:right; vertical-align:middle;">
             <?php
-        }
-        ?>
+            if ($this->dados['botao']['listUsuario']) {
+                echo "<a href='" . URLADM . "listar-usuarios/listar-usuarios' class='btn btn-primary btn-sm'>Listar</a>&nbsp;";
+            }
+            if ($this->dados['botao']['cadUsuario']) {
+                echo "<a href='" . URLADM . "cadastrar-usuario/cadastrar-usuario' class='btn btn-success btn-sm'>Cadastrar</a>";
+            }
+            ?>
+        </span>
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>PESQUISAR ADMINISTRADORES</b></h5>
+        <div class="dropdown d-block d-md-none">
+            <button class="btn btn-dark dropdown-toggle btn-sm" type="button" id="acoesListar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Ações
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="acoesListar">
+                <?php
+                if ($this->dados['botao']['listUsuario']) {
+                    echo "<a class='dropdown-item' href='" . URLADM . "listar-usuarios/listar-usuarios'>Listar</a>";
+                }
+                if ($this->dados['botao']['cadUsuario']) {
+                    echo "<a class='dropdown-item' href='" . URLADM . "cadastrar-usuario/cadastrar-usuario'>Cadastrar</a>&nbsp;";
+                }
+                ?>
+            </div>
+        </div>
+
+        <h5 class = "estilo-font p-1 text-body" style = "letter-spacing: 0.5px;"><i class = "fas fa-seedling text-success"></i> <b>PESQUISAR ADMINISTRADORES</b></h5>
 
 
-        <form class="form-inline" method="POST" action="">
-            <div class="form-group">
+        <form class = "form-inline" method = "POST" action = "">
+            <div class = "form-group">
                 <label>Nome</label>
-                <input name="nome" type="text" id="nome" class="form-control form-control-sm mx-sm-3" placeholder="Digite o nome">
+                <input name = "nome" type = "text" id = "nome" class = "form-control form-control-sm mx-sm-3" placeholder = "Digite o nome"
+                       value="<?php
+                       if (isset($_SESSION['pesqUsuarioNome'])) {
+                           echo $_SESSION['pesqUsuarioNome'];
+                       }
+                       ?>">
             </div>
-            <div class="form-group">
+            <div class = "form-group">
                 <label>E-mail</label>
-                <input name="email" type="text" id="email" class="form-control form-control-sm mx-sm-3" placeholder="Digite o e-mail">
+                <input name = "email" type = "text" id = "email" class = "form-control form-control-sm mx-sm-3" placeholder = "Digite o e-mail"
+                       value="<?php
+                       if (isset($_SESSION['pesqUsuarioEmail'])) {
+                           echo $_SESSION['pesqUsuarioEmail'];
+                       }
+                       ?>">
             </div>
-            <input name="PesqAdministrador" type="submit" class="btn btn-secondary my-2 btn-sm" value="Pesquisar">
+            <input name = "PesqAdministrador" type = "submit" class = "btn btn-secondary my-2 btn-sm" value = "Pesquisar">
         </form><hr>
 
 
-        <div class="table table-responsive text-center">   
+        <div class = "table table-responsive text-center">
 
             <?php
             if (empty($this->dados['listarUsuarios'])) {
@@ -61,6 +85,7 @@ if (!defined('URL')) {
                 unset($_SESSION['msg']);
             }
             ?>
+
 
             <table class="table table-bordered"> <!-- Início Tabela de Listar Usuários -->
                 <thead>                                                    
@@ -97,7 +122,7 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visUsuario']) {
-                                            echo "<a href='" . URLADM . "visualizar-usuario/visualizar-usuario/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
+                                            echo "<a href='" . URLADM . "consultar-usuario/consultar-usuario/$id' class='btn btn-primary btn-sm'>Consultar</a>&nbsp;";
                                         }
                                         if ($this->dados['botao']['altUsuario']) {
                                             echo "<a href='" . URLADM . "alterar-usuario/alterar-usuario/$id' class='btn btn-warning btn-sm'>Alterar</a>&nbsp;";
@@ -118,7 +143,7 @@ if (!defined('URL')) {
 
                                             <?php
                                             if ($this->dados['botao']['visUsuario']) {
-                                                echo "<a class='dropdown-item' href='" . URLADM . "visualizar-usuario/visualizar-usuario/$id'>Visualizar</a>";
+                                                echo "<a class='dropdown-item' href='" . URLADM . "consultar-usuario/consultar-usuario/$id'>Consultar</a>";
                                             }
                                             if ($this->dados['botao']['altUsuario']) {
                                                 echo "<a class='dropdown-item' href='" . URLADM . "alterar-usuario/alterar-usuario/$id'>Alterar</a>";

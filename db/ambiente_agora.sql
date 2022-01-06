@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06-Jan-2022 às 04:30
+-- Tempo de geração: 07-Jan-2022 às 00:30
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -116,7 +116,7 @@ INSERT INTO `adms_grups_pags` (`id`, `nome`, `ordem`, `created`, `modified`) VAL
 (2, 'Cadastrar', 2, '2021-07-13 03:22:48', NULL),
 (3, 'Editar', 3, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
 (4, 'Apagar', 4, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
-(5, 'Visualizar', 5, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
+(5, 'Consultar', 5, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
 (6, 'Outros', 6, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
 (7, 'Acesso', 7, '2021-07-13 03:22:48', '2021-07-13 03:22:48'),
 (8, 'Pesquisar', 8, '2022-01-05 23:29:23', NULL);
@@ -167,8 +167,8 @@ CREATE TABLE `adms_niveis_acessos` (
 --
 
 INSERT INTO `adms_niveis_acessos` (`id`, `nome`, `ordem`, `created`, `modified`) VALUES
-(1, 'Super Administrador', 1, '2021-06-26 07:00:32', '2021-12-02 05:10:20'),
-(2, 'Administrador', 2, '2021-06-26 07:00:32', '2021-12-14 19:17:40');
+(1, 'Super Administrador', 1, '2021-06-26 07:00:32', '2022-01-07 00:24:20'),
+(2, 'Administrador', 2, '2021-06-26 07:00:32', '2022-01-07 00:29:30');
 
 -- --------------------------------------------------------
 
@@ -265,31 +265,31 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 (1, 'Login', 'acessoLogin', 'login', 'acesso-login', 'Página de Login do Administrador ', 'Página de Login - Ambiente Agora', 1, 1, 1, 7, '2021-06-26 06:22:51', NULL),
 (2, 'Cadastro', 'cadastrarUsuario', 'cadastro', 'cadastrar-usuario', 'Página de Login do Administrador ', 'Página de Login do Administrador - Ambiente Agora', 1, 1, 1, 2, '2021-06-26 06:28:36', NULL),
 (3, 'MinhaConta', 'acessoMinhaConta', 'minha-conta', 'acesso-minha-conta', 'Página de Acesso à Minha Conta do Administrador', 'Minha Conta - Ambiente Agora', 1, 2, 1, 7, '2021-06-26 06:32:57', NULL),
-(4, 'VisualizarDadosCadastrais', 'visualizarDadosCadastrais', 'visualizar-dados-cadastrais', 'visualizar-dados-cadastrais', 'Visualizar Dados', 'Minha Conta - Ambiente Agora', 2, 2, 1, 5, '2021-06-26 06:35:26', NULL),
+(4, 'ConsultarDadosCadastrais', 'consultarDadosCadastrais', 'consultar-dados-cadastrais', 'consultar-dados-cadastrais', 'Consultar', 'Minha Conta - Ambiente Agora', 2, 2, 1, 5, '2021-06-26 06:35:26', NULL),
 (5, 'Login', 'logout', 'login', 'logout', 'Página de Logout', 'Página de Logout - Ambiente Agora', 2, 2, 1, 7, '2021-06-26 06:41:13', NULL),
 (6, 'EsqueceuSenha', 'esqueceuSenha', 'esqueceu-senha', 'esqueceu-senha', 'Página de Esqueceu Senha', 'Página de Esqueceu Senha - Ambiente Agora', 1, 1, 1, 7, '2021-06-26 06:43:45', NULL),
 (7, 'AtualSenha', 'atualSenha', 'atual-senha', 'atual-senha', 'Página de atualizar a senha', 'Página de atualizar a senha - Ambiente Agora', 1, 1, 1, 3, '2021-06-26 06:51:25', NULL),
 (8, 'ListarUsuarios', 'listarUsuarios', 'listar-usuarios', 'listar-usuarios', 'Gerenciar Administradores', 'Página para ter acesso a lista dos usuários cadastrados - Ambiente Agora', 1, 2, 1, 1, '2021-06-26 06:56:19', NULL),
 (9, 'Menu', 'menu', 'menu', 'menu', 'Páginas', 'Página de Menu', 2, 2, 1, 7, '2021-07-11 01:02:32', NULL),
 (10, 'DenunciasRealizadas', 'denunciasRealizadas', 'denuncias-realizadas', 'denuncias-realizadas', 'Denúncias Realizadas', 'Página de Denúncias Realizadas - Ambiente Agora', 2, 2, 1, 5, '2021-07-11 02:18:32', NULL),
-(11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'alterar-dados-cadastrais', 'alterar-dados-cadastrais', 'Alterar Dados', 'Minha Conta - Ambiente Agora', 1, 2, 1, 3, '2021-07-29 01:04:35', NULL),
+(11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'alterar-dados-cadastrais', 'alterar-dados-cadastrais', 'Alterar ', 'Minha Conta - Ambiente Agora', 1, 2, 1, 3, '2021-07-29 01:04:35', NULL),
 (12, 'ListarNiveisAcesso', 'listarNiveisAcesso', 'listar-niveis-acesso', 'listar-niveis-acesso', 'Níveis de Acesso', 'Minha Conta - Ambiente Agora', 1, 2, 1, 6, '2021-07-29 03:30:10', NULL),
 (13, 'Menu', 'menu', 'menu', 'menu', 'Item de Menu', 'Minha Conta - Ambiente Agora', 1, 2, 2, 6, '2021-07-29 03:39:08', NULL),
 (14, 'ConfirmarEmail', 'confirmarEmail', 'confirmar-email', 'confirmar-email', 'Página de Confirmar E-mail', 'Página de Confirmar E-mail - Ambiente Agora', 1, 1, 2, 7, '2021-08-05 03:52:20', NULL),
-(15, 'VisualizarUsuario', 'visualizarUsuario', 'visualizar-usuario', 'visualizar-usuario', 'Visualizar Usuário', 'Página para visualizar dados usuário - Ambiente Agora', 2, 2, 1, 5, '2021-08-14 22:09:54', NULL),
+(15, 'ConsultarUsuario', 'consultarUsuario', 'consultar-usuario', 'consultar-usuario', 'Visualizar Usuário', 'Página para consultar dados usuário - Ambiente Agora', 2, 2, 1, 5, '2021-08-14 22:09:54', NULL),
 (16, 'AlterarUsuario', 'alterarUsuario', 'alterar-usuario', 'alterar-usuario', 'Alterar Usuário', 'Página para alterar dados usuário - Ambiente Agora', 2, 2, 1, 3, '2021-08-15 01:55:07', NULL),
 (17, 'ApagarUsuario', 'apagarUsuario', 'apagar-usuario', 'apagar-usuario', 'Apagar Usuário', 'Página para apagar usuário - Ambiente Agora', 2, 2, 1, 4, '2021-08-17 00:57:12', NULL),
 (18, 'CadastrarUsuario', 'cadastrarUsuario', 'cadastrar-usuario', 'cadastrar-usuario', 'Cadastrar Usuário', 'Página para cadastrar usuário - Ambiente Agora', 2, 2, 1, 2, '2021-08-20 18:42:47', NULL),
 (19, 'CadastrarNivelAcesso', 'cadastrarNivelAcesso', 'cadastrar-nivel-acesso', 'cadastrar-nivel-acesso', 'Cadastrar Nível Acesso', 'Página para cadastrar nível de Acesso - Ambiente Agora', 2, 2, 1, 2, '2021-08-22 01:30:01', NULL),
 (20, 'AlterarNivelAcesso', 'alterarNivelAcesso', 'alterar-nivel-acesso', 'alterar-nivel-acesso', 'Alterar Nível de Acesso', 'Página para alterar nível de Acesso - Ambiente Agora', 2, 2, 1, 3, '2021-08-22 01:32:59', NULL),
-(21, 'VisualizarNivelAcesso', 'visualizarNivelAcesso', 'visualizar-nivel-acesso', 'visualizar-nivel-acesso', 'Visualizar Nível Acesso', 'Página para visualizar nível de Acesso - Ambiente Agora', 2, 2, 1, 4, '2021-08-22 01:35:04', NULL),
+(21, 'ConsultarNivelAcesso', 'consultarNivelAcesso', 'consultar-nivel-acesso', 'consultar-nivel-acesso', 'Visualizar Nível Acesso', 'Página para consultar Nível de Acesso - Ambiente Agora', 2, 2, 1, 5, '2021-08-22 01:35:04', NULL),
 (22, 'ApagarNivelAcesso', 'apagarNivelAcesso', 'apagar-nivel-acesso', 'apagar-nivel-acesso', 'Apagar Nível Acesso', 'Página para apagar nível de Acesso - Ambiente Agora', 2, 2, 1, 4, '2021-08-22 01:51:15', NULL),
 (23, 'AlterarOrdemNivelAcesso', 'alterarOrdemNivelAcesso', 'alterar-ordem-nivel-acesso', 'alterar-ordem-nivel-acesso', 'Alterar Ordem Nível Acesso', 'Página para alterar ordem do nível de Acesso - Ambiente Agora', 2, 2, 1, 3, '2021-08-22 01:55:22', NULL),
-(24, 'ListarDenunciasComuns', 'listarDenunciasComuns', 'listar-denuncias-comuns', 'listar-denuncias-comuns', 'Denúncias Comuns', 'Página de Visualizar Denúncias Realizadas - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
-(25, 'VisualizarDenunciaComum', 'visualizarDenunciaComum', 'visualizar-denuncia-comum', 'visualizar-denuncia-comum', 'Visualizar  Denúncia Comum', 'Página de Visualizar  Denúncia Comum - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
-(26, 'AvaliarDenunciaComum', 'avaliarDenunciaComum', 'avaliar-denuncia-comum', 'avaliar-denuncia-comum', 'Avaliar Denúncia', 'Página de Avaliar Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
-(27, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
-(28, 'VisualizarDenunciaAnonima', 'visualizarDenunciaAnonima', 'visualizar-denuncia-anonima', 'visualizar-denuncia-anonima', 'Visualizar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL),
+(24, 'ListarDenunciasComuns', 'listarDenunciasComuns', 'listar-denuncias-comuns', 'listar-denuncias-comuns', 'Listar Denúncias', 'Página de Listar Denúncias- Ambiente Agora', 1, 2, 1, 5, '2021-08-23 06:58:42', NULL),
+(25, 'ConsultarDenuncia', 'consultarDenuncia', 'consultar-denuncia', 'consultar-denuncia', 'Consultar Denúncia', 'Página de Consultar Denúncia - Ambiente Agora', 1, 2, 1, 5, '2021-08-23 07:48:16', NULL),
+(26, 'AvaliarDenuncia', 'avaliarDenuncia', 'avaliar-denuncia', 'avaliar-denuncia', 'Avaliar Denúncia', 'Página de Avaliar Denúncia - Ambiente Agora', 1, 2, 1, 3, '2021-08-23 08:15:54', NULL),
+(27, 'ListarDenunciasAnonimas', 'listarDenunciasAnonimas', 'listar-denuncias-anonimas', 'listar-denuncias-anonimas', 'Listar Denúncias Anônimas', 'Página de Visualizar Denúncias Anônimas - Ambiente Agora', 1, 2, 1, 5, '2021-08-30 21:43:23', NULL),
+(28, 'ConsultarDenunciaAnonima', 'consultarDenunciaAnonima', 'consultar-denuncia-anonima', 'consultar-denuncia-anonima', 'Consultar Denúncia Anônima', '', 1, 2, 1, 5, '2021-08-31 04:35:18', NULL),
 (29, 'AvaliarDenunciaAnonima', 'avaliarDenunciaAnonima', 'avaliar-denuncia-anonima', 'avaliar-denuncia-anonima', 'Avaliar Denúncia Anônima', 'Página de Avaliar Denúncia Anônima - Ambiente Agora', 1, 2, 1, 3, '2021-09-20 04:44:51', NULL),
 (30, 'PesquisarUsuarios', 'listarUsuarios', 'pesquisar-usuarios', 'listar-usuarios', 'Pesquisar Administradores', 'Página para pesquisar os administradores cadastrados - Ambiente Agora', 1, 2, 1, 8, '2022-01-05 23:22:25', NULL);
 
@@ -411,9 +411,9 @@ CREATE TABLE `adms_usuarios` (
 --
 
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$Q1p/UUM3AyAg9HWnaa9lV.zIxOhbQJMkCu/Dx7WTjpsnIhNe6FTBS', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-03 03:56:02'),
+(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$IojX0lgUe.2En1/ALSnCGeDOHppnXunO06y.foXOT0YXJ9rZKYgwi', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-07 00:29:45'),
 (2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, 2, NULL, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52'),
-(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$JN9Pma4Ir0QeBcRDD0K6MukEDq1/CCJlg240QTfad7YY1HYPQb9yy', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, '6cee742503bcf59ddddbc3e84ed8b60f', 2, NULL, 3, '2022-01-06 01:11:19', NULL);
+(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$Bu4DQJYb3zeQk9WlJdu/5.lBb/B04fgDWrcTk9mUpBU2wNO03xt4C', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, NULL, 2, NULL, 1, '2022-01-06 01:11:19', '2022-01-07 00:28:37');
 
 -- --------------------------------------------------------
 
@@ -508,6 +508,7 @@ CREATE TABLE `sts_denuncias_comuns` (
   `imagem` varchar(220) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
+  `parecer_tecnico` varchar(220) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -516,8 +517,8 @@ CREATE TABLE `sts_denuncias_comuns` (
 -- Extraindo dados da tabela `sts_denuncias_comuns`
 --
 
-INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '2022-01-02 03:25:04', '2022-01-04 18:51:26');
+INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `parecer_tecnico`, `created`, `modified`) VALUES
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '', '2022-01-02 03:25:04', '2022-01-06 23:19:28');
 
 -- --------------------------------------------------------
 
@@ -564,7 +565,7 @@ INSERT INTO `sts_grups_pags` (`id`, `nome`, `ordem`, `created`, `modified`) VALU
 (1, 'Listar', 1, '2021-06-27 05:46:45', NULL),
 (2, 'Cadastrar', 2, '2021-08-06 06:39:55', NULL),
 (3, 'Editar', 3, '2021-08-06 06:39:55', NULL),
-(4, 'Visualizar', 4, '2021-08-06 06:39:55', NULL),
+(4, 'Consultar', 4, '2021-08-06 06:39:55', NULL),
 (5, 'Outros', 5, '2021-08-06 06:39:55', NULL),
 (6, 'Acesso', 6, '2021-08-06 06:39:55', NULL),
 (7, 'Pesquisar', 7, '2022-01-05 23:26:13', NULL);
@@ -601,14 +602,14 @@ INSERT INTO `sts_pags` (`id`, `controller`, `metodo`, `nome`, `titulo`, `liberad
 (5, 'MinhaConta', 'acessoMinhaConta', 'Página de Acesso à Minha Conta', 'Minha Conta - Ambiente Agora', 1, 5, 1, 6, '2021-06-27 05:32:10', NULL),
 (6, 'ListarDenunciasRealizadas', 'listarDenunciasRealizadas', 'Página de Listar Denúncias Realizadas', 'Minha Conta - Ambiente Agora', 1, 5, 1, 4, '2021-06-27 05:34:20', NULL),
 (7, 'DenunciaComum', 'cadastrarDenunciaComum', 'Página de Denúncia Comum', 'Minha Conta - Ambiente Agora', 1, 5, 1, 2, '2021-06-27 05:36:04', NULL),
-(8, 'VisualizarDadosCadastrais', 'visualizarDadosCadastrais', 'Página de Dados Cadastrais', 'Minha Conta - Ambiente Agora', 1, 5, 1, 4, '2021-06-27 05:37:18', NULL),
+(8, 'ConsultarDadosCadastrais', 'consultarDadosCadastrais', 'Página de Consultar Dados Cadastrais', 'Minha Conta - Ambiente Agora', 1, 5, 1, 4, '2021-06-27 05:37:18', NULL),
 (9, 'Login', 'logout', 'Página de Logout', 'Página de Logout - Ambiente Agora', 1, 2, 1, 6, '2021-06-27 05:37:18', NULL),
 (10, 'EsqueceuSenha', 'esqueceuSenha', 'Página de Esqueceu Senha', 'Página de Esqueceu Senha - Ambiente Agora', 1, 5, 1, 5, '2021-06-27 05:39:43', NULL),
 (11, 'AlterarDadosCadastrais', 'alterarDadosCadastrais', 'Página de Alterar Dados Cadastrais', 'Minha Conta - Ambiente Agora', 1, 5, 1, 3, '2021-06-27 05:39:43', NULL),
-(12, 'VisualizarDadosDenuncia', 'visualizarDadosDenuncia', 'Página de Visualizar Dados da Denúncia Realizada', 'Minha Conta - Ambiente Agora ', 1, 5, 1, 4, '2021-06-27 05:42:16', NULL),
+(12, 'ConsultarDadosDenuncia', 'consultarDadosDenuncia', 'Página de Consultar Dados da Denúncia Realizada', 'Minha Conta - Ambiente Agora ', 1, 5, 1, 4, '2021-06-27 05:42:16', NULL),
 (13, 'AtualSenha', 'atualSenha', 'Página para Atualizar a Senha', 'Página para Atualizar a Senha - Ambiente Agora', 1, 5, 1, 5, '2021-06-27 05:42:16', NULL),
 (14, 'ConfirmarEmail', 'confirmarEmail', 'Página de Confirmar E-mail', 'Página de Confirmar E-mail - Ambiente Agora', 1, 3, 1, 5, '2021-08-06 07:08:16', NULL),
-(15, 'VisualizarAvaliacaoDenuncia', 'visualizarAvaliacaoDenuncia', 'Página de Visualizar Avaliação da Denúncia', 'Página de Visualizar Avaliação da Denúncia - Ambiente Agora', 1, 5, 1, 4, '2021-09-25 03:57:56', NULL);
+(15, 'ConsultarAvaliacaoDenuncia', 'consultarAvaliacaoDenuncia', 'Página de Consultar Avaliação da Denúncia', 'Página de Consultar Avaliação da Denúncia - Ambiente Agora', 1, 5, 1, 4, '2021-09-25 03:57:56', NULL);
 
 -- --------------------------------------------------------
 

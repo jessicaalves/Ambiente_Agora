@@ -33,7 +33,7 @@ class AlterarNivelAcesso {
             $editarNivAc->alterarNivelAcesso($this->dados);
             if ($editarNivAc->getResultado()) {
                 $_SESSION['msg'] = "<div class='alert alert-success'>Nível de acesso editado com sucesso!</div>";
-                $UrlDestino = URLADM . 'visualizar-nivel-acesso/visualizar-nivel-acesso/' . $this->dados['id'];
+                $UrlDestino = URLADM . 'consultar-nivel-acesso/consultar-nivel-acesso/' . $this->dados['id'];
                 header("Location: $UrlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

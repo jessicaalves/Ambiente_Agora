@@ -17,8 +17,8 @@
                 </a>
 
                 <ul class="list-unstyled collapse" id="submenu2">
-                    <li><a href="<?php echo URL . 'user/visualizar-dados-cadastrais/visualizar-dados-cadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Visualizar Dados</a></li>  
-                    <li><a href="<?php echo URL . 'user/alterar-dados-cadastrais/alterar-dados-cadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Alterar Dados</a></li>  
+                    <li><a href="<?php echo URL . 'user/consultar-dados-cadastrais/consultar-dados-cadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Consultar</a></li>  
+                    <li><a href="<?php echo URL . 'user/alterar-dados-cadastrais/alterar-dados-cadastrais'; ?>"> <i class="fas fa-seedling text-warning"></i> Alterar</a></li>  
                 </ul>
             </li>
 
@@ -85,8 +85,8 @@
                                 </td>
 
                                 <td class="align-center d-sm-table-cell">
-                                    <a href="<?php echo URL . 'user/visualizar-dados-denuncia/visualizar-dados-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Visualizar</a>
-                                    <a href="<?php echo URL . 'user/visualizar-avaliacao-denuncia/visualizar-avaliacao-denuncia/' . $id; ?>" class="btn btn-success btn-sm">Consultar Avaliação </a>
+                                    <a href="<?php echo URL . 'user/consultar-dados-denuncia/consultar-dados-denuncia/' . $id; ?>" class="btn btn-primary btn-sm">Consultar Denúncia</a>
+                                    <a href="<?php echo URL . 'user/consultar-avaliacao-denuncia/consultar-avaliacao-denuncia/' . $id; ?>" class="btn btn-success btn-sm">Consultar Avaliação </a>
                                 </td>
                                 
                             </tr>

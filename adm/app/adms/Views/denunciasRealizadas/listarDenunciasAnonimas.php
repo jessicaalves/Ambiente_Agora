@@ -69,7 +69,7 @@ if (!defined('URL')) {
 
                                     <?php
                                     if ($this->dados['botao']['visDenuncia']) {
-                                        echo "<a href='" . URLADM . "visualizar-denuncia-anonima/visualizar-denuncia-anonima/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "consultar-denuncia-anonima/consultar-denuncia-anonima/$id' class='btn btn-primary btn-sm'>Consultar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altAvaliacaoDenuncia']) {
                                         echo "<a href='" . URLADM . "avaliar-denuncia-anonima/avaliar-denuncia-anonima/$id' class='btn btn-warning btn-sm'>Avaliar</a>&nbsp;";
@@ -86,7 +86,7 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visDenuncia']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-denuncia-anonima/visualizar-denuncia-anonima/$id'>Visualizar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "consultar-denuncia-anonima/consultar-denuncia-anonima/$id'>Consultar</a>";
                                         }
                                         if ($this->dados['botao']['altAvaliacaoDenuncia']) {
                                             echo "<a class='dropdown-item' href='" . URLADM . "avaliar-denuncia-anonima/avaliar-denuncia-anonima/$id'>Avaliar</a>";

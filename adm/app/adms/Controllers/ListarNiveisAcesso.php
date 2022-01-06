@@ -23,7 +23,7 @@ class ListarNiveisAcesso {
         $this->pageId = (int) $pageId ? $pageId : 1;
 
         $botao = ['cadNivelAcesso' => ['menu_controller' => 'cadastrar-nivel-acesso', 'menu_metodo' => 'cadastrar-nivel-acesso'],
-            'visNivelAcesso' => ['menu_controller' => 'visualizar-nivel-acesso', 'menu_metodo' => 'visualizar-nivel-acesso'],
+            'visNivelAcesso' => ['menu_controller' => 'consultar-nivel-acesso', 'menu_metodo' => 'consultar-nivel-acesso'],
             'altNivelAcesso' => ['menu_controller' => 'alterar-nivel-acesso', 'menu_metodo' => 'alterar-nivel-acesso'],
             'delNivelAcesso' => ['menu_controller' => 'apagar-nivel-acesso', 'menu_metodo' => 'apagar-nivel-acesso'],
             'altOrdemNivelAcesso' => ['menu_controller' => 'alterar-ordem-nivel-acesso', 'menu_metodo' => 'alterar-ordem-nivel-acesso']];

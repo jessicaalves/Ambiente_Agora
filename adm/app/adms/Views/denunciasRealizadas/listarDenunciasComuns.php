@@ -11,7 +11,7 @@ if (!defined('URL')) {
     <div class="container">
 
 
-        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR DENÚNCIAS COMUNS</b></h5>
+        <h5 class="estilo-font p-1 text-body" style="letter-spacing: 0.5px;"><i class="fas fa-seedling text-success"></i> <b>LISTAR DENÚNCIAS</b></h5>
 
 
         <div class="table table-responsive text-center">   
@@ -39,7 +39,7 @@ if (!defined('URL')) {
 
             <table class="table table-bordered"> <!-- Início Tabela de Listar Usuários -->
                 <thead>                                                    
-                <th colspan="6" class="bg-success text-white">Quadro de Denúncias Comuns</th>
+                <th colspan="6" class="bg-success text-white">Quadro de Denúncias</th>
                 <tr>                           
                     <th>Id</th>
                     <th>Título</th>
@@ -69,10 +69,10 @@ if (!defined('URL')) {
 
                                     <?php
                                     if ($this->dados['botao']['visDenuncia']) {
-                                        echo "<a href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id' class='btn btn-primary btn-sm'>Visualizar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "consultar-denuncia/consultar-denuncia/$id' class='btn btn-primary btn-sm'>Consultar</a>&nbsp;";
                                     }
                                     if ($this->dados['botao']['altAvaliacaoDenuncia']) {
-                                        echo "<a href='" . URLADM . "avaliar-denuncia-comum/avaliar-denuncia-comum/$id' class='btn btn-warning btn-sm'>Avaliar</a>&nbsp;";
+                                        echo "<a href='" . URLADM . "avaliar-denuncia/avaliar-denuncia/$id' class='btn btn-warning btn-sm'>Avaliar</a>&nbsp;";
                                     }
                                     ?>
 
@@ -86,10 +86,10 @@ if (!defined('URL')) {
 
                                         <?php
                                         if ($this->dados['botao']['visDenuncia']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "visualizar-denuncia-comum/visualizar-denuncia-comum/$id'>Visualizar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "consultar-denuncia/consultar-denuncia/$id'>Consultar</a>";
                                         }
                                         if ($this->dados['botao']['altAvaliacaoDenuncia']) {
-                                            echo "<a class='dropdown-item' href='" . URLADM . "avaliar-denuncia-comum/avaliar-denuncia-comum/$id'>Avaliar</a>";
+                                            echo "<a class='dropdown-item' href='" . URLADM . "avaliar-denuncia/avaliar-denuncia/$id'>Avaliar</a>";
                                         }
                                         ?>
 
