@@ -16,35 +16,48 @@ class StsPhpMailer {
 
     private $resultado;
     private $dados;
+    private $dadosCredEmail;
 
     function getResultado() {
         return $this->resultado;
     }
 
     public function emailPhpMailer(array $dados) {
+
+        $this->dados = $dados;
+
+        $credEmail = new \App\adms\Models\helper\AdmsRead();
+        $credEmail->fullRead("SELECT * FROM adms_confirmar_email WHERE id =:id LIMIT :limit", "id=1&limit=1");
+        $this->dadosCredEmail = $credEmail->getResultado();
+
+        if ((isset($this->dadosCredEmail[0]['host'])) AND ( !empty($this->dadosCredEmail[0]['host']))) {
+            $this->confEmail();
+        } else {
+            $_SESSION['msg'] = "<div class='alert alert-danger'>Erro: Necessário inserir as credenciais do e-mail no admnistrativo para confirmar e-mail!</div>";
+            $this->resultado = false;
+        }
+    }
+
+    private function confEmail() {
         // Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
-        $host = 'smtp.mailtrap.io';
-        $username = 'a5a169fb92c731';
-        $password = '35572db7490e62';     
-        $porta = '2525';
 
         try {
             //Server settings
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
             $mail->CharSet = 'UTF-8';
             $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host = $host;                           // Set the SMTP server to send through
+            $mail->Host = $this->dadosCredEmail[0]['host'];                           // Set the SMTP server to send through
             $mail->SMTPAuth = true;                                     // Enable SMTP authentication
-            $mail->Username = $username;                         // SMTP username
-            $mail->Password = $password;                               // SMTP password
+            $mail->Username = $this->dadosCredEmail[0]['usuario'];                         // SMTP username
+            $mail->Password = $this->dadosCredEmail[0]['senha'];                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = $porta;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->Port = $this->dadosCredEmail[0]['porta'];                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
             //Recipients
             //$mail->setFrom('_mainaccount@ambienteagora.space', 'Ambiente Agora');
             //$mail->addAddress('jessicaalvesferreira24@gmail.com', 'Jéssica');     // Add a recipient
 
-            $mail->setFrom($this->dados['email'], $this->dados['nome']);
+            $mail->setFrom($this->dadosCredEmail[0]['email'], $this->dadosCredEmail[0]['nome']);
             $mail->addAddress($this->dados['dest_email'], $this->dados['dest_nome']);     // Add a recipient
             // Content
             $mail->isHTML(true);                                  // Set email format to HTML
@@ -61,6 +74,5 @@ class StsPhpMailer {
             $this->resultado = false;
         }
     }
-
 
 }

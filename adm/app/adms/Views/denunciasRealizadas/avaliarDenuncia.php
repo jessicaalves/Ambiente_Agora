@@ -115,7 +115,7 @@ if (isset($this->dados['form'][0])) {
                         <div class="form-group row alinhamento c-descricao-resp">
                                 <label for="ParecerTecnico" class="col-sm-2 col-form-label tamanho-font alinhar">Parecer&nbsp;Técnico&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control tamanho-font tamanho-descricao" name="parecer_tecnico" type="text" id="parecerTecnico" placeholder="Descreva o parecer técnico da denúncia"><?php
+                                    <textarea class="form-control tamanho-font tamanho-descricao" name="parecer_tecnico" type="text" id="parecerTecnico" placeholder="Descreva as informações do parecer técnico da denúncia"><?php
                                         if (isset($valorForm['parecer_tecnico'])) {
                                             echo $valorForm['parecer_tecnico'];
                                         }
