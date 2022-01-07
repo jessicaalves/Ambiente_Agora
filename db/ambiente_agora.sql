@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jan-2022 às 00:30
+-- Tempo de geração: 07-Jan-2022 às 03:13
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -42,31 +42,6 @@ CREATE TABLE `adms_cads_usuarios` (
 
 INSERT INTO `adms_cads_usuarios` (`id`, `env_email_conf`, `adms_nivel_acesso_id`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 1, 2, 3, '2021-08-04 01:36:24', NULL);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `adms_confirmar_email`
---
-
-CREATE TABLE `adms_confirmar_email` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `email` varchar(220) NOT NULL,
-  `host` varchar(220) NOT NULL,
-  `usuario` varchar(220) NOT NULL,
-  `senha` varchar(120) NOT NULL,
-  `porta` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `adms_confirmar_email`
---
-
-INSERT INTO `adms_confirmar_email` (`id`, `nome`, `email`, `host`, `usuario`, `senha`, `porta`, `created`, `modified`) VALUES
-(1, 'Ambiente Agora', 'jessicaalvesferreira24@gmail.com', 'smtp.mailtrap.io', 'a5a169fb92c731', '35572db7490e62', 2525, '2021-08-04 21:42:58', NULL);
 
 -- --------------------------------------------------------
 
@@ -413,7 +388,8 @@ CREATE TABLE `adms_usuarios` (
 INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
 (1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$IojX0lgUe.2En1/ALSnCGeDOHppnXunO06y.foXOT0YXJ9rZKYgwi', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-07 00:29:45'),
 (2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, 2, NULL, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52'),
-(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$Bu4DQJYb3zeQk9WlJdu/5.lBb/B04fgDWrcTk9mUpBU2wNO03xt4C', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, NULL, 2, NULL, 1, '2022-01-06 01:11:19', '2022-01-07 00:28:37');
+(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$Bu4DQJYb3zeQk9WlJdu/5.lBb/B04fgDWrcTk9mUpBU2wNO03xt4C', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, NULL, 2, NULL, 1, '2022-01-06 01:11:19', '2022-01-07 00:28:37'),
+(4, 'matheusGodoy@ambienteagora.com', '$2y$10$fvFXzje4TCnlOkgi4YNY9egGZIdAKR.0pePxDrDQvItvJsQL298F.', 'Matheus Eduardo Godoy', 'matheusGodoy@ambienteagora.com', '785.112.980-02', NULL, '644cf43e658ba02a858a5eaf12b4d296', 2, NULL, 3, '2022-01-07 03:07:57', NULL);
 
 -- --------------------------------------------------------
 
@@ -440,31 +416,6 @@ INSERT INTO `sts_cads_usuarios` (`id`, `env_email_conf`, `sts_perm_ace_id`, `sts
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `sts_confirmar_email`
---
-
-CREATE TABLE `sts_confirmar_email` (
-  `id` int(11) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `email` varchar(220) NOT NULL,
-  `host` varchar(220) NOT NULL,
-  `usuario` varchar(220) NOT NULL,
-  `senha` varchar(120) NOT NULL,
-  `porta` int(11) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `sts_confirmar_email`
---
-
-INSERT INTO `sts_confirmar_email` (`id`, `nome`, `email`, `host`, `usuario`, `senha`, `porta`, `created`, `modified`) VALUES
-(1, 'Ambiente Agora', 'jessicaalvesferreira24@gmail.com', 'smtp.mailtrap.io', 'a5a169fb92c731', '35572db7490e62', 2525, '2021-08-06 06:00:24', NULL);
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `sts_denuncias_anonimas`
 --
 
@@ -479,6 +430,7 @@ CREATE TABLE `sts_denuncias_anonimas` (
   `imagem` varchar(220) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
+  `parecer_tecnico` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -487,8 +439,8 @@ CREATE TABLE `sts_denuncias_anonimas` (
 -- Extraindo dados da tabela `sts_denuncias_anonimas`
 --
 
-INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
-(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, 1, '2022-01-02 03:08:18', NULL);
+INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `parecer_tecnico`, `created`, `modified`) VALUES
+(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, 1, 'A sua denúncia anônima foi recebida pelo órgão, aguarde para novas informações.', '2022-01-02 03:08:18', '2022-01-07 02:43:52');
 
 -- --------------------------------------------------------
 
@@ -508,7 +460,7 @@ CREATE TABLE `sts_denuncias_comuns` (
   `imagem` varchar(220) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
-  `parecer_tecnico` varchar(220) NOT NULL,
+  `parecer_tecnico` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -518,7 +470,7 @@ CREATE TABLE `sts_denuncias_comuns` (
 --
 
 INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `parecer_tecnico`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, '', '2022-01-02 03:25:04', '2022-01-06 23:19:28');
+(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, 'Após a investigação realizada pelos fiscais foi possível constatar que a denúncia é verdadeira, aguarde para novas informações.', '2022-01-02 03:25:04', '2022-01-07 02:25:35');
 
 -- --------------------------------------------------------
 
@@ -757,7 +709,11 @@ CREATE TABLE `sts_usuarios` (
 --
 
 INSERT INTO `sts_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `chave_descadastro`, `sts_perm_ace_id`, `sts_sit_usuario_id`, `sts_grup_pag_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$Kal53Gj/DtDmNYlT/0LQVemZQe5pzJQYSoYOvaDyDMtzQOGnb7BBu', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '515.299.560-30', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', '2022-01-03 03:22:49');
+(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$Kal53Gj/DtDmNYlT/0LQVemZQe5pzJQYSoYOvaDyDMtzQOGnb7BBu', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '515.299.560-30', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', '2022-01-03 03:22:49'),
+(3, 'julianaAmaro90@hotmail.com', '$2y$10$12jPYBZwSDx1Yh1qrT8Lj.YrJE/Nn05emS6XlOb1JYjkyHxquaxSC', 'Juliana Pires Amaro', 'julianaAmaro90@hotmail.com', '846.295.610-21', 'ded', 'Centro', NULL, '48b2c8ca802512f87343fbec822cf276', NULL, 1, 3, 6, '2022-01-07 02:03:18', NULL),
+(4, 'joana@hotmail.com', '$2y$10$FDG6Dqx8VhmLLGyWrNL1KOnS4NrnDvqwAvYTNTa/hriB70U5YrW7S', 'Joana Felizara Ramos', 'joana@hotmail.com', '712.114.680-03', 'gtfrd', 'Santa Luzia', NULL, NULL, NULL, 1, 1, 6, '2022-01-07 02:58:06', '2022-01-07 02:59:04'),
+(5, 'julianaAlmeida@hotmail.com', '$2y$10$Cl5HFkgW0iVZHpFrqVIIceZSJfoE3m5i1erMtdM9MoKL6fV.kZAyi', 'Juliana Almeida Campos', 'julianaAlmeida@hotmail.com', '724.892.810-03', 'Rua Joaquim', 'Santa Luzia', NULL, '674342c134a9e9c828e82cb2481b18bb', NULL, 1, 3, 6, '2022-01-07 03:03:49', NULL),
+(6, 'matheusEduardoGodoy@hotmail.com', '$2y$10$V3.Mk2cmAsLOHxSIWmPSm.yAfC0tHApbL8e1zahpsyxbm6sd2PEc6', 'Matheus Eduardo Godoy', 'matheusEduardoGodoy@hotmail.com', '276.435.420-74', 'Rua Joaquim', 'Santa Luzia', NULL, 'f18cb4910bb1e382409d724719243212', NULL, 1, 3, 6, '2022-01-07 03:05:44', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -770,12 +726,6 @@ ALTER TABLE `adms_cads_usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `adms_niv_acesso_id_fk` (`adms_nivel_acesso_id`) USING BTREE,
   ADD KEY `adms_si_usuario_id_fk` (`adms_sit_usuario_id`) USING BTREE;
-
---
--- Índices para tabela `adms_confirmar_email`
---
-ALTER TABLE `adms_confirmar_email`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `adms_cors`
@@ -860,12 +810,6 @@ ALTER TABLE `sts_cads_usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `sts_per_acesso_id_fk` (`sts_perm_ace_id`),
   ADD KEY `sts_si_usuario_id_fk` (`sts_sit_usuario_id`);
-
---
--- Índices para tabela `sts_confirmar_email`
---
-ALTER TABLE `sts_confirmar_email`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `sts_denuncias_anonimas`
@@ -957,12 +901,6 @@ ALTER TABLE `adms_cads_usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de tabela `adms_confirmar_email`
---
-ALTER TABLE `adms_confirmar_email`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
 -- AUTO_INCREMENT de tabela `adms_cors`
 --
 ALTER TABLE `adms_cors`
@@ -1026,18 +964,12 @@ ALTER TABLE `adms_tipos_pags`
 -- AUTO_INCREMENT de tabela `adms_usuarios`
 --
 ALTER TABLE `adms_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `sts_cads_usuarios`
 --
 ALTER TABLE `sts_cads_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `sts_confirmar_email`
---
-ALTER TABLE `sts_confirmar_email`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -1104,7 +1036,7 @@ ALTER TABLE `sts_tipos_pags`
 -- AUTO_INCREMENT de tabela `sts_usuarios`
 --
 ALTER TABLE `sts_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para despejos de tabelas

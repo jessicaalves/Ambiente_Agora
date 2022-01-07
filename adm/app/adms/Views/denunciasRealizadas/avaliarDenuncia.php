@@ -112,16 +112,16 @@ if (isset($this->dados['form'][0])) {
                         </div>
                         
                         
-                        <div class="form-group row alinhamento c-descricao-resp"> 
-                                <label for="ParecerTecnico" class="col-sm-2 col-form-label tamanho-font alinhar">Parecer&nbsp;Técnico&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                        <div class="form-group row alinhamento c-descricao-resp">
+                                <label for="ParecerTecnico" class="col-sm-2 col-form-label tamanho-font alinhar">Parecer&nbsp;Técnico&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
                                 <div class="col-sm-9">
-                                    <textarea class="form-control tamanho-font tamanho-descricao" name="parecerTecnico" type="text" id="parecerTecnico" placeholder="Digite o parecer técnico da denúncia"><?php
-                                        if (isset($valorForm['parecerTecnico'])) {
-                                            echo $valorForm['parecerTecnico'];
+                                    <textarea class="form-control tamanho-font tamanho-descricao" name="parecer_tecnico" type="text" id="parecerTecnico" placeholder="Descreva o parecer técnico da denúncia"><?php
+                                        if (isset($valorForm['parecer_tecnico'])) {
+                                            echo $valorForm['parecer_tecnico'];
                                         }
                                         ?></textarea>
                                 </div>
-                            </div>   
+                            </div>
 
                         <div class="botao-atualizar"><button class="btn btn-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Alterar</button></div> 
 

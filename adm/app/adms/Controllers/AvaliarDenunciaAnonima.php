@@ -34,7 +34,7 @@ class AvaliarDenunciaAnonima {
             $avaliarDenuncia->avaliarDenunciaAnonima($this->dados);
             if ($avaliarDenuncia->getResultado()) {
                 $_SESSION['msg'] = "<div class='alert alert-success'>Denúncia avaliada com sucesso!</div>";
-                $UrlDestino = URLADM . 'visualizar-denuncia-anonima/visualizar-denuncia-anonima/' . $this->dados['id'];
+                $UrlDestino = URLADM . 'consultar-denuncia-anonima/consultar-denuncia-anonima/' . $this->dados['id'];
                 header("Location: $UrlDestino");
             } else {
                 $this->dados['form'] = $this->dados;

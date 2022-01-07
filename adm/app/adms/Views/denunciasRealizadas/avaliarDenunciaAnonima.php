@@ -22,7 +22,7 @@ if (isset($this->dados['form'][0])) {
 
         <?php
         //if ($this->dados['botao']['listDenuncias']) {
-            ?>
+        ?>
 <!--            <a href="<?php echo URLADM . 'listar-denuncias-anonimas/listar-denuncias-anonimas'; ?>">
                 <div class="p-2">
                     <button style="float:right; vertical-align:middle;" class="btn btn-success btn-sm">
@@ -30,7 +30,7 @@ if (isset($this->dados['form'][0])) {
                     </button>
                 </div>
             </a>-->
-            <?php
+        <?php
         //}
         ?>
 
@@ -53,28 +53,28 @@ if (isset($this->dados['form'][0])) {
 
                     <form class="p-2 form" method="POST" action=""> <!-- Início Formulário Alterar Dados Cadastrais -->
                         <input name="id" type="hidden" value="<?php
-                    if (isset($valorForm['id'])) {
-                        echo $valorForm['id'];
-                    }
-                    ?>">
+                        if (isset($valorForm['id'])) {
+                            echo $valorForm['id'];
+                        }
+                        ?>">
                         <h5 class="p-2 borda-conteudo" id="">Dados - Avaliar Denúncia Anônima</h5><p><p>
 
-                        <div class="form-group row alinhamento c-login-resp"> 
+<!--                        <div class="form-group row alinhamento c-login-resp"> 
                             <label for="Id" class="col-sm-2 tamanho-font">Id&nbsp;</label>
                             <div class="col-sm-8 t-c-campos">
                                 <input class="form-control tamanho-font bg-white" name="id" type="text" id="id" placeholder="<?php $id; ?>"
                                        value="<?php
-                        if (isset($valorForm['id'])) {
-                            echo $valorForm['id'];
-                        }
-                    ?>"
+                                       if (isset($valorForm['id'])) {
+                                           echo $valorForm['id'];
+                                       }
+                                       ?>"
                                        readonly>
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="form-group row alinhamento c-tipo-resp">
                             <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Status&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
-                            <div class="col-sm-8">
+                            <div class="col-sm-9">
                                 <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_status_denuncia_id" id="sts_status_denuncia_id">
                                     <option value="">Selecione o status da denúncia</option>
                                     <?php
@@ -93,7 +93,7 @@ if (isset($this->dados['form'][0])) {
 
                         <div class="form-group row alinhamento c-tipo-resp">
                             <label for="Status" class="col-sm-2 col-form-label tamanho-font alin-tip">Descrição&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
-                            <div class="col-sm-8">
+                            <div class="col-sm-9">
                                 <select class="form-control tamanho-font-tipo bg-white tamanho-font" name="sts_descricao_stat_id" id="sts_status_denuncia_id">
                                     <option value="">Selecione a descrição da denúncia</option>
                                     <?php
@@ -110,15 +110,26 @@ if (isset($this->dados['form'][0])) {
                             </div>
                         </div>
 
+                        <div class="form-group row alinhamento c-descricao-resp">
+                            <label for="ParecerTecnico" class="col-sm-2 col-form-label tamanho-font alinhar">Parecer&nbsp;Técnico&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control tamanho-font tamanho-descricao" name="parecer_tecnico" type="text" id="parecerTecnico" placeholder="Descreva o parecer técnico da denúncia"><?php
+                                    if (isset($valorForm['parecer_tecnico'])) {
+                                        echo $valorForm['parecer_tecnico'];
+                                    }
+                                    ?></textarea>
+                            </div>
+                        </div>
+
                         <div class="botao-atualizar"><button class="btn btn-success btn-sm" type="submit" name="atualizarStatusDenuncia" value="atualizarStatusDenuncia">Alterar</button></div> 
 
                         <?php
                         //if ($this->dados['botao']['visDenuncia']) {
-                            ?>
-<!--                            <div class="botao-visualizar">
-                                <a href="<?php echo URLADM . 'visualizar-denuncia-anonima/visualizar-denuncia-anonima/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-primary btn-sm">Visualizar</a>
-                            </div>-->
-                            <?php
+                        ?>
+                        <!--                            <div class="botao-visualizar">
+                                                        <a href="<?php echo URLADM . 'visualizar-denuncia-anonima/visualizar-denuncia-anonima/' . $valorForm['id']; ?>" style="float:center; vertical-align:middle;" class="btn btn-primary btn-sm">Visualizar</a>
+                                                    </div>-->
+                        <?php
                         //}
                         ?>
 

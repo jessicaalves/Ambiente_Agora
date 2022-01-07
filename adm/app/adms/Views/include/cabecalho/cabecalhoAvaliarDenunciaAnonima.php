@@ -23,7 +23,7 @@ if (!defined('URL')) {
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/bootstrap.min.css'; ?>">
 
         <!-- Estilo Customizado -->
-        <link rel="stylesheet" text="text/css" href="<?php echo URLADM . '/assets/css/adm_avaliar_denuncia.css'; ?>">
+        <link rel="stylesheet" text="text/css" href="<?php echo URLADM . 'assets/css/adm_avaliar_denuncia.css'; ?>">
 
         <!-- Reboot CSS -->
         <link rel="stylesheet" type="text/css" href="<?php echo URLADM . '/assets/css/reboot.css'; ?>">

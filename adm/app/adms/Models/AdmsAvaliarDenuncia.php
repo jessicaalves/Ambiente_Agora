@@ -22,7 +22,7 @@ class AdmsAvaliarDenuncia {
     public function visualizarDenuncia($dadosId) {
         $this->dadosId = (int) $dadosId;
         $visualizarDenunciaComum = new \App\adms\Models\helper\AdmsRead();
-        $visualizarDenunciaComum->fullRead("SELECT denun.id, denun.sts_status_denuncia_id, denun.sts_descricao_stat_id, denun.parecer_tecnico 
+        $visualizarDenunciaComum->fullRead("SELECT denun.id, denun.sts_status_denuncia_id, denun.sts_descricao_stat_id 
                  FROM sts_denuncias_comuns AS denun
                  INNER JOIN sts_status_denuncias AS stat ON stat.id=denun.sts_status_denuncia_id
                  INNER JOIN sts_descricoes_status_denuncias AS descr ON descr.id=denun.sts_descricao_stat_id
@@ -32,7 +32,6 @@ class AdmsAvaliarDenuncia {
     }
 
     public function avaliarDenuncia(array $dados) {
-        
         $this->dados = $dados;
 
         $validarCampos = new \App\adms\Models\helper\AdmsValidarCampoVazio();
