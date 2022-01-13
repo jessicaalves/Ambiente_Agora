@@ -67,7 +67,7 @@
                         </div>   
 
                         <div class="form-group row alinhamento c-envolvido-resp">
-                            <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Tipo de Pessoa&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
+                            <label for="Envolvido" class="col-sm-2 col-form-label tamanho-font alinhar">Tipo&nbsp;de&nbsp;Pessoa&nbsp;<a href="#" class="tooltip-test text-success tamanho-font a-alinhar" title="Campo Obrigatório!">*</a></label> 
                             <div class="col-sm-8">
                                 <select class="form-control tamanho-font-tipo tamanho bg-white" name="envolvido" type="select" id="Envolvido"
                                         value="<?php

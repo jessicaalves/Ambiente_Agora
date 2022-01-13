@@ -34,7 +34,7 @@
                             <h1 class="brand-heading text-3 titulo2e3">Denuncie <i class="fas fa-globe-americas text-success"></i></h1>
                             <p class="texto-capa subtitulo2e3">Através deste ato você contribui para a preservação do meio ambiente.</p>
                             <p>
-                                <a href="<?php echo URL . 'user/denuncia-anonima/cadastrar-denuncia-anonima'; ?>" class="btn btn-lg btn-custom btn-branco btn-denunAnonima" data-toggle="modal" data-target="#denunciarAnonimamente">Denunciar Anonimamente</a>    
+                                <a href="" class="btn btn-lg btn-custom btn-branco btn-denunAnonima" data-toggle="modal" data-target="#denunciarAnonimamente">Denunciar Anonimamente</a>    
                             </p>
                         </div>
                     </div>
@@ -120,14 +120,14 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header bg-warning text-body">
-                    <h5 class="modal-title" id="TituloModalCentralizado"><i class="fas fa-seedling text-success"></i> Denúncia Anônima</h5>
+                    <h5 class="modal-title" id="TituloModalCentralizado"><i class="fas fa-seedling text-success"></i> Cadastrar Denúncia Anônima</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body text-justify">
-                    <b class="font-weight-bold">Tem certeza que deseja continuar para a denúncia anônima?</b>
-                    Após cadastrar uma denúncia anônima, não é possível consultar a denúncia, nem ter acesso a sua avaliação.
+                    <b class="font-weight-bold">Tem certeza que deseja continuar?</b><br>
+                    Após cadastrar uma denúncia anônima, não é possível consultar a denúncia e nem sua avaliação.
                     Por isso, para ter acesso a estas informações é necessário cadastrar uma nova conta.
                 </div>
                 <div class="modal-footer">

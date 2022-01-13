@@ -120,7 +120,10 @@ class StsCadastro {
             $validarCpf = new \App\sts\Models\helper\StsValidarCpf();
             $validarCpf->validarCpf($this->dados['cpf']);
 
-            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado())) {
+            $cpfValido = new \App\sts\Models\helper\StsVerificarCpfValido();
+            $cpfValido->verificarCpfValido($this->dados['cpf']);
+
+            if (( $validarSenha->getResultado())AND ( $validarUsuario->getResultado()) AND ( $validarEmailUnico->getResultado()) AND ( $validarEmail->getResultado()) AND ( $validarCpf->getResultado()) AND ( $cpfValido->getResultado())) {
                 $this->infoCadUser();
                 $this->dados['senha'] = password_hash($this->dados['senha'], PASSWORD_DEFAULT); //Criptografando a senha;
                 $this->dados['confirmar_email'] = md5($this->dados['senha'] . date('Y-m-d H:i'));

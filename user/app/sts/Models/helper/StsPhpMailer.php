@@ -26,8 +26,8 @@ class StsPhpMailer {
 
         $this->dados = $dados;
 
-        $credEmail = new \App\adms\Models\helper\AdmsRead();
-        $credEmail->fullRead("SELECT * FROM adms_confirmar_email WHERE id =:id LIMIT :limit", "id=1&limit=1");
+        $credEmail = new \App\sts\Models\helper\StsRead();
+        $credEmail->fullRead("SELECT * FROM sts_confirmar_email WHERE id =:id LIMIT :limit", "id=1&limit=1");
         $this->dadosCredEmail = $credEmail->getResultado();
 
         if ((isset($this->dadosCredEmail[0]['host'])) AND ( !empty($this->dadosCredEmail[0]['host']))) {
