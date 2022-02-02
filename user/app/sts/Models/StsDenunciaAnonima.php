@@ -9,7 +9,7 @@ if (!defined('URL')) {
     exit();
 }
 
-class StsDenunciaAnonima {
+class StsDenunciaAnonima extends StsDenuncia  {
 
     private $dados;
     private $resultado;

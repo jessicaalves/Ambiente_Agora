@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Jan-2022 às 20:51
+-- Tempo de geração: 03-Fev-2022 às 00:57
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 7.4.19
 
@@ -51,11 +51,11 @@ INSERT INTO `adms_cads_usuarios` (`id`, `env_email_conf`, `adms_nivel_acesso_id`
 
 CREATE TABLE `adms_confirmar_email` (
   `id` int(11) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `email` varchar(220) NOT NULL,
-  `host` varchar(220) NOT NULL,
-  `usuario` varchar(220) NOT NULL,
-  `senha` varchar(120) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `host` varchar(50) NOT NULL,
+  `usuario` varchar(60) NOT NULL,
+  `senha` varchar(60) NOT NULL,
   `porta` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -101,7 +101,7 @@ INSERT INTO `adms_cors` (`id`, `nome`, `cor`, `created`, `modified`) VALUES
 
 CREATE TABLE `adms_grups_pags` (
   `id` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL,
+  `nome` varchar(40) NOT NULL,
   `ordem` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -129,7 +129,7 @@ INSERT INTO `adms_grups_pags` (`id`, `nome`, `ordem`, `created`, `modified`) VAL
 
 CREATE TABLE `adms_menus` (
   `id` int(11) NOT NULL,
-  `nome` varchar(60) NOT NULL,
+  `nome` varchar(50) NOT NULL,
   `ordem` int(11) NOT NULL,
   `adms_sit_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
@@ -243,12 +243,12 @@ INSERT INTO `adms_nivs_aces_pags` (`id`, `permissao`, `ordem`, `dropdown`, `libe
 
 CREATE TABLE `adms_pags` (
   `id` int(11) NOT NULL,
-  `controller` varchar(220) NOT NULL,
-  `metodo` varchar(220) NOT NULL,
-  `menu_controller` varchar(220) NOT NULL,
-  `menu_metodo` varchar(220) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `titulo` varchar(220) NOT NULL,
+  `controller` varchar(60) NOT NULL,
+  `metodo` varchar(80) NOT NULL,
+  `menu_controller` varchar(60) NOT NULL,
+  `menu_metodo` varchar(80) NOT NULL,
+  `nome` varchar(170) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
   `liberado_bloqueado` int(11) NOT NULL DEFAULT 2,
   `adms_tipo_pag_id` int(11) NOT NULL,
   `adms_sit_pag_id` int(11) NOT NULL DEFAULT 2,
@@ -301,7 +301,7 @@ INSERT INTO `adms_pags` (`id`, `controller`, `metodo`, `menu_controller`, `menu_
 
 CREATE TABLE `adms_sits` (
   `id` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
+  `nome` varchar(40) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -345,7 +345,7 @@ INSERT INTO `adms_sits_pags` (`id`, `nome`, `created`, `modified`) VALUES
 
 CREATE TABLE `adms_sits_usuarios` (
   `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `nome` varchar(170) NOT NULL,
   `adms_cor_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -368,9 +368,9 @@ INSERT INTO `adms_sits_usuarios` (`id`, `nome`, `adms_cor_id`, `created`, `modif
 
 CREATE TABLE `adms_tipos_pags` (
   `id` int(11) NOT NULL,
-  `tipo` varchar(120) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `observacao` text NOT NULL,
+  `tipo` varchar(5) NOT NULL,
+  `nome` varchar(170) NOT NULL,
+  `observacao` varchar(220) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -381,7 +381,7 @@ CREATE TABLE `adms_tipos_pags` (
 
 INSERT INTO `adms_tipos_pags` (`id`, `tipo`, `nome`, `observacao`, `created`, `modified`) VALUES
 (1, 'adms', 'Login - Acesso', 'Página responsável por permitir que o administrador realize o login, logout, solicitar uma nova senha e atualizar sua senha no sistema.', '2021-06-26 06:03:14', NULL),
-(2, 'adms', 'Minha Conta', 'Página responsável por permitir que o administrador realize: cadastro, login, listar usuários, níveis de acesso, páginas do sistema, item de menu, alterar dados cadastrais e alterar status das denúncias realizadas pelos usuários.', '2021-07-11 01:40:02', NULL),
+(2, 'adms', 'Minha Conta', 'Página responsável por permitir que o administrador realize: cadastro, login, listar usuários, níveis de acesso, páginas do sistema, item de menu, alterar dados cadastrais e alterar status das denúncias realizadas pelos ', '2021-07-11 01:40:02', NULL),
 (3, 'adms', 'Cadastro de Administrador ', 'Página responsável por permitir que o administrador realize o cadastro de outros administradores de diferentes níveis de acesso no sistema.', '2021-07-11 01:40:02', NULL);
 
 -- --------------------------------------------------------
@@ -392,15 +392,15 @@ INSERT INTO `adms_tipos_pags` (`id`, `tipo`, `nome`, `observacao`, `created`, `m
 
 CREATE TABLE `adms_usuarios` (
   `id` int(11) NOT NULL,
-  `login` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `login` varchar(60) NOT NULL,
+  `senha` varchar(70) NOT NULL,
+  `nome` varchar(170) NOT NULL,
+  `email` varchar(60) NOT NULL,
   `cpf` varchar(15) NOT NULL,
-  `recuperar_senha` varchar(220) DEFAULT NULL,
-  `confirmar_email` varchar(120) DEFAULT NULL,
+  `recuperar_senha` varchar(70) DEFAULT NULL,
+  `confirmar_email` varchar(70) DEFAULT NULL,
+  `chave_descadastro` varchar(70) DEFAULT NULL,
   `adms_nivel_acesso_id` int(11) NOT NULL DEFAULT 1,
-  `chave_descadastro` varchar(220) DEFAULT NULL,
   `adms_sit_usuario_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -410,10 +410,10 @@ CREATE TABLE `adms_usuarios` (
 -- Extraindo dados da tabela `adms_usuarios`
 --
 
-INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `adms_nivel_acesso_id`, `chave_descadastro`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$IojX0lgUe.2En1/ALSnCGeDOHppnXunO06y.foXOT0YXJ9rZKYgwi', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, 1, NULL, 1, '2021-08-18 04:18:19', '2022-01-07 00:29:45'),
-(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, 2, NULL, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52'),
-(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$Bu4DQJYb3zeQk9WlJdu/5.lBb/B04fgDWrcTk9mUpBU2wNO03xt4C', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, NULL, 2, NULL, 1, '2022-01-06 01:11:19', '2022-01-07 00:28:37');
+INSERT INTO `adms_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `recuperar_senha`, `confirmar_email`, `chave_descadastro`, `adms_nivel_acesso_id`, `adms_sit_usuario_id`, `created`, `modified`) VALUES
+(1, 'jessicaalvesferreira24@ambiente.com', '$2y$10$IojX0lgUe.2En1/ALSnCGeDOHppnXunO06y.foXOT0YXJ9rZKYgwi', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@ambiente.com', '810.838.250-54', NULL, NULL, NULL, 1, 1, '2021-08-18 04:18:19', '2022-01-07 00:29:45'),
+(2, 'simoneBarbosaVieira@ambiente.com', '$2y$10$bMux97mXRfNRfXw0ymecMO8auNDT.E1Lk59WCV1l2HJ2lFI/BCXlW', 'Simone Barbosa Vieira', 'simoneBarbosaVieira@ambiente.com', '153.253.610-07', NULL, NULL, NULL, 2, 1, '2022-01-04 21:03:52', '2022-01-04 21:40:52'),
+(3, 'jessicaCamargoPires@hotmail.com', '$2y$10$Bu4DQJYb3zeQk9WlJdu/5.lBb/B04fgDWrcTk9mUpBU2wNO03xt4C', 'Jéssica Camargo Pires', 'jessicaCamargoPires@hotmail.com', '299.739.450-34', NULL, NULL, NULL, 2, 1, '2022-01-06 01:11:19', '2022-01-07 00:28:37');
 
 -- --------------------------------------------------------
 
@@ -445,11 +445,11 @@ INSERT INTO `sts_cads_usuarios` (`id`, `env_email_conf`, `sts_perm_ace_id`, `sts
 
 CREATE TABLE `sts_confirmar_email` (
   `id` int(11) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `email` varchar(220) NOT NULL,
-  `host` varchar(220) NOT NULL,
-  `usuario` varchar(220) NOT NULL,
-  `senha` varchar(120) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `host` varchar(50) NOT NULL,
+  `usuario` varchar(60) NOT NULL,
+  `senha` varchar(60) NOT NULL,
   `porta` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -470,16 +470,16 @@ INSERT INTO `sts_confirmar_email` (`id`, `nome`, `email`, `host`, `usuario`, `se
 
 CREATE TABLE `sts_denuncias_anonimas` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
-  `tipo` varchar(255) NOT NULL,
-  `descricao` varchar(255) NOT NULL,
-  `envolvido` varchar(220) NOT NULL,
-  `nome_envolvido` varchar(220) NOT NULL,
-  `funcao_envolvido` varchar(220) NOT NULL,
-  `imagem` varchar(220) NOT NULL,
+  `titulo` varchar(65) NOT NULL,
+  `tipo` varchar(60) NOT NULL,
+  `descricao` varchar(320) NOT NULL,
+  `envolvido` varchar(35) NOT NULL,
+  `nome_envolvido` varchar(170) NOT NULL,
+  `funcao_envolvido` varchar(120) NOT NULL,
+  `imagem` varchar(45) NOT NULL,
+  `parecer_tecnico` varchar(320) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
-  `parecer_tecnico` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -488,8 +488,11 @@ CREATE TABLE `sts_denuncias_anonimas` (
 -- Extraindo dados da tabela `sts_denuncias_anonimas`
 --
 
-INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `parecer_tecnico`, `created`, `modified`) VALUES
-(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 1, 1, 'A sua denúncia anônima foi recebida pelo órgão, aguarde para novas informações.', '2022-01-02 03:08:18', '2022-01-07 03:37:38');
+INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `parecer_tecnico`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
+(1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 'A sua denúncia anônima foi recebida pelo órgão, aguarde para novas informações.', 1, 1, '2022-01-02 03:08:18', '2022-01-07 03:37:38'),
+(2, 'Maltrato de Animais Domésticos', 'Fauna', 'blá...', 'Pessoa Física', 'Josefino Marfinno', 'Jardineiro', 'duck.jpg', '', 1, 1, '2022-01-25 00:11:17', NULL),
+(3, 'Maltrato de Animais Domésticos blá', 'Flora', 'blá', 'Pessoa Física', 'blá', 'blá', 'coelho.png', '', 1, 1, '2022-02-03 00:19:35', NULL),
+(4, 'Maltrato de Animais Domésticos blá', 'Flora', 'blá', 'Pessoa Física', 'blá', 'blá', 'coelho.png', '', 1, 1, '2022-02-03 00:26:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -500,16 +503,16 @@ INSERT INTO `sts_denuncias_anonimas` (`id`, `titulo`, `tipo`, `descricao`, `envo
 CREATE TABLE `sts_denuncias_comuns` (
   `id` int(11) NOT NULL,
   `sts_usuario_id` int(11) NOT NULL,
-  `titulo` varchar(220) NOT NULL,
-  `tipo` varchar(220) NOT NULL,
-  `descricao` varchar(255) NOT NULL,
-  `envolvido` varchar(220) NOT NULL,
-  `nome_envolvido` varchar(220) NOT NULL,
-  `funcao_envolvido` varchar(220) NOT NULL,
-  `imagem` varchar(220) NOT NULL,
+  `titulo` varchar(65) NOT NULL,
+  `tipo` varchar(60) NOT NULL,
+  `descricao` varchar(320) NOT NULL,
+  `envolvido` varchar(35) NOT NULL,
+  `nome_envolvido` varchar(170) NOT NULL,
+  `funcao_envolvido` varchar(120) NOT NULL,
+  `imagem` varchar(45) NOT NULL,
+  `parecer_tecnico` varchar(320) NOT NULL,
   `sts_status_denuncia_id` int(11) NOT NULL DEFAULT 1,
   `sts_descricao_stat_id` int(11) NOT NULL DEFAULT 1,
-  `parecer_tecnico` varchar(255) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -518,8 +521,10 @@ CREATE TABLE `sts_denuncias_comuns` (
 -- Extraindo dados da tabela `sts_denuncias_comuns`
 --
 
-INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `parecer_tecnico`, `created`, `modified`) VALUES
-(1, 1, 'Maltrato de Animais', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Seu Zé', 'Aposentado', 'gatoferido.jpg', 2, 2, 'Após a investigação realizada pelos fiscais foi possível constatar que a denúncia é verdadeira, aguarde para novas informações.', '2022-01-02 03:25:04', '2022-01-07 03:35:31');
+INSERT INTO `sts_denuncias_comuns` (`id`, `sts_usuario_id`, `titulo`, `tipo`, `descricao`, `envolvido`, `nome_envolvido`, `funcao_envolvido`, `imagem`, `parecer_tecnico`, `sts_status_denuncia_id`, `sts_descricao_stat_id`, `created`, `modified`) VALUES
+(1, 1, 'Maltrato de Animais Domésticos', 'Fauna', 'O catzinho foi atropelado pelo meu vizinho que, fugiu sem prestar socorro ao pobre animal.', 'Pessoa Física', 'Josefino Marfinno', 'Jardineiro', 'gatoferido.jpg', '....', 2, 2, '2022-01-18 03:20:06', '2022-01-25 00:09:50'),
+(2, 2, 'Maltrato de Animais Domésticos', 'Fauna', 'O cachorro foi atropelado pelo vizinho que saiu sem prestar socorro.', 'Pessoa Física', 'José', 'Aposentado', 'doguinhoatropelado.png', '', 1, 1, '2022-01-25 00:05:25', NULL),
+(3, 1, 'Maltrato de Animais Domésticos blá blá', 'Fauna', 'blá blá blá', 'Pessoa Física', 'blá', 'blá', 'coelho.png', '', 1, 1, '2022-02-03 00:30:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -552,7 +557,7 @@ INSERT INTO `sts_descricoes_status_denuncias` (`id`, `descricao`, `created`, `mo
 
 CREATE TABLE `sts_grups_pags` (
   `id` int(11) NOT NULL,
-  `nome` varchar(30) NOT NULL,
+  `nome` varchar(40) NOT NULL,
   `ordem` int(11) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
@@ -579,10 +584,10 @@ INSERT INTO `sts_grups_pags` (`id`, `nome`, `ordem`, `created`, `modified`) VALU
 
 CREATE TABLE `sts_pags` (
   `id` int(11) NOT NULL,
-  `controller` varchar(220) NOT NULL,
-  `metodo` varchar(220) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `titulo` varchar(220) NOT NULL,
+  `controller` varchar(60) NOT NULL,
+  `metodo` varchar(80) NOT NULL,
+  `nome` varchar(170) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
   `liberado_bloqueado` int(11) NOT NULL DEFAULT 2,
   `sts_tipo_pag_id` int(11) NOT NULL,
   `sts_sit_pag_id` int(11) NOT NULL DEFAULT 2,
@@ -663,7 +668,7 @@ INSERT INTO `sts_sits_pags` (`id`, `nome`, `created`, `modified`) VALUES
 
 CREATE TABLE `sts_sits_usuarios` (
   `id` int(11) NOT NULL,
-  `nome` varchar(120) NOT NULL,
+  `nome` varchar(170) NOT NULL,
   `created` datetime NOT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -685,7 +690,7 @@ INSERT INTO `sts_sits_usuarios` (`id`, `nome`, `created`, `modified`) VALUES
 
 CREATE TABLE `sts_status_denuncias` (
   `id` int(11) NOT NULL,
-  `nome` varchar(100) NOT NULL,
+  `nome` varchar(170) NOT NULL,
   `adms_cor_id` int(11) NOT NULL,
   `sts_status_descricao_denun_id` int(11) NOT NULL,
   `created` datetime NOT NULL,
@@ -710,9 +715,9 @@ INSERT INTO `sts_status_denuncias` (`id`, `nome`, `adms_cor_id`, `sts_status_des
 
 CREATE TABLE `sts_tipos_pags` (
   `id` int(11) NOT NULL,
-  `tipo` varchar(120) NOT NULL,
-  `nome` varchar(220) NOT NULL,
-  `observacao` text NOT NULL,
+  `tipo` varchar(5) NOT NULL,
+  `nome` varchar(170) NOT NULL,
+  `observacao` varchar(220) NOT NULL,
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -736,16 +741,16 @@ INSERT INTO `sts_tipos_pags` (`id`, `tipo`, `nome`, `observacao`, `created`, `mo
 
 CREATE TABLE `sts_usuarios` (
   `id` int(11) NOT NULL,
-  `login` varchar(255) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `nome` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `login` varchar(60) NOT NULL,
+  `senha` varchar(70) NOT NULL,
+  `nome` varchar(170) NOT NULL,
+  `email` varchar(60) NOT NULL,
   `cpf` varchar(15) NOT NULL,
-  `logradouro` varchar(255) NOT NULL,
-  `bairro` varchar(255) NOT NULL,
-  `recuperar_senha` varchar(220) DEFAULT NULL,
-  `confirmar_email` varchar(120) DEFAULT NULL,
-  `chave_descadastro` varchar(220) DEFAULT NULL,
+  `logradouro` varchar(80) NOT NULL,
+  `bairro` varchar(60) NOT NULL,
+  `recuperar_senha` varchar(70) DEFAULT NULL,
+  `confirmar_email` varchar(70) DEFAULT NULL,
+  `chave_descadastro` varchar(70) DEFAULT NULL,
   `sts_perm_ace_id` int(11) NOT NULL DEFAULT 1,
   `sts_sit_usuario_id` int(11) NOT NULL,
   `sts_grup_pag_id` int(11) NOT NULL,
@@ -758,7 +763,8 @@ CREATE TABLE `sts_usuarios` (
 --
 
 INSERT INTO `sts_usuarios` (`id`, `login`, `senha`, `nome`, `email`, `cpf`, `logradouro`, `bairro`, `recuperar_senha`, `confirmar_email`, `chave_descadastro`, `sts_perm_ace_id`, `sts_sit_usuario_id`, `sts_grup_pag_id`, `created`, `modified`) VALUES
-(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$Kal53Gj/DtDmNYlT/0LQVemZQe5pzJQYSoYOvaDyDMtzQOGnb7BBu', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '515.299.560-30', 'Rua da Solidão', 'Santa Maria', NULL, '2', NULL, 1, 1, 6, '2021-06-28 18:50:11', '2022-01-03 03:22:49');
+(1, 'jessicaalvesferreira24@gmail.com', '$2y$10$WlDMZ8PkdyW6tPT5ZVIlTOgELIXigxx7rFuwbanNNXk8wLoE/kBcO', 'Jéssica Alves Ferreira', 'jessicaalvesferreira24@gmail.com', '818.361.890-10', 'Rua Joaquim', 'Santa Luzia', NULL, NULL, NULL, 1, 1, 6, '2022-01-18 03:13:05', '2022-01-18 03:13:17'),
+(2, 'cleon', '$2y$10$yvw55yJgzEqhCN3/CR.8Ius9TE.yvkAphL..B12loToApYZRwiwMG', 'Cleon Xavier', 'cleon.junior@ifgoiano.edu.br', '571.353.120-15', 'Rua', 'Bairro', NULL, NULL, NULL, 1, 1, 6, '2022-01-24 23:59:34', '2022-01-25 00:03:00');
 
 --
 -- Índices para tabelas despejadas
@@ -1045,13 +1051,13 @@ ALTER TABLE `sts_confirmar_email`
 -- AUTO_INCREMENT de tabela `sts_denuncias_anonimas`
 --
 ALTER TABLE `sts_denuncias_anonimas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `sts_denuncias_comuns`
 --
 ALTER TABLE `sts_denuncias_comuns`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `sts_descricoes_status_denuncias`
@@ -1105,7 +1111,7 @@ ALTER TABLE `sts_tipos_pags`
 -- AUTO_INCREMENT de tabela `sts_usuarios`
 --
 ALTER TABLE `sts_usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas

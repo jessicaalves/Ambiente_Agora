@@ -21,7 +21,6 @@ class AdmsListarDenunciasComuns {
     }
 
     public function listarDenunciasComuns($pageId = null) {
-
         $this->pageId = (int) $pageId;
         $paginacao = new \App\adms\Models\helper\AdmsPaginacao(URLADM . 'listar-denuncias-comuns/listar-denuncias-comuns');
         $paginacao->condicao($this->pageId, $this->limiteResultado);
